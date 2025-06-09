@@ -1,0 +1,29 @@
+# Java
+
+## 📁 Install
+- brew: 맥에서 프로그램 설치를 도와주는 도구 (https://brew.sh/)
+- 터미널에서 Homebrew 설치하기
+
+    ```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    ```
+
+- Java 설치하기
+
+    ```bash
+    brew install openjdk@21
+    ```
+
+- IntelliJ 설치하기
+
+    ```bash
+    brew install --cask intellij-idea-ce
+    ```
+
+- 설치한 IntelliJ 삭제하기
+
+    ```bash
+    brew uninstall intellij-idea-ce
+    ```
+
+
