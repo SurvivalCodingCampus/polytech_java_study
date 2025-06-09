@@ -4,11 +4,6 @@ package com.survivalcoding;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int ii = 10;
-        boolean isMarried = true;
-        double d = 1.0;
-        float f = 1.0f;
-
         System.out.println("Hello and welcome!");
 
         for (int i = 1; i <= 5; i++) {
