@@ -26,6 +26,8 @@ public class Cleric {
             recoveryMp = maxMp - mp;
         }
 
+        // mp 회복
+        mp += recoveryMp;
         return recoveryMp;
     }
 }
