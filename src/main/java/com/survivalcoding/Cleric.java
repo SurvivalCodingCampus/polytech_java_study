@@ -9,10 +9,12 @@ public class Cleric {
     int currentMp;
     final int maxMp = 10;
     void selfAid(){
-        this.currentMp -= 5;
-        if(this.currentMp < 0)
-            this.currentMp = 0;
+        if(currentMp < 5){
+            // 스킬 못 쓴다고 하기
+            return;
+        }
 
+        this.currentMp -= 5;
         this.currentHp  = maxHp;
     }
 
