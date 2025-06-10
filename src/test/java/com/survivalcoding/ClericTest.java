@@ -1,4 +1,5 @@
 package com.survivalcoding;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,7 @@ class ClericTest {
         assertEquals(10, cleric.maxMp);
         assertEquals("Cleric", cleric.name);
     }
+
     @Test
     @DisplayName("SelfAid 사용시 MP는 5가 깎이며 체력은 최대 체력으로 회복")
     void testSelfAid() {
@@ -40,9 +42,10 @@ class ClericTest {
         assertEquals(5, cleric.mp);
 
     }
+
     @Test
     @DisplayName("Pray 사용시 자신의 MP를 회복한다")
-    void testPray(){
+    void testPray() {
 
         Cleric cleric = new Cleric();
 
