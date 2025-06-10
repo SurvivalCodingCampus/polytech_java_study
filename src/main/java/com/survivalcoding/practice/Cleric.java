@@ -31,4 +31,12 @@ public class Cleric {
         mp += recoveryMp;
         return recoveryMp;
     }
+
+    // test를 위해 setMp(), setHp() 추가했습니다
+    public void setHp(int hp){
+        this.hp = hp;
+    }
+    public void setMp(int mp){
+        this.mp = mp;
+    }
 }
