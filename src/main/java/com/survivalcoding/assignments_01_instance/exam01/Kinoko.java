@@ -13,6 +13,8 @@ public class Kinoko {
     System.out.println("hp를 회복");
     }
 
-    public void setHp(int i) {
+    public void setHp(int hp) {
+        this.hp=hp;
+        System.out.println("hp를 회복");
     }
 }
