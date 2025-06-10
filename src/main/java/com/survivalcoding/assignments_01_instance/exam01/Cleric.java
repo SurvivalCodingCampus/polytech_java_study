@@ -4,14 +4,17 @@ public class Cleric {
     //이름 최대 MP, HP
     String name;
     int HP;
-    final int Max_HP=50;
+    final int MAX_HP=50;
     int MP;
-    final int Max_MP=10;
+    final int MAX_MP =10;
 
     //셀프 에이드 MP 5소모 HP 최대로 회복 인수가 없고 리턴값도 없음
     public void selfAid(){
-    this.MP-=5;
-    this.HP=Max_HP;
+        if(this.MP<5){
+            return;
+        }
+        this.MP-=5;
+    this.HP= MAX_HP;
     }
 
     //기도하기로 MP 회복
@@ -20,8 +23,8 @@ public class Cleric {
     public int pray(int sec){
         int result=0;
 
-    if(MP>Max_MP){
-    MP=Max_MP;
+    if(MP> MAX_MP){
+    MP= MAX_MP;
     }
         return result;
     }
