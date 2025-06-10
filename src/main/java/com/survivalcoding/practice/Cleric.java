@@ -10,6 +10,7 @@ public class Cleric {
     final int maxMp = 10;
 
     public void selfAid(){
+        if(mp < 5) return;
         mp -= 5;
         hp = maxHp;
     }
