@@ -1,5 +1,4 @@
 package com.survivalcoding.assignments_01_instance.exam01;
-import java.util.Random;
 
 public class Cleric {
 
@@ -20,11 +19,10 @@ public class Cleric {
             if(HP < MAX_HP)
             {
                 HP = MAX_HP;
-                MP -= 5;
+
             }
-            else {
                 MP -= 5;
-            }
+
         }
     }
 
