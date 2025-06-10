@@ -10,10 +10,11 @@ public class Cleric {
     final int maxMp = 10;
 
     void SelfAid(){
+        if (this.mp < 5) return;
         this.mp -= 5;
         this.hp = maxHp;
     }
-//1초 0~2 3초 3~5 <<  초당 1씩 증가 및 기도 시간별로 0 ~ i 값으로 랜덤 상수 부여 nextInt= 0 ~ i+1까지임
+//1초 0~2 3초 3~5 <<  초당 1씩 증가 및 기도 시간별로 0 ~ i 값으로 랜덤 상수 부여 nextInt= 0 ~ i+1까지임 << 실제 return값은 MP에 몇을 증가 시킬것이냐
     int Pray(int i){
 
 
@@ -22,8 +23,8 @@ public class Cleric {
 
         int recoveredMp = i + randomNum;
 
-        if (recoveredMp >= maxMp) {
-            recoveredMp = maxMp;
+        if (recoveredMp+mp > 10){
+            recoveredMp = maxMp - mp;
         }
 
         return recoveredMp;
