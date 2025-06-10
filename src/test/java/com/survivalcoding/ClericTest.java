@@ -24,4 +24,12 @@ class ClericTest {
         assertEquals(50, cleric.hp);
         assertEquals(5, cleric.mp);
     }
+    @Test
+    @DisplayName("Pray 사용시 자신의 MP를 회복한다")
+    void testPray(){
+        Cleric cleric = new Cleric();
+
+        assertEquals(5, cleric.Pray(3));
+        assertEquals(10, cleric.Pray(100));
+    }
 }
