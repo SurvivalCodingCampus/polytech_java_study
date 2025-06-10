@@ -13,6 +13,7 @@ class ClericTest {
         // given(준비)
         Cleric clericSelfAid = new Cleric();
         //when(실행)
+        clericSelfAid.currentHp = 20;
         clericSelfAid.selfAid();
 
         //then(검증)
@@ -20,8 +21,8 @@ class ClericTest {
         assertEquals(50,clericSelfAid.currentHp);
         assertEquals(5,clericSelfAid.currentMp);
 
-        clericSelfAid.currentMp = 3;
         //when(실행)
+        clericSelfAid.currentMp = 3;
         clericSelfAid.selfAid();
 
         //then(검증)
@@ -34,16 +35,27 @@ class ClericTest {
     void pray() {
         // given(준비)
         Cleric clericPray = new Cleric();
-
+        clericPray.currentMp = 5;
+        int tempMp = clericPray.currentMp;
+        int heal = clericPray.pray(3);
         //when
-        clericPray.pray(3);
+        assertTrue(heal>=3 && heal <= 5);
         //then
-        assertEquals(10,clericPray.currentMp);
+        assertEquals(tempMp + heal,clericPray.currentMp);
         clericPray.currentHp = 3;
-
+        //when
         clericPray.pray(2);
         //then
         assertEquals(10,clericPray.currentMp);
 
+    }
+    @Test
+    @DisplayName("최대 hp에서 pray")
+    void pray2() {
+        Cleric clericPray = new Cleric();
+        int heal = clericPray.pray(3);
+
+        assertEquals(0,heal);
+        assertEquals(clericPray.maxHp,clericPray.currentHp);
     }
 }
