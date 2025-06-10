@@ -23,5 +23,11 @@ public class Cleric {
         this.hp = this.maxHp;
     }
 
-
+    public void pray(int prayerDuration)
+    {
+        Random random = new Random();
+        int min = 0;
+        int max = 2;
+        int manaRecoveryAmount = prayerDuration + ((int) (Math.random() * (max - min + 1) + min));
+    }
 }
