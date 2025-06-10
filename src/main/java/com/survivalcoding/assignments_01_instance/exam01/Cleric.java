@@ -29,5 +29,10 @@ public class Cleric {
         int min = 0;
         int max = 2;
         int manaRecoveryAmount = prayerDuration + ((int) (Math.random() * (max - min + 1) + min));
+        this.mp +=manaRecoveryAmount;
+        if(manaRecoveryAmount > maxMp)
+        {
+            this.mp = maxMp;
+        }
     }
 }
