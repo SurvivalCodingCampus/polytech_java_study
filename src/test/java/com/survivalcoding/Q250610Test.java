@@ -11,5 +11,8 @@ public class Q250610Test {
         System.out.println("Name: " + cleric.name);
         System.out.println("HP: " + cleric.HP);
         System.out.println("MP: " + cleric.MP);
+
+
     }
+
 }
