@@ -22,7 +22,7 @@ _\*오브젝트 _(object)_ : 현실 세계의 모든 객체_
 - 클래스 _(class)_ : 첫 글자는 대문자 _(Pascal)_  
   `class Hero`, `public class Monster`
 - 필드 _(field)_ : 두 번째 단어부터 맨 첫 글자는 대문자 _(Camel)_  
-  `int mLevel`, `List<String> mItemList`, \*`final int flatDamageThunder`
+  `int Level`, `List<String> ItemList`, \*`final int flatDamageThunder`
 - 메소드 _(method)_ : 두 번째 단어부터 맨 첫 글자는 대문자 _(Camel)_  
   `void attack(int dmg)`, `List<String> getItemList(object player)`
 

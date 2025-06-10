@@ -13,6 +13,7 @@ public class Cleric {
     private int MP = 5;
     private final int maxMP = 10;
 
+    //    Getter
     public int getHP() {
         return HP;
     }
@@ -35,7 +36,8 @@ public class Cleric {
         int addedMP = MP + prayingTime + rng.nextInt(3);
 
         // intellisense says "Can be replaced with Math.min() call."
-         return Math.min(addedMP, maxMP);
-//        return addedMP > maxMP ? maxMP : addedMP;
+        // Not recommended :: return addedMP > maxMP ? maxMP : addedMP;
+        return Math.min(addedMP, maxMP); // <- Looks more obvious
+
     }
 }
