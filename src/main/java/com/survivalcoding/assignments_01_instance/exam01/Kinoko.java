@@ -12,4 +12,7 @@ public class Kinoko {
     this.hp = hp;
     System.out.println("hp를 회복");
     }
+
+    public void setHp(int i) {
+    }
 }
