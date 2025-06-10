@@ -8,8 +8,8 @@ public class Main {
         int a =10;
 
 
-        //scout 엔터
-        System.out.println("Hello and welcome!");
+    //scout 엔터
+    System.out.println("Hello and welcome!");
 
 
 
