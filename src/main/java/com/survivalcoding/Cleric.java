@@ -1,3 +1,5 @@
+package com.survivalcoding;
+
 public class Cleric {
 
     String name;
@@ -6,5 +8,8 @@ public class Cleric {
     int mp=10;
     final int maxMP=10;
 
-
+    void selfAid(){
+        this.mp -=5;
+        this.hp = maxHP;
+    }
 }
