@@ -1,4 +1,5 @@
 package com.survivalcoding.assignments_01_instance.exam01;
+import java.util.Random;
 
 public class Cleric {
 
@@ -25,6 +26,19 @@ public class Cleric {
                 MP -= 5;
             }
         }
+    }
+
+    public int pray(int sec){
+        int extra = (int)(Math.random()*3);
+
+        int recover = sec + extra;
+
+        if(MP + recover > MAX_MP){
+            recover = MAX_MP - MP;
+        }
+        MP += recover;
+
+        return recover;
     }
 
 
