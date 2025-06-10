@@ -13,6 +13,21 @@ public class Cleric {
         this.name = name;
     }
 
+    public void selfAid(){
+        if(MP>=5)
+        {
+            if(HP < MAX_HP)
+            {
+                HP = MAX_HP;
+                MP -= 5;
+            }
+            else {
+                MP -= 5;
+            }
+        }
+    }
+
+
     }
 
 
