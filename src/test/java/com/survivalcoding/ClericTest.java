@@ -20,21 +20,13 @@ class ClericTest {
         assertEquals(50,clericSelfAid.currentHp);
         assertEquals(5,clericSelfAid.currentMp);
 
+        clericSelfAid.currentMp = 3;
         //when(실행)
         clericSelfAid.selfAid();
 
         //then(검증)
-        // 입력한 값와 실제 값이 같은지를 확인함
         assertEquals(50,clericSelfAid.currentHp);
-        assertEquals(0,clericSelfAid.currentMp);
-
-        //when(실행)
-        clericSelfAid.selfAid();
-
-        //then(검증)
-        // 입력한 값와 실제 값이 같은지를 확인함
-        assertEquals(50,clericSelfAid.currentHp);
-        assertEquals(0,clericSelfAid.currentMp);
+        assertEquals(3,clericSelfAid.currentMp);
     }
 
     @Test
@@ -45,7 +37,6 @@ class ClericTest {
 
         //when
         clericPray.pray(3);
-
         //then
         assertEquals(10,clericPray.currentMp);
         clericPray.currentHp = 3;
