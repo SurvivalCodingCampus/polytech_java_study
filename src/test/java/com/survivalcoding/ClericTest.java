@@ -48,15 +48,19 @@ class ClericTest {
 
         cleric.mp = 0;
         assertEquals(0, cleric.pray(0));  // 0초 Pray시 0회복
+        assertEquals(0, cleric.mp);
 
         cleric.mp = 0;
         assertEquals(5, cleric.pray(3));  // Pray 3초의 경우 3~5 난수값 회복
+        assertEquals(5, cleric.mp);
 
         cleric.mp = 0;
         assertEquals(10, cleric.pray(15));  // 최대 10까지 만 회복함
+        assertEquals(10, cleric.mp);
 
         cleric.mp = 10;
         assertEquals(0, cleric.pray(3));  //  이미 mp가 만땅의 경우 0회복
+        assertEquals(10, cleric.mp);
 
     }
 }

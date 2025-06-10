@@ -27,6 +27,8 @@ public class Cleric {
             recoveredMp = this.maxMp - this.mp;
         }
 
+        this.mp += recoveredMp;
+
         return recoveredMp;
     }
 
