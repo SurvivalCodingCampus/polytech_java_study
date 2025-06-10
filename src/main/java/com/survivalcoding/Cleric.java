@@ -9,7 +9,7 @@ public class Cleric {
     int mp = MAX_MP;
     int hp = MAX_HP;
 
-    void selfAid() {
+    public void selfAid() {
         if (mp >= 5) {
             mp -= 5;
             hp = MAX_HP;
