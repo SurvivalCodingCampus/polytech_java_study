@@ -56,7 +56,7 @@ class ClericTest extends Cleric{
 
         //when
         //then
-        Assertions.assertThrows(IllegalStateException.class, () -> testCleric.selfAid());
+        Assertions.assertThrows(IllegalStateException.class, testCleric::selfAid);
     }
 
     @Test
