@@ -16,5 +16,12 @@ public class Cleric {
         this.hp = maxHp;
         this.mp = maxMp;
     }
+    public void selfAid()
+    {
+        int manaCost =5;
+        this.mp -=manaCost;
+        this.hp = this.maxHp;
+    }
+
 
 }
