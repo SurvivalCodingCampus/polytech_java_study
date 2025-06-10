@@ -23,19 +23,19 @@ class ClericTest {
         Cleric cleric = new Cleric();
 
         cleric.hp = 1;  // 일반적인 상황에서의 SelfAid
-        cleric.SelfAid();
+        cleric.selfAid();
         assertEquals(50, cleric.hp);
         assertEquals(5, cleric.mp);
 
         cleric.mp = 4;  // MP가 부족할경우 SelfAid가 사용되지않음
         cleric.hp = 31;
-        cleric.SelfAid();
+        cleric.selfAid();
         assertEquals(31, cleric.hp);
         assertEquals(4, cleric.mp);
 
         cleric.mp = 10;  // SelfAid HP가 만땅일경우 MP만 소모
         cleric.hp = 50;
-        cleric.SelfAid();
+        cleric.selfAid();
         assertEquals(50, cleric.hp);
         assertEquals(5, cleric.mp);
 
@@ -47,16 +47,16 @@ class ClericTest {
         Cleric cleric = new Cleric();
 
         cleric.mp = 0;
-        assertEquals(0, cleric.Pray(0));  // 0초 Pray시 0회복
+        assertEquals(0, cleric.pray(0));  // 0초 Pray시 0회복
 
         cleric.mp = 0;
-        assertEquals(5, cleric.Pray(3));  // Pray 3초의 경우 3~5 난수값 회복
+        assertEquals(5, cleric.pray(3));  // Pray 3초의 경우 3~5 난수값 회복
 
         cleric.mp = 0;
-        assertEquals(10, cleric.Pray(15));  // 최대 10까지 만 회복함
+        assertEquals(10, cleric.pray(15));  // 최대 10까지 만 회복함
 
         cleric.mp = 10;
-        assertEquals(0, cleric.Pray(3));  //  이미 mp가 만땅의 경우 0회복
+        assertEquals(0, cleric.pray(3));  //  이미 mp가 만땅의 경우 0회복
 
     }
 }
