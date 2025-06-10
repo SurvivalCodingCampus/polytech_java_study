@@ -15,4 +15,13 @@ class ClericTest {
         assertEquals(10, cleric.mp);
         assertEquals("Cleric", cleric.name);
     }
+    @Test
+    @DisplayName("SelfAid 사용시 MP는 5가 깎이며 체력은 최대 체력으로 회복")
+    void testSelfAid() {
+        Cleric cleric = new Cleric();
+
+        cleric.SelfAid();
+        assertEquals(50, cleric.hp);
+        assertEquals(5, cleric.mp);
+    }
 }
