@@ -21,7 +21,7 @@ public class Cleric {
     // regenerate MP by specific amount.
     public int pray(int prayingTime) {
         Random rng = new Random();
-        int addedMP = MP + rng.nextInt(prayingTime + 1);
+        int addedMP = MP + prayingTime + rng.nextInt(3);
 
     // intellisense says "Can be replaced with Math.min() call."
     // return Math.min(addedMP, maxMP);
