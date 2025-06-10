@@ -15,8 +15,8 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("selfAcid 사용으로 MP 5소모 HP 최대 회복")
-    void selfAcid(){
+    @DisplayName("selfAid 사용으로 MP 5소모 HP 최대 회복")
+    void selfAid(){
         Cleric cleric=new Cleric();
         cleric.HP=30;
         cleric.MP=5;
@@ -27,7 +27,7 @@ class ClericTest {
         assertEquals(0,cleric.MP);
     }
     @Test
-    @DisplayName("MP가 부족할 경우 selfAcid실행")
+    @DisplayName("MP가 부족할 경우 selfAid 실행")
     void NotEnoughMP(){
         Cleric cleric = new Cleric();
         cleric.HP = 30;
@@ -37,6 +37,17 @@ class ClericTest {
 
         assertEquals(3, cleric.MP);         // MP 그대로
         assertEquals(30, cleric.HP);        // HP 변화 없음
+    }
+    @Test
+    @DisplayName("MP가 최대일 때 pray 실행")
+    void prayWhenMaxMP(){
+        Cleric cleric = new Cleric();
+        cleric.MP = cleric.MAX_MP;
+
+        int recovered = cleric.pray(3);
+
+        assertEquals(0, recovered);
+        assertEquals(cleric.MAX_MP, cleric.MP);
     }
 
     @Test
