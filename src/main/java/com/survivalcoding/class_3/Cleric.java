@@ -6,7 +6,7 @@ public class Cleric {
     final int MAX_HP =50;
     final int MAX_MP=10;
 
-    char name;
+    String name;
     int hp = MAX_HP;
     int mp= MAX_MP;
 
@@ -20,8 +20,9 @@ public class Cleric {
         int r = random.nextInt(3);
 
         if((mp+r+s)>=MAX_MP) {
+            int recovered = MAX_MP - mp;
             this.mp = MAX_MP;
-            return MAX_MP - mp;
+            return recovered;
         }
         this.mp += r+s;
         return r+s;
