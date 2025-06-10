@@ -5,18 +5,17 @@ import java.util.Random;
 public class Cleric {
 
     String name;
-    public int hp;
-    public int mp;
-    public final int maxHp = 50;
-    public final int maxMp = 10;
+    int hp;
+    int mp;
+    final int maxHp = 50;
+    final int maxMp = 10;
 
-
-    public Cleric(String name) {
+    Cleric(String name) {
         this.name = name;
         this.hp = maxHp;
         this.mp = maxMp;
     }
-    public void selfAid()
+    void selfAid()
     {
         int manaCost =5;
         if(this.mp < manaCost) {
@@ -27,7 +26,7 @@ public class Cleric {
         this.hp = maxHp;
     }
 
-    public int pray(int prayerDuration)
+    int pray(int prayerDuration)
     {
         if(prayerDuration < 1)
         {
@@ -44,9 +43,9 @@ public class Cleric {
         if(this.mp + manaRecoveryAmount > maxMp)
         {
             this.mp = maxMp;
-        }else
+        }
+        else
         {
-
             this.mp += manaRecoveryAmount;
         }
 
