@@ -10,14 +10,19 @@ public class Cleric {
     final int maxMp = 10;
 
     void selfAid() {
-        if((hp != maxHp) && (mp >= 5)) {
-            mp -= 5;
-            hp = maxHp;
+        if(mp >= 5) {
+            if(hp == maxHp) {
+                mp -= 5;
+            }
+            else {
+                mp -= 5;
+                hp = maxHp;
+            }
         }
     }
 
     int pray(int sec) {
-        if(mp == maxMp) return 0;
+        if((sec <= 0) || (mp == maxMp)) return 0;
         Random rand = new Random();
         int randInt = rand.nextInt(3) + sec;
         mp += randInt;
