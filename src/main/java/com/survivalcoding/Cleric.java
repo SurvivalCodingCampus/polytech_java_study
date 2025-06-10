@@ -8,7 +8,7 @@ public class Cleric {
     final int maxMp = 10;
     int currentHp = maxHp; // 초기 값으로 할당
     int currentMp = maxMp; // 초기 값으로 할당
-
+    private static final Random rand = new Random();
     void selfAid(){
         if(currentMp < 5){
             // 스킬 못 쓴다고 하기
@@ -25,7 +25,6 @@ public class Cleric {
             return 0;
         }
 
-        Random rand = new Random();
         int randomUpMp = rand.nextInt(3) + time;
         int tempMp = this.currentMp;
 
