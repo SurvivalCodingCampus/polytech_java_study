@@ -19,7 +19,7 @@ public class Cleric {
     {
         int manaCost =5;
         if(this.mp < manaCost) {
-            System.out.printf("Heal failed: Not enough mana");
+            System.out.println("Heal failed: Not enough mana");
             return;
         }
         this.mp -= manaCost;
