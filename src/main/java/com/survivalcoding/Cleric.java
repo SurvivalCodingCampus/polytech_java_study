@@ -3,12 +3,23 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Cleric {
+    // Random instance for PRNG generating
+    private static final Random rng = new Random();
+
     //    Base Stats
-    String name;
-    int HP = 50;
-    final int maxHP = 50;
-    int MP = 10;
-    final int maxMP = 10;
+    private String name;
+    private int HP = 20;
+    private final int maxHP = 50;
+    private int MP = 5;
+    private final int maxMP = 10;
+
+    public int getHP() {
+        return HP;
+    }
+
+    public int getMP() {
+        return MP;
+    }
 
     //    Heal self to max HP at cost of 5 MP
     public void selfAid() {
@@ -20,11 +31,11 @@ public class Cleric {
 
     // regenerate MP by specific amount.
     public int pray(int prayingTime) {
-        Random rng = new Random();
+//        Coderabbitai said, "Inefficient way." ---> Random rng = new Random();
         int addedMP = MP + prayingTime + rng.nextInt(3);
 
         // intellisense says "Can be replaced with Math.min() call."
-        // return Math.min(addedMP, maxMP);
-        return addedMP > maxMP ? maxMP : addedMP;
+         return Math.min(addedMP, maxMP);
+//        return addedMP > maxMP ? maxMP : addedMP;
     }
 }
