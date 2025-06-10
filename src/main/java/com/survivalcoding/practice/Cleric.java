@@ -9,6 +9,9 @@ public class Cleric {
     final int maxHp = 50;
     final int maxMp = 10;
 
+    // 난수 생성을 위한 Random 객체 한번만 만들자
+    Random rand = new Random();
+
     public void selfAid(){
         if(mp < 5) return;
         mp -= 5;
@@ -16,9 +19,6 @@ public class Cleric {
     }
 
     public int pray(int sec){
-        Random rand = new Random();
-        rand.setSeed(System.currentTimeMillis());
-
         // 회복량 recoveryMp에 저장
         int recoveryMp = rand.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
 
