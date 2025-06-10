@@ -113,18 +113,18 @@ class ClericTest extends Cleric{
         Assertions.assertThrows(IllegalStateException.class, () -> testCleric.pray(praySec));
     }
     @Test
-    @DisplayName("sec이 음수일 경우 예외가 발생해야한다.")
+    @DisplayName("sec이 0이나 음수일 경우 예외가 발생해야한다.")
     public void prayExceptionForSec(){
         //given
         int hp = 10;
         int mp = 9;
-        int praySec = -3;
 
         Cleric testCleric = new Cleric("test", hp, mp);
 
         //when
         //then
-        Assertions.assertThrows(IllegalStateException.class, () -> testCleric.pray(praySec));
+        Assertions.assertThrows(IllegalStateException.class, () -> testCleric.pray(-3));
+        Assertions.assertThrows(IllegalStateException.class, () -> testCleric.pray(0));
     }
 
 

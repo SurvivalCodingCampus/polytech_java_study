@@ -46,8 +46,8 @@ public class Cleric {
     }
 
     public int pray(int sec){
-        if(sec < 0){
-            throw new IllegalStateException("sec은 음수일 수 없습니다.");
+        if(sec <= 0){
+            throw new IllegalStateException("sec은 0이나 음수일 수 없습니다.");
         }
         int result = sec;
 
