@@ -13,16 +13,14 @@ public class Cleric {
     Random rand = new Random();
 
     public void selfAid(){
-        // 이미 max라면 그만둬
-        if(hp == maxHp) return;
-        if(mp < 5) return;
+        if(hp == maxHp) return; // 이미 max라면 return
+        if(mp < 5) return;      // mp가 부족하면 return
         mp -= 5;
         hp = maxHp;
     }
 
     public int pray(int sec){
-        // 이미 max라면 그만둬
-        if(mp == maxMp) return 0;
+        if(mp == maxMp) return 0; // 이미 max라면 return
 
         // 회복량 recoveryMp에 저장
         int recoveryMp = rand.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
@@ -37,7 +35,7 @@ public class Cleric {
         return recoveryMp;
     }
 
-    // test를 위해 setMp(), setHp() 추가했습니다
+    // test를 위해 setMp(), setHp() 추가
     public void setHp(int hp){
         if(hp < 0 || hp >= maxHp) return;
         this.hp = hp;
