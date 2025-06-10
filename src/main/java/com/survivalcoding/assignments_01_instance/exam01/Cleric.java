@@ -41,15 +41,17 @@ public class Cleric {
         if( mp < useAmountMp ){
             throw new IllegalStateException("MP가 부족합니다.");
         }
-        mp -= 5;
+        mp -= useAmountMp;
         hp = MAX_HP;
     }
 
     public int pray(int sec){
+        if(sec < 0){
+            throw new IllegalStateException("sec은 음수일 수 없습니다.");
+        }
         int result = sec;
 
         result += getRandomNumber(0, 2);
-
         if( result + mp > MAX_MP ){
             throw new IllegalStateException("이미 MP가 최대치 입니다.");
         }
