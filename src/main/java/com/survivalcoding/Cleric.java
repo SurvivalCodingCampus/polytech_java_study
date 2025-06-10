@@ -23,8 +23,8 @@ public class Cleric {
         Random rng = new Random();
         int addedMP = MP + prayingTime + rng.nextInt(3);
 
-    // intellisense says "Can be replaced with Math.min() call."
-    // return Math.min(addedMP, maxMP);
+        // intellisense says "Can be replaced with Math.min() call."
+        // return Math.min(addedMP, maxMP);
         return addedMP > maxMP ? maxMP : addedMP;
     }
 }
