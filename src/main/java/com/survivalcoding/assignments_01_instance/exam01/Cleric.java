@@ -14,4 +14,9 @@ public class Cleric {
         mp = MAX_MP;
         this.name = name;
     }
+
+    public void selfAid(){
+        mp -= 5;
+        hp = MAX_HP;
+    }
 }
