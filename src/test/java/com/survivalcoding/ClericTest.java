@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 class ClericTest {
 
-
     @Test // 테스트를 하기 위해 필요한 어노테이션
     @DisplayName("마법을 사용하면 mp를 소모해 hp를 최대치로 회복해야 한다.") // 옵셔널
     void selfAid() {
         // given(준비)
         Cleric clericSelfAid = new Cleric();
+
         //when(실행)
         clericSelfAid.currentHp = 20;
         clericSelfAid.selfAid();
@@ -37,14 +37,20 @@ class ClericTest {
         Cleric clericPray = new Cleric();
         clericPray.currentMp = 5;
         int tempMp = clericPray.currentMp;
-        int heal = clericPray.pray(3);
+
         //when
-        assertTrue(heal>=3 && heal <= 5);
+        int heal = clericPray.pray(3);
+
         //then
+        assertTrue(heal>=3 && heal <= 5);
         assertEquals(tempMp + heal,clericPray.currentMp);
+
+        //given
         clericPray.currentHp = 3;
+
         //when
         clericPray.pray(2);
+
         //then
         assertEquals(10,clericPray.currentMp);
 
@@ -52,10 +58,27 @@ class ClericTest {
     @Test
     @DisplayName("최대 hp에서 pray")
     void pray2() {
+        //given
         Cleric clericPray = new Cleric();
+
+        //when
         int heal = clericPray.pray(3);
 
+        //then
         assertEquals(0,heal);
         assertEquals(clericPray.maxHp,clericPray.currentHp);
+    }
+
+    @Test
+    @DisplayName("pray 매개변수 이상한 값 넣기")
+    void pray3() {
+        //given
+        Cleric clericPray = new Cleric();
+
+        //when
+        int heal = clericPray.pray(-2);
+
+        //then
+        assertEquals(0,heal);
     }
 }
