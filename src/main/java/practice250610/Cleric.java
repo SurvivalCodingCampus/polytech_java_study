@@ -1,5 +1,7 @@
 package practice250610;
 
+import java.util.Random;
+
 public class Cleric {
     String name;
     int hp = 50;
@@ -12,5 +14,17 @@ public class Cleric {
             mp -= 5;
             hp = maxHp;
         }
+    }
+
+    int pray(int sec) {
+        if(mp == maxMp) return 0;
+        Random rand = new Random();
+        int randInt = rand.nextInt(3) + sec;
+        mp += randInt;
+        if(mp > maxMp) {
+            randInt = mp - maxMp;
+            mp = maxMp;
+        }
+        return randInt;
     }
 }
