@@ -29,9 +29,9 @@ class ClericTest {
         Cleric cleric = new Cleric();
 
 //        실행 단계 : 테스트하고자 하는 기능을 실행 ---> When
-        cleric.pray(500);
+        int resultMP = cleric.pray(500);
 
 //        검증 단계 : 기능의 결과를 확인함으로써 검증 ---> Then
-        assertEquals(10, cleric.MP);
+        assertEquals(10, resultMP);
     }
 }
