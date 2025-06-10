@@ -1,5 +1,7 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import java.sql.Time;
+
 public class Cleric {
 
     private String name;
@@ -19,4 +21,19 @@ public class Cleric {
         mp -= 5;
         hp = MAX_HP;
     }
+
+    public int pray(int sec){
+        int result = 0;
+
+        for(int i = 1; i <= sec; i++){
+            result += getRandomNumber(0, 2);
+        }
+
+        return result;
+    }
+
+    private int getRandomNumber(final int min, final int max){
+        return (int)(Math.random() * (max - min + 1)) + min;
+    }
+
 }
