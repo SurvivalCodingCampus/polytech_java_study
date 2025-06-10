@@ -34,7 +34,7 @@ class ClericTest {
         cleric.mp = 0;
         int rand = cleric.pray(5);
         int check=0;
-        if(rand>=5 && rand<=8){
+        if(rand>=5 && rand<=7){
             check=1;
         }
         assertEquals(cleric.mp, rand);
