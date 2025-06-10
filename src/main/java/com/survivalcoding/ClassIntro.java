@@ -14,6 +14,8 @@ public class ClassIntro {
         System.out.println("1" + this.suffix + "2");
     }
 
+    // 검증은 여러 개 넣어도 상관없음
     // test 코드 작성법
     // src > 우클릭 > new > dir
+    // command p로 param info
 }
