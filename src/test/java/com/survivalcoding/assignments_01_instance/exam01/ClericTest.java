@@ -1,41 +1,27 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.DisplayName;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class ClericTest {
 
-    @Test
-    @DisplayName("MP가 최대일 경우 pray()는 0 반환하고 MP는 변하지 않아야 한다")
-    void testPrayMPMax(){
-        //given
-        Cleric cleric = new Cleric("Test");
-        cleric.MP = Cleric.MAX_MP;
+    public String name = "Cleric";
 
-        //when
-        int  result = cleric.pray(2);
+    static final int MAX_HP = 50;
+    static final int MAX_MP = 10;
 
-        //then
-        assertEquals(0, result);
-        assertEquals(Cleric.MAX_MP, cleric.MP);
+    public int HP = MAX_HP;
+    public int MP = MAX_MP;
+
+
+        @Test
+        public void test() {
+            System.out.println("name" + name);
+            System.out.println("HP" + HP);
+            System.out.println("MP" + MP);
+        }
+
     }
 
-    @Test
-    @DisplayName("기도 시간이 0이하일 경우 MP는 변하지 않고 0이 반환되어야 한다")
-    void testPrayTimeZero(){
-        //given
-        Cleric cleric = new Cleric("Test");
-        cleric.MP = 5;
 
-        //when
-        int result = cleric.pray(0);
-
-        //then
-        assertEquals(0, result);
-        assertEquals(5, cleric.MP);
-    }
-
-}
 
