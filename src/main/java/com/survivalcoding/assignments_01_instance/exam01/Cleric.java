@@ -10,6 +10,12 @@ public class Cleric {
     public int HP = MAX_HP;
     public int MP = MAX_MP;
 
+    public void selfAid()
+    {
+        MP -=5;
+        HP = MAX_HP;
+    }
+
     }
 
 
