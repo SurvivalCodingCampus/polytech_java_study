@@ -12,7 +12,11 @@ public class Cleric {
     protected Cleric() {
     }
 
-    public Cleric(String name) {
+    public Cleric(String name) throws RuntimeException{
+        if(name == null || name.trim().isEmpty()){
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+
         hp = MAX_HP;
         mp = MAX_MP;
         this.name = name;
@@ -36,7 +40,7 @@ public class Cleric {
         return mp;
     }
 
-    public void selfAid() throws IllegalStateException {
+    public void selfAid() throws RuntimeException {
         int useAmountMp = 5;
         if( mp < useAmountMp ){
             throw new IllegalStateException("MP가 부족합니다.");
@@ -45,18 +49,24 @@ public class Cleric {
         hp = MAX_HP;
     }
 
-    public int pray(int sec){
+    public int pray(int sec) throws RuntimeException {
         if(sec <= 0){
             throw new IllegalStateException("sec은 0이나 음수일 수 없습니다.");
         }
-        int result = sec;
-
-        result += getRandomNumber(0, 2);
-        if( result + mp > MAX_MP ){
-            throw new IllegalStateException("이미 MP가 최대치 입니다.");
+        if(mp == MAX_MP){
+            throw new IllegalStateException("MP가 이미 최대치입니다.");
         }
 
-        return result;
+        int beforeMp = mp;
+        int result = sec + getRandomNumber(0, 2);
+
+        if( result + mp > MAX_MP ){
+            mp = MAX_MP;
+            return mp - beforeMp;
+        }else{
+            mp += result;
+            return result;
+        }
     }
 
     public static int getRandomNumber(final int min, final int max){
