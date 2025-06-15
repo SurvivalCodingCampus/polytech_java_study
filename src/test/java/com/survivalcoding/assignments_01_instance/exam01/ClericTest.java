@@ -2,6 +2,7 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ClericTest {
 
@@ -21,6 +22,8 @@ class ClericTest {
             System.out.println("MP" + MP);
 
         }
+
+
 
         //selfAid() 사용 시 MP가 충분하다면, MP 5가 소비되고 HP는 최대 HP로 회복되어야 한다.
         //selfAid() 사용 시 MP가 부족하다면, HP가 회복되지 않고 MP도 감소하지 않아야 한다.
@@ -58,12 +61,38 @@ class ClericTest {
             //감소하지 않아야 한다.
 
         }
-
+//pray() 사용 시 MP가 회복되어야 하며, 반환 값은 실제로 회복된 MP 양과 일치해야 한다. (MP가 최대치가 아닐 때)
+//pray()를 일정 시간 기도했을 때, 회복되는 MP 양이 '기도 시간'에서 '기도 시간 + 2' 사이의 랜덤 범위 내에 있어야 한다.
+//pray() 사용 시 MP는 MAX_MP를 초과하여 회복될 수 없으며, MAX_MP까지만 회복되어야 한다.
 
     }
 
+    @Test
+    void RecoveryMP(){
+        Cleric c = new Cleric();
+        c.MP = 5;
+        int before = c.MP;
+        int recoverd = c.pray(2);
+        assertEquals(c.MP-before,recoverd);
+    }
+
+    @Test
+    void RangeTest() {
+        Cleric c = new Cleric();
+        c.MP = 3;
+        int recovered = c.pray(3);
+        assertTrue(recovered >= 3 && recovered <= 5);
+    }
+
+    @Test
+    void LimitTest() {
+        Cleric c = new Cleric();
+        c.MP = 9;
+        assertTrue(c.MP <= Cleric.MAX_MP);
 
     }
+}
+
 
 
 
