@@ -4,10 +4,10 @@ import java.util.Random;
 
 public class Cleric {
     String name = "Strong Cleric";
-    static final int maxHp = 50;
-    static final int maxMp = 10;
-    int currentHp = maxHp; // 초기 값으로 할당
-    int currentMp = maxMp; // 초기 값으로 할당
+    static final int MAX_HP = 50;
+    static final int MAX_MP = 10;
+    int currentHp = MAX_HP; // 초기 값으로 할당
+    int currentMp = MAX_MP; // 초기 값으로 할당
     private static final Random rand = new Random();
 
     // 1. 이름 hp mp
@@ -15,8 +15,8 @@ public class Cleric {
     // 3. 이름
     Cleric(String name) {
         this.name = name;
-        this.currentHp = maxHp;
-        this.currentMp = maxMp;
+        this.currentHp = MAX_HP;
+        this.currentMp = MAX_MP;
     }
 
     Cleric(String name, int hp) {
@@ -36,7 +36,7 @@ public class Cleric {
         }
 
         this.currentMp -= 5;
-        this.currentHp = maxHp;
+        this.currentHp = MAX_HP;
     }
 
     int pray(int time) {
@@ -50,9 +50,9 @@ public class Cleric {
 
         currentMp += randomUpMp;
 
-        if (currentMp > maxMp) {
-            currentMp = maxMp;
-            return maxMp - tempMp;
+        if (currentMp > MAX_MP) {
+            currentMp = MAX_MP;
+            return MAX_MP - tempMp;
         } else
             return randomUpMp;
     }
