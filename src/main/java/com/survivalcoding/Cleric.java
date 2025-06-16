@@ -13,16 +13,16 @@ public class Cleric {
     private int mp;
     private static final int maxMP = 10;
 
-    Cleric(String name) {
+    public Cleric(String name) {
         this(name, maxHP, maxMP);
     }
 
-    Cleric(String name, int hp) {
+    public Cleric(String name, int hp) {
         this(name, hp, maxMP);
     }
 
     //    Constructors
-    Cleric(String name, int hp, int mp) {
+    public Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
@@ -43,12 +43,21 @@ public class Cleric {
             this.hp = maxHP;
             return;
         }
+        if (hp < 0) {
+            this.hp = 0;
+            return;
+        }
+
         this.hp = hp;
     }
 
     public void setMP(int mp) {
         if (mp > maxMP) {
             this.mp = maxMP;
+            return;
+        }
+        if (mp < 0) {
+            this.mp = 0;
             return;
         }
         this.mp = mp;
