@@ -106,6 +106,7 @@ class ClericTest {
         System.out.println(cleric.hp);
         System.out.println(cleric.mp);
 
+
     }
 
     @Test
