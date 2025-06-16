@@ -5,9 +5,9 @@ import java.util.Random;
 public class Cleric {
 
     String name;
-    int hp = 50;
+    int hp ;
     static int maxHP = 50;
-    int mp = 10;
+    int mp ;
     static int maxMP = 10;
 
     void selfAid() {
@@ -31,6 +31,28 @@ public class Cleric {
 
         return reMP;
     }
+
+
+    Cleric(String name, int hp, int mp){
+
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+
+    }
+
+    Cleric(String name, int hp){
+        this.name = name;
+        this.hp = hp;
+        this.mp = maxMP;
+    }
+
+    Cleric(String name){
+        this.name = name;
+        this.hp = maxHP;
+        this.mp = maxMP;
+    }
+
 }
 
 
