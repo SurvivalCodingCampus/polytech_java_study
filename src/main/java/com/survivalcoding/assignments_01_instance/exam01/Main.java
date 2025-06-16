@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.assignments_01_instance.exam01;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
