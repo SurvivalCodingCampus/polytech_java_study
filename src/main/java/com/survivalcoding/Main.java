@@ -8,9 +8,6 @@ public class Main
         kinoko.setHp(100);
 
         System.out.println("hp 100 회복");
-
-
-
     }
 
 }

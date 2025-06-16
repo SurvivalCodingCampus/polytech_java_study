@@ -9,6 +9,25 @@ public class Cleric {
     static final int maxHp = 50;
     static final int maxMp = 10;
 
+    Cleric(String name,int hp,int mp)
+    {
+        this(name);
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name,int hp)
+    {
+        this(name);
+        this.hp = hp;
+    }
+
+    Cleric(String name)
+    {
+        this.name=name;
+        this.hp=maxHp;
+        this.mp=maxMp;
+    }
 
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();
