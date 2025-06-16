@@ -6,9 +6,9 @@ public class Cleric {
 
     String name;
     int hp = 50;
-    final int maxHP = 50;
+    static int maxHP = 50;
     int mp = 10;
-    final int maxMP = 10;
+    static int maxMP = 10;
 
     void selfAid() {
         mp -= 5;
