@@ -13,16 +13,16 @@ public class Cleric {
     private int mp;
     private static final int maxMP = 10;
 
-    Cleric(String name){
+    Cleric(String name) {
         this(name, maxHP, maxMP);
     }
 
-    Cleric(String name, int hp){
+    Cleric(String name, int hp) {
         this(name, hp, maxMP);
     }
 
     //    Constructors
-    Cleric(String name, int hp, int mp){
+    Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
