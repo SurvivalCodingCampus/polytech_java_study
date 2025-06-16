@@ -33,13 +33,12 @@ public class Cleric {
     }
 
     public Cleric(String name, int hp, int mp) {
-        this(name);
+        this(name, hp);
 
-        if(hp < 0 || mp < 0 || hp > MAX_HP || mp > MAX_MP) {
+        if(mp < 0 ||  mp > MAX_MP) {
             throw new IllegalArgumentException("HP or MP cannot be negative");
         }
 
-        this.hp = hp;
         this.mp = mp;
     }
 
