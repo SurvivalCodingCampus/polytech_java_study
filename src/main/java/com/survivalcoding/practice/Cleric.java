@@ -12,6 +12,18 @@ public class Cleric {
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();
 
+    Cleric(String name, int hp, int mp){
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+    Cleric(String name, int hp){
+        this(name, hp, maxMp);
+    }
+    Cleric(String name){
+        this(name, maxHp, maxMp);
+    }
+
     public void selfAid(){
         if(hp == maxHp) return; // 이미 max라면 return
         if(mp < 5) return;      // mp가 부족하면 return
