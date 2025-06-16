@@ -11,7 +11,7 @@ class ClericTest {
     @DisplayName("자기 회복기를 사용.")
     void testSelfAid() {
 //        준비 단계 1 : 객체를 생성 ---> Given
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("Whitemane");
 //        체력을 1로, 마나를 4로 설정
         cleric.setHP(1);
         cleric.setMP(4);
@@ -38,7 +38,7 @@ class ClericTest {
     @Test
     @DisplayName("'기도' 를 사용해 MP를 특정량만큼 회복.")
     void testPray() {
-        Cleric cleric = new Cleric(); // cleric.
+        Cleric cleric = new Cleric("Whitemane"); // cleric.
         int returnedMP = cleric.pray(3); // 3초를 기도했다고 가정.
 
 //        case 1 :: 0 을 반환, 기본 MP가 최대이므로.

@@ -4,64 +4,78 @@ import java.util.Random;
 
 public class Cleric {
     // Random instance for PRNG generating
-    private static final Random rng = new Random();
+    private static final Random random = new Random();
 
     //    Base Stats
     private String name;
-    private int HP = 50;
-    private final int maxHP = 50;
-    private int MP = 10;
-    private final int maxMP = 10;
+    private int hp;
+    private static final int maxHP = 50;
+    private int mp;
+    private static final int maxMP = 10;
+
+    Cleric(String name){
+        this(name, maxHP, maxMP);
+    }
+
+    Cleric(String name, int hp){
+        this(name, hp, maxMP);
+    }
+
+    //    Constructors
+    Cleric(String name, int hp, int mp){
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
 
     //    Getter
     public int getHP() {
-        return HP;
+        return hp;
     }
 
     public int getMP() {
-        return MP;
+        return mp;
     }
 
     //    Setter
     public void setHP(int hp) {
         if (hp > maxHP) {
-            HP = maxHP;
+            this.hp = maxHP;
             return;
         }
-        HP = hp;
+        this.hp = hp;
     }
 
     public void setMP(int mp) {
         if (mp > maxMP) {
-            MP = maxMP;
+            this.mp = maxMP;
             return;
         }
-        MP = mp;
+        this.mp = mp;
     }
 
     //    Heal self to max HP at cost of 5 MP
+    //    Aid self only if MP >= 5
+    //    Always fully aided
     public void selfAid() {
-        // Aid self only if MP >= 5
-        if (MP >= 5) {
-            MP -= 5; // Mana used
-            HP = maxHP; // Always fully aided
+        if (this.mp >= 5) {
+            this.mp -= 5;
+            this.hp = maxHP;
         }
     }
 
     // regenerate MP by specific amount.
+    // return: actual amount MP restored.
+    // exception cases :: pray in zero second or negative time | MP is already at max.
     public int pray(int prayingTime) {
-        int previousMP = MP;
-        // exception cases :: pray in negative time | MP is already at max.
-        // return 0; (means cleric didn't pray.)
-        if (prayingTime <= 0 || MP == maxMP) return 0;
+        int previousMP = this.mp;
+        if (prayingTime <= 0 || this.mp == maxMP) return 0;
 
         // MP which cleric got.
-        int addedMP = prayingTime + rng.nextInt(3);
+        int addedMP = prayingTime + random.nextInt(3);
 
-        // Pick smaller one; maxMP, only if your MP + addedMP is larger than maxMP.
-        MP = Math.min(MP + addedMP, maxMP);
+        this.mp = Math.min(this.mp + addedMP, maxMP);
 
-        // Show(return) how many MP cleric got.
-        return MP - previousMP;
+        return this.mp - previousMP;
     }
 }
