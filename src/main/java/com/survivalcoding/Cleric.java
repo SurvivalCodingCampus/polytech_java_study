@@ -9,18 +9,38 @@ public class Cleric {
     int currentHp = maxHp; // 초기 값으로 할당
     int currentMp = maxMp; // 초기 값으로 할당
     private static final Random rand = new Random();
-    void selfAid(){
-        if(currentMp < 5){
+
+    // 1. 이름 hp mp
+    // 2. 이름 mp
+    // 3. 이름
+    Cleric(String name) {
+        this.name = name;
+        this.currentHp = maxHp;
+        this.currentMp = maxMp;
+    }
+
+    Cleric(String name, int hp) {
+        this(name);
+        this.currentHp = hp;
+    }
+
+    Cleric(String name, int hp, int mp) {
+        this(name, hp);
+        this.currentMp = mp;
+    }
+
+    void selfAid() {
+        if (currentMp < 5) {
             // 스킬 못 쓴다고 하기
             return;
         }
 
         this.currentMp -= 5;
-        this.currentHp  = maxHp;
+        this.currentHp = maxHp;
     }
 
-    int pray(int time){
-        if(time < 0) {
+    int pray(int time) {
+        if (time < 0) {
             // 잘못된 time 값
             return 0;
         }
@@ -30,11 +50,10 @@ public class Cleric {
 
         currentMp += randomUpMp;
 
-        if(currentMp > maxMp){
+        if (currentMp > maxMp) {
             currentMp = maxMp;
             return maxMp - tempMp;
-        }
-        else
+        } else
             return randomUpMp;
     }
 }
