@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Cleric { //용사
     //연습문제1
-    static int max_hp = 50;
-    static int max_mp = 10;
+    public static final int max_hp = 50;
+    public static final int max_mp = 10;
 
     String name;                 //이름
     int hp;                      //HP
