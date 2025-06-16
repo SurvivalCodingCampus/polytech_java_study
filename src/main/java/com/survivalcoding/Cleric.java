@@ -50,6 +50,7 @@ public class Cleric {
 
     // regenerate MP by specific amount.
     public int pray(int prayingTime) {
+        int previousMP = MP;
         // exception cases :: pray in negative time | MP is already at max.
         // return 0; (means cleric didn't pray.)
         if (prayingTime <= 0 || MP == maxMP) return 0;
@@ -61,6 +62,6 @@ public class Cleric {
         MP = Math.min(MP + addedMP, maxMP);
 
         // Show(return) how many MP cleric got.
-        return addedMP;
+        return MP - previousMP;
     }
 }

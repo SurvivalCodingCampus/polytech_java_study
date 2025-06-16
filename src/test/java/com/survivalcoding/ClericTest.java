@@ -68,5 +68,15 @@ class ClericTest {
 //        검증하기
         assertTrue(isMPInRange);
         assertTrue(isMPRegenInRange);
+
+//        case 4 :: 예상 회복량보다 실제 회복량이 적은 경우; 최대마나와 현재마나의 차이가 별로 나지 않을 때
+//        '최대마나 - 현재마나 = 1' 로 가정하고 테스트
+//        3초를 기도했지만, 모자란 마나가 1 밖에 되지 않아서 1만 차올라야 함
+        startMP = 9;
+        cleric.setMP(startMP);
+
+        returnedMP = cleric.pray((prayingSecond));
+
+        assertEquals(1, returnedMP);
     }
 }
