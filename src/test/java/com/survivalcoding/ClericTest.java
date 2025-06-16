@@ -14,8 +14,8 @@ class ClericTest {
         Cleric cleric = new Cleric("깃허브");
 
         assertEquals("깃허브", cleric.name);
-        assertEquals(50, cleric.currentHp);
-        assertEquals(10, cleric.currentMp);
+        assertEquals(Cleric.MAX_HP, cleric.currentHp);
+        assertEquals(Cleric.MAX_MP, cleric.currentMp);
     }
 
     @Test
