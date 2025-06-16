@@ -3,46 +3,80 @@ package com.survivalcoding.assignments_01_instance.exam01;
 import java.util.Random;
 
 public class Cleric {
-    private String name = "Cleric";
-    private int hp = 50;
-    private int mp = 10;
-    private final int maxHp = 50;
-    private final int maxMp = 10;
-    private int prayerTime = 1;
-    private int addmp;
+    String name;
+    public int hp;
+    public int mp;
+    public final int maxHp = 50;
+    public final int maxMp = 10;
+    private static final int sec = 1; //기도할시간
+
     Random random = new Random();
-    //Scanner scanner = new Scanner(System.in);
+
+    Cleric(String name, int hp, int mp)
+    {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp)
+    {
+        this.name = name;
+        this.hp = hp;
+        this.mp = maxMp;
+    }
+
+    Cleric(String name)
+    {
+        this.name = name;
+        this.hp = maxHp;
+        this.mp = maxMp;
+    }
 
     public void selfAid() {
         if(mp >= 5  && hp < maxHp){
             mp -=5;
             hp = maxHp;
         } else if (hp == maxHp ) {
-            mp -= 5; //hp가 가득 차 있어도 mp5 소모
+            mp -= 5;
         }
     }
 
-    public int pray( ) {
-        int num = random.nextInt(3); //0~2
+    public int pray() {
+        int num = random.nextInt(3);
+        int recoveredAmount = 0;
 
         if (mp < maxMp) {
-            addmp = prayerTime + num;
-            mp = mp + addmp;
+            recoveredAmount = sec + num;
+            mp = mp + recoveredAmount;
 
             if (mp > maxMp) {
+                recoveredAmount -= (mp - maxMp);
                 mp = maxMp;
             }
         }
-        return addmp;
+        return recoveredAmount;
     }
 
     public void test(){
         System.out.println("이름 " + this.name);
-        selfAid();
-        pray();
-        System.out.println("MP : " + this.mp);
-        System.out.println("회복된 mp 양 : " + addmp);
-        System.out.println("기도 시간 : " + prayerTime);
+        System.out.println(hp);
+        System.out.println(mp);
     }
 
+    public void test2() {
+        System.out.println("이름 " + this.name);
+        System.out.println(hp);
+        System.out.println(mp);
+    }
+
+    public void test3() {
+        System.out.println("이름 " + this.name);
+        System.out.println(hp);
+        System.out.println(mp);
+    }
+    public void test4() {
+        pray();
+        selfAid();
+    }
 }
