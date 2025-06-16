@@ -7,13 +7,23 @@ public class Cleric {
     String name;
     int hp;
     int mp;
-    final int maxHp = 50;
-    final int maxMp = 10;
+    static final int maxHp = 50;
+    static final int maxMp = 10;
 
-    Cleric(String name) {
+    Cleric(String name, int hp, int mp) {
         this.name = name;
-        this.hp = maxHp;
-        this.mp = maxMp;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp)
+    {
+        this(name, hp, maxMp);
+    }
+
+    Cleric(String name)
+    {
+        this(name, maxHp, maxMp);
     }
     void selfAid()
     {
