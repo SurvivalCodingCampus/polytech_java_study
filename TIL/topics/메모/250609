@@ -1,0 +1,9 @@
+git 커밋 방법
+cd 폴더경로 드래그 드랍
+터미널에서 바로 만들기: echo "# 프로젝트 이름" > README.md
+깃 추가
+git add .
+git commit -m "내용 설명"
+깃허브 푸시(업로드)
+git push origin main
+
