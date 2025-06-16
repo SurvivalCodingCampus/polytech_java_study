@@ -12,7 +12,7 @@ class ClericTest {
     @DisplayName("Cleric 객체 생성 시 최대 hp = 50")
     void testInitMaxHp(){
         Cleric cleric = new Cleric("testHero");
-        assertEquals(50, cleric.maxHp);
+        assertEquals(50, Cleric.maxHp);
     }
     @Test
     @DisplayName("Cleric 객체 생성 시 최초 hp = 50")
@@ -24,7 +24,7 @@ class ClericTest {
     @DisplayName("Cleric 객체 생성 시 최대 mp = 10")
     void testInitMaxMp(){
         Cleric cleric = new Cleric("testHero");
-        assertEquals(10, cleric.maxMp);
+        assertEquals(10, Cleric.maxMp);
     }
     @Test
     @DisplayName("Cleric 객체 생성 시 최초 mp = 10")
@@ -134,7 +134,7 @@ class ClericTest {
         int recoveryMp = cleric.pray(sec);
 
         // 반환받은 mp 회복량이 maxHp - testMp 인지 확인 -> 지금은 1 나와야함
-        assertEquals(cleric.maxMp - testMp, recoveryMp);
+        assertEquals(Cleric.maxMp - testMp, recoveryMp);
     }
     @Test
     @DisplayName("pray() 확인(3) 이미 mp가 max인 경우 recoveryMp = 0 확인")
@@ -142,7 +142,7 @@ class ClericTest {
         Cleric cleric = new Cleric("testHero");
         int sec = 3;
 
-        cleric.setMp(cleric.maxMp); // maxMp로 set해주기
+        cleric.setMp(Cleric.maxMp); // maxMp로 set해주기
         int recoveryMp = cleric.pray(sec);
 
         // 반환받은 mp 회복량이 0이어야함. 이미 max이므로
@@ -204,7 +204,7 @@ class ClericTest {
         cleric.selfAid();
 
         // selfAid() 하면 maxHp로 채워지므로
-        assertEquals(cleric.hp, cleric.maxHp);
+        assertEquals(Cleric.maxHp, cleric.hp);
     }
 
     @Test
@@ -213,7 +213,7 @@ class ClericTest {
         Cleric cleric = new Cleric("testHero");
         int beforeMp = cleric.mp;
 
-        cleric.setHp(cleric.maxHp); // maxHp로 set해주기
+        cleric.setHp(Cleric.maxHp); // maxHp로 set해주기
         cleric.selfAid();
 
         // 이미 maxHp면 mp변화 없을거야
