@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Cleric {
     String name = "Strong Cleric";
-    final int maxHp = 50;
-    final int maxMp = 10;
+    static final int maxHp = 50;
+    static final int maxMp = 10;
     int currentHp = maxHp; // 초기 값으로 할당
     int currentMp = maxMp; // 초기 값으로 할당
     private static final Random rand = new Random();
