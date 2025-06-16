@@ -32,6 +32,7 @@ class ClericTest {
         assertThrows(RuntimeException.class, () -> new Cleric(null));
         assertThrows(RuntimeException.class, () -> new Cleric("    "));
     }
+
     @Test
     @DisplayName("클래릭 생성시 설정한 이름과 HP으로 지정되어야 하고 MP는 MAX_MP 로 설정되어야 한다")
     void constructorTest2() {
@@ -54,19 +55,21 @@ class ClericTest {
         assertThrows(RuntimeException.class, () -> new Cleric("test", -1));
         assertThrows(RuntimeException.class, () -> new Cleric("test", MAX_HP + 1));
     }
+
     @Test
     @DisplayName("클래릭 생성시 설정한 이름과 HP, MP로 설정되어야 한다")
     void constructorTest3() {
         //given
         String name = "z1존법사";
         int hp = 10;
+        int mp = 5;
         //when
-        Cleric cleric = new Cleric(name, hp);
+        Cleric cleric = new Cleric(name, hp, mp);
 
         //then
         assertEquals(name, cleric.getName());
         assertEquals(hp, cleric.getHp());
-        assertEquals(MAX_MP, cleric.getMp());
+        assertEquals(mp, cleric.getMp());
     }
 
     @Test
@@ -172,7 +175,7 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("pray 사용시 mp가 이미 최대치 인경우 예외가 발생한다.")
+    @DisplayName("pray 사용시 mp가 이미 최대치 인경우 회복량이 0 이다.")
     void prayException() {
         //given
         int hp = 10;
@@ -187,7 +190,7 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("pray 사용시 sec이 0이나 음수일 경우 예외가 발생해야한다.")
+    @DisplayName("pray 사용시 sec이 0이나 음수일 경우 회복량이 0 이다.")
     void prayExceptionForSec() {
         //given
         int hp = 10;
