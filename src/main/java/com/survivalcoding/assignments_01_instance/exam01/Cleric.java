@@ -10,8 +10,13 @@ public class Cleric {
     int MP;
     static final int MAX_MP = 10;
 
+    public Cleric(String name, int HP, int MP){
+        this.name=name;
+        this.HP=HP;
+        this.MP=MP;
+    }
     public static void main(String[] args){
-
+    Cleric cleric1 = new Cleric("아서스", 40, 5);
     }
     //셀프 에이드 MP 5소모 HP 최대로 회복 인수가 없고 리턴값도 없음
     public void selfAid() {
