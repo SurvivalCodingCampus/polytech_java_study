@@ -13,7 +13,6 @@ public class Cleric {
     public static void main(String[] args){
 
     }
-
     //셀프 에이드 MP 5소모 HP 최대로 회복 인수가 없고 리턴값도 없음
     public void selfAid() {
         if (this.MP < 5) {
