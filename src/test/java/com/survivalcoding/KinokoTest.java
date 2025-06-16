@@ -12,6 +12,8 @@ class KinokoTest {
     void testCreate() {
         Kinoko kinoko = new Kinoko();
         assertEquals(50, kinoko.hp);
+        kinoko.hp = 20;
+        assertEquals(20, kinoko.hp);
     }
 
 
