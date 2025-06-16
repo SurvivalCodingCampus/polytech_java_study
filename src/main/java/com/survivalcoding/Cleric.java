@@ -9,6 +9,19 @@ public class Cleric {
     int mp;
     static final int clericMaxMp = 10;
 
+    Cleric(String name) {
+        this(name, Cleric.clericMaxHp);
+    }
+    Cleric(String name, int hp){
+        this(name, hp, Cleric.clericMaxMp);
+    }
+    Cleric(String name, int hp, int mp){
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+
     void selfAid() {
         if (this.mp < 5) return;
         this.mp -= 5;
@@ -25,7 +38,7 @@ public class Cleric {
         int recoveredMp = i + randomNum;
 
         if (recoveredMp + this.mp > clericMaxMp) {
-            recoveredMp = clericMaxHp - this.mp;
+            recoveredMp = clericMaxMp - this.mp;
         }
 
         this.mp += recoveredMp;
