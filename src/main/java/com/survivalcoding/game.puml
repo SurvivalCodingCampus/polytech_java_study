@@ -14,11 +14,47 @@ class Cleric{
 }
 class Hero{
     + String name
-    - int hp;
+    - int hp
 
     + void attack(Kinoko enemy)
     + void bye()
     - void die()
 }
+class Wizard{
+    - int hp
+    - int mp
+    - String name
+    - Wand wand
 
+    + void setHp(int hp)
+    + int getHp()
+    + void setMp(int mp)
+    + int getMp()
+    + void setName(Strign name)
+    + String getName()
+    + void setWand(Wand wand)
+    + Wand getWand()
+    + void heal(Hero hero)
+}
+
+class Wand{
+    - String name
+    - double power
+
+    + void setName(String name)
+    + String getName()
+    + void setPower(double power)
+    + double getPower()
+}
+
+class Person{
+    - String name
+    - int birthYear
+
+    + int getAge()
+    + String getName()
+    + void setName(String name)
+    + int getBirthYear()
+    + void setBirthYear()
+}
 @enduml
