@@ -6,16 +6,24 @@ public class Wizard {
     private String name;
     private Wand wand;
 
+    public Wizard(int hp, int mp, String name, Wand wand) {
+        setHp(hp);
+        setMp(mp);
+        setName(name);
+        setWand(wand);
+    }
+
     public int getHp() {
         return hp;
     }
 
     public void setHp(int hp) {
         if (hp < 0) {
-            hp = 0;
+            this.hp = 0;
             throw new IllegalArgumentException("hp 값은 음수가 됨");
+        } else {
+            this.hp = hp;
         }
-        this.hp = hp;
     }
 
     public int getMp() {
@@ -23,8 +31,9 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
-        if (mp < 0)
+        if (mp < 0) {
             throw new IllegalArgumentException("mp 값이 0 이하");
+        }
         this.mp = mp;
     }
 
@@ -33,6 +42,12 @@ public class Wizard {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("name is null");
+        }
+        if (name.length() < 4) {
+            throw new IllegalArgumentException("name is too short");
+        }
         this.name = name;
     }
 
@@ -41,6 +56,9 @@ public class Wizard {
     }
 
     public void setWand(Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("wand class is null");
+        }
         this.wand = wand;
     }
 
