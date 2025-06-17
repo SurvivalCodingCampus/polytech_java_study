@@ -2,31 +2,46 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Cleric {
 
+    public static final int MAX_HP = 50;
+    public static final int MAX_MP = 10;
+
     private String name;
     private int hp;
     private int mp;
 
-    public static final int MAX_HP = 50;
-    public static final int MAX_MP = 10;
 
-    protected Cleric() {
-    }
+    private Cleric() {}
 
-    public Cleric(String name) throws RuntimeException{
-        if(name == null || name.trim().isEmpty()){
+    public Cleric(String name) throws RuntimeException {
+        if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be null or empty");
         }
-
-        hp = MAX_HP;
-        mp = MAX_MP;
         this.name = name;
+        this.hp = MAX_HP;
+        this.mp = MAX_MP;
     }
 
-    protected Cleric(String name, int hp, int mp) {
-        this.name = name;
+
+    public Cleric(String name, int hp) {
+        this(name);
+
+        if(hp < 0 || hp > MAX_HP) {
+            throw new IllegalArgumentException("HP cannot be less than 0 and greater than or equal to 0");
+        }
+
         this.hp = hp;
+    }
+
+    public Cleric(String name, int hp, int mp) {
+        this(name, hp);
+
+        if(mp < 0 ||  mp > MAX_MP) {
+            throw new IllegalArgumentException("HP or MP cannot be negative");
+        }
+
         this.mp = mp;
     }
+
 
     public String getName() {
         return name;
@@ -40,36 +55,36 @@ public class Cleric {
         return mp;
     }
 
-    public void selfAid() throws RuntimeException {
+    public void selfAid() {
         int useAmountMp = 5;
-        if( mp < useAmountMp ){
-            throw new IllegalStateException("MP가 부족합니다.");
+        if (mp < useAmountMp) {
+            return;
         }
         mp -= useAmountMp;
         hp = MAX_HP;
     }
 
-    public int pray(int sec) throws RuntimeException {
-        if(sec <= 0){
-            throw new IllegalStateException("sec은 0이나 음수일 수 없습니다.");
+    public int pray(int sec) {
+        if (sec <= 0) {
+            return 0;
         }
-        if(mp == MAX_MP){
-            throw new IllegalStateException("MP가 이미 최대치입니다.");
+        if (mp == MAX_MP) {
+            return 0;
         }
 
         int beforeMp = mp;
         int result = sec + getRandomNumber(0, 2);
 
-        if( result + mp > MAX_MP ){
+        if (result + mp > MAX_MP) {
             mp = MAX_MP;
             return mp - beforeMp;
-        }else{
+        } else {
             mp += result;
             return result;
         }
     }
 
-    public static int getRandomNumber(final int min, final int max){
-        return (int)(Math.random() * (max - min + 1)) + min;
+    public static int getRandomNumber(final int min, final int max) {
+        return (int) (Math.random() * (max - min + 1)) + min;
     }
 }
