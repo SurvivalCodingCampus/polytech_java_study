@@ -6,8 +6,8 @@ public class Cleric {
     String name = "Strong Cleric";
     static final int MAX_HP = 50;
     static final int MAX_MP = 10;
-    int currentHp = MAX_HP; // 초기 값으로 할당
-    int currentMp = MAX_MP; // 초기 값으로 할당
+    int currentHp; // 초기 값으로 할당
+    int currentMp; // 초기 값으로 할당
     private static final Random rand = new Random();
 
     // 1. 이름 hp mp
