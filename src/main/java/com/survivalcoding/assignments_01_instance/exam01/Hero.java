@@ -3,11 +3,26 @@ package com.survivalcoding.assignments_01_instance.exam01;
 import java.util.Random;
 
 public class Hero {
-    static int money=100;
+    public static int money=100;
 
-    String name;
-    int hp;
-    Sword sword;
+    private String name;
+    private int hp;
+    private Sword sword;
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        if(hp<0){
+            throw new IllegalArgumentException("hp는 음수가 될 수 없음");
+        }
+        this.hp = hp;
+    }
+
+    public void attack(Kinoko kinoko){
+
+    }
 
     static void setRandomMoney(){
         Hero.money=new Random().nextInt(1000);
@@ -27,6 +42,8 @@ public class Hero {
 
         Hero hero1 = new Hero("홍길동",100);
         System.out.println(hero1.money);
+
+        hero1.setHp(-10);
 
         Hero hero2 = hero1;
         hero2.hp=200;
