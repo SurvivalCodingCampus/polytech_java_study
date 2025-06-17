@@ -7,19 +7,29 @@ import static org.junit.jupiter.api.Assertions.*;
 class WizardTest {
 
     @Test
-    public void test(){
-        Wizard wizard = new Wizard(30, 20, "마법사");
+    public void test() {
+        Wizard wizard = new Wizard(30, 20, "마법", new Wand("지팡이", 10));
 
         wizard.wizardTest();
 
-        assertEquals("a", wizard.getName());
-        assertEquals(10, wizard.getHp());
+        assertEquals("마법", wizard.getName());
+        assertEquals(30, wizard.getHp());
         assertEquals(20, wizard.getMp());
 
         wizard.setHp(10);
-        wizard.setMp(10);
-        wizard.setName("마법사");
+        wizard.setMp(100);
+        wizard.setWand(null);
 
+        assertThrows(IllegalArgumentException.class, () -> {
+            wizard.setName(null);
+        });
+         assertThrows(IllegalArgumentException.class, () -> {
+            wizard.setWand(null);
+        });
 
+        assertThrows(IllegalArgumentException.class, () -> {
+            wizard.setMp(-1);
+        });
     }
+
 }

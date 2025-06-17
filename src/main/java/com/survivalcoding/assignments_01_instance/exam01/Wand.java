@@ -15,6 +15,14 @@ public class Wand {
     }
 
     public void setName(String name) {
+        if(name == null)
+        {
+            throw  new IllegalArgumentException("이름은 null이 아니어야 한다.");
+        }
+        if(name.length() <= 2)
+        {
+            throw  new IllegalArgumentException("이름이 너무 짧다.");
+        }
         this.name = name;
     }
 
@@ -23,6 +31,14 @@ public class Wand {
     }
 
     public void setPower(double power) {
+        if(power < 0.4)
+        {
+            throw new IllegalArgumentException("마력이 너무 적다.");
+        }
+        if(power > 100)
+        {
+            throw new IllegalArgumentException("마력이 너무 크다.");
+        }
         this.power = power;
     }
 

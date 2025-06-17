@@ -14,11 +14,12 @@ public class Wizard {
         hero.setHp(hero.getHp() + recovPoint);
     }
 
-    Wizard (int hp, int mp, String name)
+    Wizard (int hp, int mp, String name, Wand wand)
     {
         this.hp = hp;
         this.mp = mp;
         this.name = name;
+        this.wand = wand;
     }
 
     public int getHp() {
@@ -26,6 +27,10 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
+        if(hp < 0)
+        {
+            hp = 0;
+        }
         this.hp = hp;
     }
 
@@ -34,6 +39,10 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
+        if(mp < 0)
+        {
+            throw new IllegalArgumentException("mp가 마이너스다.");
+        }
         this.mp = mp;
     }
 
@@ -42,7 +51,27 @@ public class Wizard {
     }
 
     public void setName(String name) {
+        if(name == null)
+        {
+            throw new IllegalArgumentException("이름은 null이 아니어야 한다.");
+        }
+        if(name.length() <= 2 )
+        {
+            throw new IllegalArgumentException("이름이 너무 짧다.");
+        }
         this.name = name;
+    }
+
+    public Wand getWand() {
+        return wand;
+    }
+
+    public void setWand(Wand wand) {
+        if(wand == null)
+        {
+            throw new IllegalArgumentException("지팡이는 null 이다.");
+        }
+        this.wand = wand;
     }
 
     public void wizardTest()
@@ -50,5 +79,6 @@ public class Wizard {
         System.out.println(hp);
         System.out.println(mp);
         System.out.println(name);
+        System.out.println(wand);
     }
 }

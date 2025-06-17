@@ -15,8 +15,14 @@ class WandTest {
         assertEquals("지팡이", wand.getName());
         assertEquals(10, wand.getPower());
 
-        wand.setName("마법의 지팡이");
-        wand.setPower(30);
+       /* assertThrows(IllegalArgumentException.class, () ->
+        {wand.setName(null);
+        });*/
+
+        assertThrows(IllegalArgumentException.class, () ->
+        {wand.setPower(50);
+
+        });
 
     }
 
