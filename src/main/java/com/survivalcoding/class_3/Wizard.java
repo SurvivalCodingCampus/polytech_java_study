@@ -10,15 +10,15 @@ public class Wizard {
         this(10,10,"홍길동");
     }
     public Wizard(int hp, int mp, String name) {
-        this.hp = hp;
-        this.mp = mp;
-        this.name = name;
+        this.setHp(hp);
+        this.setMp(mp);
+        this.setName(name);
     }
     public Wizard(int hp, int mp, String name, Wand wand) {
-        this.hp = hp;
-        this.mp = mp;
-        this.name = name;
-        this.wand = wand;
+        this.setHp(hp);
+        this.setMp(mp);
+        this.setName(name);
+        this.setWand(wand);
     }
 
     public void heal(Hero hero) {
@@ -65,5 +65,8 @@ public class Wizard {
             throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 함");
         }
         this.mp = mp;
+    }
+    public void setName(String name) {
+        this.name = name;
     }
 }
