@@ -13,15 +13,15 @@ class ClericTest {
 
 
         //given(준비)
-        Cleric cleric = new Cleric();
-        cleric.hp=0;
+        Cleric cleric1 = new Cleric("아서스");
+        cleric1.hp=0;
 
         //when(실행)
-        cleric.selfAid();
+        cleric1.selfAid();
 
         //tnen
 
-        assertEquals(50,cleric.hp);
+        assertEquals(50,cleric1.hp);
     }
 
 
@@ -31,15 +31,15 @@ class ClericTest {
 
 
         //given(준비)
-        Cleric cleric = new Cleric();
-        cleric.hp=5;
+        Cleric cleric2 = new Cleric("아서스");
+        cleric2.hp=5;
 
         //when(실행)
-        cleric.selfAid();
+        cleric2.selfAid();
 
         //tnen
 
-        assertEquals(50,cleric.hp);
+        assertEquals(50,cleric2.hp);
     }
 
 
@@ -49,7 +49,7 @@ class ClericTest {
 
 
         //given(준비)
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("아서스");
         cleric.hp=5;
 
         //when(실행)
@@ -67,7 +67,7 @@ class ClericTest {
 
 
         //given(준비)
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("아서스");
         cleric.mp = 0;
 
         //when(실행)
@@ -84,7 +84,7 @@ class ClericTest {
 
 
         //given(준비)
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("아서스");
         cleric.mp = 9;
 
         //when(실행)
@@ -93,6 +93,56 @@ class ClericTest {
         //tnen
 
         assertEquals(10,cleric.mp);
+    }
+
+
+    @Test
+    @DisplayName("아서스, 40,5")
+
+    void clericTest() {
+
+        Cleric cleric =  new Cleric("아서스",40,5);
+        System.out.println(cleric.name);
+        System.out.println(cleric.hp);
+        System.out.println(cleric.mp);
+
+
+    }
+
+    @Test
+    @DisplayName("아서스, 35,maxMP")
+
+    void clericTest2() {
+
+        Cleric cleric =  new Cleric("아서스",40);
+        System.out.println(cleric.name);
+        System.out.println(cleric.hp);
+        System.out.println(cleric.mp);
+
+    }
+
+    @Test
+    @DisplayName("아서스,maxHP,maxMP")
+
+    void clericTest3() {
+
+        Cleric cleric =  new Cleric("아서스");
+        System.out.println(cleric.name);
+        System.out.println(cleric.hp);
+        System.out.println(cleric.mp);
+
+    }
+
+    @Test
+    @DisplayName("이름이 없는 생성자는 인스턴스화 할 수 없다")
+
+    void clericTest4() {
+
+        Cleric cleric =  new Cleric("이름을 넣을 수 없음을 확인함");
+        System.out.println(cleric.name);
+        System.out.println(cleric.hp);
+        System.out.println(cleric.mp);
+
     }
 
 
