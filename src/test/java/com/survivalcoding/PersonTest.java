@@ -21,6 +21,13 @@ class PersonTest {
             new Person(null, -101);
         });
 
+
+    }
+
+    @Test
+    void testConstructor3() {
+
+
         assertThrows(IllegalArgumentException.class, () -> {
             new Person("awd", -101);
         });
