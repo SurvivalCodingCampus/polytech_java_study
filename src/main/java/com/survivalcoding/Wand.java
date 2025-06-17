@@ -20,9 +20,14 @@ public class Wand {
     }
 
     public void setPower(double power) {
-        if (power > 0.5 && power < 100.0)
+        if (power < 0.5 && power > 100.0)
             throw new IllegalArgumentException("power의 값이 벗어남");
 
         this.power = power;
+    }
+
+    public Wand(String name, double power) {
+        setName(name);
+        setPower(power);
     }
 }
