@@ -5,8 +5,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Person {
-    String name;
-    int birthYear;
+    private String name;
+    private int birthYear;
 
     public Person(String name, int birthYear) {
         this.name = name;
