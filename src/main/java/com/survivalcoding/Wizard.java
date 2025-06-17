@@ -7,16 +7,16 @@ public class Wizard {
     private String name;
     private Wand wand;
 
-    public void heal(Hero hero){
+    public void heal(Hero hero) {
         int basePoint = 10;
-        int recovPoint = (int)(basePoint*this.wand.getPower());
+        int recovPoint = (int) (basePoint * this.wand.getPower());
         hero.setHp(hero.getHp() + recovPoint);
     }
 
-    Wizard(String name, int hp, int mp){
+    Wizard(String name, int hp, int mp) {
         this.name = name;
-        this.hp= hp;
-        this.mp=mp;
+        this.hp = hp;
+        this.mp = mp;
     }
 
     public int getHp() {
@@ -25,8 +25,8 @@ public class Wizard {
 
     public void setHp(int hp) {
         this.hp = hp;
-        if(hp<0){
-            hp=0;
+        if (hp < 0) {
+            this.hp = 0;
         }
     }
 
@@ -37,7 +37,7 @@ public class Wizard {
 
     public void setMp(int mp) {
         this.mp = mp;
-        if(mp<=0){
+        if (mp <= 0) {
             throw new IllegalArgumentException("mp는 0이상이어야 합니다.");
         }
     }
@@ -48,10 +48,10 @@ public class Wizard {
 
     public void setName(String name) {
         this.name = name;
-        if(name == null){
+        if (name == null) {
             throw new IllegalArgumentException("마법사의 이름은 null일 수 없습니다.");
         }
-        if(name.length()<3){
+        if (name.length() < 3) {
             throw new IllegalArgumentException("마법사의 이름은 3문장 이상이어야 합니다.");
         }
     }
@@ -62,7 +62,7 @@ public class Wizard {
 
     public void setWand(Wand wand) {
         this.wand = wand;
-        if(wand==null){
+        if (wand == null) {
             throw new IllegalArgumentException("마법사의 지팡이는 Null이어서는 안됩니다.");
         }
     }

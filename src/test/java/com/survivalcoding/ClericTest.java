@@ -201,7 +201,6 @@ class ClericTest {
 
     @Test
     @DisplayName("마법사의 지팡이는 NUll일 수가 없다")
-
     void Wizard_have_Wand(){
         //given(준비)
         Wizard wizard= new Wizard(null, 10,10);
@@ -210,6 +209,31 @@ class ClericTest {
         assertThrows(IllegalArgumentException.class, ()->{
             wizard.setWand(null);
         });
+    }
+
+    @Test
+    @DisplayName("마법사의 MP는 0이상이어야 한다")
+    void Wizard_MP(){
+        //given
+        Wizard wizard = new Wizard("앙그리아", 20, 0);
+
+        //then
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setMp(0);
+        });
+    }
+
+    @Test
+    @DisplayName("마법사의 HP가 음수가 되면 0이 되도록 설정한다")
+    void Wizard_HP(){
+        //given
+        Wizard wizard = new Wizard("발랜시아가", -5,10);
+
+        //when(실행)
+        wizard.setHp(-5);
+
+        //then
+        assertEquals(0, wizard.getHp());
     }
 
 
