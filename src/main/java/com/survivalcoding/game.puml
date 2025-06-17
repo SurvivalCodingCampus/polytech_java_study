@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Cleric{
+    + String name
+    - static final int MAX_HP
+    - static final int MAX_MP
+    - int currentHp
+    - int currentMp
+
+    + void selfAid()
+    + void pray(int time)
+
+}
+class Hero{
+    + String name
+    - int hp;
+
+    + void attack(Kinoko enemy)
+    + void bye()
+    - void die()
+}
+
+@enduml
