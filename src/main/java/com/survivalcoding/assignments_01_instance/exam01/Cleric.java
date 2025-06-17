@@ -1,16 +1,18 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
-public class Cleric {
+public class Cleric implements Healable {
 
     public static final int MAX_HP = 50;
     public static final int MAX_MP = 10;
+
 
     private String name;
     private int hp;
     private int mp;
 
 
-    private Cleric() {}
+    private Cleric() {
+    }
 
     public Cleric(String name) throws RuntimeException {
         if (name == null || name.trim().isEmpty()) {
@@ -25,7 +27,7 @@ public class Cleric {
     public Cleric(String name, int hp) {
         this(name);
 
-        if(hp < 0 || hp > MAX_HP) {
+        if (hp < 0 || hp > MAX_HP) {
             throw new IllegalArgumentException("HP cannot be less than 0 and greater than or equal to 0");
         }
 
@@ -35,7 +37,7 @@ public class Cleric {
     public Cleric(String name, int hp, int mp) {
         this(name, hp);
 
-        if(mp < 0 ||  mp > MAX_MP) {
+        if (mp < 0 || mp > MAX_MP) {
             throw new IllegalArgumentException("HP or MP cannot be negative");
         }
 
@@ -86,5 +88,10 @@ public class Cleric {
 
     public static int getRandomNumber(final int min, final int max) {
         return (int) (Math.random() * (max - min + 1)) + min;
+    }
+
+    @Override
+    public void beHealed(int amount) {
+        hp = Math.min(amount + hp, MAX_HP);
     }
 }
