@@ -8,7 +8,7 @@ class ClericTest {
     @Test
     void testselfAid()
     {
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric(String name, int Hp, int Mp);
 
         cleric.selfAid();
 
@@ -18,7 +18,7 @@ class ClericTest {
     @Test
     void testprey()
     {
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric(String name, int Hp, int Mp);
 
         cleric.prey(1);
 
