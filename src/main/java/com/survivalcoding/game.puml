@@ -10,12 +10,16 @@ class Hero {
     - int mp
     - Sword sword
 
-    + Hero(String name, int hp)
+    + Hero()
 
+    + string getName()
+    + void setName(String name)
     + void getHp()
     + void setHp(int hp)
     + void getMp()
     + void setMp(int mp)
+    + Sword getSword()
+    + void setSword(Sword sword)
 }
 
 class Cleric {
@@ -42,6 +46,8 @@ class Wand {
     - String name
     - double power
 
+    + Wand()
+
     + String getName()
     + void setName(String name)
     + double power()
@@ -54,8 +60,12 @@ class Wizard {
     - String name;
     - Wand wand;
 
+    + Wizard(int hp, int mp, String name, Wand wand)
+
     + int getHp()
     + void setHp(int hp)
+    + int getMp()
+    + void setMp(int mp)
     + String getName()
     + void setName(String name)
     + Wand getWand()

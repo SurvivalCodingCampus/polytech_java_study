@@ -9,6 +9,21 @@ public class Hero {
     private int mp;
     private Sword sword;    // null
 
+    public Hero() {
+        this.name = "대장";
+        this.hp = 10;
+        this.mp = 1;
+        this.setSword(new Sword());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getHp() {
         return hp;
     }
@@ -28,30 +43,11 @@ public class Hero {
         this.mp = mp;
     }
 
-    public Hero(String name, int hp) {
-        this.name = name;
-        this.hp = hp;
+    public Sword getSword() {
+        return sword;
     }
 
-    public static void main(String[] args) {
-        int a = 10;
-
-        Hero hero1 = new Hero("홍길동", 100);
-
-        hero1.setHp(-10);
-
-        Hero hero2 = hero1;
-        hero2.hp = 200;
-        System.out.println(hero1.hp);
-
-        Sword sword1 = new Sword();
-        sword1.damage = 100;
-
-        hero1.sword = sword1;
-
-        hero1 = null;
-//        String name = new String("오준석");
-
-        System.out.println(hero2.hp);
+    public void setSword(Sword sword) {
+        this.sword = sword;
     }
 }

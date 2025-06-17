@@ -6,11 +6,21 @@ public class Wizard {
     private String name;
     private Wand wand;
 
+    Wizard(int hp, int mp, String name, Wand wand) {
+        this.hp = hp;
+        this.mp = mp;
+        this.name = name;
+        this.setWand(wand); // null값을 받지 않도록 명시하기 위해 setWand(setter)를 이용해 초기화
+    }
+
     public int getHp() {
         return hp;
     }
 
     public void setHp(int hp) {
+        if (hp < 0) {
+            this.hp = 0;
+        }
         this.hp = hp;
     }
 
@@ -19,6 +29,9 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
+        if (mp < 0) {
+            throw new IllegalArgumentException("마법사의 MP는 0이상 이어야 한다");
+        }
         this.mp = mp;
     }
 
@@ -35,6 +48,9 @@ public class Wizard {
     }
 
     public void setWand(Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("마법사의 지팡이는 null일 수 없다");
+        }
         this.wand = wand;
     }
 
