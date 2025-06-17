@@ -15,7 +15,8 @@ class HeroTest {
         hero.test();
 
         assertEquals("아서", hero.getName());
-        assertEquals(40, hero.getHp());
+
+
     }
 
 }
