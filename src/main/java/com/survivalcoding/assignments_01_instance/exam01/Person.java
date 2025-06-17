@@ -3,9 +3,9 @@ package com.survivalcoding.assignments_01_instance.exam01;
 import java.time.LocalDate;
 
 public class Person {
-    private String name;
+    private final String name;
     private int age;
-    private int birthyear;
+    private final int birthyear;
 
     public Person(String name, int birthyear) {
         this.name = name;
