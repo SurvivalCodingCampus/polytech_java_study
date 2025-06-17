@@ -5,6 +5,7 @@ public class Wizard {
     int hp;
 
     void heal(Hero hero) {
-        hero.hp += 10;
+//        hero.hp += 10;
+        hero.setHp(hero.getHp() + 10);
     }
 }

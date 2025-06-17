@@ -5,13 +5,28 @@ import java.util.Random;
 
 public class Hero {
     // 공유자원
-    static int money = 100;
+    public static int money = 100;
 
-    String name;    // null
-    int hp;     // 0
-    Sword sword;    // null
+    private String name;    // null
+    private int hp;     // 0
+    private Sword sword;    // null
 
-    static void setRandomMoney() {
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        if (hp < 0) {
+            throw new IllegalArgumentException("hp는 음수가 될 수 없음");
+        }
+        this.hp = hp;
+    }
+
+    public void attack(Kinoko kinoko) {
+
+    }
+
+    public static void setRandomMoney() {
         Hero.money = new Random().nextInt(1000);
 
         Hero hero = new Hero("aaa", 10);
@@ -30,6 +45,8 @@ public class Hero {
 
         Hero hero1 = new Hero("홍길동", 100);
         System.out.println(Hero.money);
+
+        hero1.setHp(-10);
 
 
         Hero hero2 = hero1;
