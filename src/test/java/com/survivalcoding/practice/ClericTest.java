@@ -40,7 +40,7 @@ class ClericTest {
     @DisplayName("Cleric 객체 생성 시 Random 객체 생성 확인")
     void testRandomInstanceIsNotNull() {
         Cleric cleric = new Cleric("testHero");
-        assertNotNull(cleric.rand); // 객체가 Null인지 확인
+        assertNotNull(cleric.random); // 객체가 Null인지 확인
     }
 
 
