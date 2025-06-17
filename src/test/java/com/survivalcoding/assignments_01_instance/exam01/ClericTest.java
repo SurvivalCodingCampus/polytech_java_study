@@ -1,9 +1,8 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.Cleric;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -152,6 +151,7 @@ class ClericTest {
 
         Cleric c4 = new Cleric();
         System.out.println("c4 -> 이름: " + c4.name + ", HP: " + c4.hp + ", MP: " + c4.mp);
+
     }
 
 

@@ -1,6 +1,5 @@
 package com.survivalcoding;
 
-
 import java.util.Random;
 
 public class Hero {
@@ -22,8 +21,33 @@ public class Hero {
         this.hp = hp;
     }
 
-    public void attack(Kinoko kinoko) {
-        System.out.println("attack");
+    private void die() {
+        System.out.println("죽었다");
+    }
+
+    public void attack(Kinoko enemy) {
+        System.out.println("반격을 받았다");
+        hp -= 10;
+        if (hp < 1) {
+            die();
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("이름은 null이 아니어야 함");
+        }
+        if (name.length() <= 1) {
+            throw new IllegalArgumentException("이름이 너무 짧음");
+        }
+        if (name.length() >= 8) {
+            throw new IllegalArgumentException("이름이 너무 긺");
+        }
+        this.name = name;
     }
 
     public void run() {
@@ -51,7 +75,6 @@ public class Hero {
         System.out.println(Hero.money);
 
         hero1.setHp(-10);
-
 
         Hero hero2 = hero1;
         hero2.hp = 200;

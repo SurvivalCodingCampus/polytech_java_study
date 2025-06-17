@@ -9,7 +9,7 @@ public class Kinoko {
         hp = 100;
     }
 
-    void setHp(int hp) {
+    void setHP(int hp) {
         this.hp = hp;
         System.out.println("hp 를 회복");
     }

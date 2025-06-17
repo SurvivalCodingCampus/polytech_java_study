@@ -14,6 +14,11 @@ interface Attackable {
 class SoccerPlayer implements Attackable {
 }
 
+class Hero{
+    + String name
+    - int hp
+}
+
 abstract class Character implements Attackable {
     String name
     int hp
