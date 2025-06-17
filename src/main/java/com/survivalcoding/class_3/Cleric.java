@@ -2,13 +2,31 @@ package com.survivalcoding.class_3;
 //난수 생성
 import java.util.Random;
 
+/******************************************
+* 수정일 : 250616
+* 수정사항
+ * 1 : MAX_HP, MAX_MP 상수에 대해 static 선언
+ * 2 : 생성자 함수 추가
+******************************************/
 public class Cleric {
-    final int MAX_HP =50;
-    final int MAX_MP=10;
+    static final int MAX_HP =50;
+    static final int MAX_MP=10;
 
     String name;
-    int hp = MAX_HP;
-    int mp= MAX_MP;
+    int hp;
+    int mp;
+
+    Cleric(String name){
+        this(name,MAX_HP,MAX_MP);
+    }
+    Cleric(String name, int hp){
+        this(name,hp,MAX_MP);
+    }
+    Cleric(String name, int hp, int mp){
+        this.name = name;
+        this.hp = hp;
+        this.mp= mp;
+    }
 
     public void selfAid(){
         this.mp -= 5;
