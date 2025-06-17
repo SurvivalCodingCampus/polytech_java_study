@@ -3,16 +3,22 @@ package com.survivalcoding.assignments_01_instance.exam01;
 import java.util.Random;
 
 public class Cleric {
-    String name;
-    public int hp;
-    public int mp;
-    public final int maxHp = 50;
-    public final int maxMp = 10;
-    private static final int sec = 1; //기도할시간
+     String name;
+     private int hp;
+      int mp;
+    private static final int maxHp = 50;
+    private static final int maxMp = 10;
+    private static final int sec = 1; //기도 할시간
 
     Random random = new Random();
 
-    Cleric(String name, int hp, int mp)
+    public int getHP()
+    {
+        return hp;
+    }
+
+
+    Cleric(String name, int hp, int mp)//생성자
     {
         this.name = name;
         this.hp = hp;
