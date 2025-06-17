@@ -1,10 +1,10 @@
 package com.survivalcoding.class_3;
 
 public class Wizard {
-    int hp;
-    int mp;
-    String name;
-    Wand wand;
+    private int hp;
+    private int mp;
+    private String name;
+    private Wand wand;
 
     public Wizard() {
         this(10,10,"홍길동");
