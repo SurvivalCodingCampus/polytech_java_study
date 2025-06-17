@@ -19,4 +19,18 @@ class Cleric {
   + void pray(int sec)
   + void selfAid()
 }
+
+class Wizard {
+- String name
+- int hp
+- int mp
+}
+
+class Wand {
+
+- String name
+- int mp;
+
+}
+
 @enduml
