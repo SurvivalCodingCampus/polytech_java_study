@@ -8,11 +8,11 @@ public class Cleric {
     private int mp;
 
     // final = 자바 클래스 필드의 상수화
-    static final int maxHp = 50;
-    static final int maxMp = 10;
+    public static final int maxHp = 50;
+    public static final int maxMp = 10;
 
-    // 기도한 시간 + 랜덤 포인트만큼 mp회복
-    Random random = new Random();
+    // mp 회복을 위한 random
+    private Random rand = new Random();
 
     Cleric(String name) {
         this(name, Cleric.maxHp, Cleric.maxMp);
@@ -41,7 +41,7 @@ public class Cleric {
     }
 
     // mp 소모로 hp 회복
-    void selfAid() {
+    public void selfAid() {
         if(this.mp < 5) {
             return;
         }
@@ -56,7 +56,7 @@ public class Cleric {
             return 0;
         }
 
-        int randomPoint = random.nextInt(3);
+        int randomPoint = rand.nextInt(3);
         int recovery = timePray + randomPoint;
         int finalRecovery = Math.min(recovery, Cleric.maxMp - this.mp);
         this.mp += finalRecovery;

@@ -1,0 +1,76 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 1
+skinparam classAttributeIconSize 0
+
+class Hero {
+    - String name
+    - int hp
+    - int mp
+    - Sword sword
+
+    + Hero()
+
+    + string getName()
+    + void setName(String name)
+    + void getHp()
+    + void setHp(int hp)
+    + void getMp()
+    + void setMp(int mp)
+    + Sword getSword()
+    + void setSword(Sword sword)
+}
+
+class Cleric {
+    - String name
+    - int hp
+    - int mp
+    - Random rand
+    {static} + int maxHp <<constant>>
+    {static} + int maxMp <<constant>>
+
+    + Cleric(String name)
+    + Cleric(String name, int hp)
+    + Cleric(String name, int hp, int mp)
+
+    + String getName()
+    + int getHp()
+    + int getMp()
+
+    + void selfAid()
+    + int pray(int timePray)
+}
+
+class Wand {
+    - String name
+    - double power
+
+    + Wand()
+
+    + String getName()
+    + void setName(String name)
+    + double power()
+    + void setPower(double power)
+}
+
+class Wizard {
+    - int hp
+    - int mp;
+    - String name;
+    - Wand wand;
+
+    + Wizard(int hp, int mp, String name, Wand wand)
+
+    + int getHp()
+    + void setHp(int hp)
+    + int getMp()
+    + void setMp(int mp)
+    + String getName()
+    + void setName(String name)
+    + Wand getWand()
+    + void setWand(Wand wand)
+    + void heal(Hero hero)
+}
+
+@enduml

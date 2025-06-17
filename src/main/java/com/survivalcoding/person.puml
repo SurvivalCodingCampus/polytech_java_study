@@ -1,0 +1,14 @@
+@startuml
+scale 1
+skinparam classAttributeIconSize 0
+
+class Person {
+    - String name <<constant>>
+    - int birthYear <<constant>>
+
+    + Person(String name, int birthYear)
+    + String getName()
+    + int getAge()
+}
+
+@enduml
