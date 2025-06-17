@@ -18,12 +18,14 @@ public class Person {
         return birthYear;
     }
 
-    Person(String name, int birthYear) {
-        if (name == null)
+    public Person(String name, int birthYear) {
+        if (name == null) {
             throw new IllegalArgumentException("Name cannot be null");
-        if (birthYear < 0 || birthYear > 2025)
+        }
+        if (birthYear < 0 || birthYear > LocalDate.now().getYear()) {
             throw new IllegalArgumentException("Birth year must be between 0 and 2025");
-        
+        }
+
         this.name = name;
         this.birthYear = birthYear;
     }
