@@ -4,8 +4,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ClericTest {
+    @Test
+    @DisplayName("생성자 테스트1")
+    void ExceptionTest() {
+        //given and when
+        Cleric cleric = new Cleric("깃허브");
+        //cleric.setCurrentHp(-1);
+        // assert로 표현하기
+        assertThrows(IllegalArgumentException.class, () -> {
+            cleric.setCurrentHp(10);
+        });
+    }
 
     @Test
     @DisplayName("생성자 테스트1")
