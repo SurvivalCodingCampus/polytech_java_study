@@ -6,13 +6,46 @@ public class Cleric {
     String name = "Strong Cleric";
     static final int MAX_HP = 50;
     static final int MAX_MP = 10;
-    int currentHp = MAX_HP; // 초기 값으로 할당
-    int currentMp = MAX_MP; // 초기 값으로 할당
+
+    private int currentHp; // 초기 값으로 할당
+    private int currentMp; // 초기 값으로 할당
     private static final Random rand = new Random();
 
-    // 1. 이름 hp mp
-    // 2. 이름 mp
-    // 3. 이름
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name == null)
+            throw new IllegalArgumentException("Name cannot be null");
+        this.name = name;
+    }
+
+    public int getCurrentMp() {
+        return currentMp;
+    }
+
+    public void setCurrentMp(int currentMp) {
+        if (currentMp < 0)
+            throw new IllegalArgumentException("Current mp cannot be negative");
+        if (currentMp > MAX_MP)
+            throw new IllegalArgumentException("Current mp cannot be greater than max mp");
+        this.currentMp = currentMp;
+    }
+
+    public int getCurrentHp() {
+        return currentHp;
+    }
+
+    public void setCurrentHp(int currentHp) {
+        if (currentHp < 0)
+            throw new IllegalArgumentException("Current hp cannot be negative");
+        if (currentHp > MAX_HP)
+            throw new IllegalArgumentException("Current hp cannot be greater than max hp");
+
+        this.currentHp = currentHp;
+    }
+
     Cleric(String name) {
         this.name = name;
         this.currentHp = MAX_HP;
@@ -29,7 +62,7 @@ public class Cleric {
         this.currentMp = mp;
     }
 
-    void selfAid() {
+    public void selfAid() {
         if (currentMp < 5) {
             // 스킬 못 쓴다고 하기
             return;
@@ -39,7 +72,7 @@ public class Cleric {
         this.currentHp = MAX_HP;
     }
 
-    int pray(int time) {
+    public int pray(int time) {
         if (time < 0) {
             // 잘못된 time 값
             return 0;
