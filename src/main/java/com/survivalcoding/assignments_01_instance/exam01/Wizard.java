@@ -25,6 +25,9 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
+        if (mp < 0) {
+            throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 한다.");
+        }
         this.mp = mp;
     }
 
@@ -58,6 +61,7 @@ public class Wizard {
 
     public static void main(String[] args) {
         Wizard wizard = new Wizard("마법사", 100, 50);
-        wizard.setName("");
+        //wizard.setName("");
+        wizard.setMp(0);
     }
 }

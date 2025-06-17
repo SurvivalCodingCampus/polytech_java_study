@@ -30,4 +30,16 @@ class WizardTest {
         });
     }
 
+    @Test
+    @DisplayName("이름은 3글자 이상이어야 함")
+    void testwizardmp() {
+        //given
+        Wizard wizard = new Wizard("마법사", 100, 50);
+
+        // then
+        assertThrows(IllegalArgumentException.class, () -> {
+            wizard.setMp(-5);
+        });
+    }
+
 }
