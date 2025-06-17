@@ -145,6 +145,16 @@ class ClericTest {
 
     }
 
+    @Test
+    @DisplayName("마법사와 지팡이의 이름은 null일 수 없다")
+    void Wand_Wizard_tests(){
+
+        Wand wand = new Wand();
+
+        assertThrows(IllegalAccessException.class, ()->{
+            Wand.setName()
+        })
+    }
 
 
 }

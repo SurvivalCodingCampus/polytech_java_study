@@ -1,6 +1,5 @@
 @startuml
 'https://plantuml.com/class-diagram
-scale 3
 
 class Hero{
 + String name
@@ -24,8 +23,18 @@ class Cleric{
 
 
 class Wand{
-+ String name;
+- String name;
 - double power;
+}
+
+class Wizard{
+- String name;
+- int hp;
+- int mp;
+- Wand wand;
+
++ void heal(Hero hero);
+
 }
 
 @enduml
