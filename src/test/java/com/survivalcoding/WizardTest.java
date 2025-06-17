@@ -24,9 +24,9 @@ class WizardTest {
         Wand wand = new Wand("마법사의 불꽃", 99);
         Wizard wizard = new Wizard(1, 2, "3333", wand);
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            wizard.setHp(-1);
-        });
+        wizard.setHp(-1);
+        assertEquals(0, wizard.getHp());
+
         assertThrows(IllegalArgumentException.class, () -> {
             wizard.setMp(-1);
         });
