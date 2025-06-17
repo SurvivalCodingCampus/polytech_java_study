@@ -10,6 +10,7 @@ public class Wizard {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
+        this.wand = wand;
     }
 
     public int getHp() {
@@ -19,9 +20,7 @@ public class Wizard {
     public void setHp(int hp) {
         if (hp < 0) {
             this.hp = 0;
-            throw new IllegalArgumentException("HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.");
-        }
-        this.hp = hp;
+        } else this.hp = hp;
     }
 
     public int getMp() {
@@ -69,12 +68,10 @@ public class Wizard {
     public static void main(String[] args) {
         Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
         wizard.setName("");
-        wizard.setName("지팡이");
         wizard.setMp(0);
-        wizard.setMp(50);
         wizard.setHp(-5);
-        wizard.setHp(100);
+        System.out.println(wizard.hp);
         wizard.setWand(null);
-        wizard.setWand(new Wand("지팡팡", 50));
+
     }
 }
