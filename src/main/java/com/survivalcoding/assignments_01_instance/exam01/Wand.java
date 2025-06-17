@@ -9,8 +9,8 @@ public class Wand {
     }
 
     public void setName(String name) {
-        if(name==null){
-            throw new IllegalArgumentException("name은 null이 될 수 없음");
+        if (name == null || name.length() < 3) {
+            throw new IllegalArgumentException("이름은 null 이거나 3자 미만일 수 없음");
         }
         this.name = name;
     }
