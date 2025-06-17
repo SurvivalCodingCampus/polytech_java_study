@@ -12,33 +12,35 @@ public class Cleric {
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();
 
-    Cleric(String name, int hp, int mp){
+    Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
     }
-    Cleric(String name, int hp){
+
+    Cleric(String name, int hp) {
         this(name, hp, maxMp);
     }
-    Cleric(String name){
+
+    Cleric(String name) {
         this(name, maxHp, maxMp);
     }
 
-    public void selfAid(){
-        if(hp == maxHp) return; // 이미 max라면 return
-        if(mp < 5) return;      // mp가 부족하면 return
+    public void selfAid() {
+        if (hp == maxHp) return; // 이미 max라면 return
+        if (mp < 5) return;      // mp가 부족하면 return
         mp -= 5;
         hp = maxHp;
     }
 
-    public int pray(int sec){
-        if(mp == maxMp) return 0; // 이미 max라면 return
+    public int pray(int sec) {
+        if (mp == maxMp) return 0; // 이미 max라면 return
 
         // 회복량 recoveryMp에 저장
         int recoveryMp = rand.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
 
         // maxMp 보다 더 회복하는가?
-        if(recoveryMp + mp > maxMp){
+        if (recoveryMp + mp > maxMp) {
             recoveryMp = maxMp - mp;
         }
 
@@ -48,12 +50,13 @@ public class Cleric {
     }
 
     // test를 위해 setMp(), setHp() 추가
-    public void setHp(int hp){
-        if(hp < 0 || hp >= maxHp) return;
+    public void setHp(int hp) {
+        if (hp < 0 || hp >= maxHp) return;
         this.hp = hp;
     }
-    public void setMp(int mp){
-        if(mp < 0 || mp >= maxMp) return;
+
+    public void setMp(int mp) {
+        if (mp < 0 || mp >= maxMp) return;
         this.mp = mp;
     }
 }
