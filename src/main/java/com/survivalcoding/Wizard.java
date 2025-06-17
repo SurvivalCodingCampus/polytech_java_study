@@ -11,6 +11,10 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
+        if (hp < 0) {
+            hp = 0;
+            throw new IllegalArgumentException("hp 값은 음수가 됨");
+        }
         this.hp = hp;
     }
 
@@ -19,6 +23,8 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
+        if (mp < 0)
+            throw new IllegalArgumentException("mp 값이 0 이하");
         this.mp = mp;
     }
 
@@ -38,7 +44,7 @@ public class Wizard {
         this.wand = wand;
     }
 
-    void heal(Hero hero) {
+    public void heal(Hero hero) {
         int basePoint = 10;
         int revocPoint = (int) (basePoint * this.wand.getPower());
         hero.setHp(hero.getHp() + revocPoint);
