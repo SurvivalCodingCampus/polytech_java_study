@@ -39,9 +39,9 @@ public class Hero {
         this.sword = sword;
     }
 
-    String name;    // null
-    int hp;     // 0
-    Sword sword;    // null
+    private String name;    // null
+    private int hp;     // 0
+    private Sword sword;    // null
 
     static void setRandomMoney() {
         Hero.money = new Random().nextInt(1000);
