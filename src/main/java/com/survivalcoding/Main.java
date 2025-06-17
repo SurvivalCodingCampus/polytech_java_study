@@ -2,7 +2,7 @@ package com.survivalcoding;
 
 public class Main {
     public static void main(String[] args) {
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("아서스");
 
         cleric.selfAid();
         System.out.println(cleric.getHp() + " " + cleric.getMp());

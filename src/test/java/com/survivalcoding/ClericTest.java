@@ -6,51 +6,92 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClericTest {
-
     @Test
     @DisplayName("객체 생성 시 hp,mp가 알맞게 설정되는지")
     void testCreate() {
-        Cleric cleric = new Cleric();
+        String testName = "아서스";
 
-        assertEquals(50, cleric.hp);
-        assertEquals(10, cleric.mp);
+        /* 1. 1개 파라미터를 가진 생성자 호출 */
+        // given, when
+        Cleric cleric1 = new Cleric(testName);
+
+        // then
+        // name, hp, mp 테스트
+        assertEquals(testName, cleric1.getName());
+        assertEquals(Cleric.maxHp, cleric1.getHp());
+        assertEquals(Cleric.maxMp, cleric1.getMp());
+
+        /* 2. 2개 파라미터를 가진 생성자 호출 */
+        // given, when
+        int testHp = 35;
+        Cleric cleric2 = new Cleric(testName, testHp);
+
+        // then
+        // hp, mp 테스트
+        assertEquals(testHp, cleric2.getHp());
+        assertEquals(Cleric.maxMp, cleric2.getMp());
+
+        /* 2. 3개 파라미터를 가진 생성자 호출 */
+        // given, when
+        int testMp = 5;
+        Cleric cleric3 = new Cleric(testName, testHp, testMp);
+
+        // then
+        // mp만 테스트
+        assertEquals(testMp, cleric3.getMp());
     }
 
     @Test
     @DisplayName("mp소모를 하면 maxHp까지 회복")
     void testSelfAid() {
-        // given(준비)
-        Cleric cleric = new Cleric();
-        int previousMp = cleric.getMp();    // pray를 하기 전 mp
+        String testName = "아서스";
+        Cleric[] clerics = { new Cleric(testName),
+                new Cleric(testName, 35),
+                new Cleric(testName, 40, 5)};
+        int[] previousMp = { clerics[0].getMp(), clerics[1].getMp(), clerics[2].getMp()};
 
-        // when(실행)
-        cleric.selfAid();
+        // when
+        for(int i=0; i<clerics.length; ++i) {
+            clerics[i].selfAid();
+        }
 
-        // then(검증)
-        assertEquals(50, cleric.hp);
-
-        if(previousMp >= 5) {
-            assertEquals(5, previousMp - cleric.mp);
+        // then
+        for(int i=0; i<clerics.length; ++i) {
+            if (previousMp[i] >= 5) {
+                assertEquals(5, previousMp[i] - clerics[i].getMp());
+            } else {
+                assertEquals(previousMp[i], clerics[i].getMp()); // MP 변화 없음
+            }
         }
     }
 
     @Test
     @DisplayName("pray 함수의 최종 mp회복량 측정")
     void testPray() {
-        // 현재 마나가 0이어도 최대 10초가 maxMp
-        for(int sec = 0; sec<=0; ++sec) {
-            // given
-            Cleric cleric = new Cleric();
-            int previousMp = cleric.getMp();    // pray를 하기 전 현재 mp
+        String testName = "아서스";
+        Cleric[] clerics = {
+                new Cleric(testName),
+                new Cleric(testName, 35),
+                new Cleric(testName, 40, 5)
+        };
 
-            // when
-            int amount = cleric.pray(sec);
+        for (int sec = 1; sec <= 10; ++sec) {
+            for (int i = 0; i < clerics.length; ++i) {
+                int beforeMp = clerics[i].getMp();
 
-            // then
-            // randomPoint가 0이상 2이하로 설정되는지
-            assertEquals(previousMp, cleric.getMp() - sec, 2);
-            // 이전 마나와 현재 마나의 오차 범위가 amount(최종 회복량) 이내인지
-            assertEquals(previousMp, cleric.getMp(), amount);
+                // when
+                int recovered = clerics[i].pray(sec);
+                int afterMp = clerics[i].getMp();
+
+                // then
+                // 예상 회복량 범위: sec ~ sec+2
+                int maxPossibleRecovery = Math.min(sec + 2, Cleric.maxMp - beforeMp);
+                int minPossibleRecovery = Math.min(sec, Cleric.maxMp - beforeMp);
+
+                assertTrue(recovered >= minPossibleRecovery && recovered <= maxPossibleRecovery);
+
+                assertEquals(beforeMp + recovered, afterMp);
+            }
         }
     }
 }
