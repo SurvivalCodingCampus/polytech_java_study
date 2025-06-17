@@ -30,5 +30,17 @@ class WandTest {
             wand.setName("지팡");
         });
     }
+
+    @Test
+    @DisplayName("이름은 3글자 이상이어야 함")
+    void testwandpower() {
+        //given
+        Wand wand = new Wand("지팡이", 5);
+
+        // then
+        assertThrows(IllegalArgumentException.class, () -> {
+            wand.setPower(105);
+        });
+    }
 }
 
