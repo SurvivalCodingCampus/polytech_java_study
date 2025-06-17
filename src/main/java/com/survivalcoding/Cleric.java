@@ -12,10 +12,12 @@ public class Cleric {
     Cleric(String name) {
         this(name, Cleric.clericMaxHp);
     }
-    Cleric(String name, int hp){
+
+    Cleric(String name, int hp) {
         this(name, hp, Cleric.clericMaxMp);
     }
-    Cleric(String name, int hp, int mp){
+
+    Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;

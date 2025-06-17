@@ -11,7 +11,7 @@ class WandTest {
 
     @Test
     @DisplayName("완드 생성 테스트")
-    void testWand(){
+    void testWand() {
         Wand wand = new Wand("지팡이", 50);
         assertEquals("지팡이", wand.getName());
         assertEquals(50, wand.getPower());
