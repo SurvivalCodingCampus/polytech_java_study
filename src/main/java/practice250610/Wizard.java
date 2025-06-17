@@ -36,6 +36,9 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
+        if (mp < 0) {
+            throw new IllegalArgumentException("mp가 0 이상이어야 함");
+        }
         this.mp = mp;
     }
 
