@@ -5,11 +5,26 @@ import java.util.Random;
 
 public class Hero {
     // 공유자원
-    static int money = 100;
+    public static int money = 100;
 
-    String name;    // null
-    int hp;     // 0
-    Sword sword;    // null
+    private String name;    // null
+    private int hp;     // 0
+    private Sword sword;    // null
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        if (hp < 0){
+            throw new IllegalArgumentException("HP cannot be negative"); // hp는 음수가 될수없음
+        }
+        this.hp = hp;
+    }
+
+    public void attack(Kinoko kinoko) {
+
+    }
 
     static void setRandomMoney() {
         Hero.money = new Random().nextInt(1000);
