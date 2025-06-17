@@ -32,7 +32,7 @@ class WandTest {
     }
 
     @Test
-    @DisplayName("이름은 3글자 이상이어야 함")
+    @DisplayName("지팡이의 마력은 0.5 이상 100.0 이하여야 한다.")
     void testwandpower() {
         //given
         Wand wand = new Wand("지팡이", 5);
