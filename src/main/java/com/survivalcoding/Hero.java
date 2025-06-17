@@ -7,6 +7,38 @@ public class Hero {
     // 공유자원
     static int money = 100;
 
+    public static int getMoney() {
+        return money;
+    }
+
+    public static void setMoney(int money) {
+        Hero.money = money;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public Sword getSword() {
+        return sword;
+    }
+
+    public void setSword(Sword sword) {
+        this.sword = sword;
+    }
+
     String name;    // null
     int hp;     // 0
     Sword sword;    // null
