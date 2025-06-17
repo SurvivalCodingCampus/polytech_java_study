@@ -20,16 +20,19 @@ class PersonTest {
         assertThrows(IllegalArgumentException.class, () -> {
             new Person(null, -101);
         });
-
-
     }
 
     @Test
     void testConstructor3() {
-
-
         assertThrows(IllegalArgumentException.class, () -> {
-            new Person("awd", -101);
+            new Person(null, 11);
+        });
+    }
+
+    @Test
+    void testConstructor4() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Person("awafsd", 11);
         });
     }
 }
