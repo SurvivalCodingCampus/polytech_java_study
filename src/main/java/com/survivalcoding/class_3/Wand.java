@@ -1,15 +1,15 @@
 package com.survivalcoding.class_3;
 
 public class Wand {
-    String name; // 지팡이의 이름
-    double power; // 지팡이의 마력
+    private String name; // 지팡이의 이름
+    private double power; // 지팡이의 마력
 
     public Wand() {
         this("기본지팡이", 10);
     }
     public Wand(String name, double power) {
-        this.name = name;
-        this.power = power;
+        setName(name);
+        setPower(power);
     }
 
     // getter
