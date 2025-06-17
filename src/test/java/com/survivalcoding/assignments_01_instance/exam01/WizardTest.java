@@ -6,7 +6,6 @@ public class WizardTest {
 
     @Test
     public void testHeal() {
-        // 준비 (Arrange)
         Hero hero = new Hero();
         hero.setHp(30);
 
@@ -23,6 +22,39 @@ public class WizardTest {
         wizard.heal(hero);
 
         assertEquals(45, hero.getHp());
+
+    }
+
+
+    @Test
+    public void ver3texttest(){
+        Wand wand = new Wand();
+        wand.setName("abc");
+        assertEquals("abc",wand.getName());
+    }
+
+    @Test
+    public void powertest(){
+        Wand wand = new Wand();
+        wand.setPower(0.5);
+        assertEquals(0.5,wand.getPower());
+    }
+
+    @Test
+    public void mpoverzerotest(){
+        Wizard wizard = new Wizard();
+        wizard.setMp(0);
+
+        assertEquals(0,wizard.getMp());
+    }
+
+    @Test
+    public void turnintominustozerotest(){
+        Wizard wizard = new Wizard();
+
+        wizard.setHp(-10);
+        assertEquals(0,wizard.getHp());
+
     }
 
 }

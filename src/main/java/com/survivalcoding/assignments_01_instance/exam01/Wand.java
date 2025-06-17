@@ -17,6 +17,11 @@ public class Wand {
     }
 
     public void setPower(double power){
+
+        if(this.power <0.5 || power>100){
+            throw new IllegalArgumentException("메세지");
+        }
+
         this.power = power;
     }
 

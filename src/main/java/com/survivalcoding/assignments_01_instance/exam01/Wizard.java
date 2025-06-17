@@ -12,24 +12,37 @@ public class Wizard {
         return name;
     }
     public void setName(String name){
+        if(this.name == null || name.length()<3)
+        {
+            throw new IllegalArgumentException("메세지");
+        }
         this.name = name;
     }
     public Wand getWand(){
         return wand;
     }
     public void setWand(Wand wand){
+        if(this.wand == null){
+            throw new IllegalArgumentException("메세지");
+        }
         this.wand = wand;
     }
     public int getHp(){
         return hp;
     }
     public void setHp(int hp){
+        if(this.hp<0){
+            hp = 0;
+        }
         this.hp = hp;
     }
     public int getMp(){
         return mp;
     }
     public void setMp(int mp){
+        if(this.mp<0){
+            throw new IllegalArgumentException("메세지");
+        }
         this.mp = mp;
     }
 
@@ -38,7 +51,6 @@ void heal (Hero hero){
         int recovPoint = (int) (basePoint * this.wand.getPower());
         hero.setHp(hero.getHp() + recovPoint);
 }
-
 
 }
 
