@@ -8,7 +8,7 @@ class HeroTest {
 
     @Test
     void heroTest() {
-        Hero hero = new Hero("영웅", 100);
+        Hero hero = new Hero();
         assertEquals(100, hero.getHp());
 
         hero.setHp(0);
