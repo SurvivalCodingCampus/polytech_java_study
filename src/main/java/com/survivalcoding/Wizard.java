@@ -1,7 +1,7 @@
 package com.survivalcoding;
 
-public class Wizard { // 클래스
-
+public class Wizard {
+    
     private int hp;
     private int mp;
     private String name;
