@@ -1,26 +1,97 @@
 @startuml
-'https://plantuml.com/class-diagram
 
-scale 1.5
-
+scale 1
 skinparam classAttributeIconSize 0
-Class Hero{
-    + String name
-    - int hp
 
-    + void attack(Kinoko enemy)
-    + void bye()
-    - void die()
+
+class Person {
+    - String name {readOnly}
+    - int birthYear {readOnly}
+    - int age
+
+    + Person(String name, int birthYear) <<constructor>>
+
+    + String getName()
+    + void setName(String name)
+    + int getBirthYear()
+    + void setBirthYear(int birthYear)
+    + int getAge()
+    + void setAge(int age)
 }
 
-Class Cleric{
-    + String name;
+class Cleric {
+    - String name
     - int hp
-    + int mp
+    - int mp
+    {static} + int maxHp = 50
+    {static} + int maxMp = 10
+    {static} - Random random
 
-    + void attack(Kinoko enemy)
-    + void pray(int sec)
+    + Cleric(String name, int hp, int mp) <<constructor>>
+    + Cleric(String name, int hp) <<constructor>>
+    + Cleric(String name) <<constructor>>
+
     + void selfAid()
+    + int pray(int sec)
+    + void setHp(int hp)
+    + void setMp(int mp)
+    + int getHp()
+    + int getMp()
 }
+
+class Hero {
+    - int hp
+    - String name
+    - Sword sword
+
+    + Hero(String name, int hp) <<constructor>>
+
+    + int getHp()
+    + void setHp(int hp)
+    + String getName()
+    + void setName(String name)
+    + Sword getSword()
+    + void setSword(Sword sword)
+}
+
+class Sword {
+    - String name
+    - int damage
+
+    + Sword()
+    + Sword(String name)
+}
+
+class Wand {
+    - String name
+    - double power
+
+    + Wand(String name, double power) <<constructor>>
+    + String getName()
+    + void setName(String name)
+    + double getPower()
+    + void setPower(double power)
+}
+
+class Wizard {
+    - int hp
+    - int mp
+    - String name
+    - Wand wand
+
+    + Wizard(int hp, int mp, String name, Wand wand) <<constructor>>
+    + void heal(Hero hero)
+    + int getHp()
+    + void setHp(int hp)
+    + int getMp()
+    + void setMp(int mp)
+    + String getName()
+    + void setName(String name)
+    + Wand getWand()
+    + void setWand(Wand wand)
+}
+
+Hero --> Sword
+Wizard --> Wand
 
 @enduml
