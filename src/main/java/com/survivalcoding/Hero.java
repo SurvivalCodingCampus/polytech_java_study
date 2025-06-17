@@ -4,18 +4,28 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Hero {
-    // 공유자원
-    static int money = 100;
+    private String name;    // null
+    private int hp;
+    private int mp;
+    private Sword sword;    // null
 
-    String name;    // null
-    int hp;     // 0
-    Sword sword;    // null
+    public int getHp() {
+        return hp;
+    }
 
-    static void setRandomMoney() {
-        Hero.money = new Random().nextInt(1000);
+    public void setHp(int hp) {
+        if (hp < 0) {
+            throw new IllegalArgumentException("hp는 음수가 될 수 없음");
+        }
+        this.hp = hp;
+    }
 
-        Hero hero = new Hero("aaa", 10);
-        hero.name = "홍길동";
+    public int getMp() {
+        return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
     }
 
     public Hero(String name, int hp) {
@@ -26,11 +36,9 @@ public class Hero {
     public static void main(String[] args) {
         int a = 10;
 
-        Hero.money = 500;
-
         Hero hero1 = new Hero("홍길동", 100);
-        System.out.println(Hero.money);
 
+        hero1.setHp(-10);
 
         Hero hero2 = hero1;
         hero2.hp = 200;
