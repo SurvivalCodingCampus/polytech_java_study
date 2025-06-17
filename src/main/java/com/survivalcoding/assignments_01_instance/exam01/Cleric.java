@@ -50,7 +50,7 @@ public class Cleric { //용사
         /*this.name = name;
         this.hp = hp;
         this.mp = max_mp;*/
-        this(name, hp, max_mp);
+        this(name, hp, Cleric.max_mp);
     }
 
     //이름만 지정, HP 와 MP 는 최대 HP와 최대 MP로 초기화
@@ -58,7 +58,7 @@ public class Cleric { //용사
         /*this.name = name;
         this.mp = max_mp;
         this.hp = max_hp;*/
-        this(name, max_hp, max_mp);
+        this(name, Cleric.max_hp, Cleric.max_mp);
     }
 
 }
