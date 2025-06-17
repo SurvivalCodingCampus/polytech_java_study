@@ -1,8 +1,8 @@
 package com.survivalcoding;
 
 public class Wand {
-    public String name;
-    public double power;
+    private String name;
+    private double power;
 
     public String getName() {
         return name;
