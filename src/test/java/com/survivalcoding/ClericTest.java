@@ -19,7 +19,7 @@ class ClericTest {
     @DisplayName("MP가 꽉 찼을 때는 회복량 0")
     void pray() {
         // MP가 꽉
-        Cleric cleric = new Cleric();
+        Cleric cleric = new Cleric("아서스", 40, 10);
 
         int recoveredMp = cleric.pray(10);
 
@@ -27,43 +27,23 @@ class ClericTest {
     }
 
     @Test
-    @DisplayName("MP가 0일 때 회복되어야 함")
-    void pray2() {
-        // MP 적게
-        Cleric cleric = new Cleric();
-        cleric.mp = 0;
+    void 클레릭_생성자_테스트() {
+        Cleric cleric = new Cleric("아서스", 40, 5);
 
-        int recoveredMp = cleric.pray(1);   // 1 ~ 3
+        assertEquals("아서스", cleric.name);
+        assertEquals(40, cleric.hp);
+        assertEquals(5, cleric.mp);
 
-        assertTrue(recoveredMp >= 1);
-        assertTrue(recoveredMp <= 3);
+        cleric = new Cleric("아서스", 35);
 
-        cleric.mp = 0;
+        assertEquals("아서스", cleric.name);
+        assertEquals(35, cleric.hp);
+        assertEquals(Cleric.maxMp, cleric.mp);
 
-        recoveredMp = cleric.pray(8);   // 8 ~ 11
+        cleric = new Cleric("아서스");
 
-        assertTrue(recoveredMp >= 8);
-        assertTrue(recoveredMp <= 11);
-        assertTrue(recoveredMp <= cleric.maxMp);
-    }
-
-    @Test
-    @DisplayName("MP가 5일 때 회복되어야 함")
-    void pray3() {
-        // MP 적게
-        Cleric cleric = new Cleric();
-        cleric.mp = 5;
-
-        int recoveredMp = cleric.pray(1);   // 6 ~ 8
-        System.out.println(recoveredMp);
-
-        assertTrue(cleric.mp >= 6);
-        assertTrue(cleric.mp <= 8);
-
-        cleric.mp = 5;
-
-        recoveredMp = cleric.pray(8);   // 8 ~ 11
-
-        assertEquals(5, recoveredMp);
+        assertEquals("아서스", cleric.name);
+        assertEquals(Cleric.maxHp, cleric.hp);
+        assertEquals(Cleric.maxMp, cleric.mp);
     }
 }

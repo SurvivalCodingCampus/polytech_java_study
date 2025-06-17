@@ -3,14 +3,33 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Cleric {
-    String name;
-    int hp = 50;
-    int mp = 10;
     static final int maxHp = 50;
     static final int maxMp = 10;
 
+    String name;
+    int hp;
+    int mp;
+
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();
+
+    Cleric(String name, int hp, int mp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+    }
+
+    Cleric(String name, int hp) {
+        this.name = name;
+        this.hp = hp;
+        this.mp = Cleric.maxMp;
+    }
+
+    Cleric(String name) {
+        this.name = name;
+        this.hp = Cleric.maxHp;
+        this.mp = Cleric.maxMp;
+    }
 
     public void selfAid() {
         if (hp == maxHp) return; // 이미 max라면 return
