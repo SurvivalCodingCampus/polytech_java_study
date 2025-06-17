@@ -184,9 +184,11 @@ class ClericTest {
     @Test
     @DisplayName("지팡이의 마력은 0.5이상 100.0이하 이어야 한다")
     void Wand_Power(){
+        //given(준비)
         Wand wand = new Wand("모르간", 0.4);
         Wand wand2 = new Wand("노르티아", 101.0);
 
+        //tnen
         assertThrows(IllegalArgumentException.class, ()->{
             wand.setPower(0.4);
         });
@@ -197,6 +199,18 @@ class ClericTest {
 
     }
 
+    @Test
+    @DisplayName("마법사의 지팡이는 NUll일 수가 없다")
+
+    void Wizard_have_Wand(){
+        //given(준비)
+        Wizard wizard= new Wizard(null, 10,10);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setWand(null);
+        });
+    }
 
 
 }
