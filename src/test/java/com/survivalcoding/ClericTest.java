@@ -145,6 +145,96 @@ class ClericTest {
 
     }
 
+    @Test
+    @DisplayName("마법사와 지팡이의 이름은 null일 수 없다")
+    void Wand_Wizard_tests(){
+
+        //given(준비)
+        Wand wand = new Wand(null, 0);
+        Wizard wizard = new Wizard(null, 0,0);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand.setName(null);
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setName(null);
+        });
+    }
+
+    @Test
+    @DisplayName("마법사와 지팡이의 이름은 null일 수 없다")
+    void Wand_Wizard_tests2(){
+
+        //given(준비)
+        Wand wand = new Wand(null, 0);
+        Wizard wizard = new Wizard(null, 0,0);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand.setName(null);
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setName(null);
+        });
+    }
+
+    @Test
+    @DisplayName("지팡이의 마력은 0.5이상 100.0이하 이어야 한다")
+    void Wand_Power(){
+        //given(준비)
+        Wand wand = new Wand("모르간", 0.4);
+        Wand wand2 = new Wand("노르티아", 101.0);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand.setPower(0.4);
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand2.setPower(101.0);
+        });
+
+    }
+
+    @Test
+    @DisplayName("마법사의 지팡이는 NUll일 수가 없다")
+    void Wizard_have_Wand(){
+        //given(준비)
+        Wizard wizard= new Wizard(null, 10,10);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setWand(null);
+        });
+    }
+
+    @Test
+    @DisplayName("마법사의 MP는 0이상이어야 한다")
+    void Wizard_MP(){
+        //given
+        Wizard wizard = new Wizard("앙그리아", 20, 0);
+
+        //then
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setMp(0);
+        });
+    }
+
+    @Test
+    @DisplayName("마법사의 HP가 음수가 되면 0이 되도록 설정한다")
+    void Wizard_HP(){
+        //given
+        Wizard wizard = new Wizard("발랜시아가", -5,10);
+
+        //when(실행)
+        wizard.setHp(-5);
+
+        //then
+        assertEquals(0, wizard.getHp());
+    }
 
 
 }
