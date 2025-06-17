@@ -13,6 +13,12 @@ public class Wizard {
         hero.setHp(hero.getHp() + recovPoint);
     }
 
+    Wizard(String name, int hp, int mp){
+        this.name = name;
+        this.hp= hp;
+        this.mp=mp;
+    }
+
     public int getHp() {
         return hp;
     }

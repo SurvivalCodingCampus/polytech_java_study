@@ -149,12 +149,38 @@ class ClericTest {
     @DisplayName("마법사와 지팡이의 이름은 null일 수 없다")
     void Wand_Wizard_tests(){
 
-        Wand wand = new Wand();
+        //given(준비)
+        Wand wand = new Wand(null, 0);
+        Wizard wizard = new Wizard(null, 0,0);
 
-        assertThrows(IllegalAccessException.class, ()->{
-            Wand.setName()
-        })
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand.setName(null);
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setName(null);
+        });
     }
+
+    @Test
+    @DisplayName("마법사와 지팡이의 이름은 3글자 이상이어야 한다")
+    void Wand_Wizard_tests2(){
+
+        //given(준비)
+        Wand wand = new Wand("모르", 0);
+        Wizard wizard = new Wizard("릴리", 0,0);
+
+        //tnen
+        assertThrows(IllegalArgumentException.class, ()->{
+            wand.setName("모르");
+        });
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.setName("릴리");
+        });
+    }
+
 
 
 }
