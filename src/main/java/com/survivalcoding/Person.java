@@ -26,12 +26,12 @@ public class Person {
     }
 
 
-  private int getAge() {
-        age = birthyear - calendar.get(Calendar.YEAR);
+  public int getAge() {
+        age = calendar.get(Calendar.YEAR)-birthyear;
         return age;
     }
 
-   public void setAge(int age) {
+    public void setAge(int age) {
         this.age = age;
     }
 }
