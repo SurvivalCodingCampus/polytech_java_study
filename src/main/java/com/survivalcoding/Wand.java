@@ -16,7 +16,7 @@ public class Wand {
         }
 
         if(name.length()<=3){
-            thorw new IllegalArgumentException("이름이 너무 짧습니다.");
+            throw new IllegalArgumentException("이름이 너무 짧습니다.");
         }
     }
 
