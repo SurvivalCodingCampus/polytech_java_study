@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class PersonTest {
     @Test
     @DisplayName("age 반환 테스트")
-    void returnAge(){
+    void returnAge() {
         Person person = new Person("해원", 2000);
         assertEquals(26,person.getAge());
     }

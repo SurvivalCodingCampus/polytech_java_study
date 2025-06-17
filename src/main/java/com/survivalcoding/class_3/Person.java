@@ -8,12 +8,12 @@ public class Person {
     String name;
     int birthYear;
 
-    public Person(String name, int birthYear){
+    public Person(String name, int birthYear) {
         this.name = name;
         this.birthYear = birthYear;
     }
 
-    public int getAge(){
+    public int getAge() {
         //Date now = new Date();
         Calendar calendar = Calendar.getInstance();
         //calendar.setTime(now);
