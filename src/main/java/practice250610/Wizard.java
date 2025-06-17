@@ -4,7 +4,7 @@ public class Wizard {
     private int hp;
     private int mp;
     private String name;
-    private Wand wand;
+    protected Wand wand;
 
     public void heal(Hero hero) {
         int basePoint = 10; // 기본 회복 포인트
