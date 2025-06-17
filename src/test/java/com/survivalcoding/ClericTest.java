@@ -12,7 +12,6 @@ class ClericTest {
     void constructorTest1() {
         //given and when
         Cleric cleric = new Cleric("깃허브");
-
         assertEquals("깃허브", cleric.name);
         assertEquals(Cleric.MAX_HP, cleric.currentHp);
         assertEquals(Cleric.MAX_MP, cleric.currentMp);
