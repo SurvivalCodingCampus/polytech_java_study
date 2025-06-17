@@ -12,5 +12,10 @@ class WizardTest {
         assertThrows(IllegalArgumentException.class, () -> {
             Wizard merlin = new Wizard("Merlin", new Wand("W", 100.0)); // Short name exception must be thrown.
         });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            Wand wand = null;
+            Wizard merlin = new Wizard("Merlin", wand);
+        });
     }
 }

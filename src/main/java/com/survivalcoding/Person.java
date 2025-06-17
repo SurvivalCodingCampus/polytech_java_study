@@ -18,8 +18,6 @@ public class Person {
     // Did you know getYear() return the year - 1900?
     // It's a traditional reason. Go google it out.
     public int getAge() {
-        System.out.println(this.birthYear);
-        System.out.println(new Date().getYear() + 1900);
         return new Date().getYear() + 1900 - this.birthYear;
     }
 }

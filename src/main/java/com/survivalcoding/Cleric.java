@@ -44,8 +44,8 @@ public class Cleric {
     //    Setter
     public void setHP(int hp) {
         if (hp > maxHP) throw new IllegalArgumentException("HP cannot be beyond maxHP");
-        if (hp < 0) throw new IllegalArgumentException("HP cannot be below 0");
-        this.hp = hp;
+        if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
+        this.hp = Math.max(hp, 0);
     }
 
     public void setMP(int mp) {

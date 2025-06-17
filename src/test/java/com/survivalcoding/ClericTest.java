@@ -107,8 +107,13 @@ class ClericTest {
     void testClericSetterException() {
         Cleric sally = new Cleric("Whitemane");
 
+        // MP : 0 ~ 10
         assertThrows(IllegalArgumentException.class, () -> {
             sally.setMP(11);
         });
+
+        // HP less than 0 will set to 0
+        sally.setHP(-1);
+        assertEquals(0, sally.getHP());
     }
 }
