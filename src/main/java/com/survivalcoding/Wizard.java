@@ -19,14 +19,21 @@ public class Wizard {
 
     public void setHp(int hp) {
         this.hp = hp;
+        if(hp<0){
+            hp=0;
+        }
     }
 
     public int getMp() {
         return mp;
+
     }
 
     public void setMp(int mp) {
         this.mp = mp;
+        if(mp<=0){
+            throw new IllegalArgumentException("mp는 0이상이어야 합니다.");
+        }
     }
 
     public String getName() {
@@ -35,6 +42,12 @@ public class Wizard {
 
     public void setName(String name) {
         this.name = name;
+        if(name == null){
+            throw new IllegalArgumentException("마법사의 이름은 null일 수 없습니다.");
+        }
+        if(name.length()<3){
+            throw new IllegalArgumentException("마법사의 이름은 3문장 이상이어야 합니다.");
+        }
     }
 
     public Wand getWand() {
@@ -43,5 +56,8 @@ public class Wizard {
 
     public void setWand(Wand wand) {
         this.wand = wand;
+        if(wand==null){
+            throw new IllegalArgumentException("마법사의 지팡이는 Null이어서는 안됩니다.");
+        }
     }
 }
