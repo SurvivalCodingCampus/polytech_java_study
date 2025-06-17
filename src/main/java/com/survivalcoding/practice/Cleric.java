@@ -51,12 +51,12 @@ public class Cleric {
 
     // test를 위해 setMp(), setHp() 추가
     public void setHp(int hp) {
-        if (hp < 0 || hp >= maxHp) return;
+        if (hp < 0 || hp > maxHp) return;
         this.hp = hp;
     }
 
     public void setMp(int mp) {
-        if (mp < 0 || mp >= maxMp) return;
+        if (mp < 0 || mp > maxMp) return;
         this.mp = mp;
     }
 }
