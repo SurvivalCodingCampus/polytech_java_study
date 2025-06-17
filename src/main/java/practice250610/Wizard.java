@@ -33,6 +33,13 @@ public class Wizard {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("이름이 null이 아니어야 함");
+        }
+        if (name.length() < 3) {
+            throw new IllegalArgumentException("이름이 3 문자 이상이어야 함");
+        }
+        this.name = name;
         this.name = name;
     }
 
