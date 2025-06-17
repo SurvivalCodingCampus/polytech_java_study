@@ -23,6 +23,9 @@ public class Wizard {
 
     public void heal(Hero hero) {
         int basePoint = 10;
+        if (this.wand == null) {
+            throw new IllegalArgumentException("지팡이가 설정되지 않았습니다");
+        }
         int recovPoint = (int) (basePoint * this.wand.getPower()); // 지팡이에 의한 증폭
 
         hero.setHp((hero.getHp()) + recovPoint);   // 용사의 HP를 회복

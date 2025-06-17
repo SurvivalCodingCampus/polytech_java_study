@@ -18,19 +18,38 @@ class WizardTest {
         });
 
         wizard.setWand(wand);
-        assertEquals(wand,wizard.getWand());
+        assertEquals(wand, wizard.getWand());
 
         // get set Hp
         wizard.setHp(100);
-        assertEquals(100,wizard.getHp());
+        assertEquals(100, wizard.getHp());
         wizard.setHp(-10);
-        assertEquals(0,wizard.getHp());
+        assertEquals(0, wizard.getHp());
 
         // get set Mp
         assertThrows(IllegalArgumentException.class,()->{
             wizard.setMp(-10);
         });
         wizard.setMp(10);
-        assertEquals(10,wizard.getMp());
+        assertEquals(10, wizard.getMp());
+    }
+
+    @Test
+    @DisplayName("heal 메서드 확인")
+    void healTest() {
+        Wizard wizard = new Wizard();
+        Hero hero = new Hero();
+
+        assertThrows(IllegalArgumentException.class, ()->{
+            wizard.heal(hero);
+        });
+
+        Wand wand = new Wand();
+        wizard.setWand(wand);
+
+        wizard.heal(hero);
+
+        assertEquals(200, hero.getHp());
+
     }
 }
