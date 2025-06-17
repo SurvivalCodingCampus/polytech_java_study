@@ -37,33 +37,20 @@ public class Cleric {
         return this.mp;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
     //    Setter
     public void setHP(int hp) {
-        if (hp > maxHP) {
-            this.hp = maxHP;
-            return;
-        }
-        if (hp < 0) {
-            this.hp = 0;
-            return;
-        }
-
-        this.hp = hp;
+        if (hp > maxHP) throw new IllegalArgumentException("HP cannot be beyond maxHP");
+        if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
+        this.hp = Math.max(hp, 0);
     }
 
     public void setMP(int mp) {
-        if (mp > maxMP) {
-            this.mp = maxMP;
-            return;
-        }
-        if (mp < 0) {
-            this.mp = 0;
-            return;
-        }
+        if (mp > maxMP) throw new IllegalArgumentException("MP cannot be beyond maxMP");
+        if (mp < 0) throw new IllegalArgumentException("MP cannot be below 0");
         this.mp = mp;
     }
 
