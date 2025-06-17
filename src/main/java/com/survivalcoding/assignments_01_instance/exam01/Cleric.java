@@ -6,10 +6,30 @@ public class Cleric {
     //이름 최대 MP, HP
     String name;
     int HP;
-    final int MAX_HP = 50;
+    static final int MAX_HP = 50;
     int MP;
-    final int MAX_MP = 10;
+    static final int MAX_MP = 10;
 
+        //이름, HP, MP 모두 지정
+public Cleric(String name, int HP, int MP){
+            this.name=name;
+            this.HP=HP;
+            this.MP=MP;
+        }
+//이름, HP만 지정 MP는 최대 MP값으로 초기화
+    public Cleric(String name, int HP){
+            this(name, HP, MAX_MP);
+        }
+        //이름만 지정 HP와 MP는 최댓값으로 초기화
+    public Cleric(String name){
+            this(name, MAX_HP, MAX_MP);
+        }
+
+    public static void main(String[] args){
+        Cleric cleric1 = new Cleric("아서스", 40, 5);
+        // 이름을 지정하지 않는 경우에는 인스턴스화 할 수 없음 (이름이 없는 성직자는 존재할 수 없음)
+        //생성자는 가능한 중복되는 코드가 없도록 작성
+    }
     //셀프 에이드 MP 5소모 HP 최대로 회복 인수가 없고 리턴값도 없음
     public void selfAid() {
         if (this.MP < 5) {
