@@ -34,19 +34,20 @@ public class Wizard {
     }
 
     public void setWand(Wand wand) throws RuntimeException {
-        if(wand == null){
+        if (wand == null) {
             throw new IllegalArgumentException("Wand cannot be null");
         }
     }
 
     public void setMp(int mp) {
-        if(mp < 0){
+        if (mp < 0) {
             throw new IllegalArgumentException("Mp cannot be negative");
         }
         this.mp = mp;
     }
+
     public void setHp(int hp) {
-        if(hp < 0){
+        if (hp < 0) {
             this.hp = 0;
             return;
         }

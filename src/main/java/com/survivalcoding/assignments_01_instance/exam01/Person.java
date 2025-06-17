@@ -7,12 +7,21 @@ public class Person {
     private final int birthYear;
 
     public Person(String name, int year) {
+
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null");
+        }
+
         this.name = name;
         this.birthYear = year;
     }
 
     public String getName() {
         return name;
+    }
+
+    public int getBirthYear() {
+        return birthYear;
     }
 
     public int getAge() {

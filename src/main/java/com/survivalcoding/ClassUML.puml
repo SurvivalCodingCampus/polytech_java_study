@@ -34,6 +34,17 @@ interface Healable {
     + beHealed(recoverPoint: int): void
 }
 
+class Person {
+    - {final} name: String
+    - {final} birthYear: int
+
+    + Person(name: String, year: int)
+    + getName(): String
+    + getBirthYear(): int
+    + getAge(): int
+}
+
+
 Wizard --> Wand : has
 Wizard ..> Healable : uses
 

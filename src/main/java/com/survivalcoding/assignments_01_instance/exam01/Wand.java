@@ -13,10 +13,10 @@ public class Wand {
     }
 
     public void setName(String name) {
-        if(name == null){
+        if (name == null) {
             throw new IllegalArgumentException("name cannot be null");
         }
-        if(name.trim().length() < 3){
+        if (name.trim().length() < 3) {
             throw new IllegalArgumentException("name length cannot be less than 3");
         }
 
@@ -25,7 +25,7 @@ public class Wand {
 
     public void setPower(double power) {
 
-        if(power < 0.5f || power > 100.f){
+        if (power < 0.5f || power > 100.f) {
             throw new IllegalArgumentException("power cannot be less than 100");
         }
 
