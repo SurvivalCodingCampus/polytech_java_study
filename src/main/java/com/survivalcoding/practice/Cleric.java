@@ -59,4 +59,13 @@ public class Cleric {
         if (mp < 0 || mp > maxMp) return;
         this.mp = mp;
     }
+
+    // Getter
+    public int getHp() {
+        return hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
 }
