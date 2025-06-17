@@ -137,5 +137,23 @@ class ClericTest {
 
     }
 
+    public static void main(String[] args) {
+        // 이름, HP, MP 모두 지정
+        Cleric c1 = new Cleric("아서스", 40, 5);
+        System.out.println("c1 -> 이름: " + c1.name + ", HP: " + c1.hp + ", MP: " + c1.mp);
+
+        // 이름과 HP만 지정 (MP는 최대 MP로 초기화)
+        Cleric c2 = new Cleric("아서스", 35);
+        System.out.println("c2 -> 이름: " + c2.name + ", HP: " + c2.hp + ", MP: " + c2.mp);
+
+        // 이름만 지정 (HP, MP 모두 최대값으로 초기화)
+        Cleric c3 = new Cleric("아서스");
+        System.out.println("c3 -> 이름: " + c3.name + ", HP: " + c3.hp + ", MP: " + c3.mp);
+
+        Cleric c4 = new Cleric();
+        System.out.println("c4 -> 이름: " + c4.name + ", HP: " + c4.hp + ", MP: " + c4.mp);
+    }
+
+
 
 }

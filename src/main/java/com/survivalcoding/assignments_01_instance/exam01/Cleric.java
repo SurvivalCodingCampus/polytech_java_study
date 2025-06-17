@@ -2,11 +2,30 @@ package com.survivalcoding.assignments_01_instance.exam01;
 import java.util.Random;
 
 public class Cleric {
-    String name = "cleric";
-    int hp = 50;
-    final int Max_HP = 50;
-    int mp = 10;
-    final int Max_MP = 10;
+    String name;
+    int hp;
+    static final int Max_HP = 50;
+    int mp;
+    static final int Max_MP = 10;
+
+    Cleric(String name, int HP, int MP) {
+        this.name = name;
+        this.hp = HP;
+        this.mp = MP;
+    }
+    Cleric(String name, int HP) {
+        this.name = name;
+        this.hp = HP;
+        this.mp = Max_MP;
+    }
+    Cleric(String name) {
+        this.name = name;
+        this.hp = Max_HP;
+        this.mp = Max_MP;
+    }
+    Cleric() {
+
+    }
 
     //selfAid() 메소드 추가 인수가 없고, 리턴 값도 없다.
     public void selfAid() {
