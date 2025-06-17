@@ -9,6 +9,13 @@ public class Wand {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("이름은 null이 아니어야 함");
+        }
+        if (name.length() < 3) {
+            throw new IllegalArgumentException("이름은 3글자 이상이어야 함");
+        }
+
         this.name = name;
     }
 
@@ -23,5 +30,10 @@ public class Wand {
     public Wand(String name, double power) {
         this.name = name;
         this.power = power;
+    }
+
+    public static void main(String[] args) {
+        Wand wand = new Wand("지팡이", 10);
+        wand.setName("");
     }
 }
