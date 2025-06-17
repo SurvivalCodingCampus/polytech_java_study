@@ -7,10 +7,8 @@ public class Main {
         System.out.print("Hello and welcome!"); // = sout 엔터
 
         for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);  //ln은 핝줄 내리기까지 포함
+            // TIP: 디버깅을 시작하려면 단축키 Debug 사용
+            System.out.println("i = " + i); // Ln은 함수 내리기까지 포함
         }
     }
-
 }
