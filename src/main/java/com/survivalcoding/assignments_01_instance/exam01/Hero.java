@@ -18,7 +18,11 @@ public class Hero {
         return hp;
     }
 
-    public void test(){
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void heroTest(){
         System.out.println("이름 " + this.name);
         System.out.println(hp);
     }

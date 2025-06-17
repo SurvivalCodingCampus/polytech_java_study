@@ -6,15 +6,18 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
 
-    @Test
 
+@Test
  public void test()
     {
         Hero hero = new Hero("아서", 40);
 
-        hero.test();
+        hero.heroTest();
 
         assertEquals("아서", hero.getName());
+        assertEquals(40, hero.getHp());
+
+        hero.setHp(40);
 
 
     }

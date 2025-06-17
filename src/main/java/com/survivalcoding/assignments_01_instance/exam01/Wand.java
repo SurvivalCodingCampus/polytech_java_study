@@ -26,7 +26,7 @@ public class Wand {
         this.power = power;
     }
 
-    public void test()
+    public void wandTest()
     {
         System.out.println("이름 " + this.name);
         System.out.println(power);
