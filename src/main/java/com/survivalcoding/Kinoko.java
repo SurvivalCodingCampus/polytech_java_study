@@ -1,7 +1,7 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding;
 
 public class Kinoko {
-    int hp;
+    int hp = 50;
     final int level = 10;
 
     void attack() {
@@ -11,6 +11,7 @@ public class Kinoko {
 
     void setHP(int hp) {
         this.hp = hp;
+        System.out.println("hp 를 회복");
     }
 
 }
