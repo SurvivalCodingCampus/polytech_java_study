@@ -12,6 +12,17 @@ public class Wizard {
         hero.setHp(hero.getHp() + recovPoint);  // 용사의 HP를 회복
     }
 
+    public Wand getWand() {
+        return wand;
+    }
+
+    public void setWand(Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("지팡이가 null이 아니어야 함");
+        }
+        this.wand = wand;
+    }
+
     public int getHp() {
         return hp;
     }
