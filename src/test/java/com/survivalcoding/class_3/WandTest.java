@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WandTest {
     @Test
     @DisplayName("Wand getter setter 확인")
-    void getsetWand(){
+    void getsetWand() {
         Wand wand = new Wand();
 
         // get set Name
