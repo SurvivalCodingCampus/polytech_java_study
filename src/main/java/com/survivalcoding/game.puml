@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 3
+
+class Horo {
+   + String name
+   - int hp
+
+   +void attack(Kinoko enemy)
+   +void bye()
+   -void die()
+
+
+}
+class cleric{
+   + String name
+   - int hp
+   + int mp
+
+   +void attack(Kinoko enemy)
+   +void bye()
+   -void die()
+
+
+}
+
+@enduml
