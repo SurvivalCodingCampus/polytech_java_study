@@ -10,7 +10,7 @@ public class Cleric {
     static final int maxMp = 10;
 
     // 난수 생성을 위한 Random 객체 한번만 만들자
-    Random rand = new Random();
+    static Random random = new Random();
 
     Cleric(String name, int hp, int mp) {
         this.name = name;
@@ -37,7 +37,7 @@ public class Cleric {
         if (mp == maxMp) return 0; // 이미 max라면 return
 
         // 회복량 recoveryMp에 저장
-        int recoveryMp = rand.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
+        int recoveryMp = random.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
 
         // maxMp 보다 더 회복하는가?
         if (recoveryMp + mp > maxMp) {
