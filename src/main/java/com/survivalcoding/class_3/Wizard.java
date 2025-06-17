@@ -21,36 +21,36 @@ public class Wizard {
         this.wand = wand;
     }
 
-    public void heal(Hero hero){
+    public void heal(Hero hero) {
         int basePoint = 10;
         int recovPoint = (int) (basePoint * this.wand.getPower()); // 지팡이에 의한 증폭
 
-        hero.setHp((hero.getHp())+recovPoint);   // 용사의 HP를 회복
+        hero.setHp((hero.getHp()) + recovPoint);   // 용사의 HP를 회복
     }
 
     // getter
-    public Wand getWand(){
+    public Wand getWand() {
         return wand;
     }
-    public int getHp(){
+    public int getHp() {
         return hp;
     }
-    public int getMp(){
+    public int getMp() {
         return mp;
     }
-    public String getName(){
+    public String getName() {
         return name;
     }
 
     // setter
-    public void setWand(Wand wand){
-        if(wand==null){
+    public void setWand(Wand wand) {
+        if(wand == null) {
             throw new IllegalArgumentException("마법사의 지팡이는 null이 아니어야 함");
         }
         this.wand = wand;
     }
-    public void setHp(int hp){
-        if(hp<0){
+    public void setHp(int hp) {
+        if(hp < 0) {
             this.hp = 0;
         }
         else{

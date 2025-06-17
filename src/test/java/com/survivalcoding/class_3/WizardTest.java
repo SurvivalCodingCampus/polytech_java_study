@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WizardTest {
     @Test
     @DisplayName("Wizard getter setter 확인")
-    void getsetWizard(){
+    void getsetWizard() {
         Wizard wizard = new Wizard();
         Wand wand = new Wand();
 
@@ -16,6 +16,7 @@ class WizardTest {
         assertThrows(IllegalArgumentException.class,()->{
             wizard.setWand(null);
         });
+
         wizard.setWand(wand);
         assertEquals(wand,wizard.getWand());
 
@@ -32,5 +33,4 @@ class WizardTest {
         wizard.setMp(10);
         assertEquals(10,wizard.getMp());
     }
-
 }
