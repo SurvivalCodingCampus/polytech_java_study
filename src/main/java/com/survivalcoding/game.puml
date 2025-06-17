@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 2
+Class Hero {
+    + String name
+    - int hp
+
+    + void attack(Kinoko enemy)
+    + void bye()
+    - void die()
+}
+
+
+Class Cleric {
+    + String name
+    - int hp
+    + int mp
+
+     + void attack(Kinoko enemy)
+     + void pray(int sec)
+     + void selfAid()
+}
+
+Class Kinoko {
+    + int hp
+    + int level
+}
+
+
+Class Sword {
+   - String name
+   - int damage
+}
+
+Class Wand {
+    - String name
+    - double power
+}
+
+Class Wizard {
+        - int hp
+        - int mp
+        - String name
+        - Wand wand
+
+        - void heal
+}
+@enduml
