@@ -30,11 +30,15 @@ public class Cleric {
 
     //    Getter
     public int getHP() {
-        return hp;
+        return this.hp;
     }
 
     public int getMP() {
-        return mp;
+        return this.mp;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     //    Setter

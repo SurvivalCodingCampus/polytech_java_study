@@ -79,4 +79,26 @@ class ClericTest {
 
         assertEquals(1, returnedMP);
     }
+
+    @Test
+    @DisplayName("Cleric's constructor test")
+    void testClericConstructor(){
+        Cleric sally = new Cleric("Whitemane", 40,5 );
+
+        assertEquals("Whitemane", sally.getName());
+        assertEquals(40, sally.getHP());
+        assertEquals(5, sally.getMP());
+
+        sally = new Cleric("Whitemane", 35);
+
+        assertEquals("Whitemane", sally.getName());
+        assertEquals(35, sally.getHP());
+        assertEquals(10, sally.getMP());
+
+        sally = new Cleric("Whitemane");
+
+        assertEquals("Whitemane", sally.getName());
+        assertEquals(50, sally.getHP());
+        assertEquals(10, sally.getMP());
+    }
 }
