@@ -1,10 +1,10 @@
 package com.survivalcoding;
 
 public class Wizard {
-    String name;
-    int hp;
-    int mp;
-    Wand wand;
+    private String name;
+    private int hp;
+    private int mp;
+    private Wand wand;
 
     // constructor
 
@@ -64,7 +64,8 @@ public class Wizard {
         this.wand = wand;
     }
 
-    void heal(Hero hero) {
+    public void heal(Hero hero) {
+        if (hero == null) throw new IllegalArgumentException("Hero cannot be null");
         int basePoint = 10;
         int recoverPoint = (int) (basePoint * this.wand.getPower());
         hero.setHP(hero.getHP() + recoverPoint);

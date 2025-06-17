@@ -2,7 +2,7 @@
 Scale 1
 
 class Cleric {
-    + String name
+    - String name
     - int hp
     - int mp
 
@@ -12,10 +12,10 @@ class Cleric {
 }
 
 class Wizard {
-    + String name
+    - String name
     - int hp
     - int mp
-    * Wand wand
+    - Wand wand
 
     + void heal()
 }

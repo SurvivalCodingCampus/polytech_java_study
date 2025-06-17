@@ -13,8 +13,10 @@ public class Hero {
 
     public Hero(String name, int hp) {
         if (name == null) throw new IllegalArgumentException("Name cannot be null.");
+        if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
         this.name = name;
-        this.hp = hp;
+        this.hp = Math.max(hp, 0);
+
     }
 
     // getter
@@ -29,7 +31,7 @@ public class Hero {
     // setter
     public void setHP(int hp) {
         if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
-        this.hp = Math.min(hp, 0);
+        this.hp = Math.max(hp, 0);
     }
 
     public void setName(String name) {

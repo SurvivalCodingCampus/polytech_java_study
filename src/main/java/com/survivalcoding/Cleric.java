@@ -49,7 +49,7 @@ public class Cleric {
     }
 
     public void setMP(int mp) {
-        if (mp > maxMP) throw new IllegalArgumentException("MP cannot be beyond maxHP");
+        if (mp > maxMP) throw new IllegalArgumentException("MP cannot be beyond maxMP");
         if (mp < 0) throw new IllegalArgumentException("MP cannot be below 0");
         this.mp = mp;
     }

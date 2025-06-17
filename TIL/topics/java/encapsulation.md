@@ -59,8 +59,8 @@ public void setHP(int hp) {
 
 ```Java
 public void setName(String name) {
-    if (name == null) throw IllegalArgumentException("Name can be *null*");
-    if (name.length >= 10) throw IllegalArgumentException("Name's too long");
+    if (name == null) throw new IllegalArgumentException("Name can be *null*");
+    if (name.length() >= 10) throw new IllegalArgumentException("Name's too long");
     this.name = name;
 }
 ```
