@@ -37,3 +37,23 @@ _\*final로 선언된 필드는 불변하는 상수(constant) 필드_
 
 - `new` 키워드를 사용하여 클래스로부터 인스턴스 생성
 - `<변수 이름>.<필드 이름>`, `<변수 이름>.<메소드 이름()>`으로 인스턴스의 필드와 메소드를 이용
+
+### primitive and reference
+
+Java는 자료형을 크게 두개로 구분
+
+- `int`, `double`, `float`, `bool`, `char` 과 같이 값을 저장하는 기본형(Primitive Type)
+- `new` 로 생성한 인스턴스인 참조형(Reference Type)
+
+### null
+
+값이 비어있음을 의미하는 예약어
+
+- Primitive Type은 null을 가질 수 없음
+
+### Memory?
+
+메모리에서, 실시간으로 할당하는 Heap과 Stack에 인스턴스들을 다룬다.
+
+- 인스턴스는 Heap에 저장
+- 그 인스턴스의 Heap 주소는 Stack에 저장
