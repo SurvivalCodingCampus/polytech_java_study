@@ -1,0 +1,28 @@
+@startuml
+Scale 1
+
+class Cleric {
+    + String name
+    - int hp
+    - int mp
+
+    + void attack(Kinoko Enemy)
+    + void pray(int second)
+    + void selfAid()
+}
+
+class Wizard {
+    + String name
+    - int hp
+    - int mp
+    * Wand wand
+
+    + void heal()
+}
+
+class Wand {
+    + String name
+    - double power
+}
+
+@enduml

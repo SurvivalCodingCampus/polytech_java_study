@@ -82,8 +82,8 @@ class ClericTest {
 
     @Test
     @DisplayName("Cleric's constructor test")
-    void testClericConstructor(){
-        Cleric sally = new Cleric("Whitemane", 40,5 );
+    void testClericConstructor() {
+        Cleric sally = new Cleric("Whitemane", 40, 5);
 
         assertEquals("Whitemane", sally.getName());
         assertEquals(40, sally.getHP());
@@ -100,5 +100,15 @@ class ClericTest {
         assertEquals("Whitemane", sally.getName());
         assertEquals(50, sally.getHP());
         assertEquals(10, sally.getMP());
+    }
+
+    @Test
+    @DisplayName("Exception check")
+    void testClericSetterException() {
+        Cleric sally = new Cleric("Whitemane");
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            sally.setMP(11);
+        });
     }
 }
