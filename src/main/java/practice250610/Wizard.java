@@ -1,14 +1,39 @@
 package practice250610;
 
 public class Wizard {
-    int hp;
-    int mp;
-    String name;
-    Wand wand;
+    private int hp;
+    private int mp;
+    private String name;
+    private Wand wand;
 
-    void heal(Hero hero) {
+    public void heal(Hero hero) {
         int basePoint = 10; // 기본 회복 포인트
         int recovPoint = (int) (basePoint * this.wand.power);    // 지팡이에 의한 증폭
         hero.setHp(hero.getHp() + recovPoint);  // 용사의 HP를 회복
     }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getMp() {
+        return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }
