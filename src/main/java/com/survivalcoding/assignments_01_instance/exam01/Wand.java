@@ -4,6 +4,24 @@ public class Wand {
     private String name;
     private double power;
 
+    protected Wand() {}
+
+    public Wand(String name, double power) {
+
+        if (name == null) {
+            throw new IllegalArgumentException("name cannot be null");
+        }
+        if (name.trim().length() < 3) {
+            throw new IllegalArgumentException("name length cannot be less than 3");
+        }
+        if (power < 0.5f || power > 100.f) {
+            throw new IllegalArgumentException("power cannot be less than 100");
+        }
+
+        this.name = name;
+        this.power = power;
+    }
+
     public String getName() {
         return name;
     }

@@ -6,8 +6,25 @@ public class Wizard {
     private String name;
     private Wand wand;
 
+    protected Wizard() {} // 테스트 클래스에서만 사용가능하게 제한한다.
 
-    public void hael(Healable healable) {
+    public Wizard(int hp, int mp, String name, Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("Wand cannot be null");
+        }
+        if (mp < 0) {
+            throw new IllegalArgumentException("Mp cannot be negative");
+        }
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+        this.name = name;
+        this.wand = wand;
+        this.hp = Math.max(0, hp);
+        this.mp = mp;
+    }
+
+    public void heal(Healable healable) {
         int basePoint = 10;
         int recoverPoint = (int) (basePoint * this.wand.getPower());
         healable.beHealed(recoverPoint);
@@ -37,6 +54,7 @@ public class Wizard {
         if (wand == null) {
             throw new IllegalArgumentException("Wand cannot be null");
         }
+        this.wand = wand;
     }
 
     public void setMp(int mp) {
@@ -47,10 +65,6 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
-        if (hp < 0) {
-            this.hp = 0;
-            return;
-        }
-        this.hp = hp;
+        this.hp = Math.max(0, hp);
     }
 }

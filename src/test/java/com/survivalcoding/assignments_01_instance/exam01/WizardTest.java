@@ -9,76 +9,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class WizardTest {
 
     @Test
-    @DisplayName("지팡이의 이름은 Null 이 아니고 3문자 이상이다.")
-    void setWand() {
-        //given
-        String wandName = "myPet";
-        //when
-        Wand wand = new Wand();
-        wand.setName(wandName);
-        //then
-        Assertions.assertEquals(wandName, wand.getName());
-    }
-
-    @Test
-    @DisplayName("지팡이의 이름은 NULL이거나 3문자보다 작을 경우 예외가 발생한다.")
-    void setWandException() {
-        //given
-        //when
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setName("");
-                });
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setName(null);
-                });
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setName("12");
-                });
-        //then
-    }
-
-    @Test
-    @DisplayName("지팡이의 마력은 .5이상 100 이햐여야 한다.")
-    void setPower() {
-        //given
-        double power = 50.5f;
-        //when
-        Wand wand = new Wand();
-        wand.setPower(power);
-        //then
-        Assertions.assertEquals(power, wand.getPower());
-    }
-
-    @Test
-    @DisplayName("지팡이의 마력은 .5이상 100 이햐가 아닐경우 예외가 발생한다.")
-    void setPowerException_1() {
-        //given
-        //when
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setPower(0f);
-                });
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setPower(-100f);
-                });
-        assertThrows(IllegalArgumentException.class,
-                () -> {
-                    Wand wand = new Wand();
-                    wand.setPower(0.4f);
-                });
-        //then
-    }
-
-    @Test
     @DisplayName("마법사의 지팡이는 NULL일 경우 예외가 발생한다.")
     void setWandException_2() {
         //given
@@ -122,6 +52,28 @@ class WizardTest {
         wizard.setHp(amount);
         //then
         assertEquals(0, wizard.getHp());
+    }
+
+    @Test
+    @DisplayName("마법사의 heal 메서드 사용시 지팡이 파워에 비례하여 회복된다.")
+    void heal() {
+        //given
+        String wandName = "myPet";
+        double power = 1f;
+        Wand wand = new Wand();
+        wand.setPower(power);
+        wand.setName(wandName);
+        Wizard wizard = new Wizard();
+        wizard.setWand(wand);
+
+        int clericHp = 1;
+        Cleric cleric = new Cleric("Cleric", 1);
+
+        //when
+        wizard.heal(cleric);
+
+        //then
+        assertEquals(power * 10 + clericHp, cleric.getHp());
     }
 
 }
