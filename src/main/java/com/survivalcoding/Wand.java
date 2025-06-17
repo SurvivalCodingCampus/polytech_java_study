@@ -5,7 +5,7 @@ public class Wand {
     private String name;
     private double power;
 
-    Wand(String name, double power) {
+    public Wand(String name, double power) {
         setName(name);
         setPower(power);
     }

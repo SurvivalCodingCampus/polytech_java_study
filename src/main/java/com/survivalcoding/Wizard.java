@@ -30,7 +30,7 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
-        if (mp <= 0) {
+        if (mp < 0) {
             throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 합니다.");
         }
         this.mp = mp;
