@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Wizard {
+    -int hp
+    -int mp
+    -String name
+    -Wand wand
+
+    +Wizard()
+    +Wizard(int hp, int mp, String name)
+    +Wizard(int hp, int mp, String name, Wand wand)
+
+    +void heal(Hero hero)
+    +Wand getWand()
+    +int getHp()
+    +int getMp()
+    +String getName()
+    +void setWand(Wand wand)
+    +void setHp(int hp)
+    +void setMp(int mp)
+}
+
+class Wand{
+    -String name
+    -double power
+    +Wand()
+    +Wand(String name, double power)
+
+    +String getName()
+    +double getPower()
+    +void setName(String name)
+    +void setPower(double power)
+}
+
+@enduml
