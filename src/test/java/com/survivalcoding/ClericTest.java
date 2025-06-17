@@ -13,8 +13,8 @@ class ClericTest {
         //given and when
         Cleric cleric = new Cleric("깃허브");
         assertEquals("깃허브", cleric.name);
-        assertEquals(Cleric.MAX_HP, cleric.currentHp);
-        assertEquals(Cleric.MAX_MP, cleric.currentMp);
+        assertEquals(Cleric.MAX_HP, cleric.getCurrentHp());
+        assertEquals(Cleric.MAX_MP, cleric.getCurrentMp());
     }
 
     @Test
@@ -24,8 +24,8 @@ class ClericTest {
         Cleric cleric = new Cleric("깃허브2", 20);
 
         assertEquals("깃허브2", cleric.name);
-        assertEquals(20, cleric.currentHp);
-        assertEquals(10, cleric.currentMp);
+        assertEquals(20, cleric.getCurrentHp());
+        assertEquals(10, cleric.getCurrentMp());
     }
 
     @Test
@@ -35,8 +35,8 @@ class ClericTest {
         Cleric cleric = new Cleric("깃허브3", 20, 8);
 
         assertEquals("깃허브3", cleric.name);
-        assertEquals(20, cleric.currentHp);
-        assertEquals(8, cleric.currentMp);
+        assertEquals(20, cleric.getCurrentHp());
+        assertEquals(8, cleric.getCurrentMp());
     }
 //    @Test // 테스트를 하기 위해 필요한 어노테이션
 //    @DisplayName("마법을 사용하면 mp를 소모해 hp를 최대치로 회복해야 한다.")
