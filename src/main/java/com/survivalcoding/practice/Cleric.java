@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Cleric {
     String name;
-    int hp ;
-    int mp = 10;
+    int hp;
+    int mp;
     static final int maxHp = 50;
     static final int maxMp = 10;
 
