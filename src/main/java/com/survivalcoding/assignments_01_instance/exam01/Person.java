@@ -17,11 +17,8 @@ public class Person {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public static void main(String[] args) {
-        Person person = new Person("John", 30);
+    @Override
+    public String toString() {
+        return "Person{name='" + name + "', age=" + age + "}";
     }
 }
