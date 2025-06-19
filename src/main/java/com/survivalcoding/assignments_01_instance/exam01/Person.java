@@ -1,27 +1,27 @@
 package com.survivalcoding.assignments_01_instance.exam01;
+import java.util.Calendar;
 
 public class Person {
-    private String name;
-    private int age;
+    private final String name;
+    private final int birthYear;
+    Calendar cal = Calendar.getInstance();
 
-    public Person(String name, int age) {
+    public Person(String name, int birthYear) {
         this.name = name;
-        this.age = age;
+        this.birthYear = birthYear;
+
     }
 
     public String getName() {
         return name;
     }
 
+    public int getBirthYear() {
+        return birthYear;
+    }
+
     public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public static void main(String[] args) {
-        Person person = new Person("John", 30);
+        int yy = cal.get(Calendar.YEAR);
+        return yy - birthYear;
     }
 }

@@ -28,43 +28,60 @@ public class Wizard extends Character {
 
     }
 
-    public String getName() {
+    void heal(Hero hero) {
+        int basePoint = 10;         // 기본회복 포인트
+        int recovPoint = (int) (basePoint * this.wand.getPower());   // 지팡이에 의한 증폭
+        hero.setHp (hero.getHp() + recovPoint);                  // 용사의 HP를 회복
+    }
+
+    public String getName () {
+
         return name;
     }
 
-    public void setName(String name) {
+    public void setName (String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("이름은 null이 아니어야 함");
+        }
+        if (name.length() < 3) {
+            throw new IllegalArgumentException("이름이 너무 짧음");
+        }
         this.name = name;
     }
 
-    public int getHp() {
+    public int getHP () {
+
         return hp;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
-
-        if (this.hp < 0) {
+    public void setHP (int hp) {
+        if (hp < 0) {
             this.hp = 0;
         }
-    void heal(Hero hero) {
-        int basePoint = 10;         // 기본회복 포인트
-        int recovPoint = (int) (basePoint * this.wand.power);   // 지팡이에 의한 증폭
-        hero.setHp(hero.getHp() + recovPoint);                  // 용사의 HP를 회복
+        else {
+            this.hp = hp;
+        }
     }
 
-    public int getMp() {
+    public int getMP () {
         return mp;
     }
 
-    public void setMp(int mp) {
+    public void setMP (int mp) {
+        if (mp < 0) {
+            throw new IllegalArgumentException("MP는 0이상 이어야 한다.");
+        }
         this.mp = mp;
     }
 
-    public Wand getWand() {
+    public Wand getWand () {
         return wand;
     }
 
-    public void setWand(Wand wand) {
+    public void setWand (Wand wand) {
+        if (wand == null) {
+            throw new IllegalArgumentException("지팡이는 null일 수 없습니다.");
+        }
         this.wand = wand;
     }
 

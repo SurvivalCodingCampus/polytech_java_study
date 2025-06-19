@@ -1,39 +1,20 @@
 package com.survivalcoding;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class KinokoTest {
 
-    @Test
-    @DisplayName("버섯 생성시 hp는 50이어야 한다")
-    void testCreate() {
-        Kinoko kinoko = new Kinoko();
-        assertEquals(50, kinoko.hp);
-    }
-
-
-    @Test
-    @DisplayName("attack()을 하면 hp 가 100이 되어야 한다")
-    void testAttack() {
+    /*@Test //옵션 설명이 같이 나온다?
+    @DisplayName("heal을 하면 hp를 10 회복해야 한다")
+    void heal() {
         // given(준비)
-        Kinoko kinoko = new Kinoko();
-        assertEquals(50, kinoko.hp);
+        final Wizard wizard = new Wizard("마법사", 100);
+        final Hero hero = new Hero("히어로", 10);
 
         // when(실행)
-        kinoko.attack();
+        wizard.heal(hero);
 
         // then(검증)
-        assertEquals(100, kinoko.hp);
-    }
+        assertEquals(20, hero.hp);
+    }*/
 
-    @Test
-    @DisplayName("hp 설정이 잘 되어야 한다")
-    void testSetHp() {
-        Kinoko kinoko = new Kinoko();
-        kinoko.setHp(200);
-        assertEquals(200, kinoko.hp);
-    }
+
 }

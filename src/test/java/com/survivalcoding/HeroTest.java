@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class HeroTest {
 
+
     @Test
     void heroTest() {
         Hero hero = new Hero("영웅", 100);
@@ -19,6 +20,6 @@ class HeroTest {
         assertThrows(IllegalArgumentException.class, () -> {
             hero.setHp(-100);
         });
-
     }
+
 }
