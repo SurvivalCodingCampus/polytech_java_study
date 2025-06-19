@@ -1,6 +1,5 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding;
 
-import com.survivalcoding.Hero;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
