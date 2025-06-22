@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Hero
+{
+    +String name
+    -int Hp
+
+    +void attack()
+    +void bye()
+    -void die()
+}
+
+class Cleric
+{
+        +String name
+        -int Hp
+
+        +void attack()
+        +void pray(int sec)
+        +void selfAid()
+}
+
+@enduml

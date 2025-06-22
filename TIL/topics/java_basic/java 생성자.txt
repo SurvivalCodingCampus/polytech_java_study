@@ -1,0 +1,80 @@
+java 생성자
+
+0.
+객체 : 속성과 기능을 가짐 -> 필드(변수), 매서드
+클래스를 통해 생성된 객체는 클래스의 인스턴스>>instanctiate
+
+인스턴스 : 특정 객체가 어떤 클래스에서 생성되었는지를 강조, 객체는 인스턴스들의 묶음 형태
+
+-클래스의 구성요소-
+필드 : 전역변수
+매서드 (public, private 함수)
+생성자(클래스 명칭과 일치) - new 연산자를 통해 호출됨
+inner 클래스 - 중첩 클래스, 외부 클래스의 멤버에 접근 가능
+
+
+1. class 명과 함수 명이 일치하면 자동으로 생성자로 인식하고 기능하게 됨.
+
+2. 함수명을 일치시키고 사용하는 매개변수만 다르게 설정하면 계속 생성자를 만들 수 있음.
+
+3. this : 현재 객체를 지칭할때 사용
+this.name = name; >> 지역변수 지칭하는 name = 매개변수 name
+
+4. '.' 연산자를 통해 객체의 멤버에 접근
+
+
+-------------------------------------------------------
+클래스에서 객체 선언후 초기화
+
+class Car {
+    // 필드(속성) 선언
+    public String model;
+    public String color;
+    public int price;
+
+    public Car(String model, String color, int price) {
+        this.model = model;
+        this.color = color;
+        this.price = price;
+    }
+
+    void powerOn() {
+        System.out.println("시동을 켠다");
+    }
+
+    void accelerate() {
+        System.out.println("앞으로 간다.");
+    }
+
+    void stop() {
+        System.out.println("멈춘다.");
+    }
+}
+
+
+다른 스크립트에서 클래스 호출 및 객체 생성
+
+public class CarTest {
+    public static void main(String[] args) {
+//클래스이름 참조변수이름 = new 생성자();
+        Car genesis = new Car("g80", "black", 1000);
+
+        genesis.powerOn();
+        genesis.accelerate();
+        genesis.stop();
+    }
+}
+
+---------------------------------------------
+
+5. string [] args
+args : 인수(파라미터)
+
+static main : static으로 선언된 정적 메소드
+객체 생성 없이 메소드를 사용하기 위해 static을 달아둠
+
+main은 stack 영역에 가장 먼저 기록되는 메소드로 객체 생성이 불가능하다
+>>static을 붙여 해결
+
+먼저 생성된 main 함수에 데이터를 넘겨주기 위해서 args 배열을 출력하는 방식으로 main 함수 생성
+-입력받는 데이터를 배열의 형식으로 heap에 저장하고 인수의 형태로 main에서 받아가는 형식
