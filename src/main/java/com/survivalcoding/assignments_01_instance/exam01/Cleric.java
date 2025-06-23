@@ -17,6 +17,13 @@ public class Cleric {
         return hp;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getMp() {
+        return mp;
+    }
 
     Cleric(String name, int hp, int mp)//생성자
     {
