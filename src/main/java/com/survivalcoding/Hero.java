@@ -22,6 +22,9 @@ public class Hero {
     }
 
     public void setHp(int hp) {
+        if (hp > 100) {
+            return;
+        }
         this.hp = hp;
     }
 }
