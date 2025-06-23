@@ -1,8 +1,8 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Slime {
-    final String suffix;
-    int hp;
+    private final String suffix;
+    private int hp;
 
     public Slime(int hp, String suffix) {
         this.hp = hp;
