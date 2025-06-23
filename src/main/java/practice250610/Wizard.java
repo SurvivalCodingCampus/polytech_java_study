@@ -56,7 +56,6 @@ public class Wizard {
 
     public void setHp(int hp) {
         if (hp < 0) setHp(0);
-        else if (hp > getMaxHp()) setHp(getMaxHp());
         else this.hp = hp;
     }
 
@@ -70,7 +69,6 @@ public class Wizard {
 
     public void setMp(int mp) {
         if (mp < 0) throw new IllegalArgumentException("mp가 0 이상이어야 함");
-        else if (mp > getMaxMp()) setMp(getMaxMp());
         else this.mp = mp;
     }
 
