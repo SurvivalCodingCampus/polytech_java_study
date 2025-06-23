@@ -58,6 +58,11 @@ public class Cleric implements Healable {
         return hp;
     }
 
+    @Override
+    public int getMaxHp() {
+        return MAX_HP;
+    }
+
     public int getMp() {
         return mp;
     }

@@ -9,6 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WizardTest {
 
+
+    @Test
+    @DisplayName("마법사 생성시 기본 mp는 100이다")
+    void createWizard_1() {
+        //given
+        Wizard wizard = createWizard();
+        //when //then
+        assertEquals(100, wizard.getMp());
+    }
+
     @Test
     @DisplayName("마법사의 지팡이는 NULL일 경우 예외가 발생한다.")
     void setWandException_2() {
@@ -61,7 +71,7 @@ class WizardTest {
         //given
         Wizard wizard = createWizard();
         int beforeMp = wizard.getMp();
-        int hp = 100;
+        int hp = 50;
         TestHealableEntity testHealableEntity = new TestHealableEntity(hp);
 
         //when
@@ -71,6 +81,7 @@ class WizardTest {
         assertEquals(hp + 20, testHealableEntity.getHp());
         assertEquals(beforeMp - 10, wizard.getMp());
     }
+
     @Test
     @DisplayName("마법사의 heal 메서드 사용 시 mp가 부족한 경우 사용되지 않는다.")
     void heal_1() {

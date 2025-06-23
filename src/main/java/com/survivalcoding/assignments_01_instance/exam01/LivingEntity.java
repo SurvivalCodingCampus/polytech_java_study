@@ -4,5 +4,6 @@ public interface LivingEntity {
 
     void takeDamage(int amount);
     int getHp();
+    int getMaxHp();
 
 }
