@@ -14,8 +14,8 @@ public class Wizard {
         setName(name);
         setHp(hp);
         setMp(mp);
-        this.maxHp = hp;
-        this.maxMp = mp;
+        this.maxHp = getHp();
+        this.maxMp = getMp();
     }
 
     public Wizard(String name) {
@@ -55,11 +55,9 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
-        if (hp < 0) {
-            setHp(0);
-        } else {
-            this.hp = hp;
-        }
+        if (hp < 0) setHp(0);
+        else if (hp > getMaxHp()) setHp(getMaxHp());
+        else this.hp = hp;
     }
 
     public int getMaxHp() {
@@ -71,10 +69,9 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
-        if (mp < 0) {
-            throw new IllegalArgumentException("mp가 0 이상이어야 함");
-        }
-        this.mp = mp;
+        if (mp < 0) throw new IllegalArgumentException("mp가 0 이상이어야 함");
+        else if (mp > getMaxMp()) setMp(getMaxMp());
+        else this.mp = mp;
     }
 
     public int getMaxMp() {
