@@ -14,7 +14,7 @@ public class Wizard {
         this.name = name;
         this.wand = wand;
         this.hp = 100;
-        this.mp = 50;
+        this.mp = 100;  // 초기값 100으로 수정
     }
 
     public Wizard(String name, int hp, int mp, Wand wand) {
@@ -37,11 +37,7 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
-        this.hp = hp;
-
-        if (this.hp < 0) {
-            this.hp = 0;
-        }
+        this.hp = Math.max(hp, 0);
     }
 
     public int getMp() {
@@ -61,6 +57,12 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
-        hero.setHp(hero.getHp() + 10);
+        if (this.mp < 10) {
+            System.out.println("마나가 부족합니다");
+        } else {
+            this.mp -= 10;
+            hero.setHp(hero.getHp() + 20);
+            System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
+        }
     }
 }
