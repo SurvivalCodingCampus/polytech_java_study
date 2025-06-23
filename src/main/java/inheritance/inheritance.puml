@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 1
+
+class Hero {
+    - String name
+    - int hp
+
+    + void attack(Slime slime)
+    + void run()
+    + final void slip()
+}
+
+class SuperHero extends Hero {
+    - boolean isFlying
+
+    + SuperHero (String name, int hp)
+    + void attack (Slime slime)
+    + void run ()
+}
+
+class Wizard {
+    - String name
+    - int hp
+    - int mp
+
+    + void heal(Hero hero)
+
+}
+
+class GreatWizard extends Wizard {
+    - int mp
+
+    + void heal(Hero hero)
+    + void superHeal(Hero hero)
+}
+
+class Slime {
+    - final String suffix
+    - int hp
+
+    + Slime (String suffix, int hp)
+    + void attack(Hero hero, int damage)
+}
+
+class PoisonSlime extends Slime {
+    - int poisonCount
+
+    + PoisonSlime(String name, int hp)
+    + void attack(Hero hero, int damage)
+}
+
+@enduml

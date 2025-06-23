@@ -5,6 +5,13 @@ import java.util.Calendar;
 public class Person {
     private final String name;
     private final int birthYear;
+    Calendar cal = Calendar.getInstance();
+
+    public Person(String name, int birthYear) {
+        this.name = name;
+        this.birthYear = birthYear;
+
+    }
 
     public String getName() {
         return name;
@@ -15,14 +22,9 @@ public class Person {
     }
 
     public int getAge() {
-        Calendar calendar = Calendar.getInstance();
-        int year = calendar.get(Calendar.YEAR);
-
-        return year - birthYear;
+        int yy = cal.get(Calendar.YEAR);
+        return yy - birthYear;
     }
 
-    public Person(String name, int birthYear) {
-        this.name = name;
-        this.birthYear = birthYear;
-    }
+
 }
