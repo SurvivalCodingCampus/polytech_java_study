@@ -55,6 +55,14 @@ public class Hero {
         this.hp = hp;
     }
 
+    public void run() {
+        System.out.println("Run\n");
+    }
+
+    public void attack(Kinoko kinoko) {
+        System.out.println("때린다다다\n");
+    }
+
     public static void main(String[] args) {
         int a = 10;
 
