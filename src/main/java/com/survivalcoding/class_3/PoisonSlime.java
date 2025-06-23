@@ -2,16 +2,16 @@ package com.survivalcoding.class_3;
 
 public class PoisonSlime extends Slime {
     private int poisonCount;
-    private final int setPoison = 5;
+    public static final int DEFAULT_POISON_COUNT = 5;
 
     PoisonSlime(String s) {
         super(s);
-        poisonCount = setPoison;
+        poisonCount = DEFAULT_POISON_COUNT;
     }
 
     PoisonSlime(String s, int hp) {
         super(s, hp);
-        poisonCount = setPoison;
+        poisonCount = DEFAULT_POISON_COUNT;
     }
 
     public void attack(Hero hero) {
