@@ -19,7 +19,7 @@ class SlimeTest {
     }
 
     @Test
-    void setUP(){
+    void setHP(){
         slime.setHp(10);
     }
 
