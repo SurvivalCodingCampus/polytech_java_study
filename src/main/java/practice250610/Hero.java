@@ -8,7 +8,7 @@ public class Hero {
     public Hero(String name, int hp) {
         setName(name);
         setHp(hp);
-        this.maxHp = hp;
+        this.maxHp = getHp();
     }
 
     public Hero(String name) {
