@@ -4,7 +4,7 @@ public class Hero {
     String name;
     int hp;
 
-    Hero(String name, int hp){
+    Hero(String name, int hp) {
         setName(name);
         setHp(hp);
     }
@@ -17,7 +17,7 @@ public class Hero {
         return hp;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 

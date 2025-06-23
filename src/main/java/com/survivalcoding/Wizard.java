@@ -66,8 +66,7 @@ public class Wizard {
             hero.setHp(hero.getHp() + 20);
             setMp(getMp() - 10);
             System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
-        }
-        else {
+        } else {
             System.out.println("마나가 부족합니다");
         }
     }

@@ -15,10 +15,10 @@ class GreatWizardTest {
         Hero hero = new Hero("김용사", 30);
 
         greatWizard.heal(hero);
-        assertEquals(55,hero.getHp());
+        assertEquals(55, hero.getHp());
 
         greatWizard.superHeal(hero);
-        assertEquals(100,hero.getHp());
+        assertEquals(100, hero.getHp());
 
 
     }

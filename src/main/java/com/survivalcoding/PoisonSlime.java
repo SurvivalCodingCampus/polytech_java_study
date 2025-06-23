@@ -3,7 +3,7 @@ package com.survivalcoding;
 public class PoisonSlime extends Slime {
     int poisonCount;
 
-    PoisonSlime(String name){
+    PoisonSlime(String name) {
         super(name);
         setPoisonCount(5);
     }
@@ -16,7 +16,7 @@ public class PoisonSlime extends Slime {
         this.poisonCount = poisonCount;
     }
 
-    public void attack(Hero hero){
+    public void attack(Hero hero) {
         super.attack(hero);
 
         if (getPoisonCount() >= 1) {

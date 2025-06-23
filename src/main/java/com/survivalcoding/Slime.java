@@ -4,7 +4,7 @@ public class Slime {
     String name;
     int hp;
 
-    Slime(String name){
+    Slime(String name) {
         setName(name);
     }
 
@@ -16,7 +16,7 @@ public class Slime {
         return hp;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -24,7 +24,7 @@ public class Slime {
         this.hp = hp;
     }
 
-    public void attack(Hero hero){
+    public void attack(Hero hero) {
         System.out.println("슬라임" + name + "이/가 공격했다");
         System.out.println("10의 대미지");
 

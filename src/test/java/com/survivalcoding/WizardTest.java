@@ -37,11 +37,11 @@ class WizardTest {
 
         Hero hero = new Hero("김숙자", 50);
         wizard.heal(hero);
-        assertEquals(90,wizard.getMp());
+        assertEquals(90, wizard.getMp());
 
         wizard.setMp(5);
         wizard.heal(hero);
-        assertEquals(5,wizard.getMp());
+        assertEquals(5, wizard.getMp());
 
 
     }
