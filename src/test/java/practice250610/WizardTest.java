@@ -7,19 +7,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WizardTest {
     @Test
-    @DisplayName("지팡이의 파워에 따라 회복 포인트를 증가시킨다")
+    @DisplayName("heal() 실행 시 mp를 10 소모하여, 대상의 hp를 20 회복")
     void WizardHeal() {
         Wand wand = new Wand();
         Wizard wizard = new Wizard();
         Hero hero = new Hero();
 
-        wand.setPower(10.0);
-        wizard.setWand(wand);
-
-        hero.setHp(10);
+        hero.setHp(50);
+        int heroHp = hero.getHp();
+        int wizardMp = wizard.getMp();
 
         wizard.heal(hero);
-        assertEquals(110, hero.getHp());
+        heroHp += 20;
+        wizardMp -= 10;
+
+        assertEquals(heroHp, hero.getHp());
+        assertEquals(wizardMp, wizard.getMp());
+    }
+
+    @Test
+    @DisplayName("heal() 실행 시 mp가 10보다 작다면 힐 실패")
+    void mpLess10() {
+        Wand wand = new Wand();
+        Wizard wizard = new Wizard();
+        Hero hero = new Hero();
+
+        hero.setHp(50);
+        int heroHp = hero.getHp();
+        wizard.setMp(5);
+        wizard.heal(hero);
+
+        assertEquals(heroHp, hero.getHp());
     }
 
     @Test
