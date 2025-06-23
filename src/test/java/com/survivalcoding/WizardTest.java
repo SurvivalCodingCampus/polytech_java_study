@@ -1,15 +1,21 @@
 package com.survivalcoding;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class WizardTest {
+    Wand wand;
+
+    @BeforeEach
+    void setUp() {
+        wand = new Wand("마법사의 불꽃", 99);
+    }
 
     @Test
     void constructor() {
-        Wand wand = new Wand("마법사의 불꽃", 99);
         Wizard wizard = new Wizard(1, 2, "3333", wand);
 
         assertEquals(1, wizard.getHp());
@@ -21,7 +27,7 @@ class WizardTest {
 
     @Test
     void setTester() {
-        Wand wand = new Wand("마법사의 불꽃", 99);
+
         Wizard wizard = new Wizard(1, 2, "3333", wand);
 
         wizard.setHp(-1);
