@@ -1,9 +1,16 @@
 package com.survivalcoding;
 
 public class Wand {
-
+    //property
     private String name; // 지팡이의 이름
     private double power; // 지팡이의 마력
+
+
+    public Wand(String name, double power) {//생성자 있으면 완전한 객체 생성 가능
+        setName(name);
+        setPower(power);
+
+    }
 
     // NAME 관련 get, set
     public String getName() {
@@ -27,11 +34,8 @@ public class Wand {
     }
 
     public void setPower(double power) {
-        if (power < 0) {
-            // setter 메소드 안에서 값의 타당성 검사
-            throw new IllegalArgumentException("power는 음수가 될 수 없다.");
-        }
-        if (power >= 0.5 && power <= 100.0) {
+        // 0.5 이상 100.0 이하가 아니면 에러
+        if (power < 0.5 || power > 100.0) {
             // setter 메소드 안에서 값의 타당성 검사
             throw new IllegalArgumentException("power는 음수가 될 수 없다.");
         }
