@@ -2,8 +2,8 @@ package com.survivalcoding.class_3;
 
 public class Slime {
     // final : 생성자로 생성 후 수정하지 않겠다 선언
-    final String suffix;
-    int hp;
+    private final String suffix;
+    private int hp;
 
     // 생성자, getter, setter 작성
     Slime(String suffix, int hp) {
@@ -15,7 +15,7 @@ public class Slime {
         this(suffix, 10);
     }
 
-    void attack(Hero hero) {
+    public void attack(Hero hero) {
         System.out.println("슬라임 " + suffix + "이/가 공격했다");
         System.out.println("10의 데미지");
 
