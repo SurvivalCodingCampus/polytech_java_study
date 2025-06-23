@@ -2,14 +2,13 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Wizard {
     private int hp;
-    private int mp;
+    private final int mp = 100;
     private String name;
     private Wand wand;
 
-    public Wizard(String name, int hp, int mp, Wand wand) {
+    public Wizard(String name, int hp, Wand wand) {
         this.name = name;
         this.hp = hp;
-        this.mp = mp;
         this.wand = wand;
     }
 
@@ -27,13 +26,6 @@ public class Wizard {
 
     public int getMp() {
         return mp;
-    }
-
-    public void setMp(int mp) {
-        if (mp < 0) {
-            throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 한다.");
-        }
-        this.mp = mp;
     }
 
     public String getName() {
@@ -68,9 +60,8 @@ public class Wizard {
     }
 
     public static void main(String[] args) {
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
         wizard.setName("");
-        wizard.setMp(0);
         wizard.setHp(-5);
         System.out.println(wizard.hp);
         wizard.setWand(null);

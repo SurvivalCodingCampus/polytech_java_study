@@ -11,7 +11,7 @@ class WizardTest {
     @DisplayName("이름은 null이 아니어야 함")
     void testwizardname() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
 
         // then
         assertThrows(IllegalArgumentException.class, () -> {
@@ -23,7 +23,7 @@ class WizardTest {
     @DisplayName("이름은 3글자 이상이어야 함")
     void testwizardname2() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
 
         // then
         assertThrows(IllegalArgumentException.class, () -> {
@@ -32,22 +32,20 @@ class WizardTest {
     }
 
     @Test
-    @DisplayName("이름은 3글자 이상이어야 함")
+    @DisplayName("mp 초기값 100")
     void testwizardmp() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
 
         // then
-        assertThrows(IllegalArgumentException.class, () -> {
-            wizard.setMp(-5);
-        });
+        assertEquals(100, wizard.getHp());
     }
 
     @Test
     @DisplayName("마법사의 지팡이는 null 일 수 없다.")
     void testwizardwand() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
 
         // then
         assertThrows(IllegalArgumentException.class, () -> {
@@ -59,7 +57,7 @@ class WizardTest {
     @DisplayName("HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.")
     void testwizardhp() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
         wizard.setHp(-5);
 
         // then
@@ -70,7 +68,7 @@ class WizardTest {
     @DisplayName("HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.")
     void testwizardhp2() {
         //given
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
 
         // then
 
