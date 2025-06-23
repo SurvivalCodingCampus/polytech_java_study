@@ -37,7 +37,6 @@ public class Hero {
 
     public void setHp(int hp) {
         if (hp < 0) setHp(0);
-        else if (hp > getMaxHp()) setHp(getMaxHp());
         else this.hp = hp;
     }
 
