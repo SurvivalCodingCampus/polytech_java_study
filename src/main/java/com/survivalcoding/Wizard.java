@@ -9,11 +9,12 @@ public class Wizard {
 
     public void heal(Hero hero) {
 
-        setMp(-10);
-        hero.setHp(20);
+        mp= getMp()-10;
+        hero.Hp = hero.getHp()+20;
 
         if(getMp() <10){
             System.out.println("마나가 부족합니다!");
+            throw new IllegalArgumentException("마나가 부족합니다!");
         }
         else{
             System.out.println("힐을 시전했습니다. 대상 HP: "+hero.getHp());
