@@ -72,6 +72,6 @@ public class WizardTest {
         wizard1.heal(hero);
 
         // then
-        assertEquals(hero.getHp(), hero.getMp() + 10 * wizard1.getWand().getPower());
+        assertEquals(hero.getHp(), beforeHp + 10 * wizard1.getWand().getPower());
     }
 }
