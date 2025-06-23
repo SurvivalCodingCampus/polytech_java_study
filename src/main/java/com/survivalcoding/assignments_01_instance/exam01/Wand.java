@@ -4,6 +4,16 @@ public class Wand {
     private String name;
     private double power;
 
+    public Wand(String name){
+        this.name=name;
+        this.power=10.0;
+    }
+
+    public Wand(String name, double power){
+        this.name=name;
+        this.power=power;
+    }
+
     public String getName() {
         return name;
     }

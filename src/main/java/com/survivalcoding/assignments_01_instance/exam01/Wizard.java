@@ -51,12 +51,11 @@ public class Wizard {
     }
 
     }
-
-    /*void heal(Hero hero){
+    public void heal(Hero hero){
         int basePoint=10;
         int recovPoint=(int) (basePoint*this.wand.power);
         hero.setHp(hero.getHp()+recovPoint);
-    }*/
+    }
 
 
 
