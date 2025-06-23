@@ -1,8 +1,8 @@
 package com.survivalcoding;
 
 public class Hero {
-    String name;
-    int hp;
+    private String name;
+    private int hp;
 
     Hero(String name, int hp) {
         setName(name);
@@ -22,7 +22,7 @@ public class Hero {
     }
 
     public void setHp(int hp) {
-        if (hp > 100) {
+        if (hp < 0 || hp > 100) {
             return;
         }
         this.hp = hp;

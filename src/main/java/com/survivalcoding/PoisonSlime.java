@@ -12,7 +12,7 @@ public class PoisonSlime extends Slime {
         return poisonCount;
     }
 
-    public void setPoisonCount(int poisonCount) {
+    private void setPoisonCount(int poisonCount) {
         this.poisonCount = poisonCount;
     }
 

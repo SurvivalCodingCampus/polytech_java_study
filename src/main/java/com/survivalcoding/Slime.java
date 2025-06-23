@@ -1,11 +1,12 @@
 package com.survivalcoding;
 
 public class Slime {
-    String name;
-    int hp;
+    private String name;
+    private int hp;
 
     Slime(String name) {
         setName(name);
+        setHp(50);
     }
 
     public String getName() {

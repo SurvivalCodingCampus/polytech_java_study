@@ -2,8 +2,8 @@ package com.survivalcoding;
 
 public class GreatWizard extends Wizard {
     GreatWizard(int hp, int mp, String name, Wand wand) {
-        super(hp, mp, name, wand);
-        setMp(150);
+        super(hp, Math.max(mp, 150), name, wand);
+
     }
 
     @Override

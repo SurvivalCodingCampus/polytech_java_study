@@ -36,12 +36,16 @@ class WizardTest {
         assertEquals(0, wizard.getHp());
 
         Hero hero = new Hero("김숙자", 50);
+        int initialHp = hero.getHp();
         wizard.heal(hero);
         assertEquals(90, wizard.getMp());
+        assertEquals(initialHp + 20, hero.getHp()); // 힐 효과 확인
 
         wizard.setMp(5);
+        int hpBeforeFailedHeal = hero.getHp();
         wizard.heal(hero);
         assertEquals(5, wizard.getMp());
+        assertEquals(hpBeforeFailedHeal, hero.getHp()); // HP 변화 없음 확인
 
 
     }
