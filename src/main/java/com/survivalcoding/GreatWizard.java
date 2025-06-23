@@ -1,14 +1,12 @@
 package com.survivalcoding;
 
 public class GreatWizard extends Wizard {
-    private int mp = 150;
-
     public GreatWizard(String name, int hp, int mp, Wand wand) {
         super(name, hp, mp, wand);
     }
 
     public GreatWizard(String name, Wand wand) {
-        super(name, wand);
+        super(name, 50, 150, wand);
     }
 
     // methods
