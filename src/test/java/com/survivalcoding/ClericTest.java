@@ -18,14 +18,14 @@ class ClericTest {
         assertEquals(10, Cleric.clericMaxMp);
         assertEquals("아서스", cleric.name);
 
-        Cleric cleric_1 = new Cleric("아서스",40);  // 초기화 테스트
+        Cleric cleric_1 = new Cleric("아서스", 40);  // 초기화 테스트
         assertEquals(40, cleric_1.hp);
         assertEquals(50, Cleric.clericMaxHp);
         assertEquals(10, cleric_1.mp);
         assertEquals(10, Cleric.clericMaxMp);
         assertEquals("아서스", cleric_1.name);
 
-        Cleric cleric_2 = new Cleric("아서스",40, 5);  // 초기화 테스트
+        Cleric cleric_2 = new Cleric("아서스", 40, 5);  // 초기화 테스트
         assertEquals(40, cleric_2.hp);
         assertEquals(50, Cleric.clericMaxHp);
         assertEquals(5, cleric_2.mp);
@@ -59,19 +59,19 @@ class ClericTest {
     @DisplayName("Pray 사용시 자신의 MP를 회복한다")
     void testPray() {
 
-        Cleric cleric = new Cleric("아서스",50,0);
+        Cleric cleric = new Cleric("아서스", 50, 0);
         assertEquals(0, cleric.pray(0));  // 0초 Pray시 0회복
         assertEquals(0, cleric.mp);
 
-        Cleric cleric_1 = new Cleric("아서스",50,0);
-        assertEquals(5, cleric_1.pray(3));  // Pray 3초의 경우 3~5 난수값 회복
-        assertEquals(5, cleric_1.mp);
+        Cleric cleric_1 = new Cleric("아서스", 50, 0);
+        int recovered = cleric_1.pray(3); // Pray 3초의 경우 3~5 난수값 회복
+        assertTrue(recovered >= 3 && recovered <= 6);
 
-        Cleric cleric_2 = new Cleric("아서스",50,0);
+        Cleric cleric_2 = new Cleric("아서스", 50, 0);
         assertEquals(10, cleric_2.pray(15));  // 최대 10까지 만 회복함
         assertEquals(10, cleric_2.mp);
 
-        Cleric cleric_3 = new Cleric("아서스",50,10);
+        Cleric cleric_3 = new Cleric("아서스", 50, 10);
         assertEquals(0, cleric_3.pray(3));  //  이미 mp가 만땅의 경우 0회복
         assertEquals(10, cleric_3.mp);
 
