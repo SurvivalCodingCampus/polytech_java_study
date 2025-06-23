@@ -3,10 +3,9 @@ package com.survivalcoding.assignments_01_instance.exam01;
 public class Slime {
     final String suffix;
     int hp;
-
-    public Slime(String suffix, int hp) {
+    
+    public Slime(String suffix) {
         this.suffix = suffix;
-        this.hp = hp;
     }
 
     public String getSuffix() {
@@ -27,4 +26,5 @@ public class Slime {
 
         hero.setHp(hero.getHp() - 10);
     }
+
 }
