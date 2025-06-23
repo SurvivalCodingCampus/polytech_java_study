@@ -80,4 +80,6 @@ class ClericTest {
         assertEquals(10, cleric.mp);
         assertEquals("아서스", cleric.name);
     }
+
+
 }
