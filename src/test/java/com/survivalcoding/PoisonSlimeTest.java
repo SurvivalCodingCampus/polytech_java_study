@@ -9,8 +9,7 @@ class PoisonSlimeTest {
 
     @Test
     @DisplayName("독슬라임 이름 지어주기~")
-
-    void poisonSlime(){
+    void poisonSlime() {
 
         //given
         PoisonSlime poisonSlime = new PoisonSlime("A");
@@ -20,19 +19,17 @@ class PoisonSlimeTest {
 
     @Test
     @DisplayName("독 카운터는 5인가?")
-
-    void poisonSlime2(){
+    void poisonSlime2() {
 
         //given
         PoisonSlime poisonSlime = new PoisonSlime("A");
         //then
-        assertEquals(5,poisonSlime.getPoisonCount());
+        assertEquals(5, poisonSlime.getPoisonCount());
     }
 
     @Test
     @DisplayName("추가로 독 포자를 살포하는가?")
-
-    void poisonSlime3(){
+    void poisonSlime3() {
 
         //given
         PoisonSlime poisonSlime = new PoisonSlime("A");
@@ -46,8 +43,7 @@ class PoisonSlimeTest {
 
     @Test
     @DisplayName("공격 이후 독 카운터가 1 줄었는가?")
-
-    void poisonSlime4(){
+    void poisonSlime4() {
 
         //given
         PoisonSlime poisonSlime = new PoisonSlime("A");
@@ -57,7 +53,6 @@ class PoisonSlimeTest {
         //then
         assertEquals(4, poisonSlime.getPoisonCount());
     }
-
 
 
 }
