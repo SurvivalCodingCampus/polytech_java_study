@@ -1,20 +1,27 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
-public class Person {
-    private String name;
-    private int age;
+import java.time.LocalDate;
 
-    public Person(String name, int age) {
+public class Person {
+    private final String name;
+    private int age;
+    private final int birthyear;
+
+    public Person(String name, int birthyear) {
         this.name = name;
-        this.age = age;
+        this.birthyear = birthyear;
+    }
+
+    public int getAge() {
+        LocalDate now = LocalDate.now();
+        int year = now.getYear();
+
+        age = year - birthyear;
+        return age;
     }
 
     public String getName() {
         return name;
-    }
-
-    public int getAge() {
-        return age;
     }
 
     public void setAge(int age) {
