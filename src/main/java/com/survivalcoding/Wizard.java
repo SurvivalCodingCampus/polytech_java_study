@@ -75,12 +75,14 @@ public class Wizard {
         if (hero == null) {
             throw new IllegalArgumentException("hero is null");
         }
-
 //        int basePoint = 10;
 //        int revocPoint = (int) (basePoint * this.wand.getPower());
 //        hero.setHp(hero.getHp() + revocPoint);
-        hero.setHp(hero.getHp() + 20);
+        if (this.mp < 10) {
+            System.out.println("마나 부족합니다.");
+        }
         setMp(getMp() - 10);
+        hero.setHp(hero.getHp() + 20);
         System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
 
     }
