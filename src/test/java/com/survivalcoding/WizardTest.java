@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 class WizardTest {
 
     @Test
-    @DisplayName("마법사, 지팡이 생성 테스트")
+    @DisplayName("마법사, 지팡이 생성 테스트 및 힐테스트")
     void testWizard() {
         Wand wand = new Wand("지팡이", 50);
-        Wizard wizard = new Wizard(50, 50, "마법사", wand);
+        Wizard wizard = new Wizard(50, 100, "마법사", wand);
         assertEquals(50, wizard.getHp());
-        assertEquals(50, wizard.getMp());
+        assertEquals(100, wizard.getMp());
         assertEquals("마법사", wizard.getName());
         assertEquals(50, wizard.getWand().getPower());
         assertEquals("지팡이", wizard.getWand().getName());
@@ -34,6 +34,14 @@ class WizardTest {
 
         wizard.setHp(-1);
         assertEquals(0, wizard.getHp());
+
+        Hero hero = new Hero("김숙자", 50);
+        wizard.heal(hero);
+        assertEquals(90,wizard.getMp());
+
+        wizard.setMp(5);
+        wizard.heal(hero);
+        assertEquals(5,wizard.getMp());
 
 
     }
