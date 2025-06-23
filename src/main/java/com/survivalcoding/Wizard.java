@@ -12,12 +12,11 @@ public class Wizard {
         mp= getMp()-10;
         hero.Hp = hero.getHp()+20;
 
+        System.out.println("힐을 시전했습니다. 대상 HP: "+hero.getHp());
+
         if(getMp() <10){
             System.out.println("마나가 부족합니다!");
             throw new IllegalArgumentException("마나가 부족합니다!");
-        }
-        else{
-            System.out.println("힐을 시전했습니다. 대상 HP: "+hero.getHp());
         }
     }
 
