@@ -6,10 +6,21 @@ public class Wizard {
     private String name;
     protected Wand wand;
 
+    public Wizard() {
+        setMp(100);
+    }
+
     public void heal(Hero hero) {
-        int basePoint = 10; // 기본 회복 포인트
-        int recovPoint = (int) (basePoint * this.wand.power);    // 지팡이에 의한 증폭
-        hero.setHp(hero.getHp() + recovPoint);  // 용사의 HP를 회복
+        int basePoint = 20; // 기본 회복 포인트
+        int mpPoint = 10;
+
+        if (getMp() < mpPoint) {
+            System.out.println("마나가 부족합니다");
+        } else {
+            hero.setHp(hero.getHp() + basePoint);
+            setMp(getMp() - mpPoint);
+            System.out.println("힐을 시전했습니다. " + hero.getName() + " HP: " + hero.getHp());
+        }
     }
 
     public Wand getWand() {
@@ -29,9 +40,10 @@ public class Wizard {
 
     public void setHp(int hp) {
         if (hp < 0) {
-            hp = 0;
+            setHp(0);
+        } else {
+            this.hp = hp;
         }
-        this.hp = hp;
     }
 
     public int getMp() {
