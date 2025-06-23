@@ -4,10 +4,10 @@ public class PoisonSlime extends Slime{
 
     private int pointCount = 5;
 
-    protected PoisonSlime(String suffix, int hp, int pointCount) {
+    public PoisonSlime(String suffix, int hp, int pointCount) {
         super(suffix, hp);
-        this.pointCount = pointCount;
-    } // 테스트용 생성자이다.
+        this.pointCount = Math.max(0,pointCount);
+    }
 
     public PoisonSlime(String suffix) {
         super(suffix);

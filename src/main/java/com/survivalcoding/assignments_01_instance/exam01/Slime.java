@@ -15,7 +15,7 @@ public class Slime {
 
     public Slime(String suffix, int hp) {
         this(suffix);
-        this.hp = hp;
+        this.hp = Math.max(hp, 0);
     }
 
     public void setHp(int hp) {

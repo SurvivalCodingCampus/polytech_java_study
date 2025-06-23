@@ -1,13 +1,10 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
 import com.survivalcoding.assignments_01_instance.exam01.mock.TestLivingEntity;
-import com.survivalcoding.assignments_01_instance.exam01.mock.TestPoisonSlime;
+import com.survivalcoding.assignments_01_instance.exam01.mock.TestPoisonSlimeFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static com.survivalcoding.assignments_01_instance.exam01.mock.TestLivingEntity.createTestLivingEntity;
-import static org.junit.jupiter.api.Assertions.*;
 
 class PoisonSlimeTest {
 
@@ -57,7 +54,7 @@ class PoisonSlimeTest {
     @DisplayName("독이 없는 상태에서 상대방을 공격 시 10이 감소한다. ")
     void attack_2() {
         //given
-        PoisonSlime poisonSlime = TestPoisonSlime.createZeroCountSlime();
+        PoisonSlime poisonSlime = TestPoisonSlimeFactory.createZeroCountSlime();
         int hp = 100;
         TestLivingEntity testLivingEntity = new TestLivingEntity(hp);
 
