@@ -7,6 +7,11 @@ public class Hero {
     int Mp;
     static int money;
 
+    Hero(int Hp){
+        this.Hp = Hp;
+        this.Mp = 100;
+    }
+
     public int getHp() {
         return Hp;
     }
