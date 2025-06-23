@@ -31,9 +31,9 @@ public class Wand {
     }
 
     public Wand(String name, double power) {
-        this.name = name;
-        this.power = power;
-    }
++        setName(name);
++        setPower(power);
++    }
 
     public static void main(String[] args) {
         Wand wand = new Wand("지팡이", 10);
