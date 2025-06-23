@@ -3,13 +3,25 @@
 
 scale 2
 
+interface LivingEntity {
+    + takeDamage(amount: int): void
+    + getHp(): int
+    + getMaxHp(): int
+}
+
+interface Healable {
+    + beHealed(amount: int): void
+}
+
 class Wizard {
     - hp: int
-    - mp: int
+    - mp: int = 100
     - name: String
     - wand: Wand
 
-    + hael(healable: Healable): void
+    # Wizard()
+    + Wizard(hp: int, mp: int, name: String, wand: Wand)
+    + heal(healable: Healable): void
     + getHp(): int
     + getMp(): int
     + getName(): String
@@ -20,18 +32,49 @@ class Wizard {
     + setHp(hp: int): void
 }
 
+class GreatWizard {
+    - mp: int = 150
+
+    + GreatWizard()
+    + GreatWizard(hp: int, mp: int, name: String, wand: Wand)
+    + getMp(): int
+    + setMp(mp: int): void
+    + heal(healable: Healable): void
+    + superHeal(healable: Healable): void
+}
+
 class Wand {
     - name: String
     - power: double
 
+    # Wand()
+    + Wand(name: String, power: double)
     + getName(): String
     + getPower(): double
     + setName(name: String): void
     + setPower(power: double): void
 }
 
-interface Healable {
-    + beHealed(recoverPoint: int): void
+class Cleric {
+    + {static} MAX_HP: int = 50
+    + {static} MAX_MP: int = 10
+    - name: String
+    - hp: int
+    - mp: int
+
+    - Cleric()
+    + Cleric(name: String)
+    + Cleric(name: String, hp: int)
+    + Cleric(name: String, hp: int, mp: int)
+    + getName(): String
+    + takeDamage(amount: int): void
+    + getHp(): int
+    + getMaxHp(): int
+    + getMp(): int
+    + selfAid(): void
+    + pray(sec: int): int
+    + {static} getRandomNumber(min: int, max: int): int
+    + beHealed(amount: int): void
 }
 
 class Person {
@@ -44,8 +87,40 @@ class Person {
     + getAge(): int
 }
 
+class Slime {
+    - {final} suffix: String
+    - hp: int
 
+    + Slime(suffix: String)
+    + Slime(suffix: String, hp: int)
+    + setHp(hp: int): void
+    + getSuffix(): String
+    + getHp(): int
+    + attack(livingEntity: LivingEntity): void
+}
+
+class PoisonSlime {
+    - pointCount: int = 5
+
+    + PoisonSlime(suffix: String, hp: int, pointCount: int)
+    + PoisonSlime(suffix: String)
+    + PoisonSlime(suffix: String, hp: int)
+    + attack(livingEntity: LivingEntity): void
+}
+
+' Inheritance relationships
+GreatWizard --|> Wizard
+PoisonSlime --|> Slime
+Healable --|> LivingEntity
+
+' Implementation relationships
+Cleric ..|> Healable
+
+' Composition/Association relationships
 Wizard --> Wand : has
 Wizard ..> Healable : uses
+GreatWizard ..> Healable : uses
+Slime ..> LivingEntity : attacks
+PoisonSlime ..> LivingEntity : attacks
 
 @enduml
