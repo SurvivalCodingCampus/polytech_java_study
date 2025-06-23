@@ -1,13 +1,13 @@
 package practice250610;
 
 public class Hero {
-    final private String name;
+    private String name;
     private int hp;
     final private int maxHp;
 
     public Hero(String name, int hp) {
-        this.name = name;
-        this.hp = hp;
+        setName(name);
+        setHp(hp);
         this.maxHp = hp;
     }
 
@@ -27,12 +27,18 @@ public class Hero {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public int getHp() {
         return hp;
     }
 
     public void setHp(int hp) {
-        this.hp = hp;
+        if (hp < 0) setHp(0);
+        else if (hp > 100) setHp(getMaxHp());
+        else this.hp = hp;
     }
 
     public int getMaxHp() {
