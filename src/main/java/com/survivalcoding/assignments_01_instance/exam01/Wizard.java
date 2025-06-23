@@ -55,11 +55,13 @@ public class Wizard {
     public void heal(Hero hero){
         //mp가 부족하면 "마나가 부족합니다" 출력
         if(mp < 10){
-            throw new IllegalArgumentException("마나가 부족합니다");
+            System.out.println("마나가 부족합니다");
+            return;
         }
-        int basePoint=10;
-        int recovPoint=(int) (basePoint*this.wand.power);
-        hero.setHp(hero.getHp()+recovPoint);
+        hero.setHp(hero.getHp()+20);
+        this.mp-=10;
+
+        System.out.println("힐을 시전했습니다. HP:"+hero.getHp());
         //힐을 성공하면 "힐을 시전했습니다. 대상 HP: XX" 출력
     }
 
