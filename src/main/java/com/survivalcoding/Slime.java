@@ -4,11 +4,9 @@ public class Slime {
     final String suffix;
     int hp;
 
-    Slime(int hp){
-
-        this.getSuffix();
+    Slime(String suffix, int hp){
+        this.suffix = suffix;
         this.hp = hp;
-
     }
 
     public String getSuffix() {
