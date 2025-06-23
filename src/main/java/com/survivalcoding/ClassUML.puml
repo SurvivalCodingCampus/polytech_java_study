@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 2
+
+class Wizard {
+    - hp: int
+    - mp: int
+    - name: String
+    - wand: Wand
+
+    + hael(healable: Healable): void
+    + getHp(): int
+    + getMp(): int
+    + getName(): String
+    + getWand(): Wand
+    + setName(name: String): void
+    + setWand(wand: Wand): void
+    + setMp(mp: int): void
+    + setHp(hp: int): void
+}
+
+class Wand {
+    - name: String
+    - power: double
+
+    + getName(): String
+    + getPower(): double
+    + setName(name: String): void
+    + setPower(power: double): void
+}
+
+interface Healable {
+    + beHealed(recoverPoint: int): void
+}
+
+class Person {
+    - {final} name: String
+    - {final} birthYear: int
+
+    + Person(name: String, year: int)
+    + getName(): String
+    + getBirthYear(): int
+    + getAge(): int
+}
+
+
+Wizard --> Wand : has
+Wizard ..> Healable : uses
+
+@enduml

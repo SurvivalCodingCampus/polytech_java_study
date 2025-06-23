@@ -207,5 +207,36 @@ class ClericTest {
 
     }
 
+    @Test
+    @DisplayName("회복 스킬을 받을 경우 amount 만큼 회복된다.")
+    void beHealed(){
+        //given
+        int hp = 10;
+        int amount = 20;
+        Cleric cleric = new Cleric("Cleric", hp);
+
+        //when
+        cleric.beHealed(amount);
+
+        //then
+        assertEquals(hp + amount, cleric.getHp());
+
+    }
+
+    @Test
+    @DisplayName("회복 스킬을 받을 경우 MAX_HP 이상인 경우 Max까지만 회복된다.")
+    void beHealed_2(){
+        //given
+        int amount = 20;
+        Cleric cleric = new Cleric("Cleric", MAX_HP);
+
+        //when
+        cleric.beHealed(amount);
+
+        //then
+        assertEquals(MAX_HP, cleric.getHp());
+
+    }
+
 
 }
