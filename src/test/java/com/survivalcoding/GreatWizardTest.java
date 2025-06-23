@@ -18,7 +18,6 @@ class GreatWizardTest {
     @Test
     void heal() {
         Hero hero = new Hero("superhero", 0);
-        ;
         GreatWizard greatWizard = new GreatWizard(100, "greater", wand);
         for (int i = 0; i < 8; i++)
             greatWizard.heal(hero);
