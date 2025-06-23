@@ -1,8 +1,13 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Slime {
-    final String suffix;
-    int hp;
+    private final String suffix;
+    private int hp;
+
+    public Slime(String name) {
+    }
+
+    //생성자, getter, setter 작성
 
     void attack(Hero hero){
         System.out.println("슬라임 "+ suffix + "이/가 공격했다");
