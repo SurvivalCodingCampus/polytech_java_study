@@ -11,6 +11,11 @@ public class Hero {
     private int hp; // 0 초기화 가능
     private Sword sword; // null 초기화 가능
 
+
+    public void run() {
+
+    }
+
     //  hp 필드를 외부와 읽기 가능하도록 구현 - getter
     public int getHp() {
         return hp;
@@ -56,8 +61,11 @@ public class Hero {
     }
 
     public Hero(String name, int hp) { // 생성자  -
-        this.name = name;
-        this.hp = hp;
+        //this.name = name;
+        //this.hp = hp;
+        // 직접 필드에 대입시 set 검증로직 실행 안됨 >> 생성자 내부에서도 setter 사용해 일관된 검증 보장
+        setName(name);
+        setHp(hp);
     }
 
     public static void setRandomMoney() {
