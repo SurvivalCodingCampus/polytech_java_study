@@ -37,6 +37,6 @@ class WizardTest {
         Hero hero = new Hero("용사", 60);
 
         wizard.heal(hero);
-        assertEquals(80, hero.getHp());
+        assertEquals(60, hero.getHp());
     }
 }

@@ -26,8 +26,8 @@ public class Wizard {
     {
         setMp(mp);
         setHp(hp);
-        //setName(name);
-        //setWand(wand);
+        setName(name);
+        setWand(wand);
     }
 
     public int getHp() {
@@ -59,7 +59,7 @@ public class Wizard {
         return name;
     }
 
-    /*public void setName(String name) {
+    public void setName(String name) {
         if(name == null)
         {
             throw new IllegalArgumentException("이름은 null이 아니어야 한다.");
@@ -69,19 +69,19 @@ public class Wizard {
             throw new IllegalArgumentException("이름이 너무 짧다.");
         }
         this.name = name;
-    }*/
+    }
 
     public Wand getWand() {
         return wand;
     }
 
-    /*public void setWand(Wand wand) {
+    public void setWand(Wand wand) {
         if(wand == null)
         {
             throw new IllegalArgumentException("지팡이는 null 이다.");
         }
         this.wand = wand;
-    }*/
+    }
 
     public void wizardTest()
     {
