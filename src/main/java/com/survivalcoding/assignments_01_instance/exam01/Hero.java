@@ -7,7 +7,7 @@ public class Hero {
 
     private String name;
     private int hp;
-    private int maxHp;
+    private int maxHp = 100;
     private Sword sword;
 
     public int getHp() {
@@ -38,7 +38,7 @@ public class Hero {
 
     public Hero(String name, int hp) {
         this.name = name;
-        this.hp = hp;
+        this.hp = maxHp;
     }
 
     public static void main(String[] args) {
