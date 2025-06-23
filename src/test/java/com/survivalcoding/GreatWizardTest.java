@@ -20,8 +20,10 @@ class GreatWizardTest {
         Hero hero = new Hero("superhero", 0);
         ;
         GreatWizard greatWizard = new GreatWizard(100, "greater", wand);
-        for (int i = 0; i < 30; i++)
-            assertThrows(IllegalArgumentException.class, () -> greatWizard.heal(hero));
+        for (int i = 0; i < 8; i++)
+            greatWizard.heal(hero);
+
+        assertThrows(IllegalArgumentException.class, () -> greatWizard.heal(hero));
 
     }
 

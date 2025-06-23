@@ -16,6 +16,7 @@ class PoisonSlimeTest {
     @Test
     public void testPoison() {
         PoisonSlime poisonSlime = new PoisonSlime("A");
+        
         for (int i = 0; i < 5; i++)
             poisonSlime.attack(hero);
 
