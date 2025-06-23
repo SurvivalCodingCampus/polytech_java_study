@@ -1,4 +1,5 @@
 package com.survivalcoding.assignments_01_instance.exam01;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -54,6 +55,21 @@ public class WizardTest {
 
         wizard.setHp(-10);
         assertEquals(0,wizard.getHp());
+
+    }
+
+    @Test
+    @DisplayName("mp가 10보다 작으면 hero 회복 안 됨")
+    public void belowMp10NoRecoverHeroHp() {
+        Wizard wizard = new Wizard();
+        Hero hero = new Hero();
+
+        hero.setHp(50);
+        wizard.setMp(5);
+
+        wizard.heal(hero);
+
+        assertEquals(50,hero.getHp());
 
     }
 

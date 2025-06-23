@@ -9,7 +9,7 @@ class SlimeTest {
 
     @Test
     @DisplayName("일반 슬라임은 공격시 Hero의 Hp를 10 감소시킴")
-    void NormalSlimeAttack() {
+    void normalSlimeAttack() {
         Hero hero = new Hero();
         hero.setHp(50);
 

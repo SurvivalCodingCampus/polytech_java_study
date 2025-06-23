@@ -11,7 +11,7 @@ class PoisonSlimeTest {
 
     @Test
     @DisplayName("PoisonCount가 0이면 독공격 실행하지 않음")
-    void NoPoisonAttackCountZero() {
+    void noPoisonAttackCountZero() {
         Hero hero = new Hero();
         hero.setHp(50);
 
@@ -24,7 +24,7 @@ class PoisonSlimeTest {
 
     @Test
     @DisplayName("PoisonCount는 0보다 작아지지 않음")
-    void MinusCountNeverExistence() {
+    void minusCountNeverExistence() {
         Hero hero = new Hero();
         hero.setHp(100);
         PoisonSlime poisonSlime = new PoisonSlime("B");
