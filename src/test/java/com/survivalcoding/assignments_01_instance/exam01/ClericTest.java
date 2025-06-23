@@ -1,5 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ClericTest {
-
     @Test
     @DisplayName("Cleric 생성")
     void test() {
