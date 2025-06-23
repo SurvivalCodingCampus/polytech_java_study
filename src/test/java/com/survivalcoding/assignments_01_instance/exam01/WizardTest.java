@@ -66,11 +66,12 @@ class WizardTest {
     }
 
     @Test
-    @DisplayName("마법사의 heal 메서드 사용시 자신의 mp 10이 소모 되고 상대 hp 20이 회복된다.")
+    @DisplayName("마법사의 heal 메서드 사용 시 자신의 mp 10이 소모 되고 상대 hp 20이 회복된다.")
     void heal() {
         //given
         Wizard wizard = createWizard();
-        int beforeMp = wizard.getMp();
+        int beforeMp = 10;
+        wizard.setMp(beforeMp);
         int hp = 50;
         TestHealableEntity testHealableEntity = new TestHealableEntity(hp);
 

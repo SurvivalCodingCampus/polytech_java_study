@@ -25,7 +25,7 @@ public class GreatWizard extends Wizard{
 
     @Override
     public void heal(Healable healable) {
-        if (mp - 5 <= 0) {
+        if (mp - 5 < 0) {
             System.out.println("마나가 부족합니다.");
             return;
         }
@@ -36,7 +36,7 @@ public class GreatWizard extends Wizard{
     }
 
     public void superHeal(Healable healable) {
-        if (mp - 50 <= 0) {
+        if (mp - 50 < 0) {
             System.out.println("마나가 부족합니다.");
             return;
         }

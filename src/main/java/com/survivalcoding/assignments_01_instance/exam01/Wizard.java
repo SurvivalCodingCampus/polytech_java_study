@@ -26,7 +26,7 @@ public class Wizard {
     }
 
     public void heal(Healable healable) {
-        if (mp - 10 <= 0) {
+        if (mp - 10 < 0) {
             System.out.println("마나가 부족합니다.");
             return;
         }
