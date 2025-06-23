@@ -6,12 +6,9 @@ import com.survivalcoding.assignments_01_instance.exam01.LivingEntity;
 public class TestLivingEntity implements LivingEntity {
     private int hp;
     private static final int MAX_HP = 100;
+
     public TestLivingEntity(int hp) {
         this.hp = hp;
-    }
-
-    public static TestLivingEntity createTestLivingEntity() {
-        return new TestLivingEntity(100);
     }
 
     @Override

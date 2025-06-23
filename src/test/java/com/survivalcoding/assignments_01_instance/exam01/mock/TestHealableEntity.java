@@ -10,9 +10,6 @@ public class TestHealableEntity implements Healable {
         this.hp = hp;
     }
 
-    public static TestHealableEntity createTestLivingEntity() {
-        return new TestHealableEntity(100);
-    }
 
     @Override
     public int getHp() {
