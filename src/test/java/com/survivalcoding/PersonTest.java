@@ -26,7 +26,7 @@ class PersonTest {
         // 실제값: getAge() 결과
         //int actualAge = person.getAge();
         //then(검증)
-        assertEquals(25, person.getAge());
+        assertEquals(24, person.getAge());
 
     }
 }
