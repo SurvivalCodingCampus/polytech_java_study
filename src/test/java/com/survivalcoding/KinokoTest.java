@@ -1,9 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
-
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+package com.survivalcoding;
 
 class KinokoTest {
 
