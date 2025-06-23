@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+class Person {
+- String name
+- int age
++ Person(String name, int age)
++ String getName()
++ int getAge()
++ String toString()
+}
+
+ArrayList --> Person : contains
+
+@enduml
