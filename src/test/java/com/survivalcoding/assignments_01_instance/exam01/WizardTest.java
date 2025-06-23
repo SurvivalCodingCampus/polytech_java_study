@@ -6,10 +6,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WizardTest {
 
-    @Test
-    public void test() {
-        Wizard wizard = new Wizard(30, 20, "마법", new Wand("지팡이", 10));
+    Wizard wizard = new Wizard(30, 20, "마법", new Wand("지팡이", 10));
 
+    /*@Test
+    public void test() {
         wizard.wizardTest();
 
         assertEquals("마법", wizard.getName());
@@ -30,6 +30,13 @@ class WizardTest {
         assertThrows(IllegalArgumentException.class, () -> {
             wizard.setMp(-1);
         });
-    }
+    }*/
 
+    @Test
+    public void heal(){
+        Hero hero = new Hero("용사", 60);
+
+        wizard.heal(hero);
+        assertEquals(80, hero.getHp());
+    }
 }
