@@ -3,6 +3,7 @@ package com.survivalcoding;
 public class Hero {
     private String name;
     private int hp;
+    private int maxHp = 50;
 
     // constructor
 
@@ -13,14 +14,14 @@ public class Hero {
 
     public Hero(String name, int hp) {
         if (name == null) throw new IllegalArgumentException("Name cannot be null.");
-        if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
         this.name = name;
-        this.hp = Math.max(hp, 0);
 
+        if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
+        setHp(hp);
     }
 
     // getter
-    public int getHP() {
+    public int getHp() {
         return hp;
     }
 
@@ -28,10 +29,15 @@ public class Hero {
         return name;
     }
 
+    public int getMaxHp() {
+        return maxHp;
+    }
+
     // setter
-    public void setHP(int hp) {
+    public void setHp(int hp) {
         if (hp < 0) System.out.println("hp is set to 0 because you were trying to set it less than 0");
-        this.hp = Math.max(hp, 0);
+//        this.hp = Math.max(hp, 0);
+        this.hp = Math.clamp(hp, 0, maxHp);
     }
 
     public void setName(String name) {
