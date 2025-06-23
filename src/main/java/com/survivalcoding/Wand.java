@@ -1,12 +1,15 @@
 package com.survivalcoding;
 
 public class Wand {
-    private String name;
-    private double power;
+    private String name;    // null
+    private double power;   // 0.0
 
-    // 생성자 만들기
-    Wand(String name, double power) {
-        this.name = name;
+    public Wand(String name) {
+        this(name, 10.0);
+    }
+
+    public Wand(String name, double power) {
+        setName(name);
         this.power = power;
     }
 
@@ -15,6 +18,13 @@ public class Wand {
     }
 
     public void setName(String name) {
+        if (name == null) {
+            throw new IllegalArgumentException("지팡이의 이름은 null 일 수 없다");
+        }
+        if (name.length() < 3) {
+            throw new IllegalArgumentException("지팡이의 이름은 3문자 이상이어야 한다");
+        }
+
         this.name = name;
     }
 
@@ -22,15 +32,7 @@ public class Wand {
         return power;
     }
 
-    //2번------------
     public void setPower(double power) {
-        if (power < 0.5) {
-            throw new IllegalArgumentException("0.5이하면 안됨");
-        }
-        if (power > 100) {
-            throw new IllegalArgumentException("100.0 이상 안됨");
-        }
         this.power = power;
     }
-
 }

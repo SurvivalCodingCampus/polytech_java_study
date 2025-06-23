@@ -1,7 +1,30 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-scale 3
+scale 1
+
+class SuperHero extends Hero{
+  + boolean isFlying
+}
+
+class Character {
+   String name
+   int hp
+   }
+class Wizard{
+   int hp
+   int mp
+   }
+
+class Hero extends Character {
+      String name
+      int hp
+      }
+class Hero extends Wizard{
+      int hp
+      int mp
+      }
+
 
 class Horo {
    + String name
@@ -10,7 +33,6 @@ class Horo {
    +void attack(Kinoko enemy)
    +void bye()
    -void die()
-
 
 }
 class cleric{

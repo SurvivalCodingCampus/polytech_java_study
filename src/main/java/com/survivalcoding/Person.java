@@ -1,5 +1,7 @@
 package com.survivalcoding;
 
+import java.util.Calendar;
+
 public class Person {
     // 수정 불가 이름과 태어난 해
     private String name;
@@ -16,9 +18,6 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getBirthYear() {
         return birthYear;
@@ -30,6 +29,9 @@ public class Person {
 
     //3 번 임의 수정 불가로 파이널
     public int getAge() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+
         return 2025 - birthYear;
     }
 }
