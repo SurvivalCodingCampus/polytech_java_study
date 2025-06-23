@@ -6,7 +6,6 @@ public class GreatWizard extends Wizard {
         setMp(150);
     }
 }
-
 @Override
 //void heal(Hero hero) 재정의 :  hp를 25 회복시키고 자신의 mp를 5 소모
 public void heal(Hero hero){
