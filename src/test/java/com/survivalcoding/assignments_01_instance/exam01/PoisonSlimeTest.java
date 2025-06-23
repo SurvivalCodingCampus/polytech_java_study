@@ -27,8 +27,11 @@ class PoisonSlimeTest {
     }
 
     @Test
-    void AttackCounte() {
-        count--;
+    void attackCounte() {
+        int initialCount = poisonSlime.getCount();
+        Hero hero = new Hero("테스트 용사", 100);
+        poisonSlime.attack(hero);
+        assertEquals(initialCount -1, poisonSlime.getCount());
     }
 
 }
