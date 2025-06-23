@@ -1,7 +1,7 @@
 package com.survivalcoding;
 
 public class PoisonSlime extends Slime {
-    int poisonCount;
+    private int poisonCount;
 
     PoisonSlime(String name) {
         super(name);
