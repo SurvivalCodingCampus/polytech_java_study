@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding;
 import java.util.Calendar;
 
 public class Person {
@@ -24,4 +24,6 @@ public class Person {
         int yy = cal.get(Calendar.YEAR);
         return yy - birthYear;
     }
+
+
 }
