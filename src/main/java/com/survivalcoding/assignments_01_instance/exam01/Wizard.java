@@ -2,7 +2,7 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Wizard {
     private int hp;
-    private final int mp = 100;
+    private int mp = 100;
     private String name;
     private Wand wand;
 
@@ -26,6 +26,10 @@ public class Wizard {
 
     public int getMp() {
         return mp;
+    }
+
+    public void setMp(int mp) {
+        this.mp = mp;
     }
 
     public String getName() {
@@ -54,9 +58,17 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + recovPoint);
+        int usePoint = 20;
+        int recovPoint = 10;
+        hero.setHp(hero.getHp() + usePoint);  //hero의 hp 20 회복
+        this.setMp(this.getMp() - recovPoint);  //자신의 mp 소모
+        System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
+
+        if (this.getMp() < 10) {
+            System.out.println("마나가 부족합니다.");
+        }
+
+
     }
 
     public static void main(String[] args) {

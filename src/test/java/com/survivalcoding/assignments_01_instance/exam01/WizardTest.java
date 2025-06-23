@@ -75,4 +75,21 @@ class WizardTest {
         assertEquals(100, wizard.getHp());
     }
 
+    @Test
+    @DisplayName("hero의 hp를 20 회복시키고 자신의 mp를 10 소모")
+    void testwizardheal() {
+        //given
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
+        wizard.setMp(5);
+
+        Hero hero = new Hero("Hero", 50);
+
+        wizard.heal(hero);
+
+        // then
+        assertEquals(70, hero.getHp());
+        assertEquals(90, wizard.getMp());
+    }
+
+
 }
