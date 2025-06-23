@@ -5,12 +5,11 @@ public class Wand {
     private double power;   // 0.0
 
     public Wand(String name) {
-        this.name = name;
-        this.power = 10.0;
+        this(name, 10.0);
     }
 
     public Wand(String name, double power) {
-        this.name = name;
+        setName(name);
         this.power = power;
     }
 
