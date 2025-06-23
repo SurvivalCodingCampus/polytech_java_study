@@ -13,7 +13,7 @@ class WizardTest {
         Wand wand = new Wand();
 
         // get set wand
-        assertThrows(IllegalArgumentException.class,()->{
+        assertThrows(IllegalArgumentException.class, () -> {
             wizard.setWand(null);
         });
 
@@ -27,7 +27,7 @@ class WizardTest {
         assertEquals(0, wizard.getHp());
 
         // get set Mp
-        assertThrows(IllegalArgumentException.class,()->{
+        assertThrows(IllegalArgumentException.class, () -> {
             wizard.setMp(-10);
         });
         wizard.setMp(10);
@@ -40,16 +40,12 @@ class WizardTest {
         Wizard wizard = new Wizard();
         Hero hero = new Hero();
 
-        assertThrows(IllegalArgumentException.class, ()->{
-            wizard.heal(hero);
-        });
-
-        Wand wand = new Wand();
-        wizard.setWand(wand);
-
         wizard.heal(hero);
+        assertEquals(120, hero.getHp());
+        assertEquals(90, wizard.getMp());
 
-        assertEquals(200, hero.getHp());
-
+        wizard.setMp(5);
+        wizard.heal(hero);
+        assertEquals(120, hero.getHp());
     }
 }
