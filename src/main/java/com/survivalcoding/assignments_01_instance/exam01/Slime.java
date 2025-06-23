@@ -30,13 +30,13 @@ public class Slime {
         return hp;
     }
 
-    public void attack(Attackable attackable){
+    public void attack(LivingEntity livingEntity){
         int attackAmount = 10;
 
         System.out.println("슬라임 " + suffix + "이/가 공격했다");
         System.out.println( attackAmount + "의 데미지");
 
-        attackable.takeDamage(attackAmount);
+        livingEntity.takeDamage(attackAmount);
     }
 
 }
