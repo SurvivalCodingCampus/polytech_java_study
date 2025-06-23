@@ -7,10 +7,14 @@ public class Hero {
 
     private String name;
     private int hp;
+    private int maxHp;
     private Sword sword;
 
     public int getHp() {
         return hp;
+    }
+    public int getMaxHp() {
+        return maxHp;
     }
 
     public void setHp(int hp) {
@@ -18,6 +22,10 @@ public class Hero {
             throw new IllegalArgumentException("hp는 음수가 될 수 없음");
         }
         this.hp = hp;
+
+        if (this.hp > maxHp) {
+            this.hp = maxHp;
+        }
     }
 
 
