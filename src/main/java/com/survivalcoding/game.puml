@@ -3,10 +3,21 @@
 
 scale 2
 
-class Hero {
-    + String name
-    - int hp
+class SuperHero extends Hero {
+    + boolean isFlying
+}
 
+class Character {
+    String name
+    int hp
+}
+
+class Wizard extends Character {
+    int mp
+    + void heal(Hero hero)
+}
+
+class Hero extends Character {
     + void attack(Kinoko enemy)
     + void bye()
     - void die()
