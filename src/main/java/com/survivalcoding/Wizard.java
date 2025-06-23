@@ -20,6 +20,7 @@ public class Wizard {
     public void setHp(int hp) {
         if (hp < 0) {
             this.hp = 0;
+            return;
         }
         this.hp = hp;
     }
@@ -57,6 +58,6 @@ public class Wizard {
     public void heal(Hero hero) {
         int basePoint = 10;
         int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getMp() + recovPoint);
+        hero.setHp(hero.getHp() + recovPoint);
     }
 }

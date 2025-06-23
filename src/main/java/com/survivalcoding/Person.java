@@ -15,6 +15,10 @@ public class Person {
         return this.name;
     }
 
+    public int getBirthYear() {
+        return birthYear;
+    }
+
     public int getAge() {
         Date date = new Date();
         Calendar calendar = Calendar.getInstance();
