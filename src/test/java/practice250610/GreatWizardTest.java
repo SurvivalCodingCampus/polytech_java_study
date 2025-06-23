@@ -19,7 +19,6 @@ class GreatWizardTest {
         Hero hero = new Hero();
         GreatWizard wizard = new GreatWizard();
 
-        hero.setName("hero");
         hero.setHp(25);
         int heroHp = hero.getHp();
         wizard.heal(hero);
@@ -35,7 +34,6 @@ class GreatWizardTest {
         GreatWizard wizard = new GreatWizard();
 
         int wizardMp = wizard.getMp();
-        hero.setName("hero");
         hero.setHp(25);
         wizard.superHeal(hero);
         wizardMp -= 50;
