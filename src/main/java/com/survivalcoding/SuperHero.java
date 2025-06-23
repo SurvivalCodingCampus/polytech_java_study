@@ -28,10 +28,4 @@ public class SuperHero extends Hero {
             System.out.println("날고있다다다\n");
         }
     }
-
-    public static void main(String[] args) {
-        SuperHero superHero = new SuperHero("SuperHero", 10);
-        superHero.run();
-        superHero.attack(new Kinoko());
-    }
 }
