@@ -18,9 +18,11 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
+        this.hp = hp;
+
         if (hp < 0) {
             this.hp = 0;
-        } else this.hp = hp;
+        }
     }
 
     public int getMp() {
