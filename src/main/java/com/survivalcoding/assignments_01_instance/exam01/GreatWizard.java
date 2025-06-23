@@ -33,7 +33,7 @@ public class GreatWizard extends Wizard {
     public void superheal(Hero hero) {
         int usePoint = 50;
 
-        hero.setHp(hero.setMax_hp());  //hero의 hp 전부 회복
+        hero.setHp(hero.getMax_hp());  //hero의 hp 전부 회복
         this.setMp(this.getMp() - usePoint);  //자신의 mp 50 소모
         System.out.println("슈퍼 힐을 시전했습니다. 대상 HP: " + hero.getHp());
 
