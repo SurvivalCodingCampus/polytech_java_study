@@ -4,9 +4,14 @@ public class Wand {
     private String name;
     private double power;
 
-    Wand() {
-        this.name = "기본지팡이";
-        this.power = 10.f;
+    public Wand() {
+        this.setName("초보 지팡이");
+        this.power = 50;
+    }
+
+    public Wand(String name) {
+        this.name = name;
+        this.power = 50.f;
     }
 
     public String getName() {
