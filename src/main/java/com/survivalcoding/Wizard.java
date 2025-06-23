@@ -13,6 +13,13 @@ public class Wizard {
         setWand(wand);
     }
 
+    public Wizard(int hp, String name, Wand wand) {
+        setHp(hp);
+        setMp(100);
+        setName(name);
+        setWand(wand);
+    }
+
     public int getHp() {
         return hp;
     }
@@ -33,6 +40,7 @@ public class Wizard {
 
     public void setMp(int mp) {
         if (mp < 0) {
+            System.out.println("마나가 부족합니다");
             throw new IllegalArgumentException("mp 값이 0 이하");
         }
         this.mp = mp;
@@ -68,8 +76,12 @@ public class Wizard {
             throw new IllegalArgumentException("hero is null");
         }
 
-        int basePoint = 10;
-        int revocPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + revocPoint);
+//        int basePoint = 10;
+//        int revocPoint = (int) (basePoint * this.wand.getPower());
+//        hero.setHp(hero.getHp() + revocPoint);
+        hero.setHp(hero.getHp() + 20);
+        setMp(getMp() - 10);
+        System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
+
     }
 }
