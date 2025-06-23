@@ -1,4 +1,5 @@
 package com.survivalcoding;
+import java.util.Calendar;
 
 public class Person {
     static int birthYear;
@@ -19,9 +20,19 @@ public class Person {
         return age;
     }
 
+    /*
     public void getAge(int birthYear)
     {
         int age;
         age = Age(birthYear);
+    }*/
+    public void getAge()
+    {
+        Calender calender = Calender.getInstance();
+        int year = calender.get(Calender.getAge());
+
+        return year - birthYear;
     }
+
+
 }

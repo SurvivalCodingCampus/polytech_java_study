@@ -1,9 +1,25 @@
 package com.survivalcoding;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class WandTest {
+    Wand wand;
+    // 매 test 마다 wand명칭 지정하는 함수를 선처리 시키는 메서드
+    @BeforeEach
+    void setUp()
+    {
+        wand = new Wand("구부러진 지팡이");
+    }
+
+    @AfterEach
+    void tearDown()
+    {
+
+    }
+
     @Test
     @DisplayName("이름이 3문자 이상")
     public void setName(String name)

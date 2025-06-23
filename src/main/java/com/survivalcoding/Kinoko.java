@@ -4,6 +4,9 @@ public class Kinoko {
     int hp;
     final int LEVEL = 10;
 
+    public int getHp() {
+        return hp;
+    }
 
     void attack() {
         final int level = 20;
