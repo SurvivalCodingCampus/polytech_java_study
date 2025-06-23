@@ -3,11 +3,27 @@ package practice250610;
 public class Wizard {
     private int hp;
     private int mp;
+    final private int maxHp;
+    final private int maxMp;
+
     private String name;
     protected Wand wand;
 
+    //mp = 100
+    public Wizard(String name, int hp, int mp) {
+        setName(name);
+        setHp(hp);
+        setMp(mp);
+        this.maxHp = hp;
+        this.maxMp = mp;
+    }
+
+    public Wizard(String name) {
+        this(name, 100, 100);
+    }
+
     public Wizard() {
-        setMp(100);
+        this("wizard", 100, 100);
     }
 
     public void heal(Hero hero) {
@@ -46,6 +62,10 @@ public class Wizard {
         }
     }
 
+    public int getMaxHp() {
+        return maxHp;
+    }
+
     public int getMp() {
         return mp;
     }
@@ -55,6 +75,10 @@ public class Wizard {
             throw new IllegalArgumentException("mp가 0 이상이어야 함");
         }
         this.mp = mp;
+    }
+
+    public int getMaxMp() {
+        return maxMp;
     }
 
     public String getName() {
@@ -71,5 +95,4 @@ public class Wizard {
         this.name = name;
         this.name = name;
     }
-
 }
