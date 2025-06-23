@@ -25,6 +25,7 @@ public class Wizard {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
+        System.out.println("Wizard");
     }
 
     Wizard(String name, int hp) {
