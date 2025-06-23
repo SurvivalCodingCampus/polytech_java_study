@@ -48,6 +48,7 @@ class Wizard {
 class GreateWizard extends Wizard {
     {static} + int maxHp <<constant>>
     {static} + int maxHp <<constant>>
+    - int usedMp
 
     + void heal(Hero hero)
     + superHeal(Hero hero)
