@@ -27,11 +27,10 @@ public class GreatWizard extends Wizard {
             System.out.println("마나가 부족합니다");
             return;
         }
-        hero.setHp(hero.MaxHp());
+        hero.setHp(hero.getMaxHp());
         setMp(getMp()-50);
 
         System.out.println("슈퍼힐을 시전했습니다. HP:"+hero.getHp());
-        //
         //힐을 성공하면 "슈퍼힐을 시전했습니다. 대상 HP: XX" 출력
     }
 }
