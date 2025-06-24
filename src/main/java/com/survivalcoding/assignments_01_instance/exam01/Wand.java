@@ -30,10 +30,15 @@ public class Wand {
         this.power = power;
     }
 
+    public Wand(String name) {
+        this(name, 10.0);
+    }
+
     public Wand(String name, double power) {
-        this.name = name;
+        setName(name);
         this.power = power;
     }
+
 
     public static void main(String[] args) {
         Wand wand = new Wand("지팡이", 10);

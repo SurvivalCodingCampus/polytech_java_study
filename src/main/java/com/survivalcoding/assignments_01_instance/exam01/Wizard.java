@@ -2,14 +2,13 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Wizard {
     private int hp;
-    private int mp;
+    private int mp = 100;
     private String name;
     private Wand wand;
 
-    public Wizard(String name, int hp, int mp, Wand wand) {
+    public Wizard(String name, int hp, Wand wand) {
         this.name = name;
         this.hp = hp;
-        this.mp = mp;
         this.wand = wand;
     }
 
@@ -18,9 +17,11 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
+        this.hp = hp;
+
         if (hp < 0) {
             this.hp = 0;
-        } else this.hp = hp;
+        }
     }
 
     public int getMp() {
@@ -28,9 +29,6 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
-        if (mp < 0) {
-            throw new IllegalArgumentException("마법사의 MP는 0 이상이어야 한다.");
-        }
         this.mp = mp;
     }
 
@@ -60,15 +58,22 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + recovPoint);
+        int usePoint = 20;
+        int recovPoint = 10;
+        hero.setHp(hero.getHp() + usePoint);  //hero의 hp 20 회복
+        this.setMp(this.getMp() - recovPoint);  //자신의 mp 소모
+        System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
+
+        if (this.getMp() < 10) {
+            System.out.println("마나가 부족합니다.");
+        }
+
+
     }
 
     public static void main(String[] args) {
-        Wizard wizard = new Wizard("마법사", 100, 50, new Wand("지팡이", 10));
+        Wizard wizard = new Wizard("마법사", 100, new Wand("지팡이", 10));
         wizard.setName("");
-        wizard.setMp(0);
         wizard.setHp(-5);
         System.out.println(wizard.hp);
         wizard.setWand(null);

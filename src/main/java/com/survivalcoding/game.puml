@@ -6,6 +6,7 @@
 class Hero {
     + String name
     - int hp
+    - int max_hp
 
     + void attack(Kinoko enemy)
     + void bye()
@@ -35,5 +36,26 @@ class Wizard {
     + void heal(Hero hero)
 }
 
+class SuperHero extends Hero {
+    - boolean isFlying
+}
 
+class GreatWizard extends Wizard {
+    - int mp
+
+    + void superheal(Hero hero)
+}
+
+class Slime {
+    - String suffix;
+    + int hp
+
+    + void attack(Hero hero)
+}
+
+class PoisonSlime extends Slime {
+    - int poisonCount
+
+    + void attack(Hero hero)
+}
 @enduml
