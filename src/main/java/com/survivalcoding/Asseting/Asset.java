@@ -1,6 +1,6 @@
 package com.survivalcoding.Asseting;
 
-public class Asset {
+public abstract class Asset {
 
     private String name;
 

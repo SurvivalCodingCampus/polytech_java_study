@@ -2,28 +2,30 @@
 'https://plantuml.com/class-diagram
 
 scale 1
-
-abstract class IntanibleAsset{
-    String patent
+abstract class Asset {
     String name
 }
 
-abstract class TangibleAsset{
+abstract class IntanibleAsset extends Asset {
+    String smell
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
     int price
     String color
 }
 
-class Book {
+class Book extends TangibleAsset{
     String isbn
 }
 
-class Computer {
+class Computer extends TangibleAsset{
     String makerName
 }
 
 interface Thing {
-     {abstract} void setter(double weight)
-     {abstract} void getter()
+     {abstract} void setweight(double weight)
+     {abstract} void getweight()
 }
 
 @enduml
