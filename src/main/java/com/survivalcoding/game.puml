@@ -20,8 +20,8 @@ abstract class Asset{
     + int price
 }
 interface Thing{
-    + double getWeight()
-    + void setWeight(double weight)
+    + {abstract} double getWeight()
+    + {abstract} void setWeight(double weight)
 }
 
 class SuperHero extends Hero{
