@@ -5,27 +5,10 @@ public abstract class TangibleAsset {
     private int price;
     private String color;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public TangibleAsset(String name, int price, String color) {
         this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
         this.color = color;
     }
+
 }
