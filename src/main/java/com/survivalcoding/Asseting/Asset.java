@@ -4,7 +4,7 @@ public abstract class Asset {
 
     private String name;
 
-    Asset(String name){
+    Asset(String name) {
         setName(name);
     }
 

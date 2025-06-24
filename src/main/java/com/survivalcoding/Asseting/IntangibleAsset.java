@@ -2,7 +2,8 @@ package com.survivalcoding.Asseting;
 
 public abstract class IntangibleAsset extends Asset {
     private String smell;
-    IntangibleAsset(String patent, String name, String smell){
+
+    IntangibleAsset(String patent, String name, String smell) {
         super(name);
         setSmell(smell);
     }
