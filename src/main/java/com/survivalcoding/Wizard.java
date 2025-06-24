@@ -60,4 +60,14 @@ public class Wizard {
         }
         this.wand = wand;
     }
+
+    public void heal(Hero hero) {
+        if (getMp() > 10) {
+            hero.setHp(hero.getHp() + 20);
+            setMp(getMp() - 10);
+            System.out.println("힐을 시전했습니다. 대상 HP: " + hero.getHp());
+        } else {
+            System.out.println("마나가 부족합니다");
+        }
+    }
 }
