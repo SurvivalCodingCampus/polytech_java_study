@@ -4,14 +4,30 @@
 class SuperHero extends Hero{
     + boolean isFlying
 }
+
+interface Attackable {
+{abstract} void attack(Slime slime)
+}
+
+class House implements Attackable {
+}
+
+abstract class Character implements Attackable {
+String name
+
+}
+
 class Character{
     String name
     int hp
+
+    {abstract} void attack(Slime slime)
 }
 
 class Wizard extends Character{
     int mp
     + void heal(Hero hero)
+    + void attack((Slime slime)
 }
 
 class Hero extends Character {
