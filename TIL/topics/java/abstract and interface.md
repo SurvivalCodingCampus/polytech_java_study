@@ -4,43 +4,43 @@
   public abstract class Gun {
     String name;
 
-    void fire();
+    public abstract void fire();
 
-    void reload();
+    public abstract void reload();
 }
 
-public interface electricSystem {
+public interface ElectricSystem {
     void checkRemainingBattery();
 }
 
 public class Revolver extends Gun {
 
     @Override
-    void fire() {
+    public void fire() {
         // firing sequences for revolver..
     }
 
     @Override
-    void reload() {
+    public void reload() {
         // reloading sequences for revolver..
     }
 }
 
-public class Railgun extends Gun implements electricSystem {
+public class Railgun extends Gun implements ElectricSystem {
     double battery;
 
     @Override
-    void fire() {
+    public void fire() {
         // firing sequences for railgun..
     }
 
     @Override
-    void reload() {
+    public void reload() {
         // reloading sequences for railgun..
     }
 
     @Override
-    void checkRemainingBattery() {
+    public void checkRemainingBattery() {
         // print remaining battery..
     }
 }

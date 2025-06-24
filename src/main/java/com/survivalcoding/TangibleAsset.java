@@ -1,10 +1,27 @@
 package com.survivalcoding;
 
 public abstract class TangibleAsset extends Asset implements Thing {
-    int price;
-    String color;
+    private int price;
+    private String color;
+    private double weight;
 
-    double weight;
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        if (price < 0) throw new IllegalArgumentException("Price cannot be negative number");
+        this.price = price;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        if (color == null) throw new IllegalArgumentException("Color must be set");
+        this.color = color;
+    }
 
     @Override
     public double getWeight() {
