@@ -23,7 +23,7 @@ class ComputerTest {
 
     @Test
     @DisplayName("Computer 클래스 생성자 테스트")
-    public void testBook() {
+    public void testComputer() {
         assertEquals("윈도우", computer.getName());
         assertEquals(17000, computer.getPrice());
         assertEquals("black", computer.getColor());
