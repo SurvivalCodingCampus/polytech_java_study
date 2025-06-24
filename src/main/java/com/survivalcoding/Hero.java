@@ -7,6 +7,7 @@ public class Hero {
     public static int money = 100;
 
     private String name;    // null
+    private int max_hp = 100;
     private int hp;     // 0
     private Sword sword;    // null
 
@@ -60,5 +61,10 @@ public class Hero {
         hero1 = null;
 
         System.out.println(hero2.hp);
+    }
+
+    public void run()
+    {
+        System.out.println(name + "이 도망쳤다");
     }
 }
