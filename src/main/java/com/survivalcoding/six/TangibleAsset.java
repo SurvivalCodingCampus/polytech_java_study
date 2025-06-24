@@ -33,5 +33,4 @@ public abstract class TangibleAsset extends Asset implements Thing {
         }
         this.weight = weight;
     }
-
 }
