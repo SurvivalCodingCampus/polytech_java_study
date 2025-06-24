@@ -3,6 +3,10 @@ package com.survivalcoding;
 public abstract class Asset {
     private String name;
 
+    protected Asset(String name) {
+        setName(name);
+    }
+
     public String getName() {
         return name;
     }
