@@ -6,8 +6,8 @@ public class Wand {
     private double power;
 
     Wand(String name, double power) {
-        this.power = power;
-        this.name = name;
+        setName(name);
+        setPower(power);
     }
 
     public String getName() {

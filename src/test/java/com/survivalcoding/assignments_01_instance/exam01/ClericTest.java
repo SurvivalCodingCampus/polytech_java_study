@@ -41,9 +41,9 @@ class ClericTest {
 
         cleric.test3();
         //변수랑 테스트 하고 싶은 함수
-        assertEquals("아서스", cleric.name);
+        assertEquals("아서스", cleric.getName());
         assertEquals(50, cleric.getHP());
-        assertEquals(10, cleric.mp);
+        assertEquals(10, cleric.getMp());
 
     }
     @Test

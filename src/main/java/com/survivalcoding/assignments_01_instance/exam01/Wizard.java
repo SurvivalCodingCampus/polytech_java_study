@@ -2,24 +2,32 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Wizard {
 
-    int hp;
-    int mp;
-    String name;
-    Wand wand;
+    private int hp;
+    private int mp = 100;
+    private String name;
+    private Wand wand;
 
     void heal(Hero hero)
     {
-        int basePoint = 10;//기본 회복 포인트
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + recovPoint);
+        int basePoint = 20;//기본 회복 포인트
+        //int recovPoint = (int) (basePoint * this.wand.getPower());
+        if(mp > 0)
+        {
+            mp -= 10;
+            hero.setHp(hero.getHp() + basePoint);
+            System.out.println("힐을 시전했습니다. 대상의 HP : " + hero.getHp());
+        }
+        else{
+            System.out.println("마나가 부족합니다");
+        }
     }
 
     Wizard (int hp, int mp, String name, Wand wand)
     {
-        this.hp = hp;
-        this.mp = mp;
-        this.name = name;
-        this.wand = wand;
+        setMp(mp);
+        setHp(hp);
+        setName(name);
+        setWand(wand);
     }
 
     public int getHp() {
@@ -30,6 +38,7 @@ public class Wizard {
         if(hp < 0)
         {
             hp = 0;
+            System.out.println("마나가 부족합니다");
         }
         this.hp = hp;
     }
@@ -41,7 +50,7 @@ public class Wizard {
     public void setMp(int mp) {
         if(mp < 0)
         {
-            throw new IllegalArgumentException("mp가 마이너스다.");
+            throw new IllegalArgumentException("마나가 부족합니다");
         }
         this.mp = mp;
     }
