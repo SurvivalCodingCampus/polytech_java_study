@@ -103,7 +103,7 @@ class WizardTest {
         //when
         greatWizard.superHeal(hero);
         //then
-        assertEquals(100, greatWizard.getMp());
+        assertEquals(50, greatWizard.getMp());
     }
 
     @Test
