@@ -1,9 +1,9 @@
-package com.survivalcoding.Asseting;
+package com.survivalcoding.asseting;
 
 public class Computer extends TangibleAsset {
     private String makerName;
 
-    Computer(String name, int price, String color, double weight, String makerName) {
+    public Computer(String name, int price, String color, double weight, String makerName) {
         super(name, price, color, weight);
         setMakerName(makerName);
     }

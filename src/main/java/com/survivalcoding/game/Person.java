@@ -1,4 +1,4 @@
-package com.survivalcoding.Game;
+package com.survivalcoding.game;
 
 import java.time.LocalDate;
 

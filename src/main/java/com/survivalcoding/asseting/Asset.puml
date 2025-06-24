@@ -6,13 +6,14 @@ abstract class Asset {
     String name
 }
 
-abstract class IntanibleAsset extends Asset {
+abstract class IntangibleAsset extends Asset {
     String smell
 }
 
 abstract class TangibleAsset extends Asset implements Thing {
     int price
     String color
+    double weight
 }
 
 class Book extends TangibleAsset{
@@ -24,8 +25,8 @@ class Computer extends TangibleAsset{
 }
 
 interface Thing {
-     {abstract} void setweight(double weight)
-     {abstract} void getweight()
+     {abstract} void setWeight (double weight)
+     {abstract} double getWeight()
 }
 
 @enduml

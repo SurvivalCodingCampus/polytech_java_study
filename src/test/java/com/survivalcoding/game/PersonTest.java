@@ -1,4 +1,4 @@
-package com.survivalcoding.Game;
+package com.survivalcoding.game;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

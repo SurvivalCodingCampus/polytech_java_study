@@ -1,4 +1,4 @@
-package com.survivalcoding.Asseting;
+package com.survivalcoding.asseting;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +14,7 @@ class BookTest {
         assertEquals("책제목", book.getName());
         assertEquals(1234, book.getPrice());
         assertEquals("파란색", book.getColor());
-        assertEquals(12.3, book.getweight());
+        assertEquals(12.3, book.getWeight());
         assertEquals("대원", book.getIsbn());
     }
 }

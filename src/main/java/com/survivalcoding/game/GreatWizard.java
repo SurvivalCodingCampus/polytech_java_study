@@ -1,4 +1,4 @@
-package com.survivalcoding.Game;
+package com.survivalcoding.game;
 
 public class GreatWizard extends Wizard {
     GreatWizard(int hp, int mp, String name, Wand wand) {

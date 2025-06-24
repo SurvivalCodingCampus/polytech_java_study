@@ -1,9 +1,9 @@
-package com.survivalcoding.Asseting;
+package com.survivalcoding.asseting;
 
 public class Book extends TangibleAsset {
     private String isbn;
 
-    Book(String name, int price, String color, double weight, String isbn) {
+    public Book(String name, int price, String color, double weight, String isbn) {
         super(name, price, color, weight);
         setIsbn(isbn);
     }

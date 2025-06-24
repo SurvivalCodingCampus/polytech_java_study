@@ -1,4 +1,4 @@
-package com.survivalcoding.Game;
+package com.survivalcoding.game;
 
 public class PoisonSlime extends Slime {
     private int poisonCount;

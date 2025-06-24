@@ -1,4 +1,4 @@
-package com.survivalcoding.Asseting;
+package com.survivalcoding.asseting;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +14,7 @@ class ComputerTest {
         assertEquals("콤퓨타", computer.getName());
         assertEquals(18500, computer.getPrice());
         assertEquals("검정색", computer.getColor());
-        assertEquals(45.4, computer.getweight());
+        assertEquals(45.4, computer.getWeight());
         assertEquals("삼성", computer.getMakerName());
     }
 }

@@ -1,10 +1,10 @@
-package com.survivalcoding.Asseting;
+package com.survivalcoding.asseting;
 
 public abstract class Asset {
 
     private String name;
 
-    Asset(String name) {
+    public Asset(String name) {
         setName(name);
     }
 
