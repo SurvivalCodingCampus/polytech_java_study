@@ -1,5 +1,8 @@
 package com.survivalcoding.Asset;
 
-public abstract class IntangibleAsset {
-    private String name;
+public abstract class IntangibleAsset extends Asset {
+
+    public IntangibleAsset(String name) {
+        super(name);
+    }
 }
