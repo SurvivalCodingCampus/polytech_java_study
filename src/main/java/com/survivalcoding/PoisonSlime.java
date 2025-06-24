@@ -28,7 +28,7 @@ public class PoisonSlime extends Slime { // Slime 상속
 
         super.attack(hero);// 문제3_4.a ['보통 슬라임과 같은 공격']
 
-        if (poisonCount != 0) { // 문제3_b ['count가 0 아닐 경우']
+        if (poisonCount > 0) { // 문제3_b ['count가 0 아닐 경우']
             System.out.println("추가로, 독 포자를 살포했다!");
             int damage = hero.getHp() / 5;
             hero.setHp(hero.getHp() - damage);
