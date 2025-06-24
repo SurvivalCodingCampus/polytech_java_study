@@ -2,6 +2,7 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Book extends TangibleAsset {
     private String isbn;
+    private double weight;
 
     public String getIsbn() {
         return isbn;

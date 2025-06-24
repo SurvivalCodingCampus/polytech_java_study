@@ -1,8 +1,10 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
-public class TangibleAsset extends Asset {
+
+public class TangibleAsset extends Asset implements Thing {
 
     private String color;
+    private double weight;
 
     public String getColor() {
         return color;
@@ -15,5 +17,15 @@ public class TangibleAsset extends Asset {
     public TangibleAsset(String name, int price, String color) {
         super(name, price);
         this.color = color;
+    }
+
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+
+    @Override
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 }

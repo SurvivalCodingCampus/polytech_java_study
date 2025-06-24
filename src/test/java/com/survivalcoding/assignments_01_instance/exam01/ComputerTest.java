@@ -18,4 +18,13 @@ class ComputerTest {
         assertEquals("makerName", computer.getMakerName());
     }
 
+    @Test
+    @DisplayName("Computer클래스에서 weight 메서드가 잘 작동하는지 테스트")
+    void computerWeightTest() {
+        Computer computer = new Computer("name", 500000, "color", "makerName");
+        computer.setWeight(5.2);
+
+        assertEquals(5.2, computer.getWeight());
+    }
+
 }
