@@ -8,18 +8,13 @@ class Hero {
     - String name
     - int hp
     - int mp
+    {static} + int maxHp
+    {static} + int maxMp
     - Sword sword
+}
 
-    + Hero()
-
-    + string getName()
-    + void setName(String name)
-    + void getHp()
-    + void setHp(int hp)
-    + void getMp()
-    + void setMp(int mp)
-    + Sword getSword()
-    + void setSword(Sword sword)
+class SuperHero extends Hero {
+    - boolean isFlying
 }
 
 class Cleric {
@@ -30,14 +25,6 @@ class Cleric {
     {static} + int maxHp <<constant>>
     {static} + int maxMp <<constant>>
 
-    + Cleric(String name)
-    + Cleric(String name, int hp)
-    + Cleric(String name, int hp, int mp)
-
-    + String getName()
-    + int getHp()
-    + int getMp()
-
     + void selfAid()
     + int pray(int timePray)
 }
@@ -45,32 +32,39 @@ class Cleric {
 class Wand {
     - String name
     - double power
-
-    + Wand()
-
-    + String getName()
-    + void setName(String name)
-    + double power()
-    + void setPower(double power)
 }
 
 class Wizard {
     - int hp
     - int mp;
+    {static} + int maxHp
+    {static} + int maxMp
     - String name;
     - Wand wand;
 
-    + Wizard(int hp, int mp, String name, Wand wand)
-
-    + int getHp()
-    + void setHp(int hp)
-    + int getMp()
-    + void setMp(int mp)
-    + String getName()
-    + void setName(String name)
-    + Wand getWand()
-    + void setWand(Wand wand)
     + void heal(Hero hero)
+}
+
+class GreateWizard extends Wizard {
+    {static} + int maxHp <<constant>>
+    {static} + int maxHp <<constant>>
+    - int usedMp
+
+    + void heal(Hero hero)
+    + superHeal(Hero hero)
+}
+
+class Slime {
+    - String suffix <<constant>>
+    - int hp
+
+    + void attack(Hero hero)
+}
+
+class PoisonSlime extends Slime {
+    - int poisonCount
+
+    + void attack(Hero hero)
 }
 
 @enduml

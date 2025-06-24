@@ -10,7 +10,7 @@ public class WizardTest {
     @DisplayName("Wizard 객체 생성 시 올바르게 생성되는지")
     void testCreate() {
         // given, when
-        Wizard wizard = new Wizard(50, 10, "아서스", new Wand());
+        Wizard wizard = new Wizard("아서스", new Wand("아서스 지팡이"));
 
         // then
         assertEquals(50, wizard.getHp());
@@ -25,7 +25,7 @@ public class WizardTest {
     void testGetterSetter() {
         /*--------1. getter--------*/
         // given
-        Wizard wizard = new Wizard(50, 10, "아서스", new Wand());
+        Wizard wizard = new Wizard("아서스", new Wand());
 
         // when
         int testHp = wizard.getHp();
@@ -65,7 +65,7 @@ public class WizardTest {
         /*--------2. wizard의 heal 메서드 테스트--------*/
         // given
         Hero hero = new Hero();
-        Wizard wizard1 = new Wizard(50, 10, "제이나", new Wand());
+        Wizard wizard1 = new Wizard("제이나", new Wand());
         int beforeHp = hero.getHp();
 
         // when
