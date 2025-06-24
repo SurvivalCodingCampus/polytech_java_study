@@ -12,6 +12,7 @@ abstract class TangibleAsset extends Asset implements Thing{
 
 
 - String color
+- double weight
 }
 
 class Book extends TangibleAsset {
