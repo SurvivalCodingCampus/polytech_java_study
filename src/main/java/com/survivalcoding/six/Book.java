@@ -14,7 +14,7 @@ public class Book extends TangibleAsset {
 
     public void setIsbn(String isbn) {
         if (isbn == null) {
-            throw new NullPointerException("Isbn은 null일 수 없다.");
+            throw new IllegalArgumentException("isbn은 null일 수 없다.");
         }
         this.isbn = isbn;
     }
