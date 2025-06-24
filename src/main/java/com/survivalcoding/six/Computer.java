@@ -3,9 +3,9 @@ package com.survivalcoding.six;
 public class Computer extends TangibleAsset {
     private String makerName;
 
-    public Computer(String name, int price, String color, double weight) {
+    public Computer(String name, int price, String color, double weight, String makerName) {
         super(name, price, color, weight);
-        setMakerName(color);
+        setMakerName(makerName);
     }
 
     public String getMakerName() {
