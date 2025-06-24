@@ -14,6 +14,9 @@ public class Book extends TangibleAsset {
 
     public void setIsbn(String isbn) {
         if (isbn == null) throw new IllegalArgumentException("ISBN must be set");
+        if (!isbn.matches("\\d{10}|\\d{13}")) {
+            throw new IllegalArgumentException("ISBN is a numeric code with between 10 and 13 numbers");
+        }
         this.isbn = isbn;
     }
 }
