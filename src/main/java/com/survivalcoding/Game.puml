@@ -1,6 +1,12 @@
 @startuml
 Scale 1
 
+class Hero {
+    - String name
+    - int hp
+    - int maxHp
+}
+
 class Cleric {
     - String name
     - int hp
@@ -20,9 +26,25 @@ class Wizard {
     + void heal()
 }
 
+class GreatWizard extends Wizard {
+    + void heal(Hero hero)
+    + void superHeal(Hero hero)
+}
+
 class Wand {
-    + String name
+    - String name
     - double power
+}
+
+class Slime {
+    - String suffix
+    - int hp
+
+    + void attack(Hero hero)
+}
+
+class PoisonSlime extends Slime {
+    + void attack(Hero hero)
 }
 
 @enduml

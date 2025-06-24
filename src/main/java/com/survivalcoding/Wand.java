@@ -10,8 +10,8 @@ public class Wand {
         if (name.length() < 3) throw new IllegalArgumentException("Length of name must have at least 3 characters");
         if (power < 0.5 || power > 100.0)
             throw new IllegalArgumentException("Wand power must be between 0.5 and 100.0");
-        this.name = name;
-        this.power = power;
+        setName(name);
+        setPower(power);
     }
 
     // getter
