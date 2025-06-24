@@ -11,6 +11,15 @@ public class Hero {
     private int hp;     // 0
     private Sword sword;    // null
 
+    public void attack(Slime slime) {
+        System.out.println(name + "이 공격했다");
+        hp -= 10;
+    }
+
+    public void run() {
+        System.out.println(name + "이 도망쳤다");
+    }
+
     public int getHp() {
         return hp;
     }

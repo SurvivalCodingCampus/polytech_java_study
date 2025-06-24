@@ -2,6 +2,9 @@
 'https://plantuml.com/class-diagram
 
 
+class SuperHero extends Hero {
+    + boolean isFlying
+}
 
 class Hero {
     + String name
