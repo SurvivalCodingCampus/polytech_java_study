@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.Game;
 
 import java.util.Random;
 

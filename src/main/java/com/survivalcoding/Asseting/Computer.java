@@ -1,10 +1,10 @@
-package com.survivalcoding;
+package com.survivalcoding.Asseting;
 
 public class Computer extends TangibleAsset {
     private String makerName;
 
-    Computer(String patent, String name, int price, String color, String makerName) {
-        super(patent ,name, price, color);
+    Computer(String name, int price, String color, double weight,String makerName) {
+        super(name, price, color,weight);
         setMakerName(makerName);
     }
 
