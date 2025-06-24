@@ -1,6 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
-public abstract class TangibleAsset {
+public abstract class TangibleAsset extends Asset {
 
     private String name;
     private int price;
