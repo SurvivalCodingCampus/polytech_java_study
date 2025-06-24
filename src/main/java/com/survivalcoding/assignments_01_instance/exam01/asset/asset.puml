@@ -27,7 +27,7 @@ class Patent extends IntangibleAsset {
 }
 
 interface Thing {
-    + void getter(double weight)
+    + double getter(double weight)
     + void setter(double weight)
 }
 
