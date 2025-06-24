@@ -2,7 +2,7 @@ package com.survivalcoding;
 
 import java.util.Random;
 
-public class Cleric {
+public class Cleric extends Character {
     static final int maxHp = 50;
     static final int maxMp = 10;
 
@@ -48,5 +48,10 @@ public class Cleric {
         // mp 회복
         mp += recoveryMp;
         return recoveryMp;
+    }
+
+    @Override
+    public void attack(Slime slime) {
+
     }
 }
