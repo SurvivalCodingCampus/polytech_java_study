@@ -1,5 +1,7 @@
-package Character;
+package com.survivalcoding.Character;
 
+import com.survivalcoding.Character.Hero;
+import com.survivalcoding.Character.PoisonSlime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

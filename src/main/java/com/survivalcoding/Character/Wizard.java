@@ -1,4 +1,4 @@
-package Character;
+package com.survivalcoding.Character;
 
 public class Wizard {
     private int hp;

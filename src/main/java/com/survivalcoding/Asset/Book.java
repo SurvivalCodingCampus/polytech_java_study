@@ -1,4 +1,4 @@
-package Asset;
+package com.survivalcoding.Asset;
 
 public class Book extends TangibleAsset {
     private int isbn;

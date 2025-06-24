@@ -1,4 +1,4 @@
-package Asset;
+package com.survivalcoding.Asset;
 
 public class Computer extends TangibleAsset {
     private String makerName;

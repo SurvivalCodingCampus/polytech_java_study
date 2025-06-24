@@ -1,4 +1,4 @@
-package Character;
+package com.survivalcoding.Character;
 
 import java.util.Random;
 

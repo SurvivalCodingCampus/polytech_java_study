@@ -1,4 +1,4 @@
-package Character;
+package com.survivalcoding.Character;
 
 public class GreatWizard extends Wizard {
     private int superMpPoint;

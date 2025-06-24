@@ -1,4 +1,4 @@
-package Asset;
+package com.survivalcoding.Asset;
 
 public abstract class TangibleAsset extends Asset implements Thing {
     private String color;

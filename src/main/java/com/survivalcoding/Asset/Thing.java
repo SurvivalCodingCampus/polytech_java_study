@@ -1,4 +1,4 @@
-package Asset;
+package com.survivalcoding.Asset;
 
 public interface Thing {
     double getWeight();

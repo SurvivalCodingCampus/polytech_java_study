@@ -1,5 +1,6 @@
-package Asset;
+package com.survivalcoding.Asset;
 
+import com.survivalcoding.Asset.Book;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
