@@ -26,8 +26,8 @@ public class Hero {
             this.hp = 0;
         } else if (hp > 100) {
             this.hp = 100;
+        } else {
+            this.hp = hp;
         }
-
-        this.hp = hp;
     }
 }
