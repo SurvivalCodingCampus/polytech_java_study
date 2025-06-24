@@ -5,8 +5,8 @@ public class Wizard {
     private int mp;
     final private int maxHp;
     final private int maxMp;
-    final private int healPoint;
-    final private int mpPoint;
+    private int healPoint;
+    private int mpPoint;
 
     private String name;
     protected Wand wand;
@@ -96,7 +96,15 @@ public class Wizard {
         return healPoint;
     }
 
+    public void setHealPoint(int healPoint) {
+        this.healPoint = healPoint;
+    }
+
     public int getMpPoint() {
         return mpPoint;
+    }
+
+    public void setMpPoint(int mpPoint) {
+        this.mpPoint = mpPoint;
     }
 }
