@@ -19,7 +19,7 @@ public abstract class TangibleAsset extends Asset implements Thing {
 
     @Override
     public void setWeight(int weight) {
-        if (weight < 0) {
+        if (this.weight < 0) {
             throw new IllegalArgumentException("무게는 0 이상이어야 한다");
         }
         this.weight = weight;

@@ -9,7 +9,7 @@ public abstract class Asset {
     }
 
     public void setName(String name) {
-        if (name == null) {
+        if (this.name == null) {
             throw new IllegalArgumentException("이름은 1문자 이상이어야 한다");
         }
         this.name = name;
@@ -20,7 +20,7 @@ public abstract class Asset {
     }
 
     public void setPrice(int price) {
-        if (price < 0) {
+        if (this.price < 0) {
             throw new IllegalArgumentException("값은 0원 이상이어야 한다");
         }
         this.price = price;
