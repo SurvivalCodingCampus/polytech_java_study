@@ -1,10 +1,10 @@
 package com.survivalcoding.assignments_01_instance.exam01.ab;
 
-//부모 클래스를 활용한 형태로 수정
+//유형자산 (TangibleAsset)이 부모 클래스
 
-public class Book {
-    String name;
-    int price;
-    String color;
-    String isbn;
+public class Book extends TangibleAsset{
+    private String name;
+    private int price;
+    private String color;
+    private String isbn;
 }

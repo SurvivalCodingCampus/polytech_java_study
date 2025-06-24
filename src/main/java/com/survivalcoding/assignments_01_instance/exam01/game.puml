@@ -17,17 +17,10 @@ String name
 
 }
 
-class Character{
-    String name
-    int hp
-
-    {abstract} void attack(Slime slime)
-}
-
 class Wizard extends Character{
     int mp
     + void heal(Hero hero)
-    + void attack((Slime slime)
+    + void attack(Slime slime)
 }
 
 class Hero extends Character {
