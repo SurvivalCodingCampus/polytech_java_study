@@ -3,28 +3,22 @@
 
 scale 1
 
-class Cleric{
-}
-class PerSon{
-}
-class Wand{
-}
-class Wizard{
-}
-class ClericTest{
-}
-class WandTest{
-}
-class WizardTest{
-}
-class GreatWizard{
-}
-class Slime{
-}
-class PoisonSlime{
-}
-class Hero{
+class IntanibleAsset{
+    String patent
+    String name
 }
 
+class TangibleAsset{
+    int price
+    String color
+}
+
+class Book {
+    String isbn
+}
+
+class Computer {
+    String makerName
+}
 
 @enduml
