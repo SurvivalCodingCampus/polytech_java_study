@@ -3,6 +3,7 @@ package com.survivalcoding.assignments_01_instance.exam01;
 public abstract class TangibleAsset extends Asset implements Thing {
 
     private double weight;
+    private String color;
 
     public TangibleAsset(String name, int price, String color, double weight) {
         super(name, price);
@@ -12,15 +13,14 @@ public abstract class TangibleAsset extends Asset implements Thing {
 
     @Override
     public double getWeight() {
-        return 0;
+        return weight;
     }
 
     @Override
     public void setWeight(double weight) {
+        this.weight = weight;
 
     }
-
-    private String color;
 
     public String getColor() {
         return color;

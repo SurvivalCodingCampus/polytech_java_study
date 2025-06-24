@@ -14,12 +14,13 @@ interface Thing{
 }
 
 abstract class TangibleAsset extends Asset implements Thing{
+- double weight
 - String color
 
 }
 
 class Computer extends TangibleAsset{
-- String makerNamae
+- String makerName
 
 }
 
