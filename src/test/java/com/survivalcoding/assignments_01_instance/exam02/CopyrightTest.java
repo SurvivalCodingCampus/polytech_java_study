@@ -9,7 +9,7 @@ class CopyrightTest {
 
     @Test
     @DisplayName("Copyright 생성 테스트")
-    void createCopyright() {
+    void create() {
 
         //given
         String name = "내사진저작권";

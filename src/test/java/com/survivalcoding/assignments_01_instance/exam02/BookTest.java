@@ -12,7 +12,7 @@ class BookTest {
 
     @Test
     @DisplayName("Book 생성 테스트")
-    void createBook() {
+    void create() {
 
         //given
         String name = "책";

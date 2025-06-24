@@ -11,7 +11,7 @@ class ComputerTest {
 
     @Test
     @DisplayName("Computer 생성 테스트")
-    void createComputer() {
+    void create() {
 
         //given
         String name = "컴퓨터";

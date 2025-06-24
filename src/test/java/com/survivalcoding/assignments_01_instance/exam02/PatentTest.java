@@ -12,7 +12,7 @@ class PatentTest {
 
     @Test
     @DisplayName("Patent 생성 테스트")
-    void createBook() {
+    void create() {
 
         //given
         String name = "AI특허";

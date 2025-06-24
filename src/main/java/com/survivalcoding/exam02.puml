@@ -9,28 +9,55 @@ interface Thing {
 }
 
 abstract class Asset {
-    - name: String
-    - price: int
+    - {final} name: String
+    - price: long
+
+    + Asset(name: String, price: long)
+    + getName(): String
+    + getPrice(): long
+    + changePrice(price: long): void
 }
 
 abstract class TangibleAsset {
-    - color: String
+    - {final} color: Color
     - weight: double
 
+    + TangibleAsset(name: String, price: long, color: Color, weight: double)
     + getWeight(): double
     + setWeight(weight: double): void
+    + getColor(): Color
 }
 
 abstract class IntangibleAsset {
-    - patent: String
+    + IntangibleAsset(name: String, price: long)
 }
 
 class Book {
-    - isbn: String
+    - {final} isbn: String
+
+    + Book(name: String, price: long, color: Color, weight: double, isbn: String)
+    + getIsbn(): String
 }
 
 class Computer {
-    - makerName: String
+    - {final} makerName: String
+
+    + Computer(name: String, price: long, color: Color, weight: double, makerName: String)
+    + getMakerName(): String
+}
+
+class Patent {
+    - {final} registrationNumber: String
+
+    + Patent(name: String, price: long, registrationNumber: String)
+    + getRegistrationNumber(): String
+}
+
+class Copyright {
+    - {final} icn: String
+
+    + Copyright(name: String, price: long, icn: String)
+    + getIcn(): String
 }
 
 ' Inheritance relationships
@@ -38,6 +65,8 @@ TangibleAsset --|> Asset
 IntangibleAsset --|> Asset
 Book --|> TangibleAsset
 Computer --|> TangibleAsset
+Patent --|> IntangibleAsset
+Copyright --|> IntangibleAsset
 
 ' Implementation relationships
 TangibleAsset ..|> Thing
