@@ -6,7 +6,7 @@ class Computer extends TangibleAsset{
 class Book extends TangibleAsset{
     + String isbn;
 }
-abstract class TangibleAsset extends Asset{
+abstract class TangibleAsset extends Asset implements Thing{
     + String name
     + int price
     + String color
@@ -20,7 +20,10 @@ abstract class IntangibleAsset extends Asset{
 }
 abstract class Asset{
 }
-
+interface Thing{
+    + getWeight()
+    + setWeight(double weight)
+}
 
 class SuperHero extends Hero{
     + boolean isFlying
