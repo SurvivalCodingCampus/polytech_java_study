@@ -2,11 +2,11 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class PoisonSlime extends Slime{
 
-    private int pointCount = 5;
+    private int poisonCount = 5;
 
-    public PoisonSlime(String suffix, int hp, int pointCount) {
+    public PoisonSlime(String suffix, int hp, int poisonCount) {
         super(suffix, hp);
-        this.pointCount = Math.max(0,pointCount);
+        this.poisonCount = Math.max(0, poisonCount);
     }
 
     public PoisonSlime(String suffix) {
@@ -17,14 +17,17 @@ public class PoisonSlime extends Slime{
         super(suffix, hp);
     }
 
+    public int getPoisonCount() {
+        return poisonCount;
+    }
 
     @Override
     public void attack(LivingEntity livingEntity){
-        if(pointCount <= 0){
+        if(poisonCount <= 0){
             super.attack(livingEntity);
             return;
         }
-        pointCount--;
+        poisonCount--;
         int amount = livingEntity.getHp() / 5;
         super.attack(livingEntity);
         System.out.println("추가로 독 포자를 살포했다!");

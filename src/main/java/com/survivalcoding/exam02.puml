@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 2
+
+interface Thing {
+    + getWeight(): double
+    + setWeight(weight: double): void
+}
+
+abstract class Asset {
+    - name: String
+    - price: int
+}
+
+abstract class TangibleAsset {
+    - color: String
+    - weight: double
+
+    + getWeight(): double
+    + setWeight(weight: double): void
+}
+
+abstract class IntangibleAsset {
+    - patent: String
+}
+
+class Book {
+    - isbn: String
+}
+
+class Computer {
+    - makerName: String
+}
+
+' Inheritance relationships
+TangibleAsset --|> Asset
+IntangibleAsset --|> Asset
+Book --|> TangibleAsset
+Computer --|> TangibleAsset
+
+' Implementation relationships
+TangibleAsset ..|> Thing
+
+@enduml
