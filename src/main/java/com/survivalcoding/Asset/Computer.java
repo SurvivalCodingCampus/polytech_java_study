@@ -3,8 +3,8 @@ package com.survivalcoding.Asset;
 public class Computer extends TangibleAsset {
     private String makeName;
 
-    public Computer(String name, int price, String color, String makerName, double weight) {
-        super(name, price, color, weight);
+    public Computer(String owner, String name, int price, String color, String makerName, double weight) {
+        super(owner, name, price, color, weight);
         setMakeName(makeName);
     }
 
