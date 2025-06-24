@@ -1,23 +1,13 @@
 package com.survivalcoding;
 
 public abstract class TangibleAsset extends IntangibleAsset {
-    String name;
-    int price;
-    String color;
+    private int price;
+    private String color;
 
     TangibleAsset(String patent, String name, int price, String color) {
-        super(patent);
-        setName(name);
+        super(patent, name);
         setPrice(price);
         setColor(color);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getPrice() {
