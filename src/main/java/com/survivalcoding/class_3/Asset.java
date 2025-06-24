@@ -1,7 +1,7 @@
 package com.survivalcoding.class_3;
 
 public abstract class Asset {
-    public static int DEFAULT_PRICE = 10000;
+    public static final int DEFAULT_PRICE = 10000;
     private String name;
     private int price;
 
