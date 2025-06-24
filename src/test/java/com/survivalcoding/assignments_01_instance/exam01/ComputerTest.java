@@ -10,12 +10,12 @@ class ComputerTest {
     @Test
     @DisplayName("생성자를 통해 name, price, color, makerName이 잘 설정됐는지 테스트")
     void computerAllFieldCorrectly() {
-        Computer computer = new Computer("name", 500000, "color","makerName");
+        Computer computer = new Computer("name", 500000, "color", "makerName");
 
-        assertEquals("name",computer.getName());
+        assertEquals("name", computer.getName());
         assertEquals(500000, computer.getPrice());
-        assertEquals("color",computer.getColor());
-        assertEquals("makerName",computer.getMakerName());
+        assertEquals("color", computer.getColor());
+        assertEquals("makerName", computer.getMakerName());
     }
 
 }

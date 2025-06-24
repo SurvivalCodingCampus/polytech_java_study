@@ -13,7 +13,7 @@ class BookTest {
 
         Book book = new Book("name", 10000, "color", "isbn");
 
-        assertEquals("name",book.getName());
+        assertEquals("name", book.getName());
         assertEquals(10000, book.getPrice());
         assertEquals("color", book.getColor());
         assertEquals("isbn", book.getIsbn());
