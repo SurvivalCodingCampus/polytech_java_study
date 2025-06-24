@@ -2,8 +2,22 @@ package com.survivalcoding;
 
 import java.time.LocalDate;
 
-public class Patent extends IntangibleAsset{
+public class Patent extends IntangibleAsset {
     private LocalDate expiryDate;
+    private boolean isValid;
+
+    public boolean isValid() {
+        checkValidation();
+        return isValid;
+    }
+
+    private void checkValidation() {
+        if ( expiryDate.isBefore(super.getAcquiredDate()) ) {
+            isValid = false;
+        } else {
+            isValid = true;
+        }
+    }
 
     public Patent(String name, LocalDate acquiredDate, LocalDate expiryDate) {
         super(name, acquiredDate);
