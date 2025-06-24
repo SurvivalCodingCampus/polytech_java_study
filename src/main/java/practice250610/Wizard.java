@@ -3,13 +3,40 @@ package practice250610;
 public class Wizard {
     private int hp;
     private int mp;
+    final private int maxHp;
+    final private int maxMp;
+
     private String name;
     protected Wand wand;
 
+    //mp = 100
+    public Wizard(String name, int hp, int mp) {
+        setName(name);
+        setHp(hp);
+        setMp(mp);
+        this.maxHp = getHp();
+        this.maxMp = getMp();
+    }
+
+    public Wizard(String name) {
+        this(name, 100, 100);
+    }
+
+    public Wizard() {
+        this("wizard", 100, 100);
+    }
+
     public void heal(Hero hero) {
-        int basePoint = 10; // 기본 회복 포인트
-        int recovPoint = (int) (basePoint * this.wand.power);    // 지팡이에 의한 증폭
-        hero.setHp(hero.getHp() + recovPoint);  // 용사의 HP를 회복
+        int basePoint = 20; // 기본 회복 포인트
+        int mpPoint = 10;
+
+        if (getMp() < mpPoint) {
+            System.out.println("마나가 부족합니다");
+        } else {
+            hero.setHp(hero.getHp() + basePoint);
+            setMp(getMp() - mpPoint);
+            System.out.println("힐을 시전했습니다. " + hero.getName() + " HP: " + hero.getHp());
+        }
     }
 
     public Wand getWand() {
@@ -28,10 +55,12 @@ public class Wizard {
     }
 
     public void setHp(int hp) {
-        if (hp < 0) {
-            hp = 0;
-        }
-        this.hp = hp;
+        if (hp < 0) setHp(0);
+        else this.hp = hp;
+    }
+
+    public int getMaxHp() {
+        return maxHp;
     }
 
     public int getMp() {
@@ -39,10 +68,12 @@ public class Wizard {
     }
 
     public void setMp(int mp) {
-        if (mp < 0) {
-            throw new IllegalArgumentException("mp가 0 이상이어야 함");
-        }
-        this.mp = mp;
+        if (mp < 0) throw new IllegalArgumentException("mp가 0 이상이어야 함");
+        else this.mp = mp;
+    }
+
+    public int getMaxMp() {
+        return maxMp;
     }
 
     public String getName() {
@@ -59,5 +90,4 @@ public class Wizard {
         this.name = name;
         this.name = name;
     }
-
 }
