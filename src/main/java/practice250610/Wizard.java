@@ -31,11 +31,11 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
-        if (getMp() < mpPoint) {
+        if (getMp() < getMpPoint()) {
             System.out.println("마나가 부족합니다");
         } else {
-            hero.setHp(hero.getHp() + healPoint);
-            setMp(getMp() - mpPoint);
+            hero.setHp(hero.getHp() + getHealPoint());
+            setMp(getMp() - getMpPoint());
             System.out.println("힐을 시전했습니다. " + hero.getName() + " HP: " + hero.getHp());
         }
     }
