@@ -1,4 +1,5 @@
 package com.survivalcoding.Asset;
 
-public class Asset {
+public abstract class Asset {
+
 }
