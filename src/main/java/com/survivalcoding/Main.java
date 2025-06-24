@@ -2,12 +2,12 @@ package com.survivalcoding;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class  Main {
+public class Main {
     public static void main(String[] args) {
-        int ii =10;
-        boolean isMarried =true;
-        double d=5.0;
-        float f= 2.5f;
+        int ii = 10;
+        boolean isMarried = true;
+        double d = 5.0;
+        float f = 2.5f;
         String name = "홍길동";
 
         //sout 엔터
@@ -19,7 +19,8 @@ public class  Main {
             System.out.println("i = " + i);
         }
     }
-    public int attack () {
+
+    public int attack() {
         return 10;
     }
 }

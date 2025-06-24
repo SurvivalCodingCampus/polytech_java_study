@@ -36,7 +36,7 @@ public class Cleric {
         }
     }
 
-    int pray() {
+    public int pray() {
         int recoveryMP;
         int prayTimeSec;
         Random random = new Random();

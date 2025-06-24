@@ -2,11 +2,10 @@ package com.survivalcoding;
 
 public class Wizard {
     private int hp;
-    private int mp;
+    private int mp = 100;
     private String name;
     private Wand wand;
 
-    //생성자 만들기
     Wizard(int hp, int mp, String name, Wand wand) {
         this.hp = hp;
         this.mp = mp;
@@ -18,7 +17,6 @@ public class Wizard {
         return hp;
     }
 
-    //5번-----------
     public void setHp(int hp) {
         if (hp < 0) {
             throw new IllegalArgumentException("hp는 음수가 될 수 없음");
@@ -30,7 +28,6 @@ public class Wizard {
         return mp;
     }
 
-    //4번-----------
     public void setMp(int mp) {
         if (mp < 0) {
             throw new IllegalArgumentException("mp는 음수가 될 수 없음");
@@ -42,7 +39,6 @@ public class Wizard {
         return name;
     }
 
-    //1번------------
     public void setName(String name) {
         if (name == null) {
             throw new IllegalArgumentException("null이 될수 없음");
@@ -58,7 +54,6 @@ public class Wizard {
         return wand;
     }
 
-    //3번-----------
     public void setWand(Wand wand) {
         if (wand == null) {
             throw new IllegalArgumentException("null 될 수 없음");
@@ -66,9 +61,20 @@ public class Wizard {
         this.wand = wand;
     }
 
-    void heal(Hero hero) {
-        int basePoint = 10;
-        int recovPoint = (int) (basePoint * this.wand.getPower());
-        hero.setHp(hero.getHp() + recovPoint);
+    public void heal(Hero hero) {
+        //int basePoint = 10;
+        //int recovPoint = (int) (basePoint * this.wand.getPower());
+        //hero.setHp(hero.getHp() + recovPoint);
+        this.mp -= 10;
+        hero.setHp(hero.getHp() + 20);
+        System.out.println(getHp() + "힐을 시전했습니다. 대상 HP :");
+
+        if (mp < 10) {
+            System.out.println("마나가 부족합니다.");
+            return;
+
+        }
+
+
     }
 }
