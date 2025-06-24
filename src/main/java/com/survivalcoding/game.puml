@@ -1,24 +1,23 @@
 @startuml
 'https://plantuml.com/class-diagram
 class Computer extends TangibleAsset{
-    + String makerName;
+    + String makerName
 }
 class Book extends TangibleAsset{
-    + String isbn;
+    + String isbn
 }
 abstract class TangibleAsset extends Asset implements Thing{
-    + String name
-    + int price
     + String color
 }
 class Patent extends IntangibleAsset{
+    + int PatentNumber
 }
 abstract class IntangibleAsset extends Asset{
-    + String name
-    + int price
-    + String color
+    + String intangibleType
 }
 abstract class Asset{
+    + String name
+    + int price
 }
 interface Thing{
     + getWeight()
