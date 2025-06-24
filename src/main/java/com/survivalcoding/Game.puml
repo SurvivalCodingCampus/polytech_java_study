@@ -1,9 +1,20 @@
 @startuml
 'https://plantuml.com/class-diagram
-
+scale 0.7
 
 class SuperHero extends Hero {
     + boolean isFlying
+}
+
+interface Attackable {
+    {abstract} void attack(Slime slime)
+}
+
+class charcter implements Attackable {
+    String name
+    int hp
+
+    {abstract} void attack(Slime slime)
 }
 
 class Hero {
