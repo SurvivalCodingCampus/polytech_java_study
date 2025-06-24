@@ -22,9 +22,12 @@ public class Hero {
     }
 
     public void setHp(int hp) {
-        if (hp < 0 || hp > 100) {
-            return;
+        if (hp < 0) {
+            this.hp = 0;
+        } else if (hp > 100) {
+            this.hp = 100;
         }
+
         this.hp = hp;
     }
 }
