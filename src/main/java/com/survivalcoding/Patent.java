@@ -4,18 +4,12 @@ import java.time.LocalDate;
 
 public class Patent extends IntangibleAsset {
     private LocalDate expiryDate;
-    private boolean isValid;
 
     public boolean isValid() {
-        checkValidation();
-        return isValid;
-    }
-
-    private void checkValidation() {
-        if ( expiryDate.isBefore(super.getAcquiredDate()) ) {
-            isValid = false;
+        if ( expiryDate.isAfter(LocalDate.now()) ) {
+            return true;
         } else {
-            isValid = true;
+            return false;
         }
     }
 
@@ -30,6 +24,7 @@ public class Patent extends IntangibleAsset {
 
     public void setExpiryDate(LocalDate expiryDate) {
         if (expiryDate == null) throw new IllegalArgumentException("Date when will be expired is needed");
+        if (expiryDate.isBefore(super.getAcquiredDate())) throw new IllegalArgumentException("Expiry date cannot get ahead of its acquired date");
         this.expiryDate = expiryDate;
     }
 }
