@@ -6,6 +6,6 @@ public class Patent extends IntangibleAsset {
     }
 
     public Patent(String name) {
-        super(name, DEFAULT_PRICE);
+        super(name);
     }
 }
