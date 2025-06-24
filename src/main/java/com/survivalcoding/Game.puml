@@ -10,7 +10,7 @@ interface Attackable {
     {abstract} void attack(Slime slime)
 }
 
-class charcter implements Attackable {
+class character implements Attackable {
     String name
     int hp
 
