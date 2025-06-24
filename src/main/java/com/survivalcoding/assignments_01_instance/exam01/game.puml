@@ -1,10 +1,20 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class Hero{
-    + String name
-    - int hp
+class SuperHero extends Hero{
+    + boolean isFlying
+}
+class Character{
+    String name
+    int hp
+}
 
+class Wizard extends Character{
+    int mp
+    + void heal(Hero hero)
+}
+
+class Hero extends Character {
     + void attack(Kinoko enemy)
     + void bye()
     - void die()
@@ -16,30 +26,8 @@ class Cleric{
     + int mp
 
     + void attack(Kinoko enemy)
-    + void pray
-}
-
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+    + void pray(int sec)
+    + void selfAid()
 }
 
 @enduml
