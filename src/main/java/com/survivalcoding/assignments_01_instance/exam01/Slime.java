@@ -1,10 +1,15 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Slime {
-    final String suffix;
-    int hp;
-    
+    private final String suffix;
+    private int hp;
+
     public Slime(String suffix) {
+        this.suffix = suffix;
+    }
+
+    public Slime(int hp, String suffix) {
+        this.hp = hp;
         this.suffix = suffix;
     }
 
@@ -20,7 +25,7 @@ public class Slime {
         this.hp = hp;
     }
 
-    void attack(Hero hero) {
+    public void attack(Hero hero) {
         System.out.println("슬라임 " + suffix + "이/가 공격했다");
         System.out.println("10의 데미지");
 
