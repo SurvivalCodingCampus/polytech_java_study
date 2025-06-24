@@ -49,8 +49,18 @@ public class Cleric implements Healable {
         return name;
     }
 
+    @Override
+    public void takeDamage(int amount) {
+        hp = Math.max(0, hp - amount);
+    }
+
     public int getHp() {
         return hp;
+    }
+
+    @Override
+    public int getMaxHp() {
+        return MAX_HP;
     }
 
     public int getMp() {

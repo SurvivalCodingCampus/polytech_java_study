@@ -2,11 +2,12 @@ package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Wizard {
     private int hp;
-    private int mp;
+    private int mp = 100;
     private String name;
     private Wand wand;
 
-    protected Wizard() {} // 테스트 클래스에서만 사용가능하게 제한한다.
+    protected Wizard() {
+    } // 테스트 클래스에서만 사용가능하게 제한한다.
 
     public Wizard(int hp, int mp, String name, Wand wand) {
         if (wand == null) {
@@ -25,9 +26,14 @@ public class Wizard {
     }
 
     public void heal(Healable healable) {
-        int basePoint = 10;
-        int recoverPoint = (int) (basePoint * this.wand.getPower());
-        healable.beHealed(recoverPoint);
+        if (mp - 10 < 0) {
+            System.out.println("마나가 부족합니다.");
+            return;
+        }
+        mp -= 10;
+        int basePoint = 20;
+        healable.beHealed(basePoint);
+        System.out.println("힐을 시전했습니다. 대상 HP : " + healable.getHp());
     }
 
     public int getHp() {

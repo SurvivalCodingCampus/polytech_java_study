@@ -112,8 +112,8 @@ class ClericTest {
         //when
         testCleric.selfAid();
         //then
-        assertNotEquals(Cleric.MAX_HP, testCleric.getHp());
-        assertNotEquals(0, testCleric.getMp());
+        assertEquals(hp, testCleric.getHp());
+        assertEquals(mp, testCleric.getMp());
     }
 
     @Test
@@ -170,8 +170,8 @@ class ClericTest {
         //when
         int result = testCleric.pray(praySec);
         //then
-        Assertions.assertEquals(MAX_MP, testCleric.getMp());
-        Assertions.assertEquals(MAX_MP - mp, result);
+        assertEquals(MAX_MP, testCleric.getMp());
+        assertEquals(MAX_MP - mp, result);
     }
 
     @Test
@@ -186,7 +186,7 @@ class ClericTest {
         //when
         int maxResult = testCleric.pray(praySec);
         // then
-        Assertions.assertEquals(0, maxResult);
+        assertEquals(0, maxResult);
     }
 
     @Test
@@ -202,8 +202,8 @@ class ClericTest {
         int negativeResult = testCleric.pray(-3);
         int zeroResult = testCleric.pray(0);
         //then
-        Assertions.assertEquals(0, negativeResult);
-        Assertions.assertEquals(0, zeroResult);
+        assertEquals(0, negativeResult);
+        assertEquals(0, zeroResult);
 
     }
 

@@ -1,5 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.assignments_01_instance.exam01.mock.TestHealableEntity;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,16 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class WizardTest {
+
+
+    @Test
+    @DisplayName("마법사 생성시 기본 mp는 100이다")
+    void createWizard_1() {
+        //given
+        Wizard wizard = createWizard();
+        //when //then
+        assertEquals(100, wizard.getMp());
+    }
 
     @Test
     @DisplayName("마법사의 지팡이는 NULL일 경우 예외가 발생한다.")
@@ -55,9 +66,39 @@ class WizardTest {
     }
 
     @Test
-    @DisplayName("마법사의 heal 메서드 사용시 지팡이 파워에 비례하여 회복된다.")
+    @DisplayName("마법사의 heal 메서드 사용 시 자신의 mp 10이 소모 되고 상대 hp 20이 회복된다.")
     void heal() {
         //given
+        Wizard wizard = createWizard();
+        int beforeMp = 10;
+        wizard.setMp(beforeMp);
+        int hp = 50;
+        TestHealableEntity testHealableEntity = new TestHealableEntity(hp);
+
+        //when
+        wizard.heal(testHealableEntity);
+
+        //then
+        assertEquals(hp + 20, testHealableEntity.getHp());
+        assertEquals(beforeMp - 10, wizard.getMp());
+    }
+
+    @Test
+    @DisplayName("마법사의 heal 메서드 사용 시 mp가 부족한 경우 사용되지 않는다.")
+    void heal_1() {
+        //given
+        Wizard wizard = createWizard();
+        wizard.setMp(0);
+        int hp = 100;
+        TestHealableEntity testHealableEntity = new TestHealableEntity(hp);
+        //when
+        wizard.heal(testHealableEntity);
+
+        //then
+        assertEquals(hp, testHealableEntity.getHp());
+    }
+
+    private static Wizard createWizard() {
         String wandName = "myPet";
         double power = 1f;
         Wand wand = new Wand();
@@ -65,15 +106,7 @@ class WizardTest {
         wand.setName(wandName);
         Wizard wizard = new Wizard();
         wizard.setWand(wand);
-
-        int clericHp = 1;
-        Cleric cleric = new Cleric("Cleric", 1);
-
-        //when
-        wizard.heal(cleric);
-
-        //then
-        assertEquals(power * 10 + clericHp, cleric.getHp());
+        return wizard;
     }
 
 }
