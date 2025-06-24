@@ -1,18 +1,52 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+
 scale 2
-Class Hero {
+
+class GreatWizard extends Wizard {
+
++ void heal
++ void superHeal
+}
+
+class PoisonSlime extends Slime {
+- String name
+- int poisonCount
+}
+
+
+class Slime {
+-  String suffix
+- int hp
+}
+
+class SuperHero extends Hero {
+    + boolean isFlying
+}
+
+
+class Wizard {
+- int hp
+- int mp
+- String name
+- Wand wand;
+
++ void heal()
+
+}
+class Hero {
     + String name
     - int hp
 
     + void attack(Kinoko enemy)
     + void bye()
     - void die()
+    + void run()
 }
 
 
-Class Cleric {
+class Cleric {
     + String name
     - int hp
     + int mp
@@ -22,23 +56,23 @@ Class Cleric {
      + void selfAid()
 }
 
-Class Kinoko {
+class Kinoko {
     + int hp
     + int level
 }
 
 
-Class Sword {
+class Sword {
    - String name
    - int damage
 }
 
-Class Wand {
+class Wand {
     - String name
     - double power
 }
 
-Class Wizard {
+class Wizard {
         - int hp
         - int mp
         - String name

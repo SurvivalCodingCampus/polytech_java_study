@@ -35,6 +35,6 @@ public class Person {
         cal.setTime(now);
         int currentYear = cal.get(Calendar.YEAR); // Calender에서 연도 추출
 
-        return (currentYear - birthYear + 1);
+        return (currentYear - birthYear);
     }
 }
