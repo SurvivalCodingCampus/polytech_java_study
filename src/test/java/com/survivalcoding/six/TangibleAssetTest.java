@@ -43,7 +43,6 @@ class TangibleAssetTest {
 
         assertEquals("Blue", asset.getColor());
         assertThrows(IllegalArgumentException.class, () -> asset.setColor(null));
-        assertThrows(IllegalArgumentException.class, () -> asset.setColor(null));
 
         asset.setWeight(4.5);
 
