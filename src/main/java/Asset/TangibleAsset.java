@@ -2,7 +2,7 @@ package Asset;
 
 public abstract class TangibleAsset extends Asset implements Thing {
     private String color;
-    private int weight;
+    private double weight;
 
     public String getColor() {
         return this.color;
@@ -13,12 +13,12 @@ public abstract class TangibleAsset extends Asset implements Thing {
     }
 
     @Override
-    public int getWeight() {
+    public double getWeight() {
         return this.weight;
     }
 
     @Override
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         if (weight < 0) {
             throw new IllegalArgumentException("무게는 0 이상이어야 한다");
         }

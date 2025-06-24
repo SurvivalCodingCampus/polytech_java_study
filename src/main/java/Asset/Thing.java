@@ -1,7 +1,7 @@
 package Asset;
 
 public interface Thing {
-    int getWeight();
+    double getWeight();
 
-    void setWeight(int weight);
+    void setWeight(double weight);
 }
