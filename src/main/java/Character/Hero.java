@@ -1,4 +1,4 @@
-package practice250610;
+package Character;
 
 public class Hero {
     private String name;

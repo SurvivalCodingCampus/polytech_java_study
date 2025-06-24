@@ -1,4 +1,4 @@
-package practice250610;
+package Character;
 
 public class Slime {
     final String suffix;

@@ -1,4 +1,4 @@
-package practice250610;
+package Character;
 
 public class GreatWizard extends Wizard {
     private int superMpPoint;

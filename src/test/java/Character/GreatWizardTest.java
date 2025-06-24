@@ -1,4 +1,4 @@
-package practice250610;
+package Character;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
