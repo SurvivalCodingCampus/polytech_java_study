@@ -1,10 +1,14 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+class SuperHero extends Hero{
+    + boolean isFlying
+}
+
 class Cleric{
     + String name
-    - static final int MAX_HP
-    - static final int MAX_MP
+    - {static} final int MAX_HP
+    - {static} final int MAX_MP
     - int currentHp
     - int currentMp
 
@@ -12,7 +16,7 @@ class Cleric{
     + void pray(int time)
 
 }
-class Hero{
+class Hero {
     + String name
     - int hp
 
@@ -36,7 +40,19 @@ class Wizard{
     + Wand getWand()
     + void heal(Hero hero)
 }
-
+class GreatWizard extends Wizard{
+    + void heal(Hero hero)
+    + void SuperHero(Hero hero)
+}
+class Slime{
+    + String suffix;
+    + int hp;
+    + void attack(Hero hero)
+}
+class PoisonSlime extends Slime{
+    + int poisonCount
+    + void attack(Hero hero)
+}
 class Wand{
     - String name
     - double power

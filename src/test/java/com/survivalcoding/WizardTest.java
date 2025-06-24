@@ -8,10 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class WizardTest {
     Wand wand;
+    Hero hero;
 
     @BeforeEach
     void setUp() {
         wand = new Wand("마법사의 불꽃", 99);
+        hero = new Hero("Hero", 100);
     }
 
     @Test
@@ -41,6 +43,16 @@ class WizardTest {
         });
         assertThrows(IllegalArgumentException.class, () -> {
             wizard.setWand(null);
+        });
+    }
+
+    @Test
+    void healTest() {
+        Wizard wizard = new Wizard(100, "geartttt", wand);
+        for (int i = 0; i < 10; i++)
+            wizard.heal(hero);
+        assertThrows(IllegalArgumentException.class, () -> {
+            wizard.heal(hero);
         });
     }
 
