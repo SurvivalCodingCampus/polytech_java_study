@@ -5,12 +5,17 @@ scale 1
 skinparam classAttributeIconSize 0
 
 Abstract class Asset {
-
-}
-
-Abstract class TangibleAsset extends Asset {
     - String name
     - int price
+    - String owner
+}
+
+interface Thing {
+    + double getWeight()
+    + void setWeight(double weight)
+}
+
+Abstract class TangibleAsset extends Asset implements Thing {
     - String color
     - double weight
 }
@@ -28,7 +33,7 @@ Abstract class IntangibleAsset extends Asset {
 }
 
 class Patent extends IntangibleAsset {
-
+    - String expireDate
 }
 
 @enduml
