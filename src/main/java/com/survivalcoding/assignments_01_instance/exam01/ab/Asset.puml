@@ -1,7 +1,7 @@
 @startuml
 
 interface Thing {
-+ double getWeight
++ double getWeight()
 + void setWeight(double weight)
 }
 
@@ -12,6 +12,7 @@ abstract class Asset {
 
 abstract class TangibleAsset {
 + String color
++ double weight
 }
 
 abstract class IntangibleAsset {

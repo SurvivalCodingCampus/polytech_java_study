@@ -7,6 +7,14 @@ package com.survivalcoding.assignments_01_instance.exam01.ab;
 public class TangibleAsset extends Asset implements Thing {
     private double weight;
 
+    public TangibleAsset(String name, int price, String color, double weight) {
+        super();
+    }
+
+    public TangibleAsset() {
+
+    }
+
     @Override
     public double getWeight() {
         return weight;
