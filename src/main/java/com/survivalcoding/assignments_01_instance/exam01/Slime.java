@@ -1,18 +1,39 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
 public class Slime {
-    private final String suffix;
-    private int hp;
+    public static final int DEFAULT_DAMAGE = 10;
 
-    public Slime(String name) {
+    private final String prefix;
+    private int hp;
+    private int damage=DEFAULT_DAMAGE;
+
+    public Slime(String prefix, int hp) {
+        this.prefix=prefix;
+        this.hp=hp;
     }
 
+    public String getPrefix(){
+        return prefix;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
     //생성자, getter, setter 작성
 
-    void attack(Hero hero){
-        System.out.println("슬라임 "+ suffix + "이/가 공격했다");
-        System.out.println("10의 데미지");
-
-        hero.setHp(hero.getHp() - 10);
+    public void attack(Hero hero){
+        hero.setHp(hero.getHp() - damage);
     }
 }

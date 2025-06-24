@@ -31,9 +31,12 @@ public class SuperHero extends Hero {
     }
 
     public static void main(String[] args){
-        SuperHero superHero = new SuperHero("a", 10);
+        Hero hero=new Hero("aaa", 10);
+
+        SuperHero superHero = new SuperHero("aaa", 10);
         superHero.run();
 
-
+        superHero.setFlying(true);
+        superHero.attack(new Kinoko());
     }
 }
