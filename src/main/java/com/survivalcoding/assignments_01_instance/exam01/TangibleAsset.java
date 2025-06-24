@@ -1,6 +1,5 @@
 package com.survivalcoding.assignments_01_instance.exam01;
-
-
+//연습3에서 4 모두 작성
 public class TangibleAsset extends Asset implements Thing {
 
     private String color;
