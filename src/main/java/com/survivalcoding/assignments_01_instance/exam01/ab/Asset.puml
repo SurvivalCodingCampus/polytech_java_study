@@ -1,0 +1,32 @@
+@startuml
+
+interface Thing {
+}
+
+abstract class Asset {
+}
+
+abstract class TangibleAsset {
+}
+
+abstract class IntangibleAsset {
+}
+
+class Book {
+}
+
+class Computer {
+}
+
+class Patent {
+}
+
+TangibleAsset --|> Asset
+IntangibleAsset --|> Asset
+Book --|> TangibleAsset
+Computer --|> TangibleAsset
+Patent --|> IntangibleAsset
+
+TangibleAsset ..|> Thing
+
+@enduml
