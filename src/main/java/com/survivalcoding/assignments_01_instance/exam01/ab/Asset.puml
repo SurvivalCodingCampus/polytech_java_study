@@ -1,21 +1,28 @@
 @startuml
 
 interface Thing {
++ double getWeight
++ void setWeight(double weight)
 }
 
 abstract class Asset {
++ String name
++ int price
 }
 
 abstract class TangibleAsset {
++ String color
 }
 
 abstract class IntangibleAsset {
 }
 
 class Book {
++ String isbn
 }
 
 class Computer {
++ String makerName
 }
 
 class Patent {
