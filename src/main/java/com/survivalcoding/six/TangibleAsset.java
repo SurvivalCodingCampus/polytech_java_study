@@ -1,8 +1,6 @@
 package com.survivalcoding.six;
 
-public class TangibleAsset {
-    String name;
-    int price;
+public abstract class TangibleAsset extends Asset {
     String color;
 
 }
