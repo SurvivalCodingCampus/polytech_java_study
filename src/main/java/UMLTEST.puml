@@ -1,0 +1,83 @@
+@startuml
+abstract class Asset {
+    -name: String
+    - price: int
+    + getName(): String
+    + getPrice(): int
+}
+
+interface Thing {
+    + getWeight(): double
+    + setWeight(weight: double): void
+}
+
+abstract class TangibleAsset {
+    - color: String
+    - weight: double
+    + getColor(): String
+    + getWeight(): double
+    + setWeight(weight: double): void
+}
+
+class Book {
+    - isbn: String
+    + getIsbn(): String
+    + use(): void
+}
+
+class Computer {
+    - makerName: String
+    + getMakerName(): String
+    + use(): void
+}
+
+' 기본 클래스들
+class Cleric {
+    - name: String
+    - hp: int
+    - mp: int
+    + selfAid(): void
+    + pray(sec: int): int
+}
+
+class Wizard {
+    - hp: int
+    - mp: int
+    - wand: Wand
+    + heal(wizard: Wizard): void
+    + getHp(): int
+    + setHp(hp: int): void
+}
+
+class Wand {
+    - name: String
+    - power: double
+    + setName(name: String): void
+    + setPower(power: double): void
+}
+
+class Slime {
+    - name: String
+    + attack(wizard: Wizard): void
+}
+
+class PoisonSlime {
+    - poisonCount: int
+    + attack(wizard: Wizard): void
+}
+
+' 상속 관계
+PoisonSlime --|> Slime
+
+' 포함 관계 (has-a)
+Wizard --> Wand : has-a
+Slime --> Wizard : attacks
+PoisonSlime --> Wizard : attacks
+
+TangibleAsset --|> Asset
+TangibleAsset ..|> Thing
+
+Book --|> TangibleAsset
+Computer --|> TangibleAsset
+
+@enduml

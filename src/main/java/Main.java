@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        GreatWizard gw = new GreatWizard();
+        /*GreatWizard gw = new GreatWizard();
         PoisonSlime ps = new PoisonSlime("\n슬라임");
         Wizard wizard = new Wizard();
 
@@ -11,5 +11,6 @@ public class Main {
 
         gw.heal(wizard);
         gw.SuperHeal();
+    */
     }
 }
