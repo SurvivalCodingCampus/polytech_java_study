@@ -1,9 +1,12 @@
 @startuml
 scale 3
 
-abstract class TangibleAsset {
+abstract class Asset {
     String name
     int price
+}
+
+abstract class TangibleAsset extends Asset {
     String color
 }
 
@@ -13,5 +16,10 @@ class Book extends TangibleAsset {
 
 class Computer extends TangibleAsset {
     String isbn
+}
+
+class Patent extends IntangibleAsset
+
+abstract class IntangibleAsset extends Asset {
 }
 @enduml
