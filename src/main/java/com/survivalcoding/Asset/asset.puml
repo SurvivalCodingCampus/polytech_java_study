@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 1
+skinparam classAttributeIconSize 0
+
+Abstract class Asset {
+    - String name
+    - int price
+    - String owner
+}
+
+interface Thing {
+    + double getWeight()
+    + void setWeight(double weight)
+}
+
+Abstract class TangibleAsset extends Asset implements Thing {
+    - String color
+    - double weight
+}
+
+Class Book extends TangibleAsset {
+    - String isbn
+}
+
+class Computer extends TangibleAsset {
+    - String makerName
+}
+
+Abstract class IntangibleAsset extends Asset {
+
+}
+
+class Patent extends IntangibleAsset {
+    - String expireDate
+}
+
+@enduml
