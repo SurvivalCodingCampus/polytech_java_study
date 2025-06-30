@@ -48,6 +48,7 @@ class PoisonSlimeTest {
 
         //then
         Assertions.assertEquals(hp - (10 + hp / 5), testLivingEntity.getHp());
+        Assertions.assertEquals(4, poisonSlime.getPoisonCount());
     }
 
     @Test
@@ -63,6 +64,7 @@ class PoisonSlimeTest {
 
         //then
         Assertions.assertEquals(hp - 10, testLivingEntity.getHp());
+        Assertions.assertEquals(0, poisonSlime.getPoisonCount());
     }
 
 }

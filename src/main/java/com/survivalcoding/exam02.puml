@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 2
+
+interface Thing {
+    + getWeight(): double
+    + setWeight(weight: double): void
+}
+
+abstract class Asset {
+    - {final} name: String
+    - price: long
+
+    + Asset(name: String, price: long)
+    + getName(): String
+    + getPrice(): long
+    + changePrice(price: long): void
+}
+
+abstract class TangibleAsset {
+    - {final} color: Color
+    - weight: double
+
+    + TangibleAsset(name: String, price: long, color: Color, weight: double)
+    + getWeight(): double
+    + setWeight(weight: double): void
+    + getColor(): Color
+}
+
+abstract class IntangibleAsset {
+    + IntangibleAsset(name: String, price: long)
+}
+
+class Book {
+    - {final} isbn: String
+
+    + Book(name: String, price: long, color: Color, weight: double, isbn: String)
+    + getIsbn(): String
+}
+
+class Computer {
+    - {final} makerName: String
+
+    + Computer(name: String, price: long, color: Color, weight: double, makerName: String)
+    + getMakerName(): String
+}
+
+class Patent {
+    - {final} registrationNumber: String
+
+    + Patent(name: String, price: long, registrationNumber: String)
+    + getRegistrationNumber(): String
+}
+
+class Copyright {
+    - {final} icn: String
+
+    + Copyright(name: String, price: long, icn: String)
+    + getIcn(): String
+}
+
+' Inheritance relationships
+TangibleAsset --|> Asset
+IntangibleAsset --|> Asset
+Book --|> TangibleAsset
+Computer --|> TangibleAsset
+Patent --|> IntangibleAsset
+Copyright --|> IntangibleAsset
+
+' Implementation relationships
+TangibleAsset ..|> Thing
+
+@enduml
