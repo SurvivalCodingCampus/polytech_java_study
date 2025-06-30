@@ -1,0 +1,58 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+abstract class Asset {
+    - String name
+}
+
+abstract class IntangibleAsset extends Asset {
+    - Date acquiredDate
+}
+
+class Patent extends IntangibleAsset {
+    - Date expiryDate
+}
+
+interface Thing {
+    + getWeight()
+    + setWeight(double weight)
+}
+
+abstract class TangibleAsset extends Asset implements Thing {
+    - int price
+    - String color
+    - double weight
+}
+
+class Book extends TangibleAsset {
+    String isbn
+}
+
+class Computer extends TangibleAsset {
+    String makerName
+}
+
+@enduml
