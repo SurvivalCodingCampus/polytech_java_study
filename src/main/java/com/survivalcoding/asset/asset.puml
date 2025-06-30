@@ -1,5 +1,5 @@
 @startuml
-scale 3
+scale 1.5
 
 interface Thing {
     double getWeight()
