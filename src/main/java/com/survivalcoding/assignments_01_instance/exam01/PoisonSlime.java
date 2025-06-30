@@ -3,7 +3,7 @@ package com.survivalcoding.assignments_01_instance.exam01;
 public class PoisonSlime extends Slime {
     public static final int MAX_Hp = 5;
     public static final int DEFAULT_POISONCOUNT = 5;
-    private int poisonCount = 5;
+    private int poisonCount = DEFAULT_POISONCOUNT;
 
     public PoisonSlime(int hp, String suffix) {
         super(hp, suffix);
