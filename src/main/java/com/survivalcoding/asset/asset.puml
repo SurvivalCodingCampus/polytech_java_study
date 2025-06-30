@@ -1,13 +1,19 @@
 @startuml
 scale 3
 
+interface Thing {
+    double getWeight()
+    void setWeight(double weight)
+}
+
 abstract class Asset {
     String name
     int price
 }
 
-abstract class TangibleAsset extends Asset {
+abstract class TangibleAsset extends Asset implements Thing {
     String color
+    double weight
 }
 
 class Book extends TangibleAsset {
@@ -15,7 +21,7 @@ class Book extends TangibleAsset {
 }
 
 class Computer extends TangibleAsset {
-    String isbn
+    String makerName
 }
 
 class Patent extends IntangibleAsset
