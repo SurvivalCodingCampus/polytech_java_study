@@ -2,7 +2,7 @@
 'https://plantuml.com/class-diagram
 
 
-scale 2
+scale 1
 abstract class Asset {
 - String name
 - int price
