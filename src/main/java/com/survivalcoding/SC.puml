@@ -1,0 +1,88 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+'abstract class AbstractList
+'abstract AbstractCollection
+'interface List
+'interface Collection
+'
+'List <|-- AbstractList
+'Collection <|-- AbstractCollection
+'
+'Collection <|- List
+'AbstractCollection <|- AbstractList
+'AbstractList <|-- ArrayList
+'
+'class ArrayList {
+'Object[] elementData
+'size()
+'}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+scale 1.25
+
+abstract class Unit {
+    - int hp
+}
+
+abstract class Tribe extends Unit {
+}
+
+abstract class Terran extends Tribe {
+}
+
+abstract class Zerg extends Tribe {
+}
+
+abstract class Protoss extends Tribe {
+}
+
+class Marine extends Terran implements IMove, IAttack, IGroupable, IHealable, IBionic {
+}
+class Medic extends Terran implements IMove, IGroupable, IHeal, IHealable, IBionic {
+}
+class SCV extends Terran implements IMove, IAttack, IGather, IGroupable, IHealable, IRepair, IRepairable, IMechanic {
+}
+class Vulture extends Terran implements IMove, IAttack, IGroupable, IRepairable, IMechanic {
+}
+class Tank extends Terran implements IMove, IAttack, IGroupable, IRepairable, IMechanic {
+}
+
+class Zergling extends Zerg implements IMove, IAttack, IGroupable, IRegenerate, IHealable, IBionic {
+}
+class Hydralisk extends Zerg implements IMove, IAttack, IGroupable, IRegenerate, IHealable, IBionic {
+}
+
+class Zealot extends Protoss implements IMove, IAttack, IGroupable, IRegenerate, IHealable, IBionic {
+}
+class Dragoon extends Protoss implements IMove, IAttack, IGroupable, IRepairable, IMechanic {
+}
+
+interface IMove {}
+interface IAttack {
+void Attack(Unit unit)
+}
+interface IHeal {
+void Heal(IHealable healable)
+}
+interface IHealable {}
+interface IRegenerate {}
+interface IRepair {
+void Repair(IRepairable repairable)
+}
+interface IRepairable {}
+interface IGather {
+void Gather(Resource resource)
+}
+interface IGroupable {}
+interface IBuilding {}
+interface IBionic {}
+interface IMechanic {}
+
+
+@enduml
