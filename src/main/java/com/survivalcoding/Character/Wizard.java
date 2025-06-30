@@ -1,10 +1,12 @@
-package practice250610;
+package com.survivalcoding.Character;
 
 public class Wizard {
     private int hp;
     private int mp;
     final private int maxHp;
     final private int maxMp;
+    private int healPoint;
+    private int mpPoint;
 
     private String name;
     protected Wand wand;
@@ -14,8 +16,10 @@ public class Wizard {
         setName(name);
         setHp(hp);
         setMp(mp);
-        this.maxHp = getHp();
-        this.maxMp = getMp();
+        maxHp = getHp();
+        maxMp = getMp();
+        healPoint = 20;
+        mpPoint = 10;
     }
 
     public Wizard(String name) {
@@ -27,14 +31,11 @@ public class Wizard {
     }
 
     public void heal(Hero hero) {
-        int basePoint = 20; // 기본 회복 포인트
-        int mpPoint = 10;
-
-        if (getMp() < mpPoint) {
+        if (getMp() < getMpPoint()) {
             System.out.println("마나가 부족합니다");
         } else {
-            hero.setHp(hero.getHp() + basePoint);
-            setMp(getMp() - mpPoint);
+            hero.setHp(hero.getHp() + getHealPoint());
+            setMp(getMp() - getMpPoint());
             System.out.println("힐을 시전했습니다. " + hero.getName() + " HP: " + hero.getHp());
         }
     }
@@ -89,5 +90,21 @@ public class Wizard {
         }
         this.name = name;
         this.name = name;
+    }
+
+    public int getHealPoint() {
+        return healPoint;
+    }
+
+    public void setHealPoint(int healPoint) {
+        this.healPoint = healPoint;
+    }
+
+    public int getMpPoint() {
+        return mpPoint;
+    }
+
+    public void setMpPoint(int mpPoint) {
+        this.mpPoint = mpPoint;
     }
 }

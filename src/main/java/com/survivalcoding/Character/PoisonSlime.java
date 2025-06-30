@@ -1,4 +1,4 @@
-package practice250610;
+package com.survivalcoding.Character;
 
 public class PoisonSlime extends Slime {
     private int poisonCount;
@@ -14,10 +14,7 @@ public class PoisonSlime extends Slime {
 
     @Override
     public void attack(Hero hero) {
-        System.out.println("슬라임 " + getSuffix() + "이/가 공격했다");
-        System.out.println("10의 데미지");
-
-        hero.setHp(hero.getHp() - 10);
+        super.attack(hero);
 
         if (getPoisonCount() > 0) {
             System.out.println("추가로, 독 포자를 살포했다!");

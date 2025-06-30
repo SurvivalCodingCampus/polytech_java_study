@@ -1,4 +1,4 @@
-package practice250610;
+package com.survivalcoding.Character;
 
 public class Hero {
     private String name;

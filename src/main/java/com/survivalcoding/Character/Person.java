@@ -1,7 +1,6 @@
-package practice250610;
+package com.survivalcoding.Character;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Person {
     private String name;

@@ -1,6 +1,6 @@
-package practice250610;
+package com.survivalcoding.Character;
 
-import org.junit.jupiter.api.BeforeEach;
+import com.survivalcoding.Character.Cleric;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package practice250610;
+package com.survivalcoding.Character;
 
 public class Wand {
     private String name;    // 지팡이의 이름

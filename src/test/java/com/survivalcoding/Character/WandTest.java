@@ -1,5 +1,6 @@
-package practice250610;
+package com.survivalcoding.Character;
 
+import com.survivalcoding.Character.Wand;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

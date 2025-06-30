@@ -1,5 +1,7 @@
-package practice250610;
+package com.survivalcoding.Character;
 
+import com.survivalcoding.Character.Hero;
+import com.survivalcoding.Character.PoisonSlime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,10 +24,11 @@ class PoisonSlimeTest {
         Hero hero = new Hero();
         PoisonSlime poisonSlime = new PoisonSlime("A");
         int damage = 0, currentHp = 500, poison = 5;
+        int baseDamage = poisonSlime.getDamage();
 
         hero.setHp(currentHp);
         poisonSlime.attack(hero);
-        damage = 10 + ((currentHp - 10) / 5);
+        damage = baseDamage + ((currentHp - baseDamage) / 5);
         currentHp -= damage;
         poison--;
 
@@ -40,16 +43,17 @@ class PoisonSlimeTest {
         Hero hero = new Hero();
         PoisonSlime poisonSlime = new PoisonSlime("A");
         int damage, currentHp = 500, poison = 5;
+        int baseDamage = poisonSlime.getDamage();
 
         hero.setHp(currentHp);
         for (int i = poison; poison > 0; poison--) {
             poisonSlime.attack(hero);
-            damage = 10 + ((currentHp - 10) / 5);
+            damage = baseDamage + ((currentHp - baseDamage) / 5);
             currentHp -= damage;
         }
 
         poisonSlime.attack(hero);
-        currentHp -= 10;
+        currentHp -= baseDamage;
 
         assertEquals(currentHp, hero.getHp());
         assertEquals(poison, poisonSlime.getPoisonCount());
