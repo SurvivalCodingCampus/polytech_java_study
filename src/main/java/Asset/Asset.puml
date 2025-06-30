@@ -13,7 +13,10 @@ interface Thing {
 }
 
 abstract class TangibleAsset{
+    double weight
 
+    double getWeight()
+    void setWeight(double weight)
 }
 
 abstract class IntangibleAsset {
@@ -22,16 +25,21 @@ abstract class IntangibleAsset {
 
 class Computer {
     String makerName
+
+    String getMakerName()
+    void setMakerName(String makerName)
 }
 
 class Book {
     String isbn
+
+    String getIsbn()
+    void setIsbn(String isbn)
 }
 
 class Patent {
 
 }
-
 
 
 Thing <|.. TangibleAsset

@@ -9,7 +9,7 @@ public class Wand {
     }
 
     public Wand(String name, double power) {
-        setName(name);
+        this.name = name;
         this.power = power;
     }
 
@@ -20,7 +20,7 @@ public class Wand {
 
     public void setName(String name) {
         if (name == null) {
-            throw new IllegalArgumentException("지팡이 이름은 null일 수 없습니다.");
+            throw new IllegalArgumentException("지팡이 이름은 null일 수 없다.");
         }
         if (name.length() < 3) {
             throw new IllegalArgumentException("이름은 3자 이상이어야 합니다.");
