@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 1.3
+
+abstract class Asset {
+    static int DEFAULT_PRICE = 10000
+    String name
+    int price
+}
+
+interface thing {
+    double getWeight()
+    void setWeight(double weight)
+}
+
+abstract class IntangibleAsset extends Asset {
+
+}
+
+abstract class TangibleAsset extends Asset implements thing{
+    String color
+    double weight
+}
+class Book extends TangibleAsset {
+    String isbn
+}
+class computer extends TangibleAsset {
+    String makerName
+}
+class Patent extends IntangibleAsset {
+}
+
+
+@enduml
