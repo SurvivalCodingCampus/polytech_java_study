@@ -15,18 +15,19 @@ abstract Facility {
     -List<Hero>
 }
 
-abstract Marvel extends Facility {
+class Marvel extends Facility {
     -List<Hero>
+    -static boolean
 }
-abstract DC extends Facility {
+class DC extends Facility {
     -List<Hero>
-    Shield(Hero)
-    Shield(Facility)
+    -static boolean
+    Shield(DC)
 }
-abstract XMen extends Facility {
+class XMen extends Facility {
     -List<Hero>
-    SelfHealing(Hero)
-    SelfHealing(Facility)
+    -static boolean
+    SelfHealing(XMen)
 }
 
 class Hawkeye extends Human
