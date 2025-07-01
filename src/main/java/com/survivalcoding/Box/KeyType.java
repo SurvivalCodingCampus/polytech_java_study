@@ -1,6 +1,6 @@
 package com.survivalcoding.Box;
 
-enum KeyType {
+public enum KeyType {
     PADLOCK,
     BUTTON,
     DIAL,
