@@ -1,5 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.assignments_01_instance.exam01.Monster.Kinoko;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
