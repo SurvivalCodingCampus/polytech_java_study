@@ -1,5 +1,6 @@
 package com.survivalcoding;
 
+import com.survivalcoding.game.Cleric;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

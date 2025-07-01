@@ -1,6 +1,8 @@
 package com.survivalcoding;
 
-import org.junit.jupiter.api.BeforeEach;
+import com.survivalcoding.game.Hero;
+import com.survivalcoding.game.PoisonSlime;
+import com.survivalcoding.game.Slime;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
