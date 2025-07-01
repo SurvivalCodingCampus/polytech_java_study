@@ -1,6 +1,6 @@
 package com.survivalcoding;
 
-public class Wizard {
+public class Wizard extends Character {
     private String name;
     private int hp;
     private int mp;
@@ -22,6 +22,10 @@ public class Wizard {
         this.hp = hp;
         this.mp = mp;
         this.wand = wand;
+    }
+
+    public void fireball(Slime slime) {
+
     }
 
     public String getName() {
@@ -62,5 +66,18 @@ public class Wizard {
 
     public void heal(Hero hero) {
         hero.setHp(hero.getHp() + 10);
+    }
+
+    @Override
+    public void attack(Slime slime) {
+
+    }
+
+    public static void main(String[] args) {
+        Character wizard = new Wizard("aaa");
+        Slime slime = new Slime("bbb", 10);
+
+        wizard.attack(slime);
+//        wizard.fireball(slime);
     }
 }

@@ -1,6 +1,8 @@
 package com.survivalcoding;
 
-public class Slime {
+import com.survivalcoding.monster.Monster;
+
+public class Slime extends Monster {
     public static final int DEFAULT_DAMAGE = 10;
 
     private final String prefix;
@@ -34,5 +36,26 @@ public class Slime {
 
     public void attack(Hero hero) {
         hero.setHp(hero.getHp() - damage);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("2");
+    }
+
+    public static void main(String[] args) {
+        Slime slime = new Slime("", 10);
+        Monster monster = new Slime("", 10);
+        slime.run();
+        monster.run();
+
+//        Slime slime1 = (Hero) monster;
+
+        float ff = 10f;
+        int dd = 10;
+
+        ff = dd;
+
+        dd = (int) ff;
     }
 }
