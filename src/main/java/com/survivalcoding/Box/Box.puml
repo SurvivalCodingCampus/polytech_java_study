@@ -1,27 +1,14 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
+scale 1
+skinparam classAttributeIconSize 0
 
-List <|-- AbstractList
-Collection <|-- AbstractCollection
+class StrongBox {
+    - E data;
 
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+    + void put(E data)
+    + E get()
 }
 
 @enduml
