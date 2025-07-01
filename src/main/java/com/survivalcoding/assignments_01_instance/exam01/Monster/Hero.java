@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 import java.util.Random;
 

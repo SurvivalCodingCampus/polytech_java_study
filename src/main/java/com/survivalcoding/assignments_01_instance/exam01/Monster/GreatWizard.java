@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 public class GreatWizard extends Wizard {
     private int mp=150;

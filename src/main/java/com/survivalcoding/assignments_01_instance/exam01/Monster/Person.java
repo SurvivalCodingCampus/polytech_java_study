@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 public class Person {
     //이름과 태어난 해는 한 번 정해지면 수정이 불가

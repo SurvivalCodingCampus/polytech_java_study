@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 public class PoisonSlime extends Slime {
     public static final int MAX_HP=10;

@@ -1,10 +1,10 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 public class Kinoko {
     int hp = 50;
     final int level = 10;
 
-    void attack() {
+    public void attack() {
         final int level = 20;
         hp = 100;
     }

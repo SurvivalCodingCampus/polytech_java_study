@@ -1,18 +1,16 @@
-package com.survivalcoding.assignments_01_instance.exam01.ab;
+package com.survivalcoding.assignments_01_instance.exam01.Asset;
 
 //유형자산 (TangibleAsset)이 부모 클래스
 
 public class Computer extends TangibleAsset {
 
-    public Computer(){
-        super();
-    }
+    private String makerName;
 
     public Computer(String name, int price, String color, double weight, String makerName){
         super(name, price, color, weight);
         this.makerName=makerName;
     }
-    private String makerName;
+
 
     public String getMakerName() {
         return makerName;

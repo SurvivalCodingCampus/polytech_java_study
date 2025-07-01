@@ -1,11 +1,13 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.assignments_01_instance.exam01.Monster.Kinoko;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class KinokoTest {
+
     @Test
     @DisplayName("버섯 생성시 hp는 50이어야 한다")
     void testCreate() {
