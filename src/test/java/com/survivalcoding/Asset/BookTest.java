@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
-    Book book = new Book();
+    Book book = new Book("Jerry", 35000, "Orange", 3, 12345);
 
     @Test
     @DisplayName("Asset 클래스의 name 입출력 확인")

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ComputerTest {
-    Computer computer = new Computer();
+    Computer computer = new Computer("AMG-22", 990000, "BLACK", 17, "SAMSUNG");
 
     @Test
     @DisplayName("Computer 클래스의 makerName 입출력 확인")

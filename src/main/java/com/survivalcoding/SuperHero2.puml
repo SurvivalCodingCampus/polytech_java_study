@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract Hero {
+    attack()
+}
+abstract Human extends Hero implements Enhancement
+abstract Enhanced extends Hero
+abstract Tech extends Hero
+
+interface Enhancement
+
+abstract Facility {
+    -String name
+    -List<Hero>
+}
+
+class Marvel extends Facility {
+    -List<Hero>
+    -static boolean
+}
+class DC extends Facility {
+    -List<Hero>
+    -static boolean
+    Shield(DC)
+}
+class XMen extends Facility {
+    -List<Hero>
+    -static boolean
+    SelfHealing(XMen)
+}
+
+class Hawkeye extends Human
+class BlackWidow extends Human {
+    attack(Enhancement)
+}
+class IronMan extends Tech
+class WarMachine extends Tech
+class Jarvis extends Tech implements Enhancement {
+    Information()
+    Repair(Tech)
+}
+
+class Wolverine extends Enhanced
+class Beast extends Enhanced
+
+class Superman extends Human
+class Cyborg extends Tech
+
+@enduml
