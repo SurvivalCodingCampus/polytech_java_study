@@ -49,5 +49,19 @@ class StrongBoxTest {
         assertEquals("LOL", strongBox.get());
     }
 
+    @Test
+    @DisplayName("1000000번째에는 데이터가 나오는가?")
+    void strongBox4() {
+        //given
+        StrongBox<String> strongBox = new StrongBox<>(KeyType.FINGER);
+        strongBox.put("LOL");
+        //when
+        for (int i = 1; i <= 999999; i++) {
+            strongBox.get();
+        }
+        //then
+        assertEquals("LOL", strongBox.get());
+    }
+
 
 }
