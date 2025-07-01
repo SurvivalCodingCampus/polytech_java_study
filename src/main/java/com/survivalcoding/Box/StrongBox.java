@@ -32,10 +32,10 @@ public class StrongBox<E> {
                 if (1000000 > count) return null;
                 else return this.data;
             }
+            default:
+                throw new IllegalStateException("지원하지 않는 KeyType입니다: " + keyType);
 
         }
-
-        return null;
     }
 
     public void put(E data) {
