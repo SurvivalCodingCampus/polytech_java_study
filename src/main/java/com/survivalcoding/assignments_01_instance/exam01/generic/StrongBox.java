@@ -14,7 +14,7 @@ public class StrongBox<E> {
         PADLOCK(1024),
         BUTTON(10000),
         DIAL(30000),
-        FINGER(100000);
+        FINGER(1000000);
 
         private final int limit;
 

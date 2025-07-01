@@ -1,6 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
-public class Wizard {
+public class Wizard extends Character {
     private int hp;
     private int mp = 100;
     private String name;
@@ -66,7 +66,10 @@ public class Wizard {
         System.out.println("힐을 시전했습니다. HP:" + hero.getHp());
         //힐을 성공하면 "힐을 시전했습니다. 대상 HP: XX" 출력
     }
+    @Override
+    public void attack(Slime slime){
 
+    }
 }
 
 
