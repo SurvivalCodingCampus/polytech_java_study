@@ -15,15 +15,15 @@ abstract Facility {
     -List<Hero>
 }
 
-abstract Marvel {
+abstract Marvel extends Facility {
     -List<Hero>
 }
-abstract DC {
+abstract DC extends Facility {
     -List<Hero>
     Shield(Hero)
     Shield(Facility)
 }
-abstract XMen {
+abstract XMen extends Facility {
     -List<Hero>
     SelfHealing(Hero)
     SelfHealing(Facility)
