@@ -37,10 +37,10 @@ public class StrongBox<T> {
     public T get() {
         triedCount++;
 
-        if (triedCount <= keyType.getThreshold()) {
-            return this.content;
+        if (keyType == null || triedCount <= keyType.getThreshold()) {
+            return null;
         }
 
-        return null;
+        return this.content;
     }
 }

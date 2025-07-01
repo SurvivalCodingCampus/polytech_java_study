@@ -19,4 +19,4 @@ public enum KeyType {
     public int getThreshold() {
         return threshold;
     }
-    }
+}
