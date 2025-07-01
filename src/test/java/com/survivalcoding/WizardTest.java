@@ -1,5 +1,9 @@
 package com.survivalcoding;
 
+import com.survivalcoding.game.GreatWizard;
+import com.survivalcoding.game.Hero;
+import com.survivalcoding.game.Wand;
+import com.survivalcoding.game.Wizard;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

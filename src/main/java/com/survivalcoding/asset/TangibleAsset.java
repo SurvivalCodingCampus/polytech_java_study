@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.asset;
 
 public abstract class TangibleAsset extends Asset implements Thing {
     private int price;

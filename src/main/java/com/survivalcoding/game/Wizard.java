@@ -1,4 +1,4 @@
-package com.survivalcoding;
+package com.survivalcoding.game;
 
 public class Wizard {
     private String name;
