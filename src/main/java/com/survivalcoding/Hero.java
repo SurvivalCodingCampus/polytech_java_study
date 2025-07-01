@@ -23,7 +23,11 @@ public class Hero {
     }
 
     public void attack(Kinoko kinoko) {
+        System.out.println("attack");
+    }
 
+    public void run() {
+        System.out.println("run");
     }
 
     public static void setRandomMoney() {

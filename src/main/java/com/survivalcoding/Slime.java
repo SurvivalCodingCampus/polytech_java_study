@@ -1,12 +1,21 @@
 package com.survivalcoding;
 
-public class Slime {
-    private final String suffix;
-    private int hp;
+import com.survivalcoding.monster.Monster;
 
-    public Slime(String suffix) {
-        Slime slime = new Slime(suffix);
-        this.suffix = null;
+public class Slime extends Monster {
+    public static final int DEFAULT_DAMAGE = 10;
+
+    private final String prefix;
+    private int hp;
+    private int damage = DEFAULT_DAMAGE;
+
+    public Slime(String prefix, int hp) {
+        this.prefix = prefix;
+        this.hp = hp;
+    }
+
+    public String getPrefix() {
+        return prefix;
     }
 
     public int getHp() {
@@ -17,15 +26,36 @@ public class Slime {
         this.hp = hp;
     }
 
-    public String getSuffix() {
-        return suffix;
+    public int getDamage() {
+        return damage;
     }
 
-    void attack(Hero hero) {
-        System.out.println("슬라임" + suffix + "이/가 공격했다.");
-        System.out.println("10의 데미지");
-
-        hero.setHp(hero.getHp() - 10);
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
+    public void attack(Hero hero) {
+        hero.setHp(hero.getHp() - damage);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("2");
+    }
+
+    public static void main(String[] args) {
+        Slime slime = new Slime("", 10);
+        Monster monster = new Slime("", 10);
+        slime.run();
+        monster.run();
+
+//        Slime slime1 = (Hero) monster;
+
+        float ff = 10f;
+        int dd = 10;
+
+        ff = dd;
+
+        dd = (int) ff;
+    }
 }

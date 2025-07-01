@@ -2,52 +2,59 @@ package com.survivalcoding;
 
 import java.util.Random;
 
-public class Cleric {
+public class Cleric extends Character {
+    static final int maxHp = 50;
+    static final int maxMp = 10;
+
     String name;
-    static final int MAX_HP = 50;
-    static final int MAX_MP = 10;
-    int mp = MAX_MP;
-    int hp = MAX_HP;
+    int hp;
+    int mp;
 
+    // 난수 생성을 위한 Random 객체 한번만 만들자
+    Random rand = new Random();
 
-    Cleric(String name, int hp, int mp) {
+    public Cleric(String name, int hp, int mp) {
         this.name = name;
+        this.hp = hp;
         this.mp = mp;
-        this.hp = hp;
     }
 
-    Cleric(String name, int hp) {
-        this.name = name;
-        this.hp = hp;
+    public Cleric(String name, int hp) {
+        this(name, hp, Cleric.maxMp);
     }
 
-    Cleric(String name) {
-        this.name = name;
+    public Cleric(String name) {
+        this(name, Cleric.maxHp);
     }
-
 
     public void selfAid() {
-        if (mp >= 5) {
-            mp -= 5;
-            hp = MAX_HP;
-            System.out.println("MP를 사용하였습니다.");
-        } else {
-            System.out.println("MP를 사용할수 없습니다.");
+        if (hp == maxHp) return; // 이미 max라면 return
+        if (mp < 5) return;      // mp가 부족하면 return
+        mp -= 5;
+        hp = maxHp;
+    }
+
+    public int pray(int sec) {
+        if (mp == maxMp) return 0; // 이미 max라면 return
+
+        // 회복량 recoveryMp에 저장
+        int recoveryMp = rand.nextInt(3) + sec; // 0~2 랜덤값 + 기도 시간(s)
+
+        // maxMp 보다 더 회복하는가?
+        if (recoveryMp + mp > maxMp) {
+            recoveryMp = maxMp - mp;
         }
+
+        // mp 회복
+        mp += recoveryMp;
+        return recoveryMp;
     }
 
-    public int pray() {
-        int recoveryMP;
-        int prayTimeSec;
-        Random random = new Random();
-        prayTimeSec = (int) (Math.random() + 2);
-        recoveryMP = random.nextInt(3);
+    @Override
+    public void attack(Slime slime) {
 
-        return recoveryMP;
     }
-
 }
-
 
 
 

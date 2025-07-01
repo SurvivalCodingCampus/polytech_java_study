@@ -33,6 +33,10 @@ public class Wand {
     }
 
     public void setPower(double power) {
+        // 0.5 이상 100.0 이하
+        if (!(0.5 <= power && power <= 100.0)) {
+            throw new IllegalArgumentException("지팡이의 마력은 0.5 이상 100.0 이하여야 함");
+        }
         this.power = power;
     }
 }

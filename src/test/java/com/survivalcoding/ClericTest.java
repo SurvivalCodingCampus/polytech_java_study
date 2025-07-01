@@ -7,47 +7,43 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ClericTest {
 
-    //준비
-    // 실행
-    //검증
     @Test
-    @DisplayName("생성자 a")
-    void TestA() {
+    void selfAid() {
+    }
+
+    // MP가 꽉 찼을 때는 회복량 0
+    // MP가 적을 때는 회복되어야 함
+    // sec 가 0 이하면 그냥 0 리턴
+
+    @Test
+    @DisplayName("MP가 꽉 찼을 때는 회복량 0")
+    void pray() {
+        // MP가 꽉
+        Cleric cleric = new Cleric("아서스", 40, 10);
+
+        int recoveredMp = cleric.pray(10);
+
+        assertEquals(0, recoveredMp);
+    }
+
+    @Test
+    void 클레릭_생성자_테스트() {
         Cleric cleric = new Cleric("아서스", 40, 5);
-    }
 
-    @Test
-    @DisplayName("생성자 b")
-    void TestB() {
-        Cleric cleric = new Cleric("아서스", 35);
-    }
+        assertEquals("아서스", cleric.name);
+        assertEquals(40, cleric.hp);
+        assertEquals(5, cleric.mp);
 
-    @Test
-    @DisplayName("생성자 c")
-    void TestC() {
-        Cleric cleric = new Cleric("아서스");
-    }
+        cleric = new Cleric("아서스", 35);
 
+        assertEquals("아서스", cleric.name);
+        assertEquals(35, cleric.hp);
+        assertEquals(Cleric.maxMp, cleric.mp);
 
-    @Test
-    @DisplayName("MP사용시 MP가 -5감소하고, HP MAX 된다.")
-    void Test2() {
-        Cleric cleric = new Cleric("아서스");
+        cleric = new Cleric("아서스");
 
-        cleric.selfAid();
-
-        assertEquals(5, cleric.hp);
-        assertEquals(-5, cleric.mp);
-    }
-
-    @Test
-    @DisplayName("pray 사용시 자신의 MP 5증가한다.")
-    void Test3() {
-        Cleric cleric = new Cleric("아서스");
-
-        cleric.pray();
-
-        assertEquals(2, cleric.mp);
-
+        assertEquals("아서스", cleric.name);
+        assertEquals(Cleric.maxHp, cleric.hp);
+        assertEquals(Cleric.maxMp, cleric.mp);
     }
 }

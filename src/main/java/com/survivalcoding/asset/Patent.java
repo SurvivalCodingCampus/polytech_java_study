@@ -1,4 +1,4 @@
-package com.survivalcoding.TangibleAsset;
+package com.survivalcoding.asset;
 
 public class Patent extends IntangibleAsset {
     public Patent(String name, int price) {
