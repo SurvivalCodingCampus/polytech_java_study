@@ -21,4 +21,17 @@ class StrongBoxTest {
         assertEquals("Hi", strongBox.get());
     }
 
+    @Test
+    @DisplayName("10000번째에는 데이터가 나오는가?")
+    void strongBox2() {
+        //given
+        StrongBox<String> strongBox = new StrongBox<>(KeyType.BUTTON);
+        strongBox.put("XYLITOL");
+        //when
+        for (int i = 1; i <= 9999; i++) {
+            strongBox.get();
+        }
+        //then
+        assertEquals("XYLITOL", strongBox.get());
+    }
 }
