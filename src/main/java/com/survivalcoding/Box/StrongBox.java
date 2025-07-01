@@ -9,47 +9,24 @@ public class StrongBox<E> {
         this.data = data;
     }
 
-    enum KeyType {
-        PADLOCK(1024),
-        BUTTON(10000),
-        DIAL(30000),
-        FINGER(1000000);
-
-        private int value;
-
-        KeyType(int value) {
-            this.value = value;
-        }
-
-        public int getValue() {
-            return value;
-        }
-    }
-
     StrongBox(KeyType keyType) {
         this.keyType = keyType;
     }
 
     public E get() {
         this.count++;
-        switch (keyType) {
-            case PADLOCK:
-                System.out.println("PADLOCK");
-                break;
-            case BUTTON:
-                System.out.println("BUTTON");
-                break;
-            case DIAL:
-                System.out.println("DIAL");
-                break;
-            case FINGER:
-                System.out.println("FINGER");
-                break;
-            default:
-                return null;
-        }
 
-        return this.data;
+        if (count == 1024 && keyType == KeyType.PADLOCK) {
+            return data;
+        } else if (count == 10000 && keyType == KeyType.BUTTON) {
+            return data;
+        } else if (count == 30000 && keyType == KeyType.DIAL) {
+            return data;
+        } else if (count == 1000000 && keyType == KeyType.FINGER) {
+            return data;
+        } else {
+            return null;
+        }
     }
 
 
