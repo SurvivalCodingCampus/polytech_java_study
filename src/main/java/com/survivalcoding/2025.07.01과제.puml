@@ -1,0 +1,139 @@
+@startuml
+scale 1
+!theme cerulean-outline
+skinparam backgroundColor #FAFAFA
+skinparam classBackgroundColor #FFFFFF
+skinparam classBorderColor #2E86AB
+skinparam classArrowColor #A23B72
+skinparam classFontSize 10
+skinparam packageStyle rectangle
+skinparam minClassWidth 120
+skinparam ClassSpacing 30
+skinparam PackageSpacing 25
+left to right direction
+
+' 게임 시스템
+package "Game System" {
+    class Game {
+        +bool battleState
+    }
+    class Player {
+        -PlayerSquad playSquad
+    }
+    class PlayerSquad {
+        -List<Hero> heroes
+        -Faction faction
+        +void AllHeroesUseSkill(hero : Hero)
+        +void AllHeroesMove()
+    }
+}
+
+' 팩션
+package "Factions" {
+    abstract class Faction {
+        -String factionName
+    }
+    class Marvel extends Faction
+    class DC extends Faction
+    class Xmen extends Faction
+}
+
+' 메인 히어로 클래스
+package "Heroes" {
+    abstract class Hero {
+        -int energyPoint
+        -Faction faction
+    }
+    class HumanHero extends Hero
+    class TechHero extends Hero
+    class EnhancedHero extends Hero {
+        +void selfRecovery()
+        +void attack()
+    }
+}
+
+' 인터페이스 (간격 조정)
+package "Interfaces" {
+    interface ISelfRecoverable {
+        +void selfRecovery()
+    }
+
+    ISelfRecoverable -[hidden]- IAttackable
+
+    interface IAttackable {
+        +void attack(hero : Hero)
+    }
+
+    IAttackable -[hidden]- IEnhanceable
+
+    interface IEnhanceable
+
+    IEnhanceable -[hidden]- IShieldable
+
+    interface IShieldable {
+        +void shieldRecovery()
+    }
+}
+
+' 구체적인 히어로들 (메서드 간소화)
+package "Specific Heroes" {
+    ' Tech Heroes
+    class Jarvis extends TechHero {
+        +void gatherInformation()
+        +void repair(techHero : TechHero)
+    }
+    class IronMan extends TechHero
+    class WarMachine extends TechHero
+    class Cyborg extends TechHero
+' Human Heroes
+    class Hawkeye extends HumanHero
+    class SuperMan extends HumanHero
+    class BlackWidow extends HumanHero {
+        +void enhance(target: IEnhanceable)
+    }
+
+    ' Enhanced Heroes
+    class Wolverine extends EnhancedHero
+    class Beast extends EnhancedHero
+}
+
+' 시설
+package "Facilities" {
+    abstract class Facility
+    class EnhancedFacility extends Facility
+    class MarvelFacility extends Facility
+    class XmenFacility extends EnhancedFacility
+    class DCFacility extends Facility
+}
+
+' 기본 관계
+Player --> PlayerSquad
+PlayerSquad --> Hero
+Hero --> Faction
+
+' EnhancedHero 인터페이스 구현 (Heroes 패키지 내의 EnhancedHero만)
+Heroes.EnhancedHero ..|> ISelfRecoverable #FF6B35
+Heroes.EnhancedHero ..|> IAttackable #28A745
+Heroes.EnhancedHero ..|> IEnhanceable #0019f4
+
+' IAttackable 구현
+IronMan ..|> IAttackable #28A745
+WarMachine ..|> IAttackable #28A745
+Cyborg ..|> IAttackable #28A745
+Hawkeye ..|> IAttackable #28A745
+SuperMan ..|> IAttackable #28A745
+
+' IShieldable 구현
+Cyborg ..|> IShieldable #ff0000
+SuperMan ..|> IShieldable #ff0000
+DCFacility ..|> IShieldable #ff0000
+
+' IEnhanceable 구현
+Hawkeye ..|> IEnhanceable #0019f4
+SuperMan ..|> IEnhanceable #0019f4
+Jarvis ..|> IEnhanceable #0019f4
+
+' ISelfRecoverable 구현
+XmenFacility ..|> ISelfRecoverable #FF6B35
+
+@enduml

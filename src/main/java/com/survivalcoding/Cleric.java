@@ -15,11 +15,13 @@ public class Cleric extends Character {
         this.hp = HP;
         this.mp = MP;
     }
+
     Cleric(String name, int HP) {
         this.name = name;
         this.hp = HP;
         this.mp = maxMp;
     }
+
     Cleric(String name) {
         this.name = name;
         this.hp = maxHp;
@@ -33,7 +35,7 @@ public class Cleric extends Character {
         if (mp < 5) return;      // mp가 부족하면 return
         mp -= 5;
 
-        if(mp >= 5) {
+        if (mp >= 5) {
             if (hp < maxHp) {
                 hp = maxHp;
             }
@@ -59,7 +61,7 @@ public class Cleric extends Character {
         int actualRecovery = Math.min(maxMp - mp, recovery);
         mp += actualRecovery;
         System.out.println(name + "는 " + sec + "초 동안 기도하여 MP를 "
-                    + actualRecovery + " 회복했습니다.");
+                + actualRecovery + " 회복했습니다.");
         return actualRecovery;
         // maxMp 보다 더 회복하는가?
         if (recoveryMp + mp > maxMp) {

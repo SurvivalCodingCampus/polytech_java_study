@@ -7,10 +7,12 @@ public class Pocket<E> {
     private E data;
 
     public void put(E data) {
+
         this.data = data;
     }
 
     public E get() {
+
         return data;
     }
 
@@ -22,7 +24,7 @@ public class Pocket<E> {
         System.out.println(name); */
 
         Pocket<Character> pocket1 = new Pocket<>();
-        pocket1.put(new Cleric("11"));
+        //pocket1.put(new Cleric("11"));
 
         Pocket<Cleric> pocket2 = new Pocket<>();
         Pocket<Wizard> pocket3 = new Pocket<>();
