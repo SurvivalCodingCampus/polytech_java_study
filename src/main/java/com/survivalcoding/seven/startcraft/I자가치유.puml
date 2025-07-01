@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface I자가치유{
+    void selfHeal() //방어막 or 자힐
+}
+
+class Zergling implements I자가치유{
+}
+class Hydra implements I자가치유{
+}
+class Zealot implements I자가치유{
+}
+class Dragun implements I자가치유{
+}
+
+@enduml

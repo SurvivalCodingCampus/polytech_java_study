@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/class-diagram
+abstract class StarObject{
+    + string TribeName //종족
+    + int hp
+    + int cost
+    + int buildTime
+    + string nic    // 타입 구분
+}
+abstract class Units extends StarObject{
+    + int speed
+    + int peopleCount
+    + int attackForce
+}
+abstract class Structure extends StarObject{
+    + boolean unlock
+}
+interface IAttack{
+    + {abstract} void attack(StarObject object)
+}
+interface IHeal{
+    + {abstract} void heal(IHealable healable) // 유닛힐
+}
+interface IRepair{
+    + {abstract} void repair(IRepairable repairable) // 리페어
+}
+interface I자가치유{
+    + {abstract} void selfHeal() //방어막 or 자힐
+}
+interface ISheildable{
+}
+interface IHealable{
+}
+interface IRepairable{
+}
+class Marine extends Units implements IAttack,IHealable{
+}
+class Medic extends Units implements IHeal,IHealable{
+}
+class Tank extends Units implements IAttack,IRepairable{
+}
+class Vulture extends Units implements IAttack,IRepairable{
+}
+class Scv extends Units implements IAttack,IRepair,IHealable,IRepairable{
+    + void mining()
+}
+class Zergling extends Units implements IAttack,I자가치유,IHealable{
+}
+class Hydra extends Units implements IAttack,I자가치유,IHealable{
+}
+class Zealot extends Units implements IAttack,I자가치유,ISheildable,IHealable{
+}
+class Dragun extends Units implements IAttack,I자가치유,ISheildable{
+}
+
+@enduml
