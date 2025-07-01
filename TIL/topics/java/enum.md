@@ -16,14 +16,17 @@ public class Main {
         switch (state) {
             case AUTHENTICATED: {
                 System.out.println("Good to go.");
+                break;
             }
             
             case UNAUTHENTICATED: {
                 System.out.println("No.");
+                break;
             }
             
             case AUTHENTICATING: {
                 System.out.println("Checking..");
+                break;
             }
             
             default: {

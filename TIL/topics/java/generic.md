@@ -28,9 +28,9 @@ public class Main {
         pocket.put(true);
         
         // Can NOT get anything specific.
-        String name = pocket.get();
+        String name = pocket.get(); // Compile Error
         
-        // DON'T
+        // But DON'T
         String forcedName = (String) pocket.get();
     }
 }
@@ -53,7 +53,7 @@ public class Pocket<E> {
 
 public class Main {
     public static void main(String[] args) {
-        Pocket<String> pocket = new Pocket(); // Now String-specific Pocket
+        Pocket<String> pocket = new Pocket<>(); // Now String-specific Pocket
         
         pocket.put("111");
         // You can NOT 

@@ -37,24 +37,10 @@ public class StrongBox<T> {
     public T get() {
         triedCount++;
 
-        if (keyType != null) {
-            switch (keyType) {
-                case KeyType.PADLOCK -> {
-                    if (triedCount <= 1024) return null;
-                }
-                case KeyType.BUTTON -> {
-                    if (triedCount <= 10000) return null;
-                }
-                case KeyType.DIAL -> {
-                    if (triedCount <= 30000) return null;
-                }
-                case KeyType.FINGER -> {
-                    if (triedCount <= 1000000) return null;
-                }
-            }
+        if (triedCount <= keyType.getThreshold()) {
+            return this.content;
         }
 
-
-        return this.content;
+        return null;
     }
 }
