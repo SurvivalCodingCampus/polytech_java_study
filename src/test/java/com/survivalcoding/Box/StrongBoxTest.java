@@ -14,7 +14,7 @@ class StrongBoxTest {
         StrongBox<String> strongBox = new StrongBox<>(KeyType.PADLOCK);
         strongBox.put("Hi");
         //when
-        for (int i = 1; i <= 1023; i++) {
+        for (int i = 0; i < 1023; i++) {
             strongBox.get();
         }
         //then
