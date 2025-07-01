@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Marvel {
+}
+interface DC {
+    autoShield(bool isbattle)
+}
+interface XMen  {
+    selfHeal()
+}
+abstract class Facility{
+}
+
+class  FacilityMarvel extends Facility implements Marvel{
+}
+class  FacilityDC extends Facility implements DC{
+}
+class  FacilityXMen extends Facility implements XMen{
+}
+
+
+abstract class Hero {
+    string name
+    string type
+    bool isEnhanced
+
+    int hp
+    int mp
+    int energyPoint
+    int defense
+    int damage
+
+    abstract void attack(int damage)
+}
+
+abstract class Human extends Hero {
+
+}
+abstract class Enhanced extends Hero {
+
+}
+abstract class Tech extends Hero {
+
+}
+
+class Hawkeye extends Human implements Marvel{
+}
+class BlackWidow extends Human implements Marvel{
+    buff(Hero hero)
+    enhanced(Hero hero)
+}
+class IronMan extends Tech implements Marvel{
+}
+class WarMachine extends Tech implements Marvel{
+}
+class Jarvis extends Tech implements Marvel{
+    void informationCollect()
+    heroRepair(Tech tech)
+}
+
+class Superman extends Human implements DC{
+}
+
+class Wolverine extends Enhanced implements XMen{
+}
+class Beast extends Enhanced implements XMen{
+}
+
+class Cyborg extends Tech implements DC{
+}
+
+
+@enduml
