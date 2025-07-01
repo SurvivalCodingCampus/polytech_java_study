@@ -53,9 +53,6 @@ public Cleric(String name, int HP, int MP){
         result=Math.min(recovery, availableRecovery);
         MP+=result;
 
-        if (MP > MAX_MP) {
-            MP = MAX_MP;
-        }
         return result;
     }
     @Override

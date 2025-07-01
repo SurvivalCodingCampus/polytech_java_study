@@ -4,7 +4,7 @@ public class Kinoko {
     int hp = 50;
     final int level = 10;
 
-    void attack() {
+    public void attack() {
         final int level = 20;
         hp = 100;
     }
