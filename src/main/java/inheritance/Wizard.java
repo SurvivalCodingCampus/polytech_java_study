@@ -1,9 +1,9 @@
 package inheritance;
 
-public class Wizard extends Character {
+public class Wizard {
     private String name;
     private int hp;
-    private int mp;
+    private int mp = 100;
 
     public void heal(Hero hero) {
         if (mp < 10) {

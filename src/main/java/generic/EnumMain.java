@@ -1,18 +1,24 @@
 package generic;
 
+import com.survivalcoding.generic.AuthState;
+
 public class EnumMain {
     public static void main(String[] args) {
-        AuthState state = AuthState.AUTHENTICATED;
+        // 값
+        com.survivalcoding.generic.AuthState state = AuthState.AUTHENTICATED;
 
         switch (state) {
-            case AuthState.AUTHENTICATED: {
+            case AUTHENTICATED: {
                 System.out.println("AUTHENTICATED");
             }
-            case AuthState.UNAUTHENTICATED: {
+            case UNAUTHENTICATED: {
                 System.out.println("UNAUTHENTICATED");
             }
-            case AuthState.AUTHENTICATING: {
-                System.out.println("AUTHENTICATING");
+            case UNKNOWN: {
+                System.out.println("UNKNOWN");
+            }
+            default: {
+                System.out.println("default");
             }
         }
     }
