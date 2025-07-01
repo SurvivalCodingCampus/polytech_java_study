@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class KinokoTest {
+
     @Test
     @DisplayName("버섯 생성시 hp는 50이어야 한다")
     void testCreate() {

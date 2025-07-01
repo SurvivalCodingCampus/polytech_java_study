@@ -17,7 +17,7 @@ public class Pocket <E extends Character> {
         Pocket<String> pocket = new Pocket<>();
         pocket.put("111");
 
-        String name = pocket.get();
+        String name = pocket.getData();
         System.out.println(name);
 
         Pocket<Character> pocket1 = new Pocket<>();
