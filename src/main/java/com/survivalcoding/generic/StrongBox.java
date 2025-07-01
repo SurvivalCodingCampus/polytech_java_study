@@ -5,7 +5,7 @@ public class StrongBox<E> {
     private final KeyType keytype;
     private E Data;
 
-    private StrongBox(E data, KeyType keytype) {
+    StrongBox(E data, KeyType keytype) {
         this.keytype = keytype;
     }
 
@@ -17,8 +17,12 @@ public class StrongBox<E> {
         this.Data = data;
     }
 
-    E getData(E data) {
+    E getData() {
         return this.Data;
+    }
+
+    public void setData(E data) {
+        this.Data = data;
     }
 
     public E getPADLOCK() {
@@ -52,5 +56,6 @@ public class StrongBox<E> {
         }
         return Data;
     }
+
 
 }
