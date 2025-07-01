@@ -17,10 +17,10 @@ class StrongBoxTest {
         strongBox.put("test");
 
         // limit까지 test
-        for(int i=0; i<StrongBox.PADLOCK_COUNT-1; i++){
+        for(int i=0; i<StrongBox.PADLOCK_COUNT; i++){
             strongBox.get();
         }
-        assertEquals(strongBox.getCount(), "test");
+        assertEquals(strongBox.get(), "test");
     }
 
         @Test
