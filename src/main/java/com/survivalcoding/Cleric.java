@@ -13,17 +13,17 @@ public class Cleric extends Character {
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();
 
-    Cleric(String name, int hp, int mp) {
+    public Cleric(String name, int hp, int mp) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
     }
 
-    Cleric(String name, int hp) {
+    public Cleric(String name, int hp) {
         this(name, hp, Cleric.maxMp);
     }
 
-    Cleric(String name) {
+    public Cleric(String name) {
         this(name, Cleric.maxHp);
     }
 
