@@ -7,8 +7,8 @@ interface Things {
 
 abstract Asset{
 -String name
--price
--color
+-int price
+-String color
 
 +void setName
 +void setPrice
