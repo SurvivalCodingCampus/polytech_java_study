@@ -34,4 +34,20 @@ class StrongBoxTest {
         //then
         assertEquals("XYLITOL", strongBox.get());
     }
+
+    @Test
+    @DisplayName("30000번째에는 데이터가 나오는가?")
+    void strongBox3() {
+        //given
+        StrongBox<String> strongBox = new StrongBox<>(KeyType.DIAL);
+        strongBox.put("LOL");
+        //when
+        for (int i = 1; i <= 29999; i++) {
+            strongBox.get();
+        }
+        //then
+        assertEquals("LOL", strongBox.get());
+    }
+
+
 }
