@@ -41,19 +41,15 @@ public class StrongBox<T> {
             switch (keyType) {
                 case KeyType.PADLOCK -> {
                     if (triedCount <= 1024) return null;
-                    break;
                 }
                 case KeyType.BUTTON -> {
                     if (triedCount <= 10000) return null;
-                    break;
                 }
                 case KeyType.DIAL -> {
                     if (triedCount <= 30000) return null;
-                    break;
                 }
                 case KeyType.FINGER -> {
                     if (triedCount <= 1000000) return null;
-                    break;
                 }
             }
         }
