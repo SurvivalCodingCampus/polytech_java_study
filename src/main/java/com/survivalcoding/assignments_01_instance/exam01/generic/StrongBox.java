@@ -5,7 +5,7 @@ public class StrongBox<E> {
     private int count = 0;
     private final KeyType keyType;
 
-    private int getLimitByKeyType() {
+    private int getLimitKeyType() {
         switch (keyType) {
             case PADLOCK:
                 return 1024;
@@ -38,7 +38,7 @@ public class StrongBox<E> {
 
     public E get() {
         count++;
-        if (count <= getLimitByKeyType()) {
+        if (count <= getLimitKeyType()) {
             return null;
         }
         return data;
