@@ -1,27 +1,61 @@
 package inheritance;
 
-public class Slime {
-    private final String suffix;
+import Monster.Monster;
+
+public class Slime extends Monster {
+    public static final int DEFAULT_DAMAGE = 10;
+
+    private final String prefix;
     private int hp;
+    private int damage = DEFAULT_DAMAGE;
 
-    // 생성자
-    public Slime (String suffix, int hp) {
-        this.suffix = suffix;
-        this.hp = hp;   // 기본 HP 값 설정
-    }
-
-    public int getHP() {
-        return hp;
-    }
-
-    public void setHP(int hp) {
+    public Slime(String prefix, int hp) {
+        this.prefix = prefix;
         this.hp = hp;
     }
 
-    void attack(Hero hero) {
-        System.out.println("슬라임 " + suffix + "이/가 공격했다");
-        System.out.println("10의 데미지");
+    public String getPrefix() {
+        return prefix;
+    }
 
-        hero.setHp(hero.getHp() - 10);
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public void attack(Hero hero) {
+        hero.setHp(hero.getHp() - damage);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("2");
+    }
+
+    public static void main(String[] args) {
+        Slime slime = new Slime("", 10);
+        Monster monster = new Slime("", 10);
+        slime.run();
+        monster.run();
+
+//        Slime slime1 = (Hero) monster;
+
+        float ff = 10f;Add commentMore actions
+        int dd = 10;
+
+        ff = dd;
+
+        dd = (int) ff;
     }
 }
