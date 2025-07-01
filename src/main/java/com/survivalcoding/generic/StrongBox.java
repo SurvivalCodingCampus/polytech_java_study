@@ -4,7 +4,7 @@ public class StrongBox<E> {
     private E data; // 저장할 데이터
     private final KeyType keyType; // 열쇠 종류
     private int useCount;// 현재까지의 열쇠 사용 횟수 >> 외부 접근 필요 없으니 getter/setter 필요 x
-    private int limitCount;
+    
 
     // 4-2-02) 생성자 : StrongBox를 만들 때 열쇠의 종류를 생성자로 받아 저장하는 필드 추가
     public StrongBox(KeyType keyType) {
@@ -22,20 +22,17 @@ public class StrongBox<E> {
     private int limit(KeyType keyType) {
         switch (keyType) {
             case PADLOCK:
-                limitCount = 1024;
-                break;
+                return 1024;
             case BUTTON:
-                limitCount = 10000;
-                break;
+                return 10000;
             case DIAL:
-                limitCount = 30000;
-                break;
+                return 30000;
             case FINGER:
-                limitCount = 1000000;
-                break;
+                return 1000000;
+            default:
+                throw new IllegalArgumentException("Unknown key type: " + keyType);
 
         }
-        return limitCount;
     }
 
     // 데이터를 꺼내는 메서드
