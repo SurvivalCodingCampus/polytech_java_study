@@ -34,5 +34,3 @@ public class Main {
     }
 }
 ```
-
-가장 익숙한 예: RGB Color
