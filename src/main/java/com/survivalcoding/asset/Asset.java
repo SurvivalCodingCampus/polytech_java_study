@@ -1,4 +1,4 @@
-package com.survivalcoding.TangibleAsset;
+package com.survivalcoding.asset;
 
 public abstract class Asset {
     private String name;
@@ -24,5 +24,4 @@ public abstract class Asset {
     public void setPrice(int price) {
         this.price = price;
     }
-
 }
