@@ -3,19 +3,15 @@ package com.survivalcoding.assignments_01_instance.exam01.generic;
 public class StrongBox<E> {
     private E data;
     private int count = 0;
-
-    public enum KeyType {
-        PADLOCK,
-        BUTTON,
-        DIAL,
-        FINGER
-    }
-
+    private KeyType keyType;
+    
     public StrongBox(KeyType keyType) {
         this.keyType = keyType;
     }
 
-    KeyType keyType = KeyType.BUTTON;
+    public KeyType getKeyType() {
+        return keyType;
+    }
 
     public void put(E data) {
         this.data = data;
@@ -23,6 +19,9 @@ public class StrongBox<E> {
 
     public E get() {
         count++;
+        if (count < keyType.getLimit()) {
+            return null;
+        }
         return this.data;
     }
 }
