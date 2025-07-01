@@ -8,9 +8,24 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class StrongBoxTest {
+
     @Test
-    @DisplayName("StrongBox count에 따른 get()을 확인")
-    void getTest() {
+    @DisplayName("제네릭 확인")
+    void putDataTest() {
+        StrongBox<String> strongBox = new StrongBox<>(KeyType.PADLOCK);
+
+        strongBox.put("test");
+
+        // limit까지 test
+        for(int i=0; i<StrongBox.PADLOCK_COUNT-1; i++){
+            strongBox.get();
+        }
+        assertEquals(strongBox.getCount(), "test");
+    }
+
+        @Test
+    @DisplayName("StrongBox count에 따른 Padlock 타입의 get()을 확인")
+    void getPadlockTest() {
         StrongBox<Integer> strongBox = new StrongBox<>(KeyType.PADLOCK);
 
         strongBox.put(2);
@@ -18,12 +33,60 @@ class StrongBoxTest {
         assertEquals(strongBox.getCount(), 1);
 
         // limit까지 test
-        for(int i=0; i<strongBox.PADLOCK_COUNT-1; i++){
+        for(int i=0; i<StrongBox.PADLOCK_COUNT-1; i++){
             strongBox.get();
         }
         assertEquals(strongBox.get(), 2);
         assertEquals(strongBox.getCount(), 0);
     }
 
+    @Test
+    @DisplayName("StrongBox count에 따른 Button 타입의 get()을 확인")
+    void getButtonTest() {
+        StrongBox<Integer> strongBox = new StrongBox<>(KeyType.BUTTON);
 
+        strongBox.put(2);
+        assertEquals(strongBox.get(), null);
+        assertEquals(strongBox.getCount(), 1);
+
+        // limit까지 test
+        for(int i=0; i<StrongBox.BUTTON_COUNT-1; i++){
+            strongBox.get();
+        }
+        assertEquals(strongBox.get(), 2);
+        assertEquals(strongBox.getCount(), 0);
+    }
+    @Test
+    @DisplayName("StrongBox count에 따른 Dial 타입의 get()을 확인")
+    void getDialTest() {
+        StrongBox<Integer> strongBox = new StrongBox<>(KeyType.DIAL);
+
+        strongBox.put(2);
+        assertEquals(strongBox.get(), null);
+        assertEquals(strongBox.getCount(), 1);
+
+        // limit까지 test
+        for(int i=0; i<StrongBox.DIAL_COUNT-1; i++){
+            strongBox.get();
+        }
+        assertEquals(strongBox.get(), 2);
+        assertEquals(strongBox.getCount(), 0);
+    }
+
+    @Test
+    @DisplayName("StrongBox count에 따른 Button 타입의 get()을 확인")
+    void getFingerTest() {
+        StrongBox<Integer> strongBox = new StrongBox<>(KeyType.FINGER);
+
+        strongBox.put(2);
+        assertEquals(strongBox.get(), null);
+        assertEquals(strongBox.getCount(), 1);
+
+        // limit까지 test
+        for(int i=0; i<StrongBox.FINGER_COUNT-1; i++){
+            strongBox.get();
+        }
+        assertEquals(strongBox.get(), 2);
+        assertEquals(strongBox.getCount(), 0);
+    }
 }
