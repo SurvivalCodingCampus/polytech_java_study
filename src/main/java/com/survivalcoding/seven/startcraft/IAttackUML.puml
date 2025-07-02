@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IAttack{
+    void attack(StarObject target)
+}
+class Marine implements IAttack{
+}
+class Tank implements IAttack{
+}
+class Vulture implements IAttack{
+}
+class Scv implements IAttack{
+}
+class Zergling implements IAttack{
+
+}
+class Hydra implements IAttack{
+}
+class Zealot implements IAttack{
+}
+class Dragun implements IAttack{
+}
+@enduml

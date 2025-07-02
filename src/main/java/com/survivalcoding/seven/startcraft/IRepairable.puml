@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IRepairable{
+}
+class Tank implements IRepairable{
+}
+
+class Vulture implements IRepairable{
+}
+
+class Scv implements IRepairable{
+}
+
+@enduml

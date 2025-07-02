@@ -1,0 +1,10 @@
+
+@startuml
+'https://plantuml.com/class-diagram
+
+class Zealot implements ISheildable{
+}
+
+class Dragun  implements ISheildable{
+}
+@enduml

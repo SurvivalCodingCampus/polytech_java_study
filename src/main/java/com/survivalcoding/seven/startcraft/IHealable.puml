@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IHealable{
+}
+class Marine implements IHealable{
+}
+
+class Medic implements IHealable{
+}
+class Scv implements IHealable{
+}
+class Zergling implements IHealable{
+}
+class Hydra implements IHealable{
+}
+@enduml
