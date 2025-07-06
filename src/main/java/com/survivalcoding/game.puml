@@ -5,7 +5,15 @@ class SuperHero extends Hero {
     +boolean isFlying
 }
 
-class Hero
+abstract class Character
+{
+    String name;
+    int hp;
+
+    {abstract} void attack(Slime slime)
+}
+
+class Hero extends Character
 {
     +String name
     -int Hp
@@ -13,6 +21,13 @@ class Hero
     +void attack()
     +void bye()
     -void die()
+}
+
+class Wizard extends Character
+{
+    int mp
+    + void heal(Hero hero)
+    + void attack((Slime slime)
 }
 
 class Cleric
