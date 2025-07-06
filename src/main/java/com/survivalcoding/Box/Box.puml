@@ -4,11 +4,46 @@
 scale 1
 skinparam classAttributeIconSize 0
 
-class StrongBox {
-    - E data;
+interface getCnt {
+    int getUseCnt()
+}
 
+abstract class KeyType implements getCnt {
+    + void use()
+    + boolean unlock()
+    {abstract} + int getUseCnt()
+}
+
+class PADLOCK extends KeyType {
+    + int getUseCnt()
+}
+
+class BUTTON extends KeyType {
+    + int getUseCnt()
+}
+
+class DIAL extends KeyType {
+    + int getUseCnt()
+}
+
+class FINGER extends KeyType {
+    + int getUseCnt()
+}
+
+class StrongBox {
+    - E data
+    - final KeyType key
     + void put(E data)
     + E get()
+    + int getUseCnt()
+
+    + PADLOCK
+    + BUTTON
+    + DIAL
+    + FINGER
+
+    - KeyType key
+    + KeyType getKey()
 }
 
 @enduml
