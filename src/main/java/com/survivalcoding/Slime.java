@@ -1,8 +1,8 @@
 package com.survivalcoding;
 
-import com.survivalcoding.monster.Monster;
+import Monster.Monster;
 
-public class Slime extends Monster {
+public abstract class Slime extends Monster {
     public static final int DEFAULT_DAMAGE = 10;
 
     private final String prefix;
@@ -49,13 +49,13 @@ public class Slime extends Monster {
         slime.run();
         monster.run();
 
-//        Slime slime1 = (Hero) monster;
+        // Slime slime1 = (Hero) monster;
 
         float ff = 10f;
         int dd = 10;
 
-        ff = dd;
+        // ff = dd;
 
-        dd = (int) ff;
+        // dd = (int) ff;
     }
 }

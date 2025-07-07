@@ -1,5 +1,7 @@
 package instance;
 
+import com.survivalcoding.Hero;
+
 public class ToString {
     public static void main(String[] args) {
         Object object = new Hero("aaa", 10);

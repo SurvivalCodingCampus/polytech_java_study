@@ -1,11 +1,17 @@
 package instance;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class Book {
     private String title;
     private Date publishDate;
     private String comment;
+
+    public Book(String title, Date publishDate) {
+        this.title = title;
+        this.publishDate = publishDate;
+    }
 
     public String getTitle() {
         return title;
@@ -31,4 +37,24 @@ public class Book {
         this.comment = comment;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) &&
+                Objects.equals(publishDate.getYear(), book.publishDate.getYear());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, publishDate);
+    }
+
+    public static void main(String[] args) {
+
+        Book book1 = new Book("aaa", new Date(2025, 1, 1));
+        Book book2 = new Book("bbb", new Date(2025, 2, 1));
+
+
+    }
 }

@@ -11,7 +11,7 @@ public class Main {
         System.out.print("Hello and welcome!");
 
         Kinoko kinoko = new Kinoko();
-        kinoko.setHp(100);
+        kinoko.setHP(100);
 
         System.out.println("hp 100 회복");
     }

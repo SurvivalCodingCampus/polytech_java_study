@@ -1,6 +1,6 @@
 package com.survivalcoding;
 
-public class PoisonSlime extends Slime {
+public abstract class PoisonSlime extends Slime {
     public static final int MAX_HP = 10;
     public static final int DEFAULT_POISON_COUNT = 5;
 
