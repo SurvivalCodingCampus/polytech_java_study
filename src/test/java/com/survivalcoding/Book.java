@@ -7,6 +7,12 @@ public class Book {
     private Date publishDate;
     private String comment;
 
+    Book(String title, Date publishDate, String comment) {
+        this.title = getTitle();
+        this.publishDate = getPublishDate();
+        this.comment = getComment();
+    }
+
     public String getTitle() {
         return title;
     }
