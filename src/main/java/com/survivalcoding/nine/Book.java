@@ -1,14 +1,14 @@
 package com.survivalcoding.nine;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class Book implements Comparable<Book> {
     private String title;
-    private LocalDate publishDate;
+    private LocalDateTime publishDate;
     private String comment;
 
 
-    public Book(String title, LocalDate publishDate, String comment) {
+    public Book(String title, LocalDateTime publishDate, String comment) {
         setTitle(title);
         setPublishDate(publishDate);
         setComment(comment);
@@ -62,16 +62,17 @@ public class Book implements Comparable<Book> {
         this.title = title;
     }
 
-    public LocalDate getPublishDate() {
+    public LocalDateTime getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(LocalDateTime publishDate) {
         if (publishDate == null) {
             throw new IllegalArgumentException("날짜는 null이면 안됩니다.");
         }
         // 새 Date 객체를 만들어서 시간은 0으로 세팅
-        this.publishDate = publishDate;
+        this.publishDate = LocalDateTime.of(publishDate.getYear(), publishDate.getMonth(), publishDate.getDayOfMonth(), 0, 0, 0);
+
     }
 
     public String getComment() {
