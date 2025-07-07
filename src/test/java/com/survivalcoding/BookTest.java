@@ -74,4 +74,21 @@ class BookTest {
         Collections.sort(bookList);
         System.out.println(bookList);
     }
+
+    @Test
+    @DisplayName("주소가 다른지 보자")
+    void BookTest4() {
+        //given
+        Date date = new Date();
+        SimpleDateFormat sdf1 = new SimpleDateFormat("2025-05-04");
+        String formatDate = sdf1.format(date);
+        Book book = new Book("AVC", date, "comments");
+        Book book2 = book.clone();
+
+        //then
+        assertEquals(true, book != book2);
+
+
+    }
+
 }
