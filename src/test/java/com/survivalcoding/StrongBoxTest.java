@@ -17,13 +17,13 @@ class StrongBoxTest {
         strongBox.put("test");
 
         // limit까지 test
-        for(int i=0; i<StrongBox.PADLOCK_COUNT; i++){
+        for (int i = 0; i < StrongBox.PADLOCK_COUNT; i++) {
             strongBox.get();
         }
         assertEquals(strongBox.get(), "test");
     }
 
-        @Test
+    @Test
     @DisplayName("StrongBox count에 따른 Padlock 타입의 get()을 확인")
     void getPadlockTest() {
         StrongBox<Integer> strongBox = new StrongBox<>(KeyType.PADLOCK);
@@ -33,7 +33,7 @@ class StrongBoxTest {
         assertEquals(strongBox.getCount(), 1);
 
         // limit까지 test
-        for(int i=0; i<StrongBox.PADLOCK_COUNT-1; i++){
+        for (int i = 0; i < StrongBox.PADLOCK_COUNT - 1; i++) {
             strongBox.get();
         }
         assertEquals(strongBox.get(), 2);
@@ -50,12 +50,13 @@ class StrongBoxTest {
         assertEquals(strongBox.getCount(), 1);
 
         // limit까지 test
-        for(int i=0; i<StrongBox.BUTTON_COUNT-1; i++){
+        for (int i = 0; i < StrongBox.BUTTON_COUNT - 1; i++) {
             strongBox.get();
         }
         assertEquals(strongBox.get(), 2);
         assertEquals(strongBox.getCount(), 0);
     }
+
     @Test
     @DisplayName("StrongBox count에 따른 Dial 타입의 get()을 확인")
     void getDialTest() {
@@ -66,7 +67,7 @@ class StrongBoxTest {
         assertEquals(strongBox.getCount(), 1);
 
         // limit까지 test
-        for(int i=0; i<StrongBox.DIAL_COUNT-1; i++){
+        for (int i = 0; i < StrongBox.DIAL_COUNT - 1; i++) {
             strongBox.get();
         }
         assertEquals(strongBox.get(), 2);
@@ -83,7 +84,7 @@ class StrongBoxTest {
         assertEquals(strongBox.getCount(), 1);
 
         // limit까지 test
-        for(int i=0; i<StrongBox.FINGER_COUNT-1; i++){
+        for (int i = 0; i < StrongBox.FINGER_COUNT - 1; i++) {
             strongBox.get();
         }
         assertEquals(strongBox.get(), 2);
