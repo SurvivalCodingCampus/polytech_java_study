@@ -37,10 +37,11 @@ public class StrongBox<E> {
     }
 
     public E get() {
-        count++;
-        if (count <= getLimitKeyType()) {
+        if (count >= getLimitKeyType()) {
             return null;
-        }
+            }
+        count++;
+        
         return data;
     }
 }
