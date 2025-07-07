@@ -7,6 +7,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class BookTest {
 
     @Test
@@ -18,11 +20,10 @@ class BookTest {
         List<Book> bookList = new ArrayList<>();
 
         bookList.add(book1);
-        bookList.add(book2);
+        bookList.remove(book2);
 
-        //when
-        
-
+        //then
+        assertEquals(0, bookList.size());
     }
 
 }
