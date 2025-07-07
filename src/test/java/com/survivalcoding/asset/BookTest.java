@@ -26,13 +26,14 @@ class BookTest {
         );
 
         calendar.set(Calendar.MINUTE, 32);
+        Date otherDate = calendar.getTime();
         Book book2 = new Book(
                 "산나비",
                 3000,
                 "황금",
                 0.6,
                 "1234567890",
-                date
+                otherDate
         );
 
         book1.setComment("Yes.");
@@ -61,13 +62,14 @@ class BookTest {
         );
 
         calendar.set(Calendar.MINUTE, 32);
+        Date otherDate = calendar.getTime();
         Book book2 = new Book(
                 "산나비",
                 3000,
                 "황금",
                 0.6,
                 "1234567890",
-                date
+                otherDate
         );
 
         book1.setComment("Yes.");

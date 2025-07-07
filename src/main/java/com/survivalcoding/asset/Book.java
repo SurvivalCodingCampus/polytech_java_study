@@ -43,6 +43,7 @@ public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
     }
 
     public void setPublishDate(Date publishDate) {
+        if (publishDate == null) throw new IllegalArgumentException("Publish date must not be null.");
         this.publishDate = publishDate;
     }
 
@@ -62,7 +63,7 @@ public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
         return Objects.equals(getTitle(), other.getTitle())
                 && getPublishDate().getYear() == other.getPublishDate().getYear()
                 && getPublishDate().getMonth() == other.getPublishDate().getMonth()
-                && getPublishDate().getDay() == other.getPublishDate().getDay();
+                && getPublishDate().getDate() == other.getPublishDate().getDate();
     }
 
     @Override
@@ -71,7 +72,7 @@ public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
 
         hashcode += Objects.hashCode(getPublishDate().getYear());
         hashcode += Objects.hashCode(getPublishDate().getMonth());
-        hashcode += Objects.hashCode(getPublishDate().getDay());
+        hashcode += Objects.hashCode(getPublishDate().getDate());
 
         hashcode *= 31;
         return hashcode;
