@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Cleric extends Character{
     //이름 최대 MP, HP
-    String name;
+    public String name;
     int HP;
     static final int MAX_HP = 50;
     int MP;
