@@ -1,10 +1,11 @@
 package com.survivalcoding.assignments_01_instance.exam01.instance;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Objects;
 
 public class Book {
     private String title;
-    private Date publishDate;
+    private LocalDate publishDate;
     private String comment;
 
     public String getTitle() {
@@ -15,11 +16,11 @@ public class Book {
         this.title = title;
     }
 
-    public Date getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 
@@ -31,16 +32,25 @@ public class Book {
         this.comment = comment;
     }
 
-    public Book(String title) {
+    public Book(String title, String dateStr) {
         this.title = title;
+        this.publishDate = LocalDate.parse(dateStr); // "2024-01-01" → LocalDate
     }
 
-    public Book(String title, Date publishDate, String comment) {
-        this.title = title;
-        this.publishDate = publishDate;
-        this.comment = comment;
+    @Override
+    public boolean equals(Object o) {  // List) 제목이랑 출간일이 같으면 같은 책
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) && Objects.equals(publishDate, book.publishDate);
+    }
+
+    @Override
+    public int hashCode() {  // Set, Map) 제목이랑 출간일이 같으면 같은 책
+        return Objects.hash(title, publishDate);
     }
 
 
 }
+
+
 
