@@ -4,7 +4,7 @@ public class EnumMain {
     public static void main(String[] args) {
         AuthState state = AuthState.AUTHENTICATED;
 
-
+        func(state);
     }
 
     public static void func(AuthState state) {
