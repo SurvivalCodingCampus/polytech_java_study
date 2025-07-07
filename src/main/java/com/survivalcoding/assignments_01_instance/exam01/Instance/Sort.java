@@ -19,7 +19,7 @@ public class Sort {
         Collections.sort(numbers, new Comparator<Integer>(){
             @Override
             public int compare(Integer o1, Integer o2){
-                return o2-o1;
+                return Integer.compare(o2, o1);
             }
         });
         System.out.println(numbers);
