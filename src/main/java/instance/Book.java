@@ -1,5 +1,6 @@
 package instance;
 
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Date;
@@ -9,24 +10,24 @@ import java.util.Objects;
 
 public class Book implements Comparable<Book>, Cloneable {
     private String title;
-    private LocalDate publishDate;
+    private Date publishDate;
     private String comment;
 
-    public Book(String title, LocalDate publishDate, String comment) {
+    public Book(String title, Date publishDate, String comment) {
         this.title = title;
         this.publishDate = publishDate;
         this.comment = comment;
     }
 
     public Book() {
-        this("기본", LocalDate.now(), "미등록 상태");
+        this("기본", new Date(), "미등록 상태");
     }
     @Override
     public int compareTo(Book obj) {
-        if (this.publishDate.isBefore((obj.publishDate))) {
-            return -1;
-        } else if (this.publishDate.isAfter((obj.publishDate))) {
+        if (this.publishDate.before((obj.publishDate))) {
             return 1;
+        } else if (this.publishDate.after((obj.publishDate))) {
+            return -1;
         }
         return 0;
     }
@@ -35,7 +36,7 @@ public class Book implements Comparable<Book>, Cloneable {
     public Book clone() {
         Book result = new Book();
         result.title = this.title;
-        result.publishDate = LocalDate.of(this.publishDate.getYear(), this.publishDate.getMonth(),this.publishDate.getDayOfMonth());
+        result.publishDate = new Date(this.publishDate.getTime());
         result.comment = this.comment;
         return result;
     }
@@ -44,12 +45,18 @@ public class Book implements Comparable<Book>, Cloneable {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Book book)) return false;
-        return title.equals(book.title) && this.publishDate.isEqual(book.getPublishDate());
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String formatDate = format.format(this.publishDate);
+        String formatDateOther = format.format(book.getPublishDate());
+        return title.equals(book.title) && formatDate.equals(formatDateOther);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, publishDate);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String formatDate = format.format(this.publishDate);
+
+        return Objects.hash(title, formatDate);
     }
 
     // getter
@@ -57,7 +64,7 @@ public class Book implements Comparable<Book>, Cloneable {
         return title;
     }
 
-    public LocalDate getPublishDate() {
+    public Date getPublishDate() {
         return publishDate;
     }
 
@@ -70,7 +77,7 @@ public class Book implements Comparable<Book>, Cloneable {
         this.title = title;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
     }
 
