@@ -26,10 +26,10 @@ public class Person {
         int age;
         age = Age(birthYear);
     }*/
-    public void getAge()
+    public int getAge()
     {
-        Calender calender = Calender.getInstance();
-        int year = calender.get(Calender.getAge());
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
 
         return year - birthYear;
     }
