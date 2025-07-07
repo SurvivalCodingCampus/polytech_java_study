@@ -1,11 +1,11 @@
 package com.survivalcoding.assignments_01_instance.exam01.instance;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Book implements Comparable<Book>, Cloneable {
     private String title;
-    private LocalDate publishDate;
+    private LocalDateTime publishDate;
     private String comment;
 
     public String getTitle() {
@@ -16,20 +16,18 @@ public class Book implements Comparable<Book>, Cloneable {
         this.title = title;
     }
 
-    public LocalDate getPublishDate() {
+    public LocalDateTime getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(LocalDateTime publishDate) {
         this.publishDate = publishDate;
     }
 
-
-    public Book(String title, String dateStr) {
+    public Book(String title, LocalDateTime publishDate) {
         this.title = title;
-        this.publishDate = LocalDate.parse(dateStr); // "2024-01-01" → LocalDate
+        this.publishDate = publishDate;
     }
-
 
     @Override
     public String toString() {
@@ -40,15 +38,15 @@ public class Book implements Comparable<Book>, Cloneable {
     }
 
     @Override
-    public boolean equals(Object o) {  // List) 제목이랑 출간일이 같으면 같은 책
+    public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) && Objects.equals(publishDate, book.publishDate);
+        return Objects.equals(title, book.title) && Objects.equals(publishDate.toLocalDate(), book.publishDate.toLocalDate());
     }
 
     @Override
-    public int hashCode() {  // Set, Map) 제목이랑 출간일이 같으면 같은 책
-        return Objects.hash(title, publishDate);
+    public int hashCode() {
+        return Objects.hash(title, publishDate.toLocalDate());
     }
 
     @Override
@@ -58,7 +56,7 @@ public class Book implements Comparable<Book>, Cloneable {
 
     @Override
     public Book clone() {
-        Book newBook = new Book(getTitle(), getPublishDate().toString());  // 이게 복사
+        Book newBook = new Book(getTitle(), getPublishDate());  // 이게 복사
         return newBook;
     }
 }
