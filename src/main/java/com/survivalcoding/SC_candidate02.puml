@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+scale 0.75
+
+abstract class Gameobject {
+}
+
+abstract class Creature extends Gameobject implements IRegenerate {
+}
+
+abstract class Unit extends Creature implements IMove, IAttack, IGroupable {
+}
+
+abstract class Structure extends Creature implements IBuilding, IBurnable {
+}
+
+class Marine extends Unit implements IBionic {
+}
+class Medic extends Unit implements IHeal, IBionic {
+}
+class SCV extends Unit implements IGather, IRepair, IBionic ,IMechanic {
+}
+class Vulture extends Unit implements IMechanic {
+}
+class Tank extends Unit implements IMechanic {
+}
+
+class Zergling extends Unit implements IBionic {
+}
+class Hydralisk extends Unit implements IBionic {
+}
+
+class Zealot extends Unit implements IBionic {
+}
+class Dragoon extends Unit implements IMechanic {
+}
+class Reaver extends Unit implements IRobotic {
+}
+
+interface IMove {
+void Move()
+}
+interface IAttack {
+void Attack(Creature creature)
+}
+'interface IAttackable {}
+interface IHeal {
+void Heal(IBionic bionic)
+}
+'Marker below:
+'interface IHealable {}
+interface IRegenerate {
+void Regenerate()
+}
+interface IRepair {
+void Repair(IMechanic mechanic)
+}
+'Marker below:
+'interface IRepairable {}
+interface IGather {
+void Gather(Resource resource)
+}
+'Markers below:
+interface IGroupable {}
+interface IBuilding {}
+interface IBionic {}
+interface IMechanic {}
+interface IRobotic {}
+interface IBurnable {}
+
+@enduml
