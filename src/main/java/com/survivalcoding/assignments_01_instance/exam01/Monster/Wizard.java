@@ -1,6 +1,6 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
-public class Wizard {
+public class Wizard extends Character {
     private int hp;
     private int mp = 100;
     private String name;
@@ -13,9 +13,10 @@ public class Wizard {
     //HP가 음수가 되는 상황에서는 대신 0을 설정 되도록 한다.
     public void setHp(int hp) {
         if (hp < 0) {
-            hp = 0;
+            this.hp = 0;
+        } else {
+            this.hp=hp;
         }
-        this.hp = hp;
     }
 
     public int getMp() {
@@ -66,7 +67,10 @@ public class Wizard {
         System.out.println("힐을 시전했습니다. HP:" + hero.getHp());
         //힐을 성공하면 "힐을 시전했습니다. 대상 HP: XX" 출력
     }
+    @Override
+    public void attack(Slime slime){
 
+    }
 }
 
 

@@ -1,8 +1,8 @@
-package com.survivalcoding.assignments_01_instance.exam01;
+package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 import java.util.Random;
 
-public class Cleric {
+public class Cleric extends Character{
     //이름 최대 MP, HP
     String name;
     int HP;
@@ -16,10 +16,12 @@ public Cleric(String name, int HP, int MP){
             this.HP=HP;
             this.MP=MP;
         }
+
 //이름, HP만 지정 MP는 최대 MP값으로 초기화
     public Cleric(String name, int HP){
             this(name, HP, MAX_MP);
         }
+
         //이름만 지정 HP와 MP는 최댓값으로 초기화
     public Cleric(String name){
             this(name, MAX_HP, MAX_MP);
@@ -51,9 +53,10 @@ public Cleric(String name, int HP, int MP){
         result=Math.min(recovery, availableRecovery);
         MP+=result;
 
-        if (MP > MAX_MP) {
-            MP = MAX_MP;
-        }
         return result;
+    }
+    @Override
+    public void attack(Slime slime){
+
     }
 }

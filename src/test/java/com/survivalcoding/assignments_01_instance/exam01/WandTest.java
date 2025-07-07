@@ -1,5 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.assignments_01_instance.exam01.Monster.Wand;
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;

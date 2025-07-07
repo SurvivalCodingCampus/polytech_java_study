@@ -1,4 +1,4 @@
-package com.survivalcoding.assignments_01_instance.exam01.ab;
+package com.survivalcoding.assignments_01_instance.exam01.Asset;
 
 //무형자산(intangibleAsset)이 부모 클래스
 

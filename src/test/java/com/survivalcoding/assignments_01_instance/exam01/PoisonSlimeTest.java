@@ -1,5 +1,7 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import com.survivalcoding.assignments_01_instance.exam01.Monster.Hero;
+import com.survivalcoding.assignments_01_instance.exam01.Monster.PoisonSlime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
