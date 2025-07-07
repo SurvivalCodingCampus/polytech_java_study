@@ -61,16 +61,6 @@ public class Book implements Comparable<Book>, Cloneable {
         Book newBook = new Book(getTitle(), getPublishDate().toString());  // 이게 복사
         return newBook;
     }
-
-
-    public static void main(String[] args) {
-
-        Book book1 = new Book("AA", "2025-07-07");
-        Book book2 = book1.clone();
-
-        System.out.println(book2.equals(book1));
-
-    }
 }
 
 
