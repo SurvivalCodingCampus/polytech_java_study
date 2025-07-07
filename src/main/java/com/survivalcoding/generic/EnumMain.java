@@ -4,7 +4,7 @@ public class EnumMain {
     public static void main(String[] args) {
         AuthState State = AuthState.AUTHENTICATED;
 
-        switch (state) {
+        switch (State) {
             case AuthState.AUTHENTICATED: {
                 System.out.println("AUTHENTICATED");
             }
