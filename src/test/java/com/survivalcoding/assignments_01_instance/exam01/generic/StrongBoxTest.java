@@ -20,7 +20,7 @@ class StrongBoxTest {
     }
 
     @Test
-    @DisplayName("임계값 도달 후 추가 get() 호출)
+    @DisplayName("임계값 도달 후 추가 get() 호출")
             void testGet(){
 
     }
