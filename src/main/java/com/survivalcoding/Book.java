@@ -3,7 +3,7 @@ package com.survivalcoding;
 import java.util.Date;
 import java.util.Objects;
 
-public class Book implements Comparable<Book> {
+public class Book implements Comparable<Book>, Cloneable {
     private String title;
     private Date publishDate;
     private String comment;
@@ -54,4 +54,12 @@ public class Book implements Comparable<Book> {
     public int compareTo(Book o) {
         return this.publishDate.compareTo(o.publishDate) * -1;
     }
+
+    @Override
+    public Book clone() {
+        Book book = new Book(title, publishDate, comment);
+        book.publishDate = (Date) this.publishDate.clone();
+        return book;
+    }
+
 }
