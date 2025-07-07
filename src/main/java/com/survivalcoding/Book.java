@@ -1,10 +1,11 @@
 package com.survivalcoding;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Book {
     private String title;
-    private Date publishDate;
+    private LocalDate publishDate;
     private String comment;
 
     Book(String title, Date publishDate, String comment) {
@@ -21,11 +22,11 @@ public class Book {
         this.title = title;
     }
 
-    public Date getPublishDate() {
+    public LocalDate getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(Date publishDate) {
+    public void setPublishDate(LocalDate publishDate) {
         this.publishDate = publishDate;
     }
 
