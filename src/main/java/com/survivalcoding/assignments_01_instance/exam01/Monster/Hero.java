@@ -6,13 +6,6 @@ import java.util.Random;
 public class Hero implements Comparable<Hero>, Cloneable {
     public static int money=100;
 
-    public static void setRandomMoney{
-        Hero.money=new Random().nextInt(1000);
-
-        Hero hero=new Hero("aaa", 10);
-        hero.name="홍길동";
-    }
-
     private String name;
     private int hp;
     private int maxHp;
@@ -23,7 +16,7 @@ public class Hero implements Comparable<Hero>, Cloneable {
         this.hp=hp;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
