@@ -1,14 +1,14 @@
 package com.survivalcoding;
 
-public class Sword {
-    String name;
-    int damage;
+public class Sword implements Cloneable {
+    public String name;
+    public int damage;
 
-    Sword() {
+    public Sword() {
         this("기본 이름");
     }
 
-    Sword(String name) {
+    public Sword(String name) {
         this.name = name;
         damage = 10;
     }

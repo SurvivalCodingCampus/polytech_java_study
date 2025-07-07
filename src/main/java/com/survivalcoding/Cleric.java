@@ -6,9 +6,9 @@ public class Cleric extends Character {
     static final int maxHp = 50;
     static final int maxMp = 10;
 
-    String name;
-    int hp;
-    int mp;
+    public String name;
+    public int hp;
+    public int mp;
 
     // 난수 생성을 위한 Random 객체 한번만 만들자
     Random rand = new Random();

@@ -4,5 +4,5 @@ public enum AuthState {
     AUTHENTICATED,
     UNAUTHENTICATED,
     UNKNOWN,
-    AUTHENTICATING,
+    AUTHENTICATING
 }
