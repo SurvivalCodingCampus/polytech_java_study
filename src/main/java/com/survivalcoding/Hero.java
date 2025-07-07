@@ -4,10 +4,12 @@ package com.survivalcoding;
 import java.util.Random;
 
 public class Hero {
-    private String name;    // null
+    private String name;
+    public static final int maxHp = 50;
+    public static final int maxMp = 50;
     private int hp;
     private int mp;
-    private Sword sword;    // null
+    private Sword sword;
 
     public Hero() {
         this.name = "대장";
