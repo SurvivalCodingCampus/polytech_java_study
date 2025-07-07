@@ -1,17 +1,17 @@
 package com.survivalcoding;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.Objects;
 
 public class Book {
     private String title;
-    private LocalDate publishDate;
+    private Date publishDate;
     private String comment;
 
-    Book(String title, LocalDate publishDate, String comment) {
-        this.title = getTitle();
-        this.publishDate = getPublishDate();
-        this.comment = getComment();
+    Book(String title, Date publishDate, String comment) {
+        this.title = title;
+        this.publishDate = publishDate;
+        this.comment = comment;
     }
 
     public String getTitle() {
@@ -22,11 +22,11 @@ public class Book {
         this.title = title;
     }
 
-    public LocalDate getPublishDate() {
+    public Date getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(Date publishDate) {
         this.publishDate = publishDate;
     }
 
@@ -37,7 +37,6 @@ public class Book {
     public void setComment(String comment) {
         this.comment = comment;
     }
-
 
     @Override
     public boolean equals(Object o) {
