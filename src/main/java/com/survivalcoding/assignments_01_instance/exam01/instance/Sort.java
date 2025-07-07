@@ -31,8 +31,8 @@ public class Sort {
         heros.add(new Hero("한석봉", 20));
         heros.add(new Hero("김수한무", 20));
         heros.add(new Hero("이순신", 20));
-        Collections.sort(names);
-        System.out.println(numbers);
+        Collections.sort(heros);
+        System.out.println(heros);
     }
 
 }

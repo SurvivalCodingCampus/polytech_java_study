@@ -1,9 +1,12 @@
 package com.survivalcoding.assignments_01_instance.exam01.instance;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book>, Cloneable {
     private String title;
     private LocalDate publishDate;
     private String comment;
@@ -38,6 +41,14 @@ public class Book {
     }
 
     @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", publishDate=" + publishDate +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {  // List) 제목이랑 출간일이 같으면 같은 책
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
@@ -49,7 +60,29 @@ public class Book {
         return Objects.hash(title, publishDate);
     }
 
+    @Override
+    public int compareTo(Book o) {
+        return publishDate.compareTo(o.publishDate) * -1;
+    }
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+
+    public static void main(String[] args) {
+        List<Book> books = new ArrayList<>();
+
+        books.add(new Book("AA", "2024-06-08"));
+        books.add(new Book("BB", "2025-07-07"));
+        books.add(new Book("CC", "2024-12-25"));
+
+        Collections.sort(books);
+
+        System.out.println(books);
+
+    }
 }
 
 
