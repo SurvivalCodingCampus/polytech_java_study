@@ -8,12 +8,15 @@ public class EnumMain {
         switch (state) {
             case AuthState.AUTHENTICATED: {
                 System.out.println("AUTHENTICATED");
+                break;
             }
             case AuthState.UNAUTHENTICATED: {
                 System.out.println("UNAUTHENTICATED");
+                break;
             }
             case AuthState.UNKNOWN: {
                 System.out.println("UNKNOWN");
+                break;
             }
             default: {
                 System.out.println("default");
