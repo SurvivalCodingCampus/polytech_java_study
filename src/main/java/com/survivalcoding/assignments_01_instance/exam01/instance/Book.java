@@ -13,10 +13,6 @@ public class Book implements Comparable<Book>, Cloneable {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public Date getPublishDate() {
         return publishDate;
     }
