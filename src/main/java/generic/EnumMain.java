@@ -15,8 +15,8 @@ public class EnumMain {
             case UNKNOWN: {
                 System.out.println("UNKNOWN");
             }
-            default: {
-                System.out.println("default");
+            case AUTHENTICATING: {
+                System.out.println("AUTHENTICATING");
             }
         }
     }
