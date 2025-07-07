@@ -31,7 +31,7 @@ class BookTest {
     }
 
     @Test
-    @DisplayName("제목과 출간일이 같으면 같은 책으로 판단한다 List")
+    @DisplayName("제목과 출간일이 같으면 같은 책으로 판단한다 set")
     void BookTest2() {
 
         //given
@@ -49,5 +49,29 @@ class BookTest {
 
         //then
         assertEquals(1, bookSet.size());
+    }
+
+    @Test
+    @DisplayName("신상 순서대로 정렬하자")
+    void BookTest3() {
+        //given
+        Date date = new Date();
+        Date date1 = new Date();
+
+        SimpleDateFormat sdf1 = new SimpleDateFormat("2025-05-04");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("2025-06-04");
+
+        String formatDate = sdf1.format(date);
+        String formatDate2 = sdf2.format(date1);
+
+        Book book1 = new Book("ABC", date, "NoComment");
+        Book book2 = new Book("DEF", date1, "Comment");
+
+        List<Book> bookList = new ArrayList<>();
+        bookList.add(book1);
+        bookList.add(book2);
+
+        Collections.sort(bookList);
+        System.out.println(bookList);
     }
 }
