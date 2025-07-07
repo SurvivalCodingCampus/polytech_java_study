@@ -1,14 +1,39 @@
 package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
+import java.util.Objects;
 import java.util.Random;
 
-public class Hero {
+public class Hero implements Comparable<Hero>, Cloneable {
     public static int money=100;
+
+    public static void setRandomMoney{
+        Hero.money=new Random().nextInt(1000);
+
+        Hero hero=new Hero("aaa", 10);
+        hero.name="홍길동";
+    }
 
     private String name;
     private int hp;
     private int maxHp;
     private Sword sword;
+
+    public Hero(String name, int hp){
+        this.name=name;
+        this.hp=hp;
+    }
+
+    private String getName() {
+        return name;
+    }
+
+    public Sword getSword() {
+        return sword;
+    }
+
+    public void setSword(Sword sword) {
+        this.sword = sword;
+    }
 
     public int getHp() {
         return hp;
@@ -29,16 +54,34 @@ public class Hero {
         System.out.println("run");
     }
 
+    @Override
+    public final boolean equals(Object o){
+        if(!(o instanceof Hero hero)) return false;
+
+        return hp==hero.hp&& Objects.equals(name, hero.name)&&Objects.equals(sword, hero.sword);
+    }
+
+    @Override
+    public int hashCode(){
+        int result = Objects.hashCode(name);
+        result=31*result+hp;
+        result=31*result+Objects.hashCode(sword);
+        return result;
+    }
+
+    @Override
+    public String toString(){
+        return "Hero{" +
+                "name='" +name + '\'' +
+                ", hp=" + hp +
+                ", sword=" + sword +
+                '}';
+    }
+
     static void setRandomMoney(){
         Hero.money=new Random().nextInt(1000);
         Hero hero=new Hero("aaa",10);
         hero.name="홍길동";
-    }
-
-    public Hero(String name, int hp){
-        this.name=name;
-        this.hp=hp;
-        this.maxHp=hp;
     }
 
     public int getMaxHp() {
@@ -68,5 +111,17 @@ public class Hero {
         hero1=null;
 
         System.out.println(hero2.hp);
+    }
+
+    @Override
+    public int compareTo(Hero o){
+        return Integer.compare(hp, o.hp)*-1;
+    }
+
+    @Override
+    public Hero clone(){
+        Hero newHero=new Hero(getName(), getHp());
+        newHero.setSword(getSword());
+        return newHero;
     }
 }
