@@ -5,10 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 class Book_2Test {
 
@@ -45,7 +42,17 @@ class Book_2Test {
         Book_2 book6 = new Book_2("책이름6","진현규6");
         Book_2 book7 = new Book_2("책이름7","진현규7");
 
-        int a = book5.getPublishDate().compareTo(book6.getPublishDate());
+        List<Book_2> booklist = new ArrayList<>();
+
+        booklist.add(book5);
+        booklist.add(book6);
+        booklist.add(book7);
+
+        Collections.sort(booklist);
+
+        assertEquals(book5, booklist.get(0));
+        assertEquals(book6, booklist.get(1));
+        assertEquals(book7, booklist.get(2));
 
 
 
@@ -55,5 +62,4 @@ class Book_2Test {
 
         assertFalse(book9 == book8);
     }
-
 }

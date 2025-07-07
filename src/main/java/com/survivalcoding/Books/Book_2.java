@@ -54,7 +54,6 @@ public class Book_2 implements Comparable<Book_2>, Cloneable{
 
     @Override
     public int compareTo(Book_2 o) {
-
-        return 0;
+        return o.publishDate.compareTo(this.publishDate);
     }
 }
