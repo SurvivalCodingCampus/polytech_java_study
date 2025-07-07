@@ -1,11 +1,29 @@
 package com.survivalcoding.asset;
 
-public class Book extends TangibleAsset {
-    private String isbn;
+import java.util.Date;
+import java.util.Objects;
 
-    public Book(String name, int price, String color, double weight, String isbn) {
+public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
+    private String isbn;
+    private Date publishDate;
+    private String comment;
+
+    // Constructor
+    public Book(String name, int price, String color, double weight, String isbn, Date publishDate) {
         super(name, price, color, weight);
         setIsbn(isbn);
+        setPublishDate(publishDate);
+    }
+
+    // getter, setter
+
+    // alternative name caller for Book class
+    public String getTitle() {
+        return this.getName();
+    }
+
+    public void setTitle(String name) {
+        setName(name);
     }
 
     public String getIsbn() {
@@ -18,5 +36,64 @@ public class Book extends TangibleAsset {
             throw new IllegalArgumentException("ISBN is a numeric code with between 10 and 13 numbers");
         }
         this.isbn = isbn;
+    }
+
+    public Date getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(Date publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    // Object methods
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Book other)) return false; // check if 'Object is a Book'
+
+        return Objects.equals(getTitle(), other.getTitle())
+                && getPublishDate().getYear() == other.getPublishDate().getYear()
+                && getPublishDate().getMonth() == other.getPublishDate().getMonth()
+                && getPublishDate().getDay() == other.getPublishDate().getDay();
+    }
+
+    @Override
+    public int hashCode() {
+        int hashcode = Objects.hashCode(getTitle());
+
+        hashcode += Objects.hashCode(getPublishDate().getYear());
+        hashcode += Objects.hashCode(getPublishDate().getMonth());
+        hashcode += Objects.hashCode(getPublishDate().getDay());
+
+        hashcode *= 31;
+        return hashcode;
+    }
+
+    // Collections methods
+    @Override
+    public int compareTo(Book other) {
+        return getPublishDate().compareTo(other.getPublishDate());
+    }
+
+    @Override
+    public Book clone() {
+        Book result = new Book(
+                getName(),
+                getPrice(),
+                getColor(),
+                getWeight(),
+                getIsbn(),
+                (Date) getPublishDate().clone() // We all know it came from Date class.
+        );
+        result.setComment(getComment());
+        return result;
     }
 }
