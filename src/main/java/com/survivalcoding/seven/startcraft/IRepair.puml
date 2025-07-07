@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IRepair{
+    void repair(IRepairable repairable) // 리페어
+}
+class Scv implements IRepair{
+    + void mining()
+}
+@enduml

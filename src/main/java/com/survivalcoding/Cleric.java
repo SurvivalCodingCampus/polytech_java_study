@@ -46,18 +46,18 @@ public class Cleric {
         this.currentHp = currentHp;
     }
 
-    Cleric(String name) {
+    public Cleric(String name) {
         this.name = name;
         this.currentHp = MAX_HP;
         this.currentMp = MAX_MP;
     }
 
-    Cleric(String name, int hp) {
+    public Cleric(String name, int hp) {
         this(name);
         this.currentHp = hp;
     }
 
-    Cleric(String name, int hp, int mp) {
+    public Cleric(String name, int hp, int mp) {
         this(name, hp);
         this.currentMp = mp;
     }

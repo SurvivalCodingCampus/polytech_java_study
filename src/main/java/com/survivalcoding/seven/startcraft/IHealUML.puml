@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface IHeal{
+    void heal(IHealable healable) // 유닛힐
+}
+class Medic implements IHeal{
+}
+@enduml
