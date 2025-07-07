@@ -1,0 +1,20 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class StrongBox<E>{
+    - E data
+    - KeyType keyType
+    - int count
+
+    + int getCount()
+    + void put(E data)
+    + E get()
+}
++enum KeyType {
+    PADLOCK
+    BUTTON
+    DIAL
+    FINGER
+}
+
+@enduml
