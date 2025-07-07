@@ -7,7 +7,6 @@ public class Book_2 implements Comparable<Book_2>, Cloneable{
     private String title;
     private Date publishDate;
     private String comment;
-    private int number;
 
     public Book_2(String title, String comment){
 
