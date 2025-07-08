@@ -1,0 +1,9 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Book implements Cloneable, Comparable<Book> {
+    - String title;
+    - Date publishDate;
+    - String comment;
+}
+@enduml
