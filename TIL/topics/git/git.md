@@ -59,8 +59,10 @@
 1. git pull : 원격 저장소의 앞서가는 버전을 로컬 저장소에 적용함
 2. git reset --hard \[commit ID] : \[commit ID] 에 해당하는 커밋으로 로컬 저장소의 내용을 되돌림  
 
-## 브랜치 BRANCH 와 체크아웃 CHECKOUT
+## 브랜치 BRANCH, 체크아웃 CHECKOUT, 머지 MERGE
 1. git branch : 브랜치 목록 확인
 > git branch <name> : ‘name’ 으로 브랜치 생성 
-2. git checkout <name> : ‘name’ 이름의 브랜치로 이동 (해당 브랜치에서 작업하게 됨)
+> git branch -d <name> : ‘name’ 이름의 브랜치 제거
+2. git checkout <name> : ‘name’ 이름의 브랜치로 이동(HEAD) (해당 브랜치에서 작업하게 됨)
 > git checkout -b <name> : ‘name’ 이름의 브랜치로 생성한 뒤 이동
+3. git merge <name> : 'name' 이름의 브랜치를 현재 작업중인 브랜치(HEAD)에 병합
