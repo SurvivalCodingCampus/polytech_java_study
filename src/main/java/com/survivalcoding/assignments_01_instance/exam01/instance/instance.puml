@@ -1,0 +1,23 @@
+@startuml
+
+class Book implements Comparable, Cloneable {
+    - String title
+    - Date publishDate
+    - String comment
+
+    + void Book(String title)
+    + void Book(String title, Date publishDate)
+    + String getTitle()
+    + Date getPublishDate()
+    + void setPublishDate(Date publishDate)
+    + String toString()
+    + boolean equals(o : Object)
+    + int hashCode()
+    + int compareTo(Book o)
+    + Book clone()
+}
+
+interface Comparable
+interface Cloneable
+
+@enduml

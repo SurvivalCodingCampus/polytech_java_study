@@ -1,8 +1,9 @@
 package com.survivalcoding.assignments_01_instance.exam01;
 
+import java.util.Objects;
 import java.util.Random;
 
-public class Hero {
+public class Hero implements Comparable<Hero>, Cloneable {
     static int money = 100; //공공자원
     private int max_hp = 100;
     private String name;
@@ -42,7 +43,7 @@ public class Hero {
         this.name = "김영웅";
     }
 
-    Hero(String name) {
+    public Hero(String name) {
         this.hp = 100;
         this.name = name;
     }
@@ -58,5 +59,40 @@ public class Hero {
 
     public void run() {
         System.out.println("run");
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return Objects.equals(name, hero.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "max_hp=" + max_hp +
+                ", name='" + name + '\'' +
+                ", hp=" + hp +
+                ", sword=" + sword +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Hero o) { // 대소비교 규칙
+        return name.compareTo(o.name);
+    }
+
+    @Override
+    public Hero clone() {
+        Hero newHero = new Hero(getName(), getHp());  // 이게 복사
+        newHero.setSword((getSword()));
+        return newHero;
     }
 }
