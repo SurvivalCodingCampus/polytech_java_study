@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class BookTest {
 
@@ -41,5 +41,26 @@ class BookTest {
         bookSet.add(book1);   // 1
         bookSet.remove(book2);    // 0
         assertEquals(0, bookSet.size());
+    }
+
+    @Test
+    @DisplayName("Book 인스턴스를 담고 있는 컬렉션에 대해 Collections.sort() 를 사용하면 출간일이 신상 순서대로 정렬된다")
+    void shouldSortBooksByPublicationDateInDescendingOrder() {
+        Book book1 = new Book("제목1", new Date(2024, 3, 1), "comment1");
+        Book book2 = new Book("제목2", new Date(2024, 1, 1), "comment2");
+        Book book3 = new Book("제목3", new Date(2024, 2, 1), "comment3");
+        Book book4 = new Book("제목4", new Date(2024, 4, 1), "comment4");
+
+        List<Book> books = new ArrayList<>();
+        books.add(book1);
+        books.add(book2);
+        books.add(book3);
+        books.add(book4);
+
+        Collections.sort(books);
+        assertEquals(book4, books.get(0));
+        assertEquals(book1, books.get(1));
+        assertEquals(book3, books.get(2));
+        assertEquals(book2, books.get(3));
     }
 }
