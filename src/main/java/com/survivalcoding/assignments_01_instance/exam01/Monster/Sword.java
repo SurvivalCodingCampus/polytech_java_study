@@ -1,14 +1,30 @@
 package com.survivalcoding.assignments_01_instance.exam01.Monster;
 
 public class Sword {
-    String name;
-   int damage;
+    public String name;
+    public int damage;
 
-   Sword(){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    Sword(){
        name="";
    }
 
-   Sword(String name) {
+   public Sword(String name) {
        this.name=name;
        damage=10;
    }
