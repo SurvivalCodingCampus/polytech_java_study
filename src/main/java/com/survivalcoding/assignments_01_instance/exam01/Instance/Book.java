@@ -1,7 +1,6 @@
 package com.survivalcoding.assignments_01_instance.exam01.Instance;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Date;
@@ -75,7 +74,7 @@ public Book(String title, Date publishDate, String comment){
     // Book 인스턴스를 담고 있는 컬렉션에 대해 Collections.sort() 를 사용하면 출간일이 신상 순서대로 정렬된다
     @Override
     public int compareTo(Book book) {
-        return book.publishDate.compareTo(this.publishDate);
+        return -1*publishDate.compareTo(book.getPublishDate());
     }
 
     @Override
