@@ -65,4 +65,4 @@
 > git branch -d <name> : ‘name’ 이름의 브랜치 제거
 2. git checkout <name> : ‘name’ 이름의 브랜치로 이동(HEAD) (해당 브랜치에서 작업하게 됨)
 > git checkout -b <name> : ‘name’ 이름의 브랜치로 생성한 뒤 이동
-3. git merge <name> : 'name' 이름의 브랜치를 현재 작업중인 브랜치(HEAD)에 병합
+3. git merge <name> : 'name' 이름의 브랜치를 현재 작업중인 브랜치(HEAD)에 병합00
