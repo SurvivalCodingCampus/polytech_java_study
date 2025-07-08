@@ -44,8 +44,8 @@
 
 ## 로컬에서 원격으로
 1. git add : 스테이지에 변경사항을 등록
-> git add . : 현재 작업 디렉토리의 모든 변경사항을 스테이징 영역에 추가  
-> git add -A : 추적중인 파일과 추적중이 아닌 파일의 모든 변경사항을 스테이징 영역에 추가
+> git add . : **현재 디렉터리·하위 디렉터리**의 *추가·수정* 파일을 스테이징(삭제-파일 제외)  
+> git add -A : 저장소 전체에서 *추가·수정·삭제* 모든 변경사항을 스테이징
 2. **git commit -m \[message]** :  
    스테이지에 올라간 변경사항을 원격 저장소에 적용할 준비를 함, commit 메시지는 \[message] 로 남김
 > git commit --amend -m \[message] : commit 메시지를 \[message] 로 변경
@@ -57,12 +57,14 @@
 
 ## 저장소간의 버전이 다른 상황에서의 작업
 1. git pull : 원격 저장소의 앞서가는 버전을 로컬 저장소에 적용함
-2. git reset --hard \[commit ID] : \[commit ID] 에 해당하는 커밋으로 로컬 저장소의 내용을 되돌림  
+2. git reset --hard \[commit ID] : ⚠️ 로컬의 모든 변경사항을 삭제하고 \[commit ID] 상태로 되돌림(주의!)
 
 ## 브랜치 BRANCH, 체크아웃 CHECKOUT, 머지 MERGE
 1. git branch : 브랜치 목록 확인
 > git branch <name> : ‘name’ 으로 브랜치 생성 
-> git branch -d <name> : ‘name’ 이름의 브랜치 제거
-2. git checkout <name> : ‘name’ 이름의 브랜치로 이동(HEAD) (해당 브랜치에서 작업하게 됨)
+> git branch -d <name> : ‘name’ 이름의 브랜치 제거  
+> git branch -D <name> : 강제 삭제
+2. git checkout <name> : ‘name’ 이름의 브랜치로 이동(이동한 브랜치가 HEAD, 그러니까 현재 브랜치가 되고, 해당 브랜치에서 작업하게 됨)
 > git checkout -b <name> : ‘name’ 이름의 브랜치로 생성한 뒤 이동
 3. git merge <name> : 'name' 이름의 브랜치를 현재 작업중인 브랜치(HEAD)에 병합
+> git merge --no-ff <name> : 병합 커밋 강제 생성
