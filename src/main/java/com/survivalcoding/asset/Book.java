@@ -3,6 +3,10 @@ package com.survivalcoding.asset;
 import java.util.Date;
 import java.util.Objects;
 
+
+// 클래스를 생성한 뒤, 생성자 | Getter n' Setter | toString() | equals() | hashCode()
+// 를 구성해 '모델 클래스(Model Class)' 를 준비
+
 public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
     private String isbn;
     private Date publishDate;
@@ -81,7 +85,7 @@ public class Book extends TangibleAsset implements Comparable<Book>, Cloneable {
     // Collections methods
     @Override
     public int compareTo(Book other) {
-        return getPublishDate().compareTo(other.getPublishDate());
+        return getPublishDate().compareTo(other.getPublishDate()) * -1;
     }
 
     @Override
