@@ -57,7 +57,20 @@ class BookTest {
 
         Collections.sort(books);
         assertEquals(book4, books.get(0));
-
+        assertEquals(book1, books.get(1));
+        assertEquals(book3, books.get(2));
+        assertEquals(book2, books.get(3));
 
         }
+
+        @Test
+        @DisplayName("clone() 메서드를 제공하고, 깊은 복사를 수행한다")
+        void  DeepCopyCloning(){
+            Book book1=new Book("제목1", new Date(2024, 3 ,1), "comment");
+            Book book2=book1.clone();
+
+            assertNotSame(book1, book2);
+            assertNotSame(book1.getPublishDate(), book2.getPublishDate());
+        }
+
     }
