@@ -67,4 +67,21 @@ public class Hero {
     {
         System.out.println(name + "이 도망쳤다");
     }
+
+    @Override
+    public String toString() {
+        return "Hero{" +
+                "name='" + name + '\'' +
+                ", max_hp=" + max_hp +
+                ", hp=" + hp +
+                ", sword=" + sword +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return hp;
+    }
+
+
 }
