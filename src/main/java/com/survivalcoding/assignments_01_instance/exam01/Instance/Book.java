@@ -56,7 +56,10 @@ public Book(String title, Date publishDate, String comment){
     @Override
     public int hashCode() {
         int result = Objects.hashCode(title);
-        result=31*result+Objects.hashCode(publishDate);
+        result=31*result+getPublishDate().getYear();
+        result=31*result+getPublishDate().getMonth();
+        result=31*result+getPublishDate().getDate();
+
         return result;
     }
 
@@ -77,11 +80,8 @@ public Book(String title, Date publishDate, String comment){
 
     @Override
     public Book clone(){
-    Book result=new Book();
-    result.title=this.title;
-    result.publishDate= LocalDateTime.of(this.publishDate.getYear(), this.publishDate.getMonth(), this.publishDate.getDayOfMonth());
-    result.comment=this.comment;
-    return result;
+        Date date=(Date) publishDate.clone();
+        return new Book(title, date, comment);
     }
 
 }
