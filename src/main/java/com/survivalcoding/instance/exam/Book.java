@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Objects;
 
 // 모델 클래스
-public class Book implements Comparable<Book> {
+public class Book implements Comparable<Book>, Cloneable {
     // String, primitive type = 값을 복사 느낌 (깊은 복사)
     private String title;
     private Date publishDate;
@@ -71,5 +71,11 @@ public class Book implements Comparable<Book> {
     @Override
     public int compareTo(Book other) {
         return -1 * publishDate.compareTo(other.getPublishDate());
+    }
+
+    @Override
+    public Book clone() {
+        Date date = (Date) publishDate.clone();
+        return new Book(title, date, comment);
     }
 }
