@@ -3,7 +3,7 @@ package instance;
 import java.util.Date;
 import java.util.Objects;
 
-public class Book {
+public class Book implements Comparable<Book>, Cloneable {
     private String title;
     private Date publishDate;
     private String comment;
@@ -41,13 +41,23 @@ public class Book {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(title, book.title) &&
-                Objects.equals(publishDate.getYear(), book.publishDate.getYear());
+        return Objects.equals(title, book.title) && Objects.equals(publishDate, book.publishDate);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(title, publishDate);
+    }
+
+    @Override
+    public int compareTo(Book o) {
+
+        return 0;
+    }
+
+    @Override
+    public Book clone() {
+
     }
 
     public static void main(String[] args) {
@@ -57,4 +67,5 @@ public class Book {
 
 
     }
+
 }
