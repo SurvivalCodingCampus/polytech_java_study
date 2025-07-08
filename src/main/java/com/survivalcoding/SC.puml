@@ -24,7 +24,7 @@
 'MINUTES
 '}
 
-scale 2
+scale 1.25
 
 abstract class Unit {
     - int hp
