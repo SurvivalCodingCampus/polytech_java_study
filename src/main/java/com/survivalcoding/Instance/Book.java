@@ -4,9 +4,12 @@ package com.survivalcoding.Instance;
 import java.util.Date;
 import java.util.Objects;
 
+
+// 모델 클래스
 public class Book implements Comparable<Book>, Cloneable {
+    // String, Primitive type = 값을 복사 느낌 (깊은 복사)
     private String title;
-    private Date publishDate;
+    private Date publishDate; // 이 친구는 그냥하면 얕은 복사됨
     private String comment;
 
     // 생성자
@@ -41,6 +44,15 @@ public class Book implements Comparable<Book>, Cloneable {
         this.comment = comment;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", publishDate=" + publishDate +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
+
     // 문제 1 : 제목과 출간 일이 같으면 같은 책으로 판단
     @Override
     public boolean equals(Object obj) { // 두 Book 객체가 같은지 판단 > Object 클래스의 equals 메서드를 재정의한다는 의미
@@ -63,6 +75,7 @@ public class Book implements Comparable<Book>, Cloneable {
         return other.publishDate.compareTo(this.publishDate); // 다른 객체가 먼저 vs 현재 객체 나중에 나옴  > 큰 것 부터
     }
 
+
     // 문제 3 : clone 메서드를 이용하여 깊은 복사 수행하기
     @Override
     public Book clone() {
@@ -74,4 +87,6 @@ public class Book implements Comparable<Book>, Cloneable {
         return book;
 
     }
+
+
 }
